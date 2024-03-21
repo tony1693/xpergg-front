@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_17" data-name="Rectángulo 17" width="1920" height="1080" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.106" y1="0.097" x2="0.897" y2="0.892" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#010050"/>
+      <stop offset="1" stop-color="#c00065"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7f00ff"/>
+      <stop offset="1" stop-color="#7f00ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1b1b1b"/>
+      <stop offset="1" stop-color="#1b1b1b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="Enmascarar_grupo_1" data-name="Enmascarar grupo 1" clip-path="url(#clip-path)">
+    <g id="Grupo_9" data-name="Grupo 9">
+      <rect id="Rectángulo_11" data-name="Rectángulo 11" width="1920" height="1080" fill="url(#linear-gradient)"/>
+      <rect id="Rectángulo_12" data-name="Rectángulo 12" width="1678" height="890" transform="translate(2370 1430) rotate(180)" opacity="0.53" fill="url(#radial-gradient)"/>
+      <rect id="Rectángulo_14" data-name="Rectángulo 14" width="2337" height="938" transform="translate(2702 608) rotate(180)" opacity="0.48" fill="url(#radial-gradient-2)"/>
+    </g>
+  </g>
+</svg>
