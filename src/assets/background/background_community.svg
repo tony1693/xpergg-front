@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1088" viewBox="0 0 1920 1088">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_90" data-name="Rectángulo 90" width="1695" height="728" transform="translate(225 351)" fill="#fff"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7f00ff"/>
+      <stop offset="1" stop-color="#7f00ff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip-path-2">
+      <rect id="Rectángulo_68" data-name="Rectángulo 68" width="1197" height="444" transform="translate(0 -9)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_217" data-name="Grupo 217" transform="translate(0 9)">
+    <rect id="Rectángulo_118" data-name="Rectángulo 118" width="1920" height="1079" fill="#1b1b1b"/>
+    <g id="Enmascarar_grupo_5" data-name="Enmascarar grupo 5" clip-path="url(#clip-path)">
+      <rect id="Rectángulo_89" data-name="Rectángulo 89" width="2337" height="938" transform="translate(426 351)" opacity="0.48" fill="url(#radial-gradient)"/>
+    </g>
+    <g id="Enmascarar_grupo_4" data-name="Enmascarar grupo 4" clip-path="url(#clip-path-2)">
+      <rect id="Rectángulo_67" data-name="Rectángulo 67" width="1678" height="890" transform="translate(-631 -526)" opacity="0.53" fill="url(#radial-gradient)"/>
+    </g>
+  </g>
+</svg>
