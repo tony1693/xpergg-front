@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+</head>
+
+<body>
+    <div class="containerForm">
+        <form [formGroup]="reactiveForm" (ngSubmit)="loginSubmit()">
+            <h2>Iniciar Sesión</h2>
+            <br>
+            <div class="form">
+                <label for="name" class="label">Usuario</label>
+                <input class="control" placeholder="User" type="text" name="name" formControlName="name">
+                <!-- Mensaje de error para el campo de usuario -->
+                <div
+                    *ngIf="reactiveForm.get('name')?.invalid && (reactiveForm.get('name')?.dirty || reactiveForm.get('name')?.touched)">
+                    <p class="error">*Campo obligatorio</p>
+                </div>
+            </div>
+            <div class="form">
+                <label for="password" class="label">Contraseña</label>
+                <input class="control" placeholder="Password" type="password" name="password"
+                    formControlName="password">
+                <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
+                <!-- Mensaje de error para el campo de contraseña -->
+                <div
+                    *ngIf="reactiveForm.get('password')?.invalid && (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched)">
+                    <p class="error">*Longitud de contraseña incorrecta</p>
+                </div>
+            </div>
+            <br>
+            <div class="buttonLogin">
+                <button [disabled]="reactiveForm.invalid" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

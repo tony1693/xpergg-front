@@ -1,0 +1,76 @@
+/* Estilos para el formulario de inicio de sesión */
+
+.containerForm {
+    width: 302px;
+    height: 311px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #707070;
+    border-radius: 37px;
+    opacity: 1;
+    padding: 4%;
+}
+
+h2 {
+
+    font: normal normal 800 24px/26px Plus Jakarta Sans;
+
+    color: #E100FF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font: normal normal medium 15px/26px Plus Jakarta Sans;
+    color: #1B1B1B;
+    opacity: 80%;
+    font-size: 15px;
+    line-height: 26px;
+    padding-left: 8%;
+}
+
+.control {
+    width: 210px;
+    height: 38px;
+    background: #E100FF29;
+    border-radius: 52px;
+    opacity: 1;
+    padding: 10px;
+    border: 1px solid #E100FF29;
+}
+
+button {
+    width: 131px;
+    height: 32px;
+    background: #1B1B1B;
+    border: 1px solid #E100FF;
+    border-radius: 16px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal 800 18px/23px Plus Jakarta Sans;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buttonLogin {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: xx-small;
+}
+
+.subtitlePassword {
+    color: white;
+    font-size: x-small;
+}
