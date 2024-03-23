@@ -1,0 +1,13 @@
+
+.avatar{
+
+    position: relative;
+    top: 184px;
+    left: 307px;
+    width: 159px;
+    height: 159px;
+    
+    background: #E100FF 0% 0% no-repeat padding-box;
+    border-radius:  50%;
+    border: 5px solid #636363;
+    }
