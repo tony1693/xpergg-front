@@ -3,6 +3,6 @@ import { FormLoginComponent } from './components/form-login/form-login.component
 import { UsersListComponent } from './components/users-list/users-list.component';
 
 export const routes: Routes = [
-    { path: 'Login', component: UsersListComponent },
+    { path: 'Login', component: FormLoginComponent },
     { path: 'Users-list', component: UsersListComponent },
 ];
