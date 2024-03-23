@@ -4,7 +4,7 @@ export class User {
         public avatar!: string;
         public name!: string;
         public email!: string;
-        public nacionality!: string;
+        public nationality!: string;
         public aboutMe!: string;
         public password!: string;
         public confirmPassword!: string;
@@ -17,7 +17,7 @@ export class User {
           this.name = name;
           this.email = email;
           this.avatar = '';
-          this.nacionality = '';
+          this.nationality = '';
           this.aboutMe = '';
           this.password = '';
           this.confirmPassword = '';
