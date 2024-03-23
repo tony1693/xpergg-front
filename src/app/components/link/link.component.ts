@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class LinkComponent {
   @Input() public linkText: string = "Home";
-  @Input() public linkImg: string = "assets/icon/icono-home-landing-nr.svg"
+  @Input() public linkImg: string = "assets/icon/icono-home-landing-nr.svg";
+  @Input() public linkRouting: string = "";
 }
