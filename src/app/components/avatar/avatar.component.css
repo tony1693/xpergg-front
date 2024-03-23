@@ -10,4 +10,21 @@
     background: #E100FF 0% 0% no-repeat padding-box;
     border-radius:  50%;
     border: 5px solid #636363;
-    }
+}
+
+.name{
+    top: 447px;
+    left: 554px;
+    width: 629px;
+    height: 23px;
+/* UI Properties */
+    text-align: left;
+    font: normal normal bold 15px/19px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #E100FF;
+    opacity: 1;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
