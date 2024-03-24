@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    height: 58px;
+    margin-top: 47px;
+    background-color: blueviolet;
+}
+
+.navbar-brand {
+    margin-left: 112px;
+    width: 198px;
+    height: 58px;
+}
+
+.logo{
+    width: 198px;
+    height: 58px;
+}
+
+.navbarLinks{
+    height: 58px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.navbarItem{
+    margin-right: 15px;
+}
+
+.navbarItemR{
+    margin-right: 15px;
+}
