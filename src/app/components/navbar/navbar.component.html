@@ -1,1 +1,76 @@
-<p>navbar works!</p>
+<!-- Aquí va el navbar de los usuarios NO registrados -->
+<nav class="navbar bg-body-tertiary noRegistered">
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <img src="assets\Images\crash.png" alt="LogoXperGG" class="logo">
+        </a>
+        <div class="navbarLinks">
+            <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                linkRouting=""></app-link>
+            <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
+                linkText="Publicaciones" linkRouting=""></app-link>
+            <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
+                linkRouting=""></app-link>
+            <button>LOGIN</button>
+            <!-- Aquí falta el LOGIN COMPONENT -->
+        </div>
+    </div>
+</nav>
+
+<!-- Aquí va el navbar de los usuarios registrados -->
+<nav class="navbar bg-body-tertiary registered">
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <img src="assets\Images\crash.png" alt="LogoXperGG" class="logo">
+        </a>
+        <div class="navbarLinks">
+            <app-link class="navbarItemR" linkImg="assets\icon\iconoInicioR.svg" linkText="Inicio"
+                linkRouting=""></app-link>
+            <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades"
+                linkRouting=""></app-link>
+            <app-link class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg" linkText="Solicitudes"
+                linkRouting=""></app-link>
+            <app-link class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" linkText="Notificaciones"
+                linkRouting=""></app-link>
+            <!-- Aquí falta el MY USER COMPONENT -->
+            <button>My User</button>
+        </div>
+    </div>
+</nav>
+
+<!-- <nav class="navbar bg-body-tertiary"> -->
+<!-- <div class="container"> -->
+<!-- <a class="navbar-brand" href=""> -->
+<!-- <img src="assets\Images\crash.png" alt="LogoXperGG" class="logo"> -->
+<!-- </a> -->
+<!--  -->
+<!-- <div class="conditional"> -->
+<!-- @if (user){ -->
+<!-- <div class="navbarLinks"> -->
+<!-- <app-link class="navbarItemR" linkImg="assets\icon\iconoInicioR.svg" linkText="Inicio" -->
+<!-- linkRouting=""></app-link> -->
+<!-- <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades" -->
+<!-- linkRouting=""></app-link> -->
+<!-- <app-link class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg" linkText="Solicitudes" -->
+<!-- linkRouting=""></app-link> -->
+<!-- <app-link class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" linkText="Notificaciones" -->
+<!-- linkRouting=""></app-link> -->
+<!-- Aquí falta el MY USER COMPONENT -->
+<!-- <button>My User</button> -->
+<!-- </div> -->
+<!-- } @else { -->
+<!-- <div class="navbarLinks"> -->
+<!-- <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home" -->
+<!-- linkRouting=""></app-link> -->
+<!-- <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg" -->
+<!-- linkText="Publicaciones" linkRouting=""></app-link> -->
+<!-- <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad" -->
+<!-- linkRouting=""></app-link> -->
+<!-- <button>LOGIN</button> -->
+<!-- Aquí falta el LOGIN COMPONENT -->
+<!-- </div> -->
+<!-- } -->
+<!-- </div> -->
+<!--  -->
+<!-- </div> -->
+<!-- </nav> -->
