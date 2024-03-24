@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './link.component.css'
 })
 export class LinkComponent {
-  @Input() public linkText: string = "Home";
-  @Input() public linkImg: string = "assets/icon/icono-home-landing-nr.svg";
+  @Input() public linkText: string = "";
+  @Input() public linkImg: string = "";
   @Input() public linkRouting: string = "";
 }

@@ -1,7 +1,6 @@
 .linkContainer {
     display: flex;
     align-items: center;
-    background-color: blue;
 }
 
 .linkIconNR{
@@ -14,10 +13,12 @@
 }
 
 .linkText{
-    width: 62px;
-    height: 23px;
+    width: auto;
+    height: 18px;
+    width: auto;
     text-align: center;
-    font-family: "Plus Jakarta Sans";
+    font-family: 'Segoe UI Regular';
+    font-style: normal;
     font-weight: bold;
     letter-spacing: 0px;
     color: #FFFFFF;
