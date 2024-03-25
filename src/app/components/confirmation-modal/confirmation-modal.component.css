@@ -2,15 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-}
-
-#staticBackdrop {
-    padding: 20px;
-    background-color: #141414;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
+    right: 1260;
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid black
 }
 
 .modal-content{
@@ -21,17 +19,10 @@
 
 .modal-header{
     display: flex;
-    justify-content: space-between;
-}
-
-.modal-title{
-    font-family: 'Plus Jakarta Sans';
-    font-weight: bold;
-    color: #E100FF;
+    align-self: flex-end;
 }
 
 .btn-close{
-    margin-left: 20px;
     height: 25px;
     background-color: #C0005A;
     color: white;
@@ -39,15 +30,13 @@
     font-family: 'Plus Jakarta Sans';
     font-weight: bold;
     text-align: center;
-
 }
 
 .modal-body{
-    color: whitesmoke;
+    color: black;
     font-family: 'Plus Jakarta Sans';
-    margin-bottom: 40px;
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-content: center;
 }
 
@@ -57,13 +46,13 @@
 }
 
 .btn-primary{
-    background-color: #E100FF;
+    background-color: black;
     border: none;
     border-radius: 10px;
     color: white;
     display: flex;
     justify-content: center;
     align-self: center;
-    padding: 5px;
     font-family: 'Plus Jakarta Sans';
+    padding: 3px
 }
