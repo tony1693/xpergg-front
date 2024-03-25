@@ -1,0 +1,74 @@
+.form-style {
+    width: 305px;
+    height: 666px;
+    background: #141414;
+    border: 2px solid #E100FF;
+    border-radius: 18px;
+    opacity: 1;
+    padding: 2%;
+}
+
+table {
+    width: 300px;
+    height: 70px;
+    border-radius: 18px;
+    opacity: 1;
+}
+
+hr{
+    width: 229px;
+    height: 0px;
+    border: 1px solid #707070;
+    opacity: 1;
+}
+
+img{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+}
+
+.avatar {
+    width: 23px;
+    height: 23px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding-left: 3%;
+}
+.name {
+    width: 107px;
+    height: 23px;
+    text-align: left;
+    font: normal normal bold 15px/19px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    padding-left: 3%;
+}
+
+.status {
+    width: 88px;
+    height: 13px;
+    text-align: start;
+    font: normal normal normal 11px/26px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+/* Cambia el color del texto para estado activo */
+.status.activo {
+    color: #7CFC00;
+    text-decoration-line:large bold;
+  }
+  
+  /* Cambia el color del texto para estado inactivo */
+  .status.inactivo {
+    color: #636363;
+    opacity: 60%;
+  }
+.punto-gordo{
+     font-weight: bold;
+     width: 9px;
+     height: 9px;
+      margin-right: 0.5em;
+}
