@@ -1,8 +1,7 @@
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 1260;
+    position: fixed;
+    bottom: 150px;
+    right: 350px;
     width: 200px;
     height: 150px;
     background-color: white;
