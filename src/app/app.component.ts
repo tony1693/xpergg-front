@@ -9,7 +9,7 @@ import { VideoPostComponent } from './components/video-post/video-post.component
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LinkComponent, FooterComponent, TrendingNewsComponent, VideoPostComponent],
+  imports: [CommonModule, RouterOutlet,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
