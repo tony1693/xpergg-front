@@ -7,9 +7,10 @@
     display: flex;
     color: #C0005A;
     opacity: 100%;
-    width: 23px;
-    height: 22px;
+    width: 27px;
+    height: 27px;
     margin-right: 12px;
+    border-radius: 50%;
 }
 
 .linkText{

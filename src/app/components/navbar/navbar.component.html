@@ -15,9 +15,19 @@
                     linkRouting=""></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" linkText="Notificaciones"
                     linkRouting=""></app-link>
-                <!-- Aquí falta el MY USER COMPONENT -->
-                <button>My User</button>
+                <app-link class="navbarItemAvatar" linkImg="assets\avatar\call_of_duty-2.jpg" linkText="{{user.name}}"
+                    linkRouting=""></app-link>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                    </ul>
+                </div>
             </div>
+
+
             } @else {
             <div class="navbarLinks">
                 <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
@@ -26,7 +36,7 @@
                     linkText="Publicaciones" linkRouting=""></app-link>
                 <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
                     linkRouting=""></app-link>
-                <button>LOGIN</button>
+                <button class="loginBtn">LOGIN</button>
                 <!-- Aquí falta el LOGIN COMPONENT -->
             </div>
             }

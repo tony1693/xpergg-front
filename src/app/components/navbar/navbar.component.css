@@ -31,3 +31,19 @@
 .navbarItemR{
     margin-right: 15px;
 }
+
+.navbarItemAvatar{
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    color: #636363;
+}
+
