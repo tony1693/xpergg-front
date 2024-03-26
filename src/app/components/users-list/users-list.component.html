@@ -1,0 +1,23 @@
+<div class="form-style">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user.user_id) {
+        <tr>
+          <td class="avatar"><img [src]="user.avatar" alt="User Avatar" width="23" height="23"></td>
+          <td class="name">{{user.name}}</td>
+          <td class="status {{user.status ? 'activo' : 'inactivo'}}"><span class="punto-gordo">•</span>{{user.status ? ' Disponible' : ' No Disponible'}}</td>
+        </tr>
+        <tr>
+          <td colspan="3"><hr></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

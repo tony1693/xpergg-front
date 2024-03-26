@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class AvatarComponent {
   @Input() user!: User;
   @Input() public selectedAvatar: string = ''; 
-  @Input() public nameUser: string = ''; 
+  @Input() public userName: string = ''; 
 
 
   constructor() {
