@@ -1,0 +1,64 @@
+.container {
+    width: 1920px;
+    height: 1080px;
+    background-image: url('../../../assets/background/background_register.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    opacity: 1;
+    position: absolute;
+}
+
+.boxForm {
+    width: 500px;
+    height: 715px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 37px;
+    opacity: 1;
+    position: absolute;
+    margin: 215px 275px 150px 1145px;
+}
+
+.img {
+    width: 642px;
+    height: 759px;
+    opacity: 1;
+    position: absolute;
+    margin: 308px 775px 0px 673px;
+    border: 1px solid #707070;
+}
+
+.boxTitle {
+    width: 517px;
+    height: 287px;
+    text-align: start;
+    font: normal normal bold 70px/70px Plus Jakarta Sans;
+    opacity: 1;
+    position: absolute;
+    margin: 310px 1108px 471px 295px;
+    border: 1px solid #707070;
+    padding: 1%;
+    color: #FFFFFF;
+
+}
+
+.boxText {
+
+    width: 418px;
+    height: 63px;
+    text-align: left;
+    font: normal normal normal 18px/30px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: black;
+    opacity: 1;
+    position: absolute;
+    margin: 616px 1207px 381px 295px;
+    border: 1px solid #707070;
+    padding: 1%;
+    color: #FFFFFF;
+}
+
+span {
+    color: #E100FF;
+}
