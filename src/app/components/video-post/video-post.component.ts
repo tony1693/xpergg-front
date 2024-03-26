@@ -15,10 +15,13 @@ export class VideoPostComponent {
 
   users: User[] = [];
 
+  // Inicializa el contador de likes
+  likesCount: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
-    // Aquí se cargaran los usuarios desde el servicio.
+    // Aquí se cargarían los usuarios desde el servicio.
 
 
     //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
@@ -55,6 +58,11 @@ export class VideoPostComponent {
 
   public addComment(inputComment: HTMLInputElement) {
     console.log(inputComment.value)
+  }
+
+  // Método para incrementar el contador de likes
+  addLike(): void {
+    this.likesCount++;
   }
 
 }

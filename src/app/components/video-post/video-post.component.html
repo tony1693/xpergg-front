@@ -13,8 +13,10 @@
         <p>{{ titlePost }}</p>
     </div>
     <div class="video-interactions">
-        <button class="likes" src = "">❤️</button>
-        <span class="likes-count">23</span>
+        <!-- <button class="likes" src = "">❤️</button>
+        <span class="likes-count">23</span> -->
+        <button class="likes" (click)="addLike()">❤️</button>
+        <span class="likes-count">{{ likesCount }}</span>
         <a href="" class="view-comments">Ver comentarios 300K</a>
     </div>
     <div class="comment-section">
