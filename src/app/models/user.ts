@@ -11,6 +11,5 @@ export class User {
     public status!: boolean;
     public platforms!: string[];
     public genres!: string[];
-  
-  }
+    }
   
