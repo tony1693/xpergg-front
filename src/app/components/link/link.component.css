@@ -1,0 +1,29 @@
+.linkContainer {
+    display: flex;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.linkIconNR{
+    display: flex;
+    color: #C0005A;
+    opacity: 100%;
+    width: 23px;
+    height: 22px;
+    margin-right: 12px;
+}
+
+.linkText{
+    width: 62px;
+    height: 23px;
+    text-align: center;
+    font-family: "Plus Jakarta Sans";
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+a{
+    text-decoration: none;
+}
