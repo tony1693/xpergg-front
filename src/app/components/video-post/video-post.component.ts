@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../../models/user';
 
 @Component({
@@ -9,6 +9,10 @@ import { User } from '../../models/user';
   styleUrl: './video-post.component.css'
 })
 export class VideoPostComponent {
+
+  @Input() public linkYoutubePost!: string;
+  @Input() public titlePost: string = "El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento";
+
   users: User[] = [];
 
   constructor() { }
