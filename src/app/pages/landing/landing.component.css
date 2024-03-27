@@ -1,0 +1,133 @@
+.container{
+    width: 1920px;
+    height: 100vh;
+
+}
+
+.container1{
+    width: 1920px;
+    height: 1080px;
+    background-image: url("../../../assets/background/background_landing_header.svg");
+    background-size: 100%;
+    background-repeat: no repeat;
+}
+.boxTitle{
+width: 799px;
+height: 209px;
+text-align: center;
+font: normal normal bold 90px/96px Plus Jakarta Sans;
+position: absolute;
+margin: 209px 560px 662px 561px;
+color: #E100FF;
+}
+span{
+color: #FFFFFF;
+}
+.boxText{
+width: 684px;
+height: 49px;
+text-align: center;
+position: absolute;
+font: normal normal bold 39px/49px Plus Jakarta Sans;
+color: #FFFFFF;
+margin: 438px 617px 593px 619px;
+}
+.boxText2{
+width: 668px;
+height: 53px;
+text-align: center;
+font: normal normal normal 18px/30px Plus Jakarta Sans;
+color: #FFFFFF;
+position: absolute;
+margin: 515px 625px 512px 627px;
+}
+.img{
+width: 397px;
+height: 755px;
+background: transparent;
+position: absolute;
+margin: 268px 1460px 57px 63px;
+}
+.img2{
+width: 560px;
+height: 32px;
+background: transparent;
+position: absolute;
+margin: 515px 625px 98px 1345px;
+}
+button{
+width: 215px;
+height: 60px;
+background: #7F00FF 0% 0% no-repeat padding-box;
+border: 1px solid #E100FF;
+border-radius: 16px;
+position: absolute;
+margin: 613px 852px 407px 853px;
+text-align: center;
+font: normal normal 800 27px/34px Plus Jakarta Sans;
+color: #FFFFFF;
+cursor: pointer;
+}
+.img3a{
+    width: 238px;
+    height: 163px;
+    background: transparent url('../../../assets/Images/socializeBox.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 38px;
+    position: absolute;
+    margin: 795px 1097px 122px 585px;
+  
+}
+.img3b{
+    width: 237px; 
+    height: 163px;
+    background: transparent url('../../../assets/Images/shareBox.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 38px;
+    position: absolute;
+    margin: 795px 841px 122px 842px;
+   
+}
+.img3c{
+    width: 237px;
+    height: 163px;
+    background: transparent url('../../../assets/Images/newsBox.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 34px;
+    position: absolute;
+    margin: 795px 585px 122px 1098px;
+   
+}
+.socializa{
+    width: 166px;
+    height: 30px;
+    text-align: center;
+    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    letter-spacing: 3.6px;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 749px 1130px 301px 624px;
+
+}
+.conecta{
+    width: 149px;
+    height: 30px;
+    text-align: center;
+    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    letter-spacing: 3.6px;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 749px 885px 301px 886px;
+
+}
+.noticias{
+width: 149px;
+height: 30px;
+text-align: center;
+font: normal normal 800 24px/30px Plus Jakarta Sans;
+letter-spacing: 3.6px;
+color: #FFFFFF;
+position: absolute;
+margin: 749px 629px 301px 1142px;
+
+}
