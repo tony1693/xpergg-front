@@ -6,7 +6,7 @@
 
 .container1{
     width: 1920px;
-    height: 1080px;
+    height: 1020px;
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
     background-repeat: no repeat;
@@ -17,7 +17,7 @@ height: 209px;
 text-align: center;
 font: normal normal bold 90px/96px Plus Jakarta Sans;
 position: absolute;
-margin: 209px 560px 662px 561px;
+margin: 139px 560px 592px 561px;
 color: #E100FF;
 }
 span{
@@ -30,7 +30,7 @@ text-align: center;
 position: absolute;
 font: normal normal bold 39px/49px Plus Jakarta Sans;
 color: #FFFFFF;
-margin: 438px 617px 593px 619px;
+margin: 418px 617px 613px 619px;
 }
 .boxText2{
 width: 668px;
@@ -53,7 +53,7 @@ width: 560px;
 height: 32px;
 background: transparent;
 position: absolute;
-margin: 515px 625px 98px 1345px;
+margin: 475px 625px 138px 1345px;
 }
 button{
 width: 215px;
