@@ -1,13 +1,18 @@
+.navbar{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
 .container{
     display: flex;
     justify-content: space-between;
     height: 58px;
+    width: 100%;
     margin-top: 47px;
     background-color: blueviolet;
 }
 
 .navbar-brand {
-    margin-left: 112px;
     width: 198px;
     height: 58px;
 }
@@ -43,7 +48,19 @@
     cursor: pointer;
 }
 
-.dropdown-menu{
+.dropdown-item{
     color: #636363;
 }
+
+.loginBtn {
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    margin-left: 15px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    font-family: 'Segoe UI';
+}
+
+
 
