@@ -1,21 +1,25 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../../models/user';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './status.component.html',
   styleUrl: './status.component.css'
 })
 export class StatusComponent {
   @Input() user!: User;
 
-  getStatusText(): string {
-    return this.user.status ? 'true' : 'false';  }
+  isAvailable = true;
+   isUser = { status: 'DISPONIBLE' };
 
-  getStatusColor(): string {
-    return this.user.status ? 'green' : 'gray';
+  toggleStatus() {
+    this.isAvailable = !this.isAvailable;
+    this.isUser.status = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
   }
 }
+
+
  

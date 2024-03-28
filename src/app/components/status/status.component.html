@@ -1,5 +1,6 @@
-<div class="container-status">
-    <div class="status" [style.color]="getStatusColor()">
-        {{ user.status ? 'Activo' : 'Inactivo' }}
-    </div>
+<div class="status-container">
+  <button id="button" (click)="toggleStatus()" [ngClass]="{'available': isAvailable, 'absent': !isAvailable}">
+    <span id="dispo" *ngIf="isAvailable; else absentTemplate">• Disponible</span>
+    <ng-template id="ausent" #absentTemplate><span>• Ausente</span></ng-template>
+  </button>
 </div>

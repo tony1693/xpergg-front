@@ -1,0 +1,23 @@
+.card{
+
+    width: 329px;
+    height: 557px;
+    background: transparent linear-gradient(359deg, #141414 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #FFFFFF;
+    border-radius: 31px;
+}
+
+.icono{
+    
+    width: 84px;
+    height: 65px;
+    /* background: transparent url('img/Grupo 167.png') 0% 0% no-repeat padding-box; */
+}
+
+.imagen{
+    
+    width: 249px;
+    height: 340px;
+    /* background: transparent url('img/klipartz.com.png') 0% 0% no-repeat padding-box; */
+   
+}
