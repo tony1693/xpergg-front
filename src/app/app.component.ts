@@ -7,6 +7,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TrendingNewsComponent } from './components/trending-news/trending-news.component';
 import { VideoPostComponent } from './components/video-post/video-post.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { VideoPostComponent } from './components/video-post/video-post.component
     VideoPostComponent,
     RegisterComponent,
     NavbarComponent,
+    FormLoginComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

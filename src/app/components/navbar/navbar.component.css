@@ -52,7 +52,7 @@
     color: #636363;
 }
 
-.loginBtn {
+#loginBtn {
     border: 2px solid #FFFFFF;
     border-radius: 6px;
     margin-left: 15px;
@@ -62,5 +62,17 @@
     font-family: 'Segoe UI';
 }
 
+.btn-primary{
+    background-color: blueviolet;
+}
 
 
+.modal-dialog{
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid red
+}
+
+.modal-content{
+    border: 1px solid greenyellow
+}
