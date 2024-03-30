@@ -1,47 +1,70 @@
-.container{
+#exampleModal{
+    background-color: transparent;
+    border: none
+}
+
+#btnOpenModal{
+    background-color: #E100FF;
+    color: white;
+    height: 37px;
+    width: 190px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
     position: fixed;
-    bottom: 150px;
-    right: 350px;
-    width: 200px;
-    height: 150px;
-    background-color: white;
+    bottom: 10px;
+    right: 10px;
+}
+
+.modal-dialog{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
     padding: 10px;
     border-radius: 40px;
-    border: 1px solid black
+    width: 300px;
+    height: 200px;
 }
 
 .modal-content{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: none
 }
 
 .modal-header{
     display: flex;
     align-self: flex-end;
+    border: none
 }
 
 .btn-close{
-    height: 25px;
+    height: 15px;
     background-color: #C0005A;
-    color: white;
     border-radius: 10px;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: bold;
-    text-align: center;
+    border: none;
+    padding: 0px
 }
 
 .modal-body{
+    border: none;
+    padding: 0px;
+    margin: 0px
+}
+
+p{
     color: black;
     font-family: 'Plus Jakarta Sans';
     display: flex;
     text-align: center;
     align-content: center;
+    margin: 0px;
 }
 
 .modal-footer{
     display: flex;
     justify-content: center;
+    border: none;
 }
 
 .btn-primary{
