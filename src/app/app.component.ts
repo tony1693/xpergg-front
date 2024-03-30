@@ -6,12 +6,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TrendingNewsComponent } from './components/trending-news/trending-news.component';
 import { VideoPostComponent } from './components/video-post/video-post.component';
 import { LandingComponent } from './pages/landing/landing.component';
-
+import { PlatformCardComponent } from './components/platform-card/platform-card.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,LandingComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    LandingComponent,
+    PlatformCardComponent,
+    CommunityComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
