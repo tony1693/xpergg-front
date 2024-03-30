@@ -24,6 +24,14 @@
     opacity: 1;
 }
 
+.linkText:hover{
+    color:#E100FF;
+}
+
+a.active{
+    color: #C0005A;
+}
+
 a{
     text-decoration: none;
 }

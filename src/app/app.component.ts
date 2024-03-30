@@ -22,6 +22,7 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     RegisterComponent,
     NavbarComponent,
     FormLoginComponent,
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

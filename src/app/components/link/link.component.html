@@ -1,5 +1,4 @@
-<div class = "linkContainer">
-    <img class = "linkIconNR" [src]= "linkImg" alt="Icon">
-    <a class = "linkText" [href]="linkRouting">{{linkText}}</a>
+<div class="linkContainer">
+    <img class="linkIconNR" [src]="linkImg" alt="Icon">
+    <a class="linkText" [routerLink]="linkRouting" [routerLinkActive]="['active']">{{linkText}}</a>
 </div>
-

@@ -42,6 +42,10 @@
     margin-right: 15px;
 }
 
+.linkText:hover{
+    color: #C0005A;
+}
+
 .btn{
     border: none;
     background-color: transparent;
@@ -62,17 +66,31 @@
     font-family: 'Segoe UI';
 }
 
-.btn-primary{
-    background-color: blueviolet;
+#loginBtn::after{
+    background-color: #FFFFFF;
+    color: #010050
 }
 
-
-.modal-dialog{
+.btn-close{
     display: flex;
     justify-content: flex-end;
-    border: 1px solid red
+}
+
+.modal-header{
+    border: none
+}
+
+.modal-body{
+    align-content: center;
+    border-top: none;
+    padding: 0px;
+    justify-content: center;
+    margin-left: 20px;
 }
 
 .modal-content{
-    border: 1px solid greenyellow
+    width: 350px;
+    height: auto;
+    border: none
 }
+
