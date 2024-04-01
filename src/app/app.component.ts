@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { LinkComponent } from './components/link/link.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TrendingNewsComponent } from './components/trending-news/trending-news.component';
 import { VideoPostComponent } from './components/video-post/video-post.component';
-import { LandingComponent } from './pages/landing/landing.component';
-import { PlatformCardComponent } from './components/platform-card/platform-card.component';
-import { CommunityComponent } from './pages/community/community.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +15,14 @@ import { CommunityComponent } from './pages/community/community.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    LandingComponent,
-    PlatformCardComponent,
-    CommunityComponent,
+    LinkComponent,
+    FooterComponent,
+    TrendingNewsComponent,
+    VideoPostComponent,
+    RegisterComponent,
+    NavbarComponent,
+    FormLoginComponent,
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

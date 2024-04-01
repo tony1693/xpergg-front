@@ -4,6 +4,6 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { LandingComponent } from './pages/landing/landing.component';
 
 export const routes: Routes = [
-    { path: 'Landing', component: LandingComponent },
-
+  { path: 'Login', component: FormLoginComponent },
+  { path: 'Users-list', component: UsersListComponent },
 ];
