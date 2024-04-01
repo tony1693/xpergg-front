@@ -7,7 +7,6 @@ import { TrendingNewsComponent } from './components/trending-news/trending-news.
 import { VideoPostComponent } from './components/video-post/video-post.component';
 import { LandingComponent } from "./pages/landing/landing.component";
 import { RegisterComponent } from './pages/register/register.component';
-import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
@@ -15,7 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, LandingComponent,RegisterComponent, HeaderComponent,NavbarComponent, FooterComponent]
+    imports: [CommonModule, RouterOutlet, LandingComponent,RegisterComponent,NavbarComponent, FooterComponent]
 })
 export class AppComponent {
   title = 'xpergg-front';
