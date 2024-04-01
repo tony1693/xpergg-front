@@ -5,19 +5,41 @@
     background: transparent linear-gradient(359deg, #141414 0%, #000000 100%) 0% 0% no-repeat padding-box;
     border: 1px solid #FFFFFF;
     border-radius: 31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .icono{
-    
-    width: 84px;
+    width: 175px;
     height: 65px;
+    margin-top: 35px;
+    margin-bottom: 20px;
     /* background: transparent url('img/Grupo 167.png') 0% 0% no-repeat padding-box; */
 }
 
-.imagen{
+#imagen{
     
-    width: 249px;
+    width: 274px;
     height: 340px;
     /* background: transparent url('img/klipartz.com.png') 0% 0% no-repeat padding-box; */
-   
+}
+
+.btn{
+    height: 37px;
+    width: 129px;
+    border-radius: 16px;
+    background-color: #7F00FF;
+    color: white;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.btn:hover{
+    background-color: #E100FF;
 }

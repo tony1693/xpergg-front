@@ -5,9 +5,9 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './platform-card.component.html',
-  styleUrl: './platform-card.component.css'
+  styleUrl: './platform-card.component.css',
 })
 export class PlatformCardComponent {
-  @Input() icon!: string;
-  @Input() img!: string;
+  @Input() public icon: string = '';
+  @Input() public img: string = '';
 }
