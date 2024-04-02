@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TrendingNewsComponent } from './components/trending-news/trending-news.component';
 import { VideoPostComponent } from './components/video-post/video-post.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     NavbarComponent,
     FormLoginComponent,
     RouterOutlet,
+    CommunityComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

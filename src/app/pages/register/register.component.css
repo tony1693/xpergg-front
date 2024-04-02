@@ -6,7 +6,6 @@
     background-repeat: no-repeat;
     max-width: 100%;
     opacity: 1;
-    position: absolute;
 }
 
 .boxForm {
@@ -26,7 +25,6 @@
     opacity: 1;
     position: absolute;
     margin: 308px 775px 0px 673px;
-    border: 1px solid #707070;
 }
 
 .boxTitle {
@@ -37,7 +35,6 @@
     opacity: 1;
     position: absolute;
     margin: 310px 1108px 471px 295px;
-    border: 1px solid #707070;
     padding: 1%;
     color: #FFFFFF;
 
@@ -54,7 +51,6 @@
     opacity: 1;
     position: absolute;
     margin: 616px 1207px 381px 295px;
-    border: 1px solid #707070;
     padding: 1%;
     color: #FFFFFF;
 }
