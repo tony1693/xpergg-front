@@ -1,56 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-</head>
-
-<body>
-    <div class="containerForm">
-        <form [formGroup]="reactiveForm" (ngSubmit)="loginSubmit()">
-            <h2>Iniciar Sesión</h2>
-            <br>
-            <div class="form">
-                <label for="name" class="label">Usuario</label>
-                <input class="control" placeholder="User" type="text" name="name" formControlName="name">
-                <!-- Mensaje de error para el campo de usuario -->
-                @if ( (reactiveForm.get('name')?.dirty || reactiveForm.get('name')?.touched) &&
-                reactiveForm.get('name')?.invalid) {
-                @if (reactiveForm.get('name')?.hasError('required')) {
-                <div>
-                    <p class="error">*Campo obligatorio</p>
-                </div>
-                }
-                }
+<div class="containerForm">
+    <form [formGroup]="reactiveForm" (ngSubmit)="loginSubmit()">
+        <h2>Iniciar Sesión</h2>
+        <!-- <br> -->
+        <div class="form">
+            <label for="name" class="label">Usuario</label>
+            <input class="control" placeholder="User" type="text" name="name" formControlName="name">
+            <!-- Mensaje de error para el campo de usuario -->
+            @if ( (reactiveForm.get('name')?.dirty || reactiveForm.get('name')?.touched) &&
+            reactiveForm.get('name')?.invalid) {
+            @if (reactiveForm.get('name')?.hasError('required')) {
+            <div>
+                <p class="error">*Campo obligatorio</p>
             </div>
-            <div class="form">
-                <label for="password" class="label">Contraseña</label>
-                <input class="control" placeholder="Password" type="password" name="password"
-                    formControlName="password">
-                <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
-                <!-- Mensaje de error para el campo de contraseña -->
-                @if ( (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched) &&
-                reactiveForm.get('password')?.invalid) {
-                @if (reactiveForm.get('password')?.hasError('required')) {
-                <div>
-                    <p class="error">*Campo obligatorio</p>
-                </div>
-                }
-                @if (reactiveForm.get('password')?.hasError('minlength') || reactiveForm.get('password')?.hasError('maxlength')) {
-                <div>
-                    <p class="error">*Longitud de Contraseña incorrecta</p>
-                </div>
-                }
-                }
+            }
+            }
+        </div>
+        <div class="form">
+            <label for="password" class="label">Contraseña</label>
+            <input class="control" placeholder="Password" type="password" name="password" formControlName="password">
+            <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
+            <!-- Mensaje de error para el campo de contraseña -->
+            @if ( (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched) &&
+            reactiveForm.get('password')?.invalid) {
+            @if (reactiveForm.get('password')?.hasError('required')) {
+            <div>
+                <p class="error">*Campo obligatorio</p>
             </div>
-            <br>
-            <div class="buttonLogin">
-                <button type="submit" [disabled]="!reactiveForm.valid" [style.background-color]="reactiveForm.valid ? '#1B1B1B' : '#707070'">Login</button>
+            }
+            @if (reactiveForm.get('password')?.hasError('minlength') ||
+            reactiveForm.get('password')?.hasError('maxlength')) {
+            <div>
+                <p class="error">*Longitud de Contraseña incorrecta</p>
             </div>
-        </form>
-    </div>
-</body>
-
-</html>
+            }
+            }
+        </div>
+        <br>
+        <div class="buttonLogin">
+            <button type="submit" [disabled]="!reactiveForm.valid"
+                [style.background-color]="reactiveForm.valid ? '#1B1B1B' : '#707070'">Login</button>
+        </div>
+    </form>
+</div>
