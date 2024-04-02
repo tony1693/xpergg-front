@@ -1,6 +1,6 @@
-.container {
-    width: 1920px;
-    height: 1080px;
+.container-fluid {
+    width: 100vw;
+    height: 100vw;
     background-image: url('../../../assets/background/background_community.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
 }
 
 .title{
-    width: 1270px;
+    width: 100vw;
     height: 70px;
     font-family: 'Plus Jakarta Sans';
     font-weight: bold;
@@ -23,7 +23,7 @@
 }
 
 p{
-    width: 1270px;
+    width: 100vw;
     height: 70px;
     font-family: 'Plus Jakarta Sans';
     font-weight: bold;
@@ -40,14 +40,16 @@ p span{
 }
 
 .cards{
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 70px;
+    margin: 0 20 70 20;
 }
 
 .icon{
-    margin-right: 30px;
+    margin-right: 0px;
+    width: 60vw;
 }
 
 .footer{
@@ -62,4 +64,5 @@ p span{
     color: white;
     height: 68px;
     width: 670px; 
+    margin-top: 70px;
 }
