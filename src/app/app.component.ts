@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TrendingNewsComponent } from './components/trending-news/trending-news.component';
 import { VideoPostComponent } from './components/video-post/video-post.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { DropdownsRequestsComponent } from './components/dropdowns-requests/dropdowns-requests.component';
 
 @Component({
   selector: 'app-root',
