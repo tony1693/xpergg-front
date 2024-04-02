@@ -1,7 +1,7 @@
 
 .footer-container{
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 505px;
     align-items: center;
     background: url("../../../assets/background/background_landing_footer.svg");
