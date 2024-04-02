@@ -1,0 +1,109 @@
+<div>
+    <form [formGroup]="reactiveregister" (ngSubmit)="handleSubmit()">
+      <h1>Regístrate</h1>
+        <div>
+            <label>Nombre</label>
+            <input type="text" formControlName="name" id="nombre">
+            <div *ngIf="reactiveregister.get('name')?.errors?.['required'] && (reactiveregister.get('name')?.touched || reactiveregister.get('name')?.dirty)">
+              <small class="error">Nombre Obligatorio.</small>
+            </div>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" formControlName="email" id="email">
+            <div *ngIf="reactiveregister.get('email')?.errors?.['required'] && (reactiveregister.get('email')?.touched || reactiveregister.get('email')?.dirty)">
+              <small class="error">Email Obligatorio</small>
+            </div>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" formControlName="password" id="password">
+            <div *ngIf="reactiveregister.get('email')?.errors?.['required'] && (reactiveregister.get('email')?.touched || reactiveregister.get('email')?.dirty)">
+              <small class="error">Contraseña Obligatoria</small>
+            </div>
+        </div>
+        <div>
+            <label>Nacionalidad</label>
+            <input type="text" formControlName="nacionality" id="nacionalidad">
+            <div *ngIf="reactiveregister.get('email')?.errors?.['required'] && (reactiveregister.get('email')?.touched || reactiveregister.get('email')?.dirty)">
+              <small class="error">Nacionalidad Obligatoria</small>
+            </div>
+        </div>
+
+        <div>
+          <h4>Plataformas</h4>
+            <p>Obligatorio seleccionar una plataforma</p>
+              <label>
+                <input type="checkbox" formControlName="ps">
+                Ps
+              </label>
+              <label>
+                <input type="checkbox" formControlName="xbox">
+                Xbox
+              </label>
+              <label>
+                <input type="checkbox" formControlName="nintendo">
+                Nintendo
+              </label>
+              <label>
+                <input type="checkbox" formControlName="pc">
+                Pc
+              </label>
+          </div>
+        
+          <div>
+            <h4>Géneros</h4>
+            <p>Obligatorio seleccionar un genero</p>
+              <label>
+                <input type="checkbox" formControlName="arcade" >
+                Arcade
+              </label>
+              <label>
+                <input type="checkbox" formControlName="disparos" >
+                Disparos
+              </label>
+              <label>
+                <input type="checkbox" formControlName="peleas" >
+                Peleas
+              </label>
+              <label>
+                <input type="checkbox" formControlName="aventura" >
+                Aventuras
+              </label>
+              <label>
+                <input type="checkbox" formControlName="acción" >
+                Acción
+              </label>
+              <label>
+                <input type="checkbox" formControlName="puzzle" >
+                Puzzle
+              </label>
+              <label>
+                <input type="checkbox" formControlName="preguntas" >
+                Preguntas
+              </label>
+              <label>
+                <input type="checkbox" formControlName="deportes" >
+                Deportes
+              </label>
+              <label>
+                <input type="checkbox" formControlName="coches" >
+                Coches
+              </label>
+              <label>
+                <input type="checkbox" formControlName="rol" >
+                Rol
+              </label>
+              <label>
+                <input type="checkbox" formControlName="estrategia" >
+                Estrategia
+              </label>
+              <label>
+                <input type="checkbox" formControlName="realidadVirtual" >
+                Realidad Virtual
+              </label>
+          </div>
+        
+          <button [disabled]="reactiveregister.invalid" type="submit">Registro</button>
+    </form>
+</div>
