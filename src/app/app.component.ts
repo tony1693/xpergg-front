@@ -8,6 +8,8 @@ import { VideoPostComponent } from './components/video-post/video-post.component
 import { LandingComponent } from "./pages/landing/landing.component";
 import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
+import { DropdownsRequestsComponent } from './components/dropdowns-requests/dropdowns-requests.component';
 
 @Component({
     selector: 'app-root',

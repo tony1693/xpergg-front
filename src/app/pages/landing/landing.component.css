@@ -1,11 +1,12 @@
-.container {
-    width: 1920px;
+.container-fluid {
+    width: 100vw;
     height: 100vh;
+    border: 1px solid black;
 
 }
 
 .container1 {
-    width: 1920px;
+    width: 100vw;
     height: 1020px;
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
@@ -147,7 +148,7 @@ span {
 
 /* landing container2 */
 .container2 {
-    width: 1920px;
+    width: 100vw;
     height: 1000px;
 }
 
@@ -247,7 +248,7 @@ span {
 
 /* landing container3 */
 .container3 {
-    width: 1920px;
+    width: 100vw;
     height: 819px;
     background-image: url("../../../assets/background/background_landing_chat.svg");
     background-size: 100%;
@@ -337,7 +338,7 @@ span {
 /* landing container4 */
 
 .container4 {
-    width: 1920px;
+    width: 100vw;
     height: 1249px;
     background-color: #0100500D;
     opacity: 100%;
