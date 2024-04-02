@@ -1,8 +1,13 @@
-.navbar{
+.containerNavbar{
     padding: 0px;
     margin: 0px;
-    width: 100%;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    background-color: transparent;
+    z-index: 11;
 }
+
 .container{
     display: flex;
     justify-content: space-between;
@@ -10,6 +15,7 @@
     width: 100%;
     margin-top: 47px;
     background-color: transparent;
+    padding: 0px
 }
 
 .navbar-brand {
@@ -26,6 +32,7 @@
     height: 58px;
     display: flex;
     align-items: center;
+    gap: 15px;
     margin-right: 5px;
 }
 
@@ -35,6 +42,10 @@
 
 .navbarItemR{
     margin-right: 15px;
+}
+
+.navbarItem:hover{
+    color: #C0005A
 }
 
 .navbarItemAvatar{
@@ -59,7 +70,6 @@
 #loginBtn {
     border: 2px solid #FFFFFF;
     border-radius: 6px;
-    margin-left: 15px;
     text-align: center;
     background-color: transparent;
     color: white;
