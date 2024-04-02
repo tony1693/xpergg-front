@@ -1,21 +1,19 @@
-.container-fluid {
+.container-main {
     width: 100vw;
     height: 100vh;
-    border: 1px solid black;
-
 }
 
 .container1 {
     width: 100vw;
-    height: 1020px;
+    height: 696px;
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
     background-repeat: no repeat;
 }
 
 .boxTitle {
-    width: 799px;
-    height: 209px;
+    width: 511px;
+    height: 134px;
     text-align: center;
     font: normal normal bold 90px/96px Plus Jakarta Sans;
     position: absolute;
@@ -28,8 +26,8 @@ span {
 }
 
 .boxText {
-    width: 684px;
-    height: 49px;
+    width: 438px;
+    height: 31px;
     text-align: center;
     position: absolute;
     font: normal normal bold 39px/49px Plus Jakarta Sans;
@@ -38,8 +36,8 @@ span {
 }
 
 .boxText2 {
-    width: 668px;
-    height: 53px;
+    width: 428px;
+    height: 34px;
     text-align: center;
     font: normal normal normal 18px/30px Plus Jakarta Sans;
     color: #FFFFFF;
@@ -48,24 +46,24 @@ span {
 }
 
 .img {
-    width: 397px;
-    height: 755px;
+    width: 254px;
+    height: 483px;
     background: transparent;
     position: absolute;
-    margin: 268px 1460px 57px 63px;
+    margin: 171px 1460px 57px 63px;
 }
 
 .img2 {
-    width: 560px;
-    height: 32px;
+    width: 347px;
+    height: 187px;
     background: transparent;
     position: absolute;
     margin: 475px 625px 138px 1345px;
 }
 
 #buttonRegister {
-    width: 215px;
-    height: 60px;
+    width: 138px;
+    height: 38px;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 16px;
@@ -78,8 +76,8 @@ span {
 }
 
 .img3a {
-    width: 238px;
-    height: 163px;
+    width: 152px;
+    height: 104px;
     background: transparent url('../../../assets/Images/socializeBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 38px;
@@ -89,8 +87,8 @@ span {
 }
 
 .img3b {
-    width: 237px;
-    height: 163px;
+    width: 152px;
+    height: 104px;
     background: transparent url('../../../assets/Images/shareBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 38px;
@@ -100,8 +98,8 @@ span {
 }
 
 .img3c {
-    width: 237px;
-    height: 163px;
+    width: 152px;
+    height: 104px;
     background: transparent url('../../../assets/Images/newsBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 34px;
