@@ -7,6 +7,6 @@ export const routes: Routes = [
     { path: '', redirectTo: '/Landing', pathMatch: 'full' },
     { path: 'Landing', component: LandingComponent},
     { path: 'Register', component: RegisterComponent},
-    { path: 'HttpClient', component:HttpClient}
+    { path: 'HttpClient', component:HttpClient},
 
 ];

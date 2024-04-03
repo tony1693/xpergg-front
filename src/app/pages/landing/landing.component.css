@@ -12,12 +12,14 @@
 }
 
 .boxTitle {
-    width: 511px;
-    height: 134px;
+    width: 600px;
+    height: 150px;
     text-align: center;
-    font: normal normal bold 90px/96px Plus Jakarta Sans;
+    font: normal normal bold 61px/61px Plus Jakarta Sans;
     position: absolute;
-    margin: 139px 560px 592px 561px;
+    top: 25%;
+    left: 26%;
+    border: 1px solid #707070; 
     color: #E100FF;
 }
 
@@ -26,23 +28,26 @@ span {
 }
 
 .boxText {
-    width: 438px;
-    height: 31px;
+    width: 444px;
+    height: 29px;
     text-align: center;
+    font: normal normal bold 25px/31px Plus Jakarta Sans;
     position: absolute;
-    font: normal normal bold 39px/49px Plus Jakarta Sans;
     color: #FFFFFF;
-    margin: 418px 617px 613px 619px;
+    top: 48%;
+    left: 32%;
+    border: 1px solid #707070; 
 }
 
 .boxText2 {
-    width: 428px;
+    width: 400px;
     height: 34px;
     text-align: center;
-    font: normal normal normal 18px/30px Plus Jakarta Sans;
+    font: normal normal normal 11px/19px Plus Jakarta Sans;
     color: #FFFFFF;
     position: absolute;
-    margin: 515px 625px 512px 627px;
+    top: 55%;
+    left: 33%;
 }
 
 .img {
@@ -50,16 +55,20 @@ span {
     height: 483px;
     background: transparent;
     position: absolute;
-    margin: 171px 1460px 57px 63px;
+    bottom: 0;
+    left: 2%;
+    border: 1px solid #707070; 
 }
 
 .img2 {
     width: 347px;
-    height: 187px;
+    height: 334px;
     background: transparent;
     position: absolute;
-    margin: 475px 625px 138px 1345px;
-}
+    bottom: 2%;
+    right: 2%;
+    border: 1px solid #707070; 
+    }
 
 #buttonRegister {
     width: 138px;
@@ -68,9 +77,10 @@ span {
     border: 1px solid #E100FF;
     border-radius: 16px;
     position: absolute;
-    margin: 613px 852px 407px 853px;
+    top: 65%;
+    left: 43%;
     text-align: center;
-    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    font: normal normal 800 17px/22px Plus Jakarta Sans;
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -82,7 +92,8 @@ span {
     border: 1px solid #E100FF;
     border-radius: 38px;
     position: absolute;
-    margin: 795px 1097px 122px 585px;
+    top: 80%;
+    left: 29%;
 
 }
 
@@ -93,7 +104,8 @@ span {
     border: 1px solid #E100FF;
     border-radius: 38px;
     position: absolute;
-    margin: 795px 841px 122px 842px;
+    top: 80%;
+    left: 43%;
 
 }
 
@@ -104,7 +116,8 @@ span {
     border: 1px solid #E100FF;
     border-radius: 34px;
     position: absolute;
-    margin: 795px 585px 122px 1098px;
+    top: 80%;
+    left: 57%;
 
 }
 
@@ -112,11 +125,12 @@ span {
     width: 166px;
     height: 30px;
     text-align: center;
-    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    font: normal normal 800 15px/19px Plus Jakarta Sans;
     letter-spacing: 3.6px;
     color: #FFFFFF;
     position: absolute;
-    margin: 749px 1130px 301px 624px;
+    top: 75%;
+    left: 29%;
 
 }
 
@@ -124,11 +138,12 @@ span {
     width: 149px;
     height: 30px;
     text-align: center;
-    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    font: normal normal 800 15px/19px Plus Jakarta Sans;
     letter-spacing: 3.6px;
     color: #FFFFFF;
     position: absolute;
-    margin: 749px 885px 301px 886px;
+    top: 75%;
+    left: 43%;
 
 }
 
@@ -136,11 +151,12 @@ span {
     width: 149px;
     height: 30px;
     text-align: center;
-    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    font: normal normal 800 15px/19px Plus Jakarta Sans;
     letter-spacing: 3.6px;
     color: #FFFFFF;
     position: absolute;
-    margin: 749px 629px 301px 1142px;
+    top: 75%;
+    left: 57%;
 
 }
 
@@ -172,6 +188,10 @@ span {
     color: #1B1B1B;
     position: absolute;
     margin: 272px 625px 679px 627px;
+}
+.boxNews{
+    display: flex;
+    flex-direction: row;
 }
 
 .new1 {
