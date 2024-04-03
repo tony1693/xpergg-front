@@ -1,0 +1,59 @@
+
+<div class="container-init">
+
+    <div class="news">
+        <p>Noticias Destacadas</p>
+        <div class="card-news">
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "viewAll" routerLink="">Ver Todas</a>
+        </div>
+        <div class="status">
+            <p class="status-text">Mi Estado</p>
+            <app-status></app-status>
+        </div>
+    </div>
+
+    <div class="posts">
+        <div class="new-post">
+            <!-- <img class="avatar" [src]="user.avatar" alt="User Avatar"> -->
+            <div class="info-post">
+                <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required #inputTextPost>
+                <input type="text" class="link-video" id="" placeholder="Link Video" required #inputLinkVideoPost>
+            </div>
+            <button class="public-post" type="submit" (click)="addPost(inputTextPost, inputLinkVideoPost)">Publicar</button>
+        </div>
+        <app-video-post></app-video-post>
+    </div>
+
+    <div class="friends">
+
+        <p class="center2">Amigos Disponibles</p>
+        <div class="card-online-friends">
+            <app-users-list></app-users-list>
+        </div>
+
+        <div class="new-friends">
+            <p class="center">Sugerencias de Amistad</p>
+            <div class="card-new-friends">
+                @for (user of users; track user.user_id) {
+                <tr>
+                    <td class="avatar-newfriends"><img [src]="user.avatar" alt="User Avatar" width="23" height="23"></td>
+                    <td class="name">{{user.name}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <hr>
+                    </td>
+                </tr>
+                }
+            </div>
+        </div>
+        
+        <button class="buttonCommunity" routerLink="">Accede a la comunidad</button>
+
+    </div>
+
+</div>
