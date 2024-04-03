@@ -3,9 +3,10 @@
     height: 100vh;
 }
 
+  
 .container1 {
     width: 100vw;
-    height: 696px;
+    height: 658px;
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
     background-repeat: no repeat;
@@ -15,10 +16,10 @@
     width: 600px;
     height: 150px;
     text-align: center;
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
-    font-size: 11px;
-    line-height: 17px;
+    font-size: 58px;
+    line-height: 62px;
     font-family: "Plus Jakarta Sans", sans-serif;
     position: absolute;
     top: 25%;
@@ -469,10 +470,9 @@ line-height: 17px;
 }
 
 .imgDecorador1 {
-    width: 204px;
-    height: 10px;
+
     position: absolute;
-    top: 369%;
+    top: 361%;
     left: 65%;
 }
 
@@ -508,10 +508,14 @@ line-height: 17px;
     margin: 0;
 }
 
-
 .imgDecorador2 {
     position: absolute;
-    top: 393%;
+    top: 385%;
     left: 72%;
 } 
 
+.footer{
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}

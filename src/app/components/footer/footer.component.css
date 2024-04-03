@@ -2,29 +2,31 @@
 .footer-container{
     display: flex;
     width: 100vw;
-    height: 505px;
+    height: 330px;
     align-items: center;
     background: url("../../../assets/background/background_landing_footer.svg");
     background-size: cover;
-    gap: 100px;
+    gap: 64px;
 }
 
 
 .provisional-logo {
-    margin-left: 160px;
-    width: 198px;
-    height: 58px;
-    font: normal normal 800 46px/58px Plus Jakarta Sans;
+    margin-left: 102px;
+    width: 126px;
+    height: 37px;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 58px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     letter-spacing: 0px;
     color: #E100FF;
-    opacity: 1;
     text-decoration: none;
 }
 
 
-/* .navbarLinks {
+.navbarLinks {
     margin-left: 70px; 
-} */
+}
 
 
 .buttonRegister {
@@ -38,11 +40,13 @@
     font: normal normal bold 18px/23px Plus Jakarta Sans;
     color: #FFFFFF;
 }
-
+.buttonRegister:hover{
+    background-color:#1B1B1B; ;
+}
 
 .footerImg {
-    width: 499px;
-    height: 570px; 
+    width: 319px;
+    height: 385px; 
     background: url('/xpergg-front/src/assets/Images/imageFooter.png');
     opacity: 1;
 }

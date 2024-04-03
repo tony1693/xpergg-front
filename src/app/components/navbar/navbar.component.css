@@ -1,15 +1,18 @@
 .navbar{
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
+    padding: 2% 7% 2% 2%;
+    margin: 0;
+    width: 100vw;
+    background-image: url("../../../assets/background/background_landing_header.svg");
+    background-size: 100%;
+    background-repeat: no repeat;
 }
-.container{
+.container-navbar{
     display: flex;
     justify-content: space-between;
-    height: 58px;
-    width: 100%;
-    margin-top: 47px;
-    background-color: blueviolet;
+    height: 38px;
+    width: 100vw;
+    /* margin-top: 47px; */
+   
 }
 
 .navbar-brand {
@@ -27,6 +30,8 @@
     display: flex;
     align-items: center;
     margin-right: 5px;
+  
+
 }
 
 .navbarItem{
@@ -64,6 +69,10 @@
     background-color: transparent;
     color: white;
     font-family: 'Segoe UI';
+}
+#loginBtn:hover{
+    background-color:#1B1B1B;
+    border: 1px solid #E100FF;
 }
 
 #loginBtn::after{
