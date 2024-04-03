@@ -2,22 +2,20 @@
 
 .containerForm {
     width: 302px;
-    height: 311px;
+    height: 330px;
+    border-radius: 37px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: #FFFFFF;
-    border: 1px solid #707070;
-    border-radius: 37px;
-    opacity: 1;
-    padding: 4%;
-}
+    background: #ffffff;
+    /* padding: 4%; */
+
+ }
+
 
 h2 {
-
     font: normal normal 800 24px/26px Plus Jakarta Sans;
-
     color: #E100FF;
     margin-bottom: 20px;
     text-align: center;
@@ -66,8 +64,8 @@ button {
 }
 .buttonLogin[disabled] {
     background-color: #707070;
+}
 
-  }
 .error {
     color: red;
     font-size: xx-small;
@@ -77,3 +75,4 @@ button {
     color: white;
     font-size: x-small;
 }
+

@@ -1,0 +1,457 @@
+.container-fluid {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid black;
+
+}
+
+.container1 {
+    width: 100vw;
+    height: 1020px;
+    background-image: url("../../../assets/background/background_landing_header.svg");
+    background-size: 100%;
+    background-repeat: no repeat;
+}
+
+.boxTitle {
+    width: 799px;
+    height: 209px;
+    text-align: center;
+    font: normal normal bold 90px/96px Plus Jakarta Sans;
+    position: absolute;
+    margin: 139px 560px 592px 561px;
+    color: #E100FF;
+}
+
+span {
+    color: #FFFFFF;
+}
+
+.boxText {
+    width: 684px;
+    height: 49px;
+    text-align: center;
+    position: absolute;
+    font: normal normal bold 39px/49px Plus Jakarta Sans;
+    color: #FFFFFF;
+    margin: 418px 617px 613px 619px;
+}
+
+.boxText2 {
+    width: 668px;
+    height: 53px;
+    text-align: center;
+    font: normal normal normal 18px/30px Plus Jakarta Sans;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 515px 625px 512px 627px;
+}
+
+.img {
+    width: 397px;
+    height: 755px;
+    background: transparent;
+    position: absolute;
+    margin: 268px 1460px 57px 63px;
+}
+
+.img2 {
+    width: 560px;
+    height: 32px;
+    background: transparent;
+    position: absolute;
+    margin: 475px 625px 138px 1345px;
+}
+
+#buttonRegister {
+    width: 215px;
+    height: 60px;
+    background: #7F00FF 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 16px;
+    position: absolute;
+    margin: 613px 852px 407px 853px;
+    text-align: center;
+    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.img3a {
+    width: 238px;
+    height: 163px;
+    background: transparent url('../../../assets/Images/socializeBox.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 38px;
+    position: absolute;
+    margin: 795px 1097px 122px 585px;
+
+}
+
+.img3b {
+    width: 237px;
+    height: 163px;
+    background: transparent url('../../../assets/Images/shareBox.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 38px;
+    position: absolute;
+    margin: 795px 841px 122px 842px;
+
+}
+
+.img3c {
+    width: 237px;
+    height: 163px;
+    background: transparent url('../../../assets/Images/newsBox.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 34px;
+    position: absolute;
+    margin: 795px 585px 122px 1098px;
+
+}
+
+.socializa {
+    width: 166px;
+    height: 30px;
+    text-align: center;
+    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    letter-spacing: 3.6px;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 749px 1130px 301px 624px;
+
+}
+
+.conecta {
+    width: 149px;
+    height: 30px;
+    text-align: center;
+    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    letter-spacing: 3.6px;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 749px 885px 301px 886px;
+
+}
+
+.noticias {
+    width: 149px;
+    height: 30px;
+    text-align: center;
+    font: normal normal 800 24px/30px Plus Jakarta Sans;
+    letter-spacing: 3.6px;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 749px 629px 301px 1142px;
+
+}
+
+/* landing container2 */
+.container2 {
+    width: 100vw;
+    height: 1000px;
+}
+
+.boxTitleLanding2 {
+    width: 799px;
+    height: 95px;
+    text-align: center;
+    font: normal normal bold 75px/96px Plus Jakarta Sans;
+    color: #1B1B1B;
+    position: absolute;
+    margin: 87px 560px 818px 561px;
+}
+
+.spanLanding2 {
+    color: #E100FF;
+}
+
+.boxTextLanding2 {
+    width: 668px;
+    height: 49px;
+    text-align: center;
+    font: normal normal medium 22px/26px Plus Jakarta Sans;
+    color: #1B1B1B;
+    position: absolute;
+    margin: 272px 625px 679px 627px;
+}
+
+.new1 {
+    width: 450px;
+    height: 258px;
+    background: transparent;
+    border: 1px solid #707070;
+    position: absolute;
+    margin: 351px 1224px 391px 246px;
+}
+
+.new2 {
+    width: 450px;
+    height: 258px;
+    background: transparent;
+    border: 1px solid #707070;
+    position: absolute;
+    margin: 351px 740px 391px 729px;
+}
+
+.new3 {
+    width: 450px;
+    height: 258px;
+    background: transparent;
+    border: 1px solid #707070;
+    position: absolute;
+    margin: 351px 257px 391px 1213px;
+}
+
+.textNew1 {
+    width: 461px;
+    height: 132px;
+    text-align: left;
+    font: normal normal bold 26px/33px Plus Jakarta Sans;
+    color: #010050;
+    position: absolute;
+    margin: 629px 1213px 239px 246px;
+}
+
+.textNew2 {
+    width: 461px;
+    height: 132px;
+    text-align: left;
+    font: normal normal bold 26px/33px Plus Jakarta Sans;
+    color: #010050;
+    position: absolute;
+    margin: 629px 730px 239px 729px;
+}
+
+.textNew3 {
+    width: 461px;
+    height: 132px;
+    text-align: left;
+    font: normal normal bold 26px/33px Plus Jakarta Sans;
+    color: #010050;
+    position: absolute;
+    margin: 629px 246px 239px 1213px;
+}
+
+#buttonNews {
+    width: 215px;
+    height: 60px;
+    background: #7F00FF;
+    border-radius: 16px;
+    position: absolute;
+    margin: 813px 852px 127px 853px;
+    text-align: center;
+    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* landing container3 */
+.container3 {
+    width: 100vw;
+    height: 819px;
+    background-image: url("../../../assets/background/background_landing_chat.svg");
+    background-size: 100%;
+    background-repeat: no repeat;
+    background-color: #0100500D;
+    opacity: 100%;
+}
+
+.boxTitleLanding3 {
+    width: 517px;
+    height: 182px;
+    text-align: left;
+    font: normal normal bold 75px/87px Plus Jakarta Sans;
+    position: absolute;
+    margin: 120px 1116px 517px 287px;
+    color: #E100FF;
+}
+
+.spanLanding3 {
+
+    color: #FFFFFF;
+}
+
+.boxTextLanding3 {
+    width: 467px;
+    height: 83px;
+    text-align: left;
+    font: normal normal normal 18px/30px Plus Jakarta Sans;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 378px 1166px 358px 287px;
+}
+
+#buttonRegister3 {
+    width: 215px;
+    height: 60px;
+    text-align: center;
+    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    background: #1B1B1B;
+    border: 1px solid #E100FF;
+    color: #E100FF;
+    border-radius: 16px;
+    position: absolute;
+    margin: 499px 1418px 260px 287px;
+    cursor: pointer;
+}
+
+.imgLandingChat {
+    width: 574px;
+    height: 545px;
+    position: absolute;
+    margin: 98.86px 305.85px 175.16px 1040px;
+}
+
+.imgPs {
+    width: 57px;
+    height: 44px;
+    opacity: 0.57;
+    position: absolute;
+    margin: 704.89px 1233.26px 70.27px 629.92px;
+}
+
+.imgXbox {
+    width: 57px;
+    height: 44px;
+    opacity: 0.57;
+    position: absolute;
+    margin: 707.16px 1052.29px 74.04px 739.31px;
+}
+
+.imgNintendo {
+    width: 57px;
+    height: 44px;
+    opacity: 0.57;
+    position: absolute;
+    margin: 707.16px 839.89px 74.04px 920.81px;
+}
+
+.imgPc {
+    width: 57px;
+    height: 44px;
+    opacity: 0.57;
+    position: absolute;
+    margin: 710.55px 629.92px 75.73px 1132.47px;
+}
+
+/* landing container4 */
+
+.container4 {
+    width: 100vw;
+    height: 1249px;
+    background-color: #0100500D;
+    opacity: 100%;
+}
+
+.boxTitleLanding4 {
+    width: 799px;
+    height: 175px;
+    text-align: center;
+    font: normal normal bold 75px/80px Plus Jakarta Sans;
+    color: #E100FF;
+    position: absolute;
+    margin: 118px 560px 896px 561px;
+}
+
+.spanLanding4 {
+    color: #1B1B1B;
+}
+
+.boxTextLanding4 {
+    width: 668px;
+    height: 57px;
+    text-align: center;
+    font: normal normal medium 18px/26px Plus Jakarta Sans;
+    color: #1B1B1B;
+    position: absolute;
+    margin: 368px 625px 824px 627px;
+}
+
+#buttonRegister4 {
+    width: 215px;
+    height: 60px;
+    background: #7F00FF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    text-align: center;
+    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 449px 852px 740px 853px;
+    cursor: pointer;
+}
+
+.imgLandingComunidad {
+    width: 768px;
+    height: 481px;
+    position: absolute;
+    margin: 636px 873px 132px 279px;
+}
+
+.boxMessage1{
+    width: 451px;
+    background-color: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 52px;
+
+}
+
+.pmessage1a {
+    width: 210px;
+    height: 36px;
+    text-align: left;
+    font: normal normal 800 24px/26px Plus Jakarta Sans;
+    color: #E100FF;
+    position: absolute;
+    margin: 618px 536px 595px 1174px;
+}
+
+.pmessage1b {
+    width: 404px;
+    height: 84px;
+    text-align: left;
+    font: normal normal medium 18px/26px Plus Jakarta Sans;
+    color: #1B1B1B;
+    position: absolute;
+    margin: 664px 342px 501px 1174px;
+}
+
+.imgDecorador1 {
+    width: 319px;
+    height: 16px;
+    position: absolute;
+    margin: 789px 338px 444px 1263px;
+}
+
+.boxMessage2 {
+    width: 451px;
+    background: #FFFFFF;
+    border-radius: 52px;
+}
+
+.pmessage2a{
+    width: 300px;
+    height: 36px;
+    text-align: left;
+    font: normal normal 800 24px/26px Plus Jakarta Sans;
+    color: #E100FF;
+    position: absolute;
+    margin: 870px 394px 343px 1226px;
+}
+
+.pmessage2b {
+    width: 366px;
+    height: 85px;
+    text-align: left;
+    font: normal normal medium 18px/26px Plus Jakarta Sans;
+    color: #1B1B1B;
+    position: absolute;
+    margin: 916px 328px 248px 1226px;
+}
+
+.imgDecorador2 {
+    width: 194px;
+    height: 16px;
+    position: absolute;
+    margin: 1042px 328px 191px 1398px;
+} 
+
