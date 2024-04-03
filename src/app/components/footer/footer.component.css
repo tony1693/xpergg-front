@@ -1,0 +1,49 @@
+
+.footer-container{
+    display: flex;
+    width: 100vw;
+    height: 505px;
+    align-items: center;
+    background: url("../../../assets/background/background_landing_footer.svg");
+    background-size: cover;
+    gap: 100px;
+}
+
+
+.provisional-logo {
+    margin-left: 160px;
+    width: 198px;
+    height: 58px;
+    font: normal normal 800 46px/58px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #E100FF;
+    opacity: 1;
+    text-decoration: none;
+}
+
+
+/* .navbarLinks {
+    margin-left: 70px; 
+} */
+
+
+.buttonRegister {
+    width: 152px;
+    height: 35px;
+    background: #7F00FF 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
+    border-radius: 10px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 18px/23px Plus Jakarta Sans;
+    color: #FFFFFF;
+}
+
+
+.footerImg {
+    width: 499px;
+    height: 570px; 
+    background: url('/xpergg-front/src/assets/Images/imageFooter.png');
+    opacity: 1;
+}
+

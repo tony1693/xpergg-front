@@ -1,28 +1,13 @@
-export class User {
-        public user_id!: number;
-        public avatar!: string;
-        public name!: string;
-        public email!: string;
-        public nationality!: string;
-        public aboutMe!: string;
-        public password!: string;
-        public confirmPassword!: string;
-        public status!: Boolean;
-        public platforms!: String[];
-        public genres!: String[];
-      
-        constructor(user_id: number, name: string, email: string) {
-          this.user_id = user_id,
-          this.name = name,
-          this.email = email,
-          this.avatar = '',
-          this.nationality = '',
-          this.aboutMe = '',
-          this.password = '',
-          this.confirmPassword = '',
-          this.status = false,
-          this.platforms = [],
-          this.genres = []
-        }
-      }
-      
+export interface User {
+  user_id: number;
+  avatar: string;
+  name: string;
+  email: string;
+  nationality: string;
+  aboutMe: string;
+  password: string;
+  confirmPassword: string;
+  status: boolean;
+  platforms: string[];
+  genres: string[];
+}

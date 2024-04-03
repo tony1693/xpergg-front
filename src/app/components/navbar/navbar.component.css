@@ -1,0 +1,96 @@
+.navbar{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    height: 58px;
+    width: 100%;
+    margin-top: 47px;
+    background-color: blueviolet;
+}
+
+.navbar-brand {
+    width: 198px;
+    height: 58px;
+}
+
+.logo{
+    width: 198px;
+    height: 58px;
+}
+
+.navbarLinks{
+    height: 58px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.navbarItem{
+    margin-right: 15px;
+}
+
+.navbarItemR{
+    margin-right: 15px;
+}
+
+.navbarItemAvatar{
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.linkText:hover{
+    color: #C0005A;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.dropdown-item{
+    color: #636363;
+}
+
+#loginBtn {
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    margin-left: 15px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    font-family: 'Segoe UI';
+}
+
+#loginBtn::after{
+    background-color: #FFFFFF;
+    color: #010050
+}
+
+.btn-close{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-header{
+    border: none
+}
+
+.modal-body{
+    align-content: center;
+    border-top: none;
+    padding: 0px;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.modal-content{
+    width: 350px;
+    height: auto;
+    border: none
+}
+

@@ -1,8 +1,12 @@
 import { Routes } from '@angular/router';
-import { FormLoginComponent } from './components/form-login/form-login.component';
-import { UsersListComponent } from './components/users-list/users-list.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HttpClient } from '@angular/common/http';
 
 export const routes: Routes = [
-    { path: 'Login', component: FormLoginComponent },
-    { path: 'Users-list', component: UsersListComponent },
+    { path: '', redirectTo: '/Landing', pathMatch: 'full' },
+    { path: 'Landing', component: LandingComponent},
+    { path: 'Register', component: RegisterComponent},
+    { path: 'HttpClient', component:HttpClient}
+
 ];

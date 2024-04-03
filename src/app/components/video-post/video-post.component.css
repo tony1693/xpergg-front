@@ -1,0 +1,119 @@
+
+.video-post {
+    width: 100%;
+    height: 100%;
+    /* background: url("../../../assets/background/background_news.svg"); */
+    background: #1B1B1B 0% 0% no-repeat padding-box;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 29px;
+    height: 29px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 3%;
+    border: 1px solid #ffffff;
+}
+
+.name {
+    width: 107px;
+    height: 23px;
+    text-align: left;
+    font: normal normal bold 15px/19px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-left: 1%;
+    text-decoration: none;
+}
+
+
+.video-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 865px;
+    height: 322px;
+    background: #141414 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 18px;
+    opacity: 1;
+}
+
+
+.play-btn{
+    font: normal normal bold 15px/19px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+.video-description {
+    width: 826px;
+    height: 52px;
+    text-align: left;
+    font: normal normal medium 18px/23px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+
+.video-interactions {
+    display: flex;
+    gap: 10px;
+    color: #FFFFFF;
+}
+
+.likes {
+    text-decoration: none;
+}
+
+.view-comments {
+    color: #FFFFFF;
+}
+
+.comment-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 863px;
+    height: 68px;
+    background: #141414 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 18px;
+    opacity: 1;
+}
+
+
+.comment-btn{
+    width: 104px;
+    height: 32px;
+    background: #E100FF 0% 0% no-repeat padding-box;
+    border: 4px solid #E100FF;
+    border-radius: 14px;
+    opacity: 1;
+    font: normal normal medium 18px/23px Plus Jakarta Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+/* corregir esta clase si se mete bootstrap para arreglar el placeholder */
+.form-control{
+    width: 100%;
+    height: 68px;
+    background: transparent;
+    border-radius: 18px;
+    opacity: 1;
+    color: #FFFFFF;
+}

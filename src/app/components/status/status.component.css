@@ -1,0 +1,33 @@
+
+#button {
+  border: solid #000;
+  background-color: #000000 ;
+  font-size: 2px;
+  cursor: pointer;
+  color: #636363;
+  display: inline-block;
+  text-align: center;
+  width: 35px;
+  
+}
+
+#dispo {
+  font: normal normal bold Plus Jakarta Sans;
+  color: #7cfc00;
+  font-size: 2px;
+}
+
+.absents {
+  font: normal normal bold Plus Jakarta Sans;
+  color: #636363;
+  background-color:  #636363;
+  font-size: 2px; 
+}
+
+ #ausent { 
+  font: normal normal bold Plus Jakarta Sans;
+  color: #636363; 
+ }
+ 
+
+
