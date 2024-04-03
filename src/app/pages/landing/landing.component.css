@@ -67,7 +67,7 @@ span {
     position: absolute;
     bottom: 2%;
     right: 2%;
-    border: 1px solid #707070; 
+    /* border: 1px solid #707070;  */
     }
 
 #buttonRegister {
@@ -75,7 +75,7 @@ span {
     height: 38px;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
-    border-radius: 16px;
+    border-radius: 10px;
     position: absolute;
     top: 65%;
     left: 43%;
@@ -97,7 +97,6 @@ span {
     position: absolute;
     top: 80%;
     left: 29%;
-
 }
 
 .img3b {
@@ -109,7 +108,6 @@ span {
     position: absolute;
     top: 80%;
     left: 43%;
-
 }
 
 .img3c {
@@ -121,7 +119,6 @@ span {
     position: absolute;
     top: 80%;
     left: 57%;
-
 }
 
 .socializa {
@@ -134,7 +131,6 @@ span {
     position: absolute;
     top: 75%;
     left: 29%;
-
 }
 
 .conecta {
@@ -147,7 +143,6 @@ span {
     position: absolute;
     top: 75%;
     left: 43%;
-
 }
 
 .noticias {
@@ -160,7 +155,6 @@ span {
     position: absolute;
     top: 75%;
     left: 57%;
-
 }
 
 /* landing container2 */
@@ -168,6 +162,11 @@ span {
 .container2 {
     width: 100vw;
     height: 640px;
+    background-image: url('/src/assets/background/backgroun_landing_news.svg');
+    background-size: 100%;
+    background-repeat: no repeat;
+    background-color: #0100500D;
+    opacity: 100%;
 }
 
 .boxTitleLanding2 {
@@ -214,7 +213,7 @@ span {
     height: 38px;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
-    border-radius: 16px;
+    border-radius: 10px;
     position: absolute;
     top: 200%;
     left: 43%;
@@ -224,14 +223,14 @@ span {
     cursor: pointer;
 }
 #buttonNews:hover{
-    background-color:#1B1B1B; ;
+    background-color:#1B1B1B;
 }
 
 /* landing container3 */
 
 .container3 {
     width: 100vw;
-    height: 819px;
+    height: 525px;
     background-image: url("../../../assets/background/background_landing_chat.svg");
     background-size: 100%;
     background-repeat: no repeat;
@@ -240,41 +239,43 @@ span {
 }
 
 .boxTitleLanding3 {
-    width: 517px;
-    height: 182px;
+    width: 330px;
+    height: 116px;
     text-align: left;
-    font: normal normal bold 75px/87px Plus Jakarta Sans;
+    font: normal normal bold 48px/55px Plus Jakarta Sans;
     position: absolute;
-    margin: 120px 1116px 517px 287px;
+    top: 230%;
+    left: 18%;
     color: #E100FF;
 }
 
 .spanLanding3 {
-
     color: #FFFFFF;
 }
 
 .boxTextLanding3 {
-    width: 467px;
-    height: 83px;
+    width: 299px;
+    height: 53px;
     text-align: left;
-    font: normal normal normal 18px/30px Plus Jakarta Sans;
+    font: normal normal normal 12px/19px Plus Jakarta Sans;
     color: #FFFFFF;
     position: absolute;
-    margin: 378px 1166px 358px 287px;
+    top: 250%;
+    left: 18%;
 }
 
 #buttonRegister3 {
-    width: 215px;
-    height: 60px;
+    width: 138px;
+    height: 38px;
     text-align: center;
-    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    font: normal normal 800 17px/22px Plus Jakarta Sans;
     background: #1B1B1B;
     border: 1px solid #E100FF;
     color: #E100FF;
-    border-radius: 16px;
+    border-radius: 10px;
     position: absolute;
-    margin: 499px 1418px 260px 287px;
+    top: 265%;
+    left: 18%;
     cursor: pointer;
 }
 #buttonRegister3:hover{
@@ -282,61 +283,56 @@ span {
 }
 
 .imgLandingChat {
-    width: 574px;
-    height: 545px;
     position: absolute;
-    margin: 98.86px 305.85px 175.16px 1040px;
+    top: 230%;
+    right: 14%;
 }
 
 .imgPs {
-    width: 57px;
-    height: 44px;
-    opacity: 0.57;
     position: absolute;
-    margin: 704.89px 1233.26px 70.27px 629.92px;
+    top: 285%;
+    left: 35%;
 }
 
 .imgXbox {
-    width: 57px;
-    height: 44px;
-    opacity: 0.57;
     position: absolute;
-    margin: 707.16px 1052.29px 74.04px 739.31px;
+    top: 285%;
+    left: 41%;
 }
 
 .imgNintendo {
-    width: 57px;
-    height: 44px;
-    opacity: 0.57;
     position: absolute;
-    margin: 707.16px 839.89px 74.04px 920.81px;
+    top: 285%;
+    left: 50%;
 }
 
 .imgPc {
-    width: 57px;
-    height: 44px;
-    opacity: 0.57;
     position: absolute;
-    margin: 710.55px 629.92px 75.73px 1132.47px;
+    top: 285%;
+    left: 60%;
 }
 
 /* landing container4 */
 
 .container4 {
     width: 100vw;
-    height: 1249px;
+    height: 800px;
+    background-image: url('/src/assets/background/background_landing_comunidad.svg');
+    background-size: 100%;
+    background-repeat: no repeat;
     background-color: #0100500D;
     opacity: 100%;
 }
 
 .boxTitleLanding4 {
-    width: 799px;
-    height: 175px;
+    width: 511px;
+    height: 112px;
     text-align: center;
-    font: normal normal bold 75px/80px Plus Jakarta Sans;
+    font: normal normal bold 48px/51px Plus Jakarta Sans;
     color: #E100FF;
     position: absolute;
-    margin: 118px 560px 896px 561px;
+    top: 310%;
+    left: 30%;
 }
 
 .spanLanding4 {
@@ -344,25 +340,27 @@ span {
 }
 
 .boxTextLanding4 {
-    width: 668px;
-    height: 57px;
+    width: 448px;
+    height: 37px;
     text-align: center;
-    font: normal normal medium 18px/26px Plus Jakarta Sans;
+    font: normal normal normal 11px/16px Plus Jakarta Sans;
     color: #1B1B1B;
     position: absolute;
-    margin: 368px 625px 824px 627px;
+    top: 330%;
+    left: 32%;
 }
 
 #buttonRegister4 {
-    width: 215px;
-    height: 60px;
+    width: 138px;
+    height: 38px;
     background: #7F00FF 0% 0% no-repeat padding-box;
-    border-radius: 16px;
+    border-radius: 10px;
     text-align: center;
-    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    font: normal normal 800 17px/22px Plus Jakarta Sans;
     color: #FFFFFF;
     position: absolute;
-    margin: 449px 852px 740px 853px;
+    top: 340%;
+    left: 44%;
     cursor: pointer;
 }
 #buttonRegister4:hover{
@@ -370,76 +368,93 @@ span {
 }
 
 .imgLandingComunidad {
-    width: 768px;
-    height: 481px;
+   
     position: absolute;
-    margin: 636px 873px 132px 279px;
+    top: 355%;
+    left: 16%;
+    cursor: pointer;
 }
 
 .boxMessage1{
-    width: 451px;
-    background-color: #FFFFFF 0% 0% no-repeat padding-box;
+    width: 289px;
+    height: 90px;
+    background-color: #FFFFFF;
     border-radius: 52px;
-
+    position: absolute;
+    top: 350%;
+    left: 58%;
 }
 
 .pmessage1a {
-    width: 210px;
-    height: 36px;
+    width: 134px;
+    height: 23px;
     text-align: left;
-    font: normal normal 800 24px/26px Plus Jakarta Sans;
+    font: normal normal bold 15px/17px Plus Jakarta Sans;
     color: #E100FF;
     position: absolute;
-    margin: 618px 536px 595px 1174px;
+    top: 355%;
+    left: 60%;
 }
 
 .pmessage1b {
-    width: 404px;
-    height: 84px;
+    width: 259px;
+    height: 54px;
     text-align: left;
-    font: normal normal medium 18px/26px Plus Jakarta Sans;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 17px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
     position: absolute;
-    margin: 664px 342px 501px 1174px;
+    top: 360%;
+    left: 60%;
 }
 
 .imgDecorador1 {
-    width: 319px;
-    height: 16px;
+    width: 204px;
+    height: 10px;
     position: absolute;
-    margin: 789px 338px 444px 1263px;
+    top: 370%;
+    left: 65%;
 }
 
 .boxMessage2 {
-    width: 451px;
+    width: 289px;
+    height: 90px;
     background: #FFFFFF;
     border-radius: 52px;
 }
 
 .pmessage2a{
-    width: 300px;
-    height: 36px;
+    width: 134px;
+    height: 23px;
     text-align: left;
-    font: normal normal 800 24px/26px Plus Jakarta Sans;
+    font: normal normal bold 15px/17px Plus Jakarta Sans;
     color: #E100FF;
     position: absolute;
-    margin: 870px 394px 343px 1226px;
+    top: 380%;
+    left: 62%;
 }
 
 .pmessage2b {
-    width: 366px;
-    height: 85px;
+    width: 259px;
+    height: 54px;
     text-align: left;
-    font: normal normal medium 18px/26px Plus Jakarta Sans;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 17px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
     position: absolute;
-    margin: 916px 328px 248px 1226px;
+    top: 390%;
+    left: 62%;
 }
 
 .imgDecorador2 {
-    width: 194px;
-    height: 16px;
     position: absolute;
-    margin: 1042px 328px 191px 1398px;
+    top: 400%;
+    left: 70%;
 } 
 
