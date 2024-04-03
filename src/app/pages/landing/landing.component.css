@@ -15,7 +15,11 @@
     width: 600px;
     height: 150px;
     text-align: center;
-    font: normal normal bold 61px/61px Plus Jakarta Sans;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 17px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     position: absolute;
     top: 25%;
     left: 26%;
@@ -31,7 +35,11 @@ span {
     width: 444px;
     height: 29px;
     text-align: center;
-    font: normal normal bold 25px/31px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 31px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     position: absolute;
     color: #FFFFFF;
     top: 48%;
@@ -43,7 +51,11 @@ span {
     width: 400px;
     height: 34px;
     text-align: center;
-    font: normal normal normal 11px/19px Plus Jakarta Sans;
+    font-weight: normal;
+font-style: normal;
+font-size: 11px;
+line-height: 19px;
+font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     position: absolute;
     top: 55%;
@@ -80,7 +92,12 @@ span {
     top: 65%;
     left: 43%;
     text-align: center;
-    font: normal normal 800 17px/22px Plus Jakarta Sans;
+    font-weight: bold;
+font-style: normal;
+font-size: 17px;
+line-height: 22px;
+font-family: "Plus Jakarta Sans", sans-serif;
+
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -125,7 +142,11 @@ span {
     width: 166px;
     height: 30px;
     text-align: center;
-    font: normal normal 800 15px/19px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 19px;
+    font-family: "Plus Jakarta Sans", sans-serif;    
     letter-spacing: 3.6px;
     color: #FFFFFF;
     position: absolute;
@@ -137,7 +158,11 @@ span {
     width: 149px;
     height: 30px;
     text-align: center;
-    font: normal normal 800 15px/19px Plus Jakarta Sans;
+    font-weight: bold;
+font-style: normal;
+font-size: 15px;
+line-height: 19px;
+font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
     position: absolute;
@@ -149,7 +174,11 @@ span {
     width: 149px;
     height: 30px;
     text-align: center;
-    font: normal normal 800 15px/19px Plus Jakarta Sans;
+    font-weight: bold;
+font-style: normal;
+font-size: 15px;
+line-height: 19px;
+font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
     position: absolute;
@@ -173,7 +202,11 @@ span {
     width: 511px;
     height: 89px;
     text-align: center;
-    font: normal normal bold 48px/61px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 61px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
     position: absolute;
     top: 140%;
@@ -188,7 +221,11 @@ span {
     width: 411px;
     height: 34px;
     text-align: center;
-    font: normal normal normal 12px/16px Plus Jakarta Sans;
+    font-weight: normal;
+font-style: normal;
+font-size: 12px;
+line-height: 16px;
+font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
     position: absolute;
     top: 150%;
@@ -218,7 +255,11 @@ span {
     top: 200%;
     left: 43%;
     text-align: center;
-    font: normal normal 800 17px/22px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 22px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -242,7 +283,11 @@ span {
     width: 330px;
     height: 116px;
     text-align: left;
-    font: normal normal bold 48px/55px Plus Jakarta Sans;
+    font-weight: bold;
+font-style: normal;
+font-size: 48px;
+line-height: 55px;
+font-family: "Plus Jakarta Sans", sans-serif;
     position: absolute;
     top: 230%;
     left: 18%;
@@ -257,7 +302,11 @@ span {
     width: 299px;
     height: 53px;
     text-align: left;
-    font: normal normal normal 12px/19px Plus Jakarta Sans;
+    font-weight: normal;
+font-style: normal;
+font-size: 12px;
+line-height: 19px;
+font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     position: absolute;
     top: 250%;
@@ -268,7 +317,11 @@ span {
     width: 138px;
     height: 38px;
     text-align: center;
-    font: normal normal 800 17px/22px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 22px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     background: #1B1B1B;
     border: 1px solid #E100FF;
     color: #E100FF;
@@ -328,7 +381,11 @@ span {
     width: 511px;
     height: 112px;
     text-align: center;
-    font: normal normal bold 48px/51px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 51px;
+    font-family: "Plus Jakarta Sans", sans-serif;    
     color: #E100FF;
     position: absolute;
     top: 310%;
@@ -343,7 +400,11 @@ span {
     width: 448px;
     height: 37px;
     text-align: center;
-    font: normal normal normal 11px/16px Plus Jakarta Sans;
+    font-weight: normal;
+font-style: normal;
+font-size: 11px;
+line-height: 16px;
+font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
     position: absolute;
     top: 330%;
@@ -356,7 +417,10 @@ span {
     background: #7F00FF 0% 0% no-repeat padding-box;
     border-radius: 10px;
     text-align: center;
-    font: normal normal 800 17px/22px Plus Jakarta Sans;
+    font-weight: bold;
+font-size: 17px;
+line-height: 22px;
+font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
     position: absolute;
     top: 340%;
@@ -368,93 +432,86 @@ span {
 }
 
 .imgLandingComunidad {
-   
     position: absolute;
     top: 355%;
     left: 16%;
     cursor: pointer;
 }
-
-.boxMessage1{
-    width: 289px;
-    height: 90px;
+.boxMessage1 {
+    width: 269px;
+    height: auto;
     background-color: #FFFFFF;
-    border-radius: 52px;
-    position: absolute;
-    top: 350%;
+    border-radius: 33px;
+    padding: 20px;
+    position: relative;
+    top: 43%;
     left: 58%;
 }
 
 .pmessage1a {
-    width: 134px;
-    height: 23px;
-    text-align: left;
-    font: normal normal bold 15px/17px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: bold;
+font-size: 15px;
+line-height: 17px;
     color: #E100FF;
-    position: absolute;
-    top: 355%;
-    left: 60%;
+    margin: 0;
+    padding-bottom: 3%;
 }
 
 .pmessage1b {
-    width: 259px;
-    height: 54px;
-    text-align: left;
     font-weight: normal;
     font-style: normal;
     font-size: 11px;
     line-height: 17px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 360%;
-    left: 60%;
+    margin: 0;
 }
 
 .imgDecorador1 {
     width: 204px;
     height: 10px;
     position: absolute;
-    top: 370%;
+    top: 369%;
     left: 65%;
 }
 
 .boxMessage2 {
-    width: 289px;
-    height: 90px;
-    background: #FFFFFF;
-    border-radius: 52px;
+    width: 269px;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 33px;
+    padding: 20px; 
+    position: relative;
+    top: 48%;
+    left: 61%;
 }
 
-.pmessage2a{
-    width: 134px;
-    height: 23px;
-    text-align: left;
-    font: normal normal bold 15px/17px Plus Jakarta Sans;
+.pmessage2a {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 17px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: #E100FF;
-    position: absolute;
-    top: 380%;
-    left: 62%;
+    margin: 0;
+    padding-bottom: 3%;
 }
 
 .pmessage2b {
-    width: 259px;
-    height: 54px;
-    text-align: left;
     font-weight: normal;
     font-style: normal;
     font-size: 11px;
     line-height: 17px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 390%;
-    left: 62%;
+    margin: 0;
 }
+
 
 .imgDecorador2 {
     position: absolute;
-    top: 400%;
-    left: 70%;
+    top: 393%;
+    left: 72%;
 } 
 
