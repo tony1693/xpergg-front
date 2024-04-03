@@ -15,7 +15,6 @@ import { TrendingNewsComponent } from '../../components/trending-news/trending-n
 })
 export class LandingComponent {
 
-
     newsText1 = 'Texto de la noticia 1';
     newsImage1 = 'URL de la imagen de la noticia 1';
     newsLink1 = 'URL del enlace de la noticia 1';

@@ -19,7 +19,7 @@
     position: absolute;
     top: 25%;
     left: 26%;
-    border: 1px solid #707070; 
+    /* border: 1px solid #707070;  */
     color: #E100FF;
 }
 
@@ -36,7 +36,7 @@ span {
     color: #FFFFFF;
     top: 48%;
     left: 32%;
-    border: 1px solid #707070; 
+    /* border: 1px solid #707070;  */
 }
 
 .boxText2 {
@@ -57,7 +57,7 @@ span {
     position: absolute;
     bottom: 0;
     left: 2%;
-    border: 1px solid #707070; 
+    /* border: 1px solid #707070;  */
 }
 
 .img2 {
@@ -83,6 +83,9 @@ span {
     font: normal normal 800 17px/22px Plus Jakarta Sans;
     color: #FFFFFF;
     cursor: pointer;
+}
+#buttonRegister:hover{
+    background-color:#1B1B1B; ;
 }
 
 .img3a {
@@ -161,19 +164,21 @@ span {
 }
 
 /* landing container2 */
+
 .container2 {
     width: 100vw;
-    height: 1000px;
+    height: 640px;
 }
 
 .boxTitleLanding2 {
-    width: 799px;
-    height: 95px;
+    width: 511px;
+    height: 89px;
     text-align: center;
-    font: normal normal bold 75px/96px Plus Jakarta Sans;
+    font: normal normal bold 48px/61px Plus Jakarta Sans;
     color: #1B1B1B;
     position: absolute;
-    margin: 87px 560px 818px 561px;
+    top: 140%;
+    left: 28%;
 }
 
 .spanLanding2 {
@@ -181,87 +186,45 @@ span {
 }
 
 .boxTextLanding2 {
-    width: 668px;
-    height: 49px;
+    width: 411px;
+    height: 34px;
     text-align: center;
-    font: normal normal medium 22px/26px Plus Jakarta Sans;
+    font: normal normal normal 12px/16px Plus Jakarta Sans;
     color: #1B1B1B;
     position: absolute;
-    margin: 272px 625px 679px 627px;
+    top: 150%;
+    left: 32%;
+    /* border: 1px solid #707070; */
 }
+
 .boxNews{
     display: flex;
     flex-direction: row;
-}
-
-.new1 {
-    width: 450px;
-    height: 258px;
+    width: 840px;
+    height: 160px;
     background: transparent;
-    border: 1px solid #707070;
+    /* border: 1px solid #707070; */
     position: absolute;
-    margin: 351px 1224px 391px 246px;
-}
-
-.new2 {
-    width: 450px;
-    height: 258px;
-    background: transparent;
-    border: 1px solid #707070;
-    position: absolute;
-    margin: 351px 740px 391px 729px;
-}
-
-.new3 {
-    width: 450px;
-    height: 258px;
-    background: transparent;
-    border: 1px solid #707070;
-    position: absolute;
-    margin: 351px 257px 391px 1213px;
-}
-
-.textNew1 {
-    width: 461px;
-    height: 132px;
-    text-align: left;
-    font: normal normal bold 26px/33px Plus Jakarta Sans;
-    color: #010050;
-    position: absolute;
-    margin: 629px 1213px 239px 246px;
-}
-
-.textNew2 {
-    width: 461px;
-    height: 132px;
-    text-align: left;
-    font: normal normal bold 26px/33px Plus Jakarta Sans;
-    color: #010050;
-    position: absolute;
-    margin: 629px 730px 239px 729px;
-}
-
-.textNew3 {
-    width: 461px;
-    height: 132px;
-    text-align: left;
-    font: normal normal bold 26px/33px Plus Jakarta Sans;
-    color: #010050;
-    position: absolute;
-    margin: 629px 246px 239px 1213px;
+    top: 160%;
+    left: 13%;
 }
 
 #buttonNews {
-    width: 215px;
-    height: 60px;
-    background: #7F00FF;
+    width: 138px;
+    height: 38px;
+    background: #7F00FF 0% 0% no-repeat padding-box;
+    border: 1px solid #E100FF;
     border-radius: 16px;
     position: absolute;
-    margin: 813px 852px 127px 853px;
+    top: 200%;
+    left: 43%;
     text-align: center;
-    font: normal normal 800 27px/34px Plus Jakarta Sans;
+    font: normal normal 800 17px/22px Plus Jakarta Sans;
     color: #FFFFFF;
     cursor: pointer;
+}
+#buttonNews:hover{
+    background-color:#1B1B1B; ;
 }
 
 /* landing container3 */
@@ -312,6 +275,9 @@ span {
     position: absolute;
     margin: 499px 1418px 260px 287px;
     cursor: pointer;
+}
+#buttonRegister3:hover{
+    background-color:#1B1B1B; ;
 }
 
 .imgLandingChat {
@@ -397,6 +363,9 @@ span {
     position: absolute;
     margin: 449px 852px 740px 853px;
     cursor: pointer;
+}
+#buttonRegister4:hover{
+    background-color:#1B1B1B; ;
 }
 
 .imgLandingComunidad {
