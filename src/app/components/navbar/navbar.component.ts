@@ -1,12 +1,10 @@
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { LinkComponent } from '../link/link.component';
 import { User } from '../../models/user';
 import { UsersListComponent } from '../users-list/users-list.component';
 import { FormLoginComponent } from '../form-login/form-login.component';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
-import { AvatarComponent } from '../avatar/avatar.component';
-import { FormLoginNavbarComponent } from '../form-login-navbar/form-login-navbar.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -17,8 +15,6 @@ import { FormLoginNavbarComponent } from '../form-login-navbar/form-login-navbar
     FormLoginComponent,
     CommonModule,
     RouterModule,
-    AvatarComponent,
-    FormLoginNavbarComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',

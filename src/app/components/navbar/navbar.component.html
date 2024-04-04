@@ -1,5 +1,5 @@
-<nav class="containerNavbar">
-    <div class="container1">
+<nav class="navbar bg-body-tertiary">
+    <div class="container-navbar">
         <a class="navbar-brand" href="">
             <img src="assets\Images\crash.png" alt="LogoXperGG" class="logo" />
         </a>
@@ -8,9 +8,9 @@
             @if (user){
             <div class="navbarLinks">
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoInicioR.svg" linkText="Inicio"
-                    linkRouting="/Landing"></app-link>
+                    linkRouting=""></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades"
-                    linkRouting="/Community"></app-link>
+                    linkRouting=""></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg" linkText="Solicitudes"
                     linkRouting=""></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" linkText="Notificaciones"
@@ -27,7 +27,6 @@
                 </div>
             </div>
 
-
             } @else {
             <div class="navbarLinks">
                 <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
@@ -35,8 +34,7 @@
                 <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
                     linkText="Publicaciones" linkRouting=""></app-link>
                 <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
-                    linkRouting="/Community"></app-link>
-
+                    linkRouting=""></app-link>
                 <!-- Created button for Login with modal -->
                 <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -53,7 +51,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <app-form-login-navbar></app-form-login-navbar>
+                                <app-form-login></app-form-login>
                             </div>
                         </div>
                     </div>
