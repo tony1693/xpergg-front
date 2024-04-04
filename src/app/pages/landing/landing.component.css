@@ -3,7 +3,6 @@
     height: 100vh;
 }
 
-
 .container1 {
     width: 100vw;
     height: 690px;
@@ -380,7 +379,6 @@ span {
     background-size: 100%;
     background-repeat: no repeat;
     background-color: #0100500D;
-    opacity: 100%;
 }
 
 .boxTitleLanding4 {
@@ -522,8 +520,10 @@ span {
     left: 72%;
 }
 
-.footer {
-    /* position: fixed; */
+/* Estilo para el footer */
+footer {
+    position: absolute;
     bottom: 0;
     width: 100%;
+    padding: 20px;
 }

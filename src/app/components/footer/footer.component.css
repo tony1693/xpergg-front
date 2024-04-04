@@ -2,23 +2,22 @@
 .footer-container{
     display: flex;
     width: 100vw;
-    height: 330px;
+    height: 270px;
     align-items: center;
     background: url("../../../assets/background/background_landing_footer.svg");
     background-size: cover;
-    gap: 64px;
+    gap: 65px;
 }
 
 
 .provisional-logo {
-    margin-left: 102px;
+    margin-left: 100px;
     width: 126px;
     height: 37px;
     font-weight: bold;
-    font-size: 46px;
-    line-height: 58px;
+    font-size: 30px;
+    line-height: 37px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: 0px;
     color: #E100FF;
     text-decoration: none;
 }
@@ -26,18 +25,26 @@
 
 .navbarLinks {
     margin-left: 70px; 
+    color:#FFFFFF
+}
+
+.navbarItem {
+    font-size: x-small;
+    
 }
 
 
 .buttonRegister {
-    width: 152px;
-    height: 35px;
+    width: 97px;
+    height: 23px;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
-    border-radius: 10px;
-    opacity: 1;
+    border-radius: 6px;
     text-align: center;
-    font: normal normal bold 18px/23px Plus Jakarta Sans;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
 }
 .buttonRegister:hover{
@@ -46,8 +53,7 @@
 
 .footerImg {
     width: 319px;
-    height: 385px; 
+    height: 340px; 
     background: url('/xpergg-front/src/assets/Images/imageFooter.png');
-    opacity: 1;
 }
 
