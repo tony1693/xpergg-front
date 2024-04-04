@@ -10,8 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { DropdownsRequestsComponent } from './components/dropdowns-requests/dropdowns-requests.component';
-
-import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { InitComponent } from './pages/init/init.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +24,7 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
     RegisterComponent,
     NavbarComponent,
     FooterComponent,
-    ConfirmationModalComponent,
+    InitComponent,
   ],
 })
 export class AppComponent {
