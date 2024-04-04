@@ -4,7 +4,6 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { RegisterComponent } from '../register/register.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { LinkComponent } from '../../components/link/link.component';
-import { ConfirmationModalComponent } from '../../componenets/confirmation-modal/confirmation-modal.component';
 
 @Component({
   selector: 'app-landing',
@@ -17,7 +16,6 @@ import { ConfirmationModalComponent } from '../../componenets/confirmation-modal
     RegisterComponent,
     NavbarComponent,
     LinkComponent,
-    ConfirmationModalComponent,
   ],
 })
 export class LandingComponent {}
