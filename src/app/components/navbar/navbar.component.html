@@ -1,5 +1,5 @@
-<nav class="navbarContainer bg-body-tertiary">
-    <div class="container-navbar">
+<nav class="containerNavbar">
+    <div class="container1">
         <a class="navbar-brand" href="">
             <img src="assets\Images\crash.png" alt="LogoXperGG" class="logo" />
         </a>
@@ -7,22 +7,22 @@
         <div class="conditional">
             @if (user){
             <div class="navbarLinks">
-                <app-link class="navbarItemR" [isUser]=true linkImg="assets\icon\iconoInicioR.svg" linkText="Inicio"
+                <app-link class="navbarItemR" linkImg="assets\icon\iconoInicioR.svg" linkText="Inicio"
+                    linkRouting="/Landing"></app-link>
+                <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades"
+                    linkRouting="/Community"></app-link>
+                <app-link class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg" linkText="Solicitudes"
                     linkRouting=""></app-link>
-                <app-link class="navbarItemR" [isUser]=true linkImg="assets\icon\iconoComunidadR.svg"
-                    linkText="Comunidades" linkRouting="/Community"></app-link>
-                <app-link class="navbarItemR" [isUser]=true linkImg="assets\icon\iconoSolicitudesR.svg"
-                    linkText="Solicitudes" linkRouting=""></app-link>
-                <app-link class="navbarItemR" [isUser]=true linkImg="assets\icon\iconoNotificacionesR.svg"
-                    linkText="Notificaciones" linkRouting=""></app-link>
-                <app-link class="navbarItemAvatar" [isUser]=true linkImg="assets\avatar\call_of_duty-2.jpg"
-                    linkText="{{user.name}}" linkRouting=""></app-link>
+                <app-link class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" linkText="Notificaciones"
+                    linkRouting=""></app-link>
+                <app-link class="navbarItemAvatar" linkImg="assets\avatar\call_of_duty-2.jpg" linkText="{{user.name}}"
+                    linkRouting=""></app-link>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,16 +30,17 @@
 
             } @else {
             <div class="navbarLinks">
-                <app-link class="navbarItem" [isUser]=false linkImg="assets\icon\icono-home-landing-nr.svg"
-                    linkText="Home" linkRouting="/Landing"></app-link>
-                <app-link class="navbarItem" [isUser]=false linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
+                <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                    linkRouting=""></app-link>
+                <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
                     linkText="Publicaciones" linkRouting=""></app-link>
-                <app-link class="navbarItem" [isUser]=false linkImg="assets\icon\icono-comunidades-landing-nr.svg"
-                    linkText="Comunidad" linkRouting="/Community"></app-link>
+                <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
+                    linkRouting="/Community"></app-link>
+
                 <!-- Created button for Login with modal -->
                 <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
-                    <i class="fa-solid fa-user"></i>
+                    <img src="assets\icon\icono-login.svg" alt="Login Icon">
                     Login
                 </button>
                 <!-- Modal -->
@@ -52,7 +53,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-
+                                <app-form-login></app-form-login>
                             </div>
                         </div>
                     </div>
