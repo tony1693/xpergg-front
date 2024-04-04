@@ -1,8 +1,7 @@
-<div class="container">
-    <div class="header">
-        <!-- <app-header></app-header> -->
-    </div>
+<div class="container-main">
+
     <div class="container1">
+        <app-navbar></app-navbar>
         <div class="boxTitle">
             <p>¡El punto <span>de encuentro </span>gamer!</p>
         </div>
@@ -15,10 +14,10 @@
                 sus mejores momentos gaming, y chatear.</p>
         </div>
         <div class="img">
-            <img src="../../../assets/Images/godofwar-x2.png" alt="" width="397" height="755">
+            <img src="../../../assets/Images/godofwar-x2.png" alt="" width="289" height="483">
         </div>
         <div class="img2">
-            <img src="../../../assets/Images/mario-x2.png" alt="" width="543" height="522">
+            <img src="../../../assets/Images/mario-x2.png" alt="" width="347" height="334">
         </div>
         <br>
         <div class="buttonRegister">
@@ -26,15 +25,15 @@
         </div>
         <a class="socializa">SOCIALIZA</a>
         <div class="img3a">
-            <img src="../../../assets/Images/shareBox.png" alt="" width="238" height="163">
+            <img src="../../../assets/Images/shareBox.png" alt="" width="152" height="104">
         </div>
         <a class="conecta">CONECTA</a>
         <div class="img3b">
-            <img src="../../../assets/Images/socializeBox.png" alt="" width="238" height="163">
+            <img src="../../../assets/Images/socializeBox.png" alt="" width="152" height="104">
         </div>
         <a class="noticias">NOTICIAS</a>
         <div class="img3c">
-            <img src="../../../assets/Images/newsBox.png" alt="" width="238" height="163">
+            <img src="../../../assets/Images/newsBox.png" alt="" width="152" height="104">
         </div>
     </div>
 
@@ -49,18 +48,14 @@
                 del gaming.</a>
         </div>
         <div class="boxNews">
-            <!-- Acomodar esto para que traiga las tres primeras imagenes de la page News -->
-            <img class="new1" src=" " alt="">
-            <p class="textNew1">El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el
-                lanzamiento</p>
-            <img class="new2" src=" " alt="">
-            <p class="textNew2">El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el
-                lanzamiento.</p>
-            <img class="new3" src=" " alt="">
-            <p class="textNew3">El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el
-                lanzamiento</p>
+            <app-trending-news [apiNewsText]="newsText1" [apiNewsImg]="newsImage1" [linkApiNewsRouting]="newsLink1">
+            </app-trending-news>
+            <app-trending-news [apiNewsText]="newsText2" [apiNewsImg]="newsImage2" [linkApiNewsRouting]="newsLink2">
+            </app-trending-news>
+            <app-trending-news [apiNewsText]="newsText3" [apiNewsImg]="newsImage3" [linkApiNewsRouting]="newsLink3">
+            </app-trending-news>
         </div>
-        <!--acomodar este boton al boton componente y el routerLink a la pagina de News -->
+        <!--acomodar este boton haciendo routerLink a la pagina de News -->
         <div class="buttonNews">
             <button id="buttonNews" onclick type="submit" routerLink="/News">Ver Todas</button>
         </div>
@@ -80,19 +75,19 @@
             <button id="buttonRegister3" routerLink="/Register">Regístrate</button>
         </div>
         <div class="imgLandingChat">
-            <img src="../../../assets/Images/imageChat.png" alt="" width="574.29" height="544.98">
+            <img src="../../../assets/Images/imageChat.png" alt="" width="367" height="348">
         </div>
         <div class="imgPs">
-            <img src="../../../assets/icon/iconoPS.svg" alt="" width="56.82" height="43.84">
+            <img src="../../../assets/icon/iconoPS.svg" alt="" width="36" height="28">
         </div>
         <div class="imgXbox">
-            <img src="../../../assets/icon/iconoXBOX.svg" alt="" width="128" height="37.81">
+            <img src="../../../assets/icon/iconoXBOX.svg" alt="" width="82" height="24">
         </div>
         <div class="imgNintendo">
-            <img src="../../../assets/icon/iconoNintendo.svg" alt="" width="159.3" height="37.81">
+            <img src="../../../assets/icon/iconoNintendo.svg" alt="" width="102" height="24">
         </div>
         <div class="imgPc">
-            <img src="../../../assets/icon/iconoPC.svg" alt="" width="157.61" height="32.72">
+            <img src="../../../assets/icon/iconoPC.svg" alt="" width="100" height="21">
         </div>
     </div>
     <div class="container4">
@@ -109,7 +104,24 @@
             <button id="buttonRegister4" routerLink="/Register">Regístrate</button>
         </div>
         <div class="imgLandingComunidad">
-            <img src="../../../assets/Images/imageShare.png" alt="" width="768" height="481">
+            <img src="../../../assets/Images/imageShare.png" alt="" width="471" height="308">
+        </div>
+        <div class="boxMessage1">
+            <p class="pmessage1a">Crea comunidad</p>
+            <p class="pmessage1b">Permite que los usuarios compartan sus propios contenidos, así fomenta una comunidad
+                activa y comprometida.</p>
+        </div>
+
+        <div class="imgDecorador1">
+            <img src="../../../assets/Images/decorador1.svg" alt="" width="204" height="10">
+        </div>
+        <div class="boxMessage2">
+            <p class="pmessage2a">Contenido Potencial</p>
+            <p class="pmessage2b">Una experiencia única con videos y fotos de momentos épicos en los juegos tienen
+                el potencial de volverse virales.</p>
+        </div>
+        <div class="imgDecorador2">
+            <img src="../../../assets/Images/decorador2.svg" alt="" width="124" height="10">
         </div>
         <div class="boxMessage1">
             <p class="pmessage1a">Crea comunidad</p>

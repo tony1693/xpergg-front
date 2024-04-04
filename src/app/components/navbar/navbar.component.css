@@ -1,15 +1,18 @@
-.navbar{
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
+.navbar {
+    padding: 2% 7% 2% 2%;
+    margin: 0;
+    width: 100vw;
+    background-image: url("../../../assets/background/background_landing_header.svg");
+    background-size: 100%;
+    background-repeat: no repeat;
 }
-.container{
+
+.container-navbar {
     display: flex;
     justify-content: space-between;
-    height: 58px;
-    width: 100%;
-    margin-top: 47px;
-    background-color: blueviolet;
+    height: 38px;
+    width: 100vw;
+
 }
 
 .navbar-brand {
@@ -17,42 +20,49 @@
     height: 58px;
 }
 
-.logo{
+.logo {
     width: 198px;
     height: 58px;
 }
 
-.navbarLinks{
+.navbarLinks {
     height: 58px;
     display: flex;
     align-items: center;
     margin-right: 5px;
+    color:#FFFFFF
+
 }
 
-.navbarItem{
+.navbarItem {
     margin-right: 15px;
+    font-size: x-small;
+    
 }
 
-.navbarItemR{
+.navbarItemR {
     margin-right: 15px;
+    font-size: x-small;
+    color:#FFFFFF;
+    
 }
 
-.navbarItemAvatar{
+.navbarItemAvatar {
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.linkText:hover{
+.linkText:hover {
     color: #C0005A;
 }
 
-.btn{
+.btn {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.dropdown-item{
+.dropdown-item {
     color: #636363;
 }
 
@@ -62,25 +72,30 @@
     margin-left: 15px;
     text-align: center;
     background-color: transparent;
-    color: white;
+    color: #FFFFFF;
     font-family: 'Segoe UI';
 }
 
-#loginBtn::after{
+#loginBtn:hover {
+    background-color: #1B1B1B;
+    border: 1px solid #C0005A;;
+}
+
+#loginBtn::after {
     background-color: #FFFFFF;
     color: #010050
 }
 
-.btn-close{
+.btn-close {
     display: flex;
     justify-content: flex-end;
 }
 
-.modal-header{
+.modal-header {
     border: none
 }
 
-.modal-body{
+.modal-body {
     align-content: center;
     border-top: none;
     padding: 0px;
@@ -88,9 +103,8 @@
     margin-left: 20px;
 }
 
-.modal-content{
+.modal-content {
     width: 350px;
     height: auto;
     border: none
 }
-
