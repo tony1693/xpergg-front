@@ -1,0 +1,49 @@
+#triggerBtn{
+    width: 190px;
+    height: 40px;
+    background-color: #E100FF;
+    color: white;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 22px;
+    border: 1px solid #E100FF; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.modal-content{
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    padding: 10px
+}
+.modal-header{
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#closeBtn {
+    color:#E100FF;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.modal-body{
+    font-family: 'Plus Jakarta Sans';
+    border: none;
+    justify-content: center;
+}
+
+.modal-footer{
+    border: none
+}
+
+.btn-primary{
+    background-color: #E100FF;
+    border: 1px solid #E100FF
+}
