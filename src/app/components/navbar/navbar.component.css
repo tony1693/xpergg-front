@@ -70,20 +70,21 @@
     border: 2px solid #FFFFFF;
     border-radius: 6px;
     margin-left: 15px;
+    height: 40px;
     text-align: center;
     background-color: transparent;
     color: #FFFFFF;
     font-family: 'Segoe UI';
 }
 
-#loginBtn:hover {
-    background-color: #1B1B1B;
-    border: 1px solid #C0005A;;
+.fa-solid{
+    height: 30px;
 }
-
-#loginBtn::after {
+#loginBtn:hover {
     background-color: #FFFFFF;
-    color: #010050
+    border: 2px solid #FFFFFF;
+    color: #010050;
+    height: 40px;
 }
 
 .btn-close {
