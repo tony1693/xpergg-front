@@ -1,10 +1,16 @@
 .navbar {
-    padding: 2% 7% 2% 2%;
-    margin: 0;
-    width: 100vw;
-    background-image: url("../../../assets/background/background_landing_header.svg");
-    background-size: 100%;
-    background-repeat: no repeat;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 57px;
+    position: absolute;
+    top:0;
+    background-color: transparent !important;
+    display: flex;
+}
+
+.bg-body-tertiary{
+    background-color: transparent;
 }
 
 .container-navbar {
@@ -18,6 +24,11 @@
 .navbar-brand {
     width: 198px;
     height: 58px;
+    padding: 0px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+
 }
 
 .logo {
@@ -25,31 +36,42 @@
     height: 58px;
 }
 
-.navbarLinks {
+.conditional{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.navbarLinks{
     height: 58px;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
     margin-right: 5px;
-    color:#FFFFFF
-
 }
 
+
 .navbarItem {
-    margin-right: 15px;
-    font-size: x-small;
-    
+    margin-right: 15px;  
 }
 
 .navbarItemR {
     margin-right: 15px;
-    font-size: x-small;
-    color:#FFFFFF;
-    
+    color:#FFFFFF; 
 }
 
 .navbarItemAvatar {
     border-radius: 50%;
     margin-right: 15px;
+}
+
+.dropdown-toggle{
+    margin-right: 15px;
+    padding: 0px
 }
 
 .linkText:hover {
@@ -66,24 +88,51 @@
     color: #636363;
 }
 
+.dropdown-menu{
+    position: relative;
+    height: 45px;
+
+}
+
+.dropdown-item{
+    position: absolute;
+    height: 30px;
+}
+
+.modalBnt-Login{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 #loginBtn {
     border: 2px solid #FFFFFF;
     border-radius: 6px;
     margin-left: 15px;
+    margin-top: 5px;
+    height: 40px;
     text-align: center;
     background-color: transparent;
     color: #FFFFFF;
     font-family: 'Segoe UI';
+    position: relative
 }
 
+.modalLogin{
+    position: absolute;
+    align-self: center;
+    display: block;
+}
+
+.fa-solid{
+    height: 30px;
+    margin-right: 8px;
+}
 #loginBtn:hover {
-    background-color: #1B1B1B;
-    border: 1px solid #C0005A;;
-}
-
-#loginBtn::after {
     background-color: #FFFFFF;
-    color: #010050
+    border: 2px solid #FFFFFF;
+    color: #010050;
+    height: 40px;
 }
 
 .btn-close {
@@ -108,3 +157,4 @@
     height: auto;
     border: none
 }
+

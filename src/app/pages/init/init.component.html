@@ -18,7 +18,7 @@
 
     <div class="posts">
         <div class="new-post">
-            <!-- <img class="avatar" [src]="user.avatar" alt="User Avatar"> -->
+            <img class="avatarPost">
             <div class="info-post">
                 <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required #inputTextPost>
                 <input type="text" class="link-video" id="" placeholder="Link Video" required #inputLinkVideoPost>
@@ -30,26 +30,12 @@
 
     <div class="friends">
 
-        <p class="center2">Amigos Disponibles</p>
         <div class="card-online-friends">
-            <app-users-list></app-users-list>
+            <app-users-list class="amigos" title="Amigos Disponibles"></app-users-list>
         </div>
 
         <div class="new-friends">
-            <p class="center">Sugerencias de Amistad</p>
-            <div class="card-new-friends">
-                @for (user of users; track user.user_id) {
-                <tr>
-                    <td class="avatar-newfriends"><img [src]="user.avatar" alt="User Avatar" width="23" height="23"></td>
-                    <td class="name">{{user.name}}</td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <hr>
-                    </td>
-                </tr>
-                }
-            </div>
+            <app-users-list class="amigos" title="Sugerencias de Amistad"></app-users-list>
         </div>
         
         <button class="buttonCommunity" routerLink="">Accede a la comunidad</button>

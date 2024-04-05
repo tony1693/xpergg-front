@@ -1,0 +1,168 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#exampleModal {
+    width: 350px;
+    height: auto;
+    border-radius: 24px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding:2%;
+    background: #ffffff;
+    display: flex;
+    position: fixed;
+    top: 10%;
+    left: 75%;
+}
+
+.modal-dialog{
+    border: none;
+    margin: 0px;
+    height: 100%;
+    border: 1px solid #E100FF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.modal-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.modal-header{
+    border-bottom: #E100FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 17px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #E100FF;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.modal-body{
+    height: 100%;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+
+.label{
+    font-weight: medium;
+    font-size: 17px;
+    line-height: 17px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1B1B1B;
+    opacity: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.control{
+    width: 200px;
+    height: 24px;
+    background: #E100FF29;
+    border-radius: 34px;
+    border: 1px solid #E100FF29;
+    font-size: small;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.error{
+    font-size:x-small;
+    text-align: center;
+    color: red;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+.subtitlePassword {
+    color: white;
+    font-size: x-small;
+}
+
+.modal-footer{
+    border: none;
+    margin: 0px;
+    display: flex;
+}
+
+.bntFooter{
+    display: flex;
+    justify-content: space-between;
+}
+.buttonLogin {
+    width: 84px;
+    height: 30px;
+    margin: 5px;
+    background: #1B1B1B;
+    border: 1px solid #E100FF;
+    border-radius: 10px;
+    opacity: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnClose{
+    width: 84px;
+    height: 30px;
+    margin: 5px;
+    background: #1B1B1B;
+    border: 1px solid #1B1B1B;
+    border-radius: 10px;
+    opacity: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buttonLogin:hover{
+    background-color:#E100FF;
+    border: 1px solid #1B1B1B;
+}
+
