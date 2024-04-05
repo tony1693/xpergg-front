@@ -24,6 +24,11 @@
 .navbar-brand {
     width: 198px;
     height: 58px;
+    padding: 0px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+
 }
 
 .logo {
@@ -31,25 +36,32 @@
     height: 58px;
 }
 
-.navbarLinks {
+.conditional{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.navbarLinks{
     height: 58px;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
     margin-right: 5px;
-    color:#FFFFFF; 
-    gap: 10px  
 }
 
+
 .navbarItem {
-    margin-right: 15px;
-    font-size: x-small;   
+    margin-right: 15px;  
 }
 
 .navbarItemR {
     margin-right: 15px;
-    font-size: x-small;
-    color:#FFFFFF;
-    
+    color:#FFFFFF; 
 }
 
 .navbarItemAvatar {
