@@ -10,13 +10,14 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { DropdownsRequestsComponent } from './components/dropdowns-requests/dropdowns-requests.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, LandingComponent,RegisterComponent,NavbarComponent, FooterComponent]
+    imports: [CommonModule, RouterOutlet, LandingComponent,RegisterComponent,NavbarComponent, FooterComponent, CommunityComponent]
 })
 export class AppComponent {
   title = 'xpergg-front';
