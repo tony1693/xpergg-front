@@ -1,4 +1,5 @@
 <div class="linkContainer">
     <img class="linkIconNR" [src]="linkImg" alt="Icon">
-    <a class="linkText" [routerLink]="linkRouting" [routerLinkActive]="['active']">{{linkText}}</a>
+    <a [ngClass]="{classUser:isUser,classGuest :!isUser}" [routerLink]="linkRouting"
+        routerLinkActive="active">{{linkText}}</a>
 </div>
