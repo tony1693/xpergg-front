@@ -22,7 +22,8 @@
                         aria-expanded="false">
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" (click)="logOut()" [routerLink]="['/Landing']">Cerrar sesión</a>
+                        </li>
                     </ul>
                 </div>
             </div>

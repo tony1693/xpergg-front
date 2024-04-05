@@ -88,6 +88,17 @@
     color: #636363;
 }
 
+.dropdown-menu{
+    position: relative;
+    height: 45px;
+
+}
+
+.dropdown-item{
+    position: absolute;
+    height: 30px;
+}
+
 .modalBnt-Login{
     display: flex;
     justify-content: center;

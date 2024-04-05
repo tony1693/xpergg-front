@@ -60,10 +60,6 @@ h1 {
     margin-right: 20px;
 }
 
-.btn-close{
-    color: #E100FF;
-}
-
 .modal-body{
     height: 100%;  
     display: flex;
@@ -121,15 +117,38 @@ h1 {
 
 .modal-footer{
     border: none;
-    margin: 0px
+    margin: 0px;
+    display: flex;
 }
 
+.bntFooter{
+    display: flex;
+    justify-content: space-between;
+}
 .buttonLogin {
     width: 84px;
     height: 30px;
     margin: 5px;
     background: #1B1B1B;
     border: 1px solid #E100FF;
+    border-radius: 10px;
+    opacity: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnClose{
+    width: 84px;
+    height: 30px;
+    margin: 5px;
+    background: #1B1B1B;
+    border: 1px solid #1B1B1B;
     border-radius: 10px;
     opacity: 1;
     text-align: center;
