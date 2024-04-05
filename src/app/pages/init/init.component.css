@@ -175,20 +175,20 @@ p {
 }
 
 
-.card-online-friends{
-    width: 305px;
-    height: 50px;
-    background: #141414 0% 0% no-repeat padding-box;
-    border: 2px solid #E100FF;
-    border-radius: 18px;
-}
-
-
 .new-friends {
     margin-top: 300px;
 
 }
 
+.amigos{
+    width: 459px;
+    height: 35px;
+    text-align: center;
+    font: Plus Jakarta Sans;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
 
 .card-new-friends {
     width: 305px;

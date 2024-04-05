@@ -5,10 +5,10 @@ import { HttpClient } from '@angular/common/http';
 import { InitComponent } from './pages/init/init.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/Landing', pathMatch: 'full' },
-    { path: 'Landing', component: LandingComponent},
-    { path: 'Register', component: RegisterComponent},
-    { path: 'Init', component: InitComponent},
-    { path: 'HttpClient', component:HttpClient}
+    // { path: '', redirectTo: '/Landing', pathMatch: 'full' },
+    // { path: 'Landing', component: LandingComponent},
+    // { path: 'Register', component: RegisterComponent},
+    // { path: 'Init', component: InitComponent},
+    // { path: 'HttpClient', component:HttpClient}
 
 ];
