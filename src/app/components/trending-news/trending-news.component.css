@@ -6,20 +6,26 @@
 }
 
 .apiNewsImg{
-    width: 450px;
-    height: 258px;
-    border: 1px solid #707070;
+    width: 288px;
+    height: 165px;
+    /* border: 1px solid #707070; */
     opacity: 1;
+    padding: 4%;
 }
 
 .apiNewsText {
-    width: 461px;
-    height: 132px;
+    width: 278px;
+    height: 165px;
     text-align: left;
-    font: normal normal bold 26px/33px Plus Jakarta Sans;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 0px;
     color: #010050;
     opacity: 1;
+    padding: 4%;
 }
 
 a {

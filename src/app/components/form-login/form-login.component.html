@@ -1,7 +1,6 @@
 <div class="containerForm">
     <form [formGroup]="reactiveForm" (ngSubmit)="loginSubmit()">
         <h2>Iniciar Sesión</h2>
-        <!-- <br> -->
         <div class="form">
             <label for="name" class="label">Usuario</label>
             <input class="control" placeholder="User" type="text" name="name" formControlName="name">
@@ -35,7 +34,6 @@
             }
             }
         </div>
-        <br>
         <div class="buttonLogin">
             <button type="submit" [disabled]="!reactiveForm.valid"
                 [style.background-color]="reactiveForm.valid ? '#1B1B1B' : '#707070'">Login</button>

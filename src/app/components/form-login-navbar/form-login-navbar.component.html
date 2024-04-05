@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form [formGroup]="reactiveForm" (ngSubmit)="loginSubmit()">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <label for="name" class="label">Usuario</label>
+                        <input class="control" placeholder="User" type="text" name="name" formControlName="name">
+                        <!-- Mensaje de error para el campo de usuario -->
+                        @if ( (reactiveForm.get('name')?.dirty || reactiveForm.get('name')?.touched) &&
+                        reactiveForm.get('name')?.invalid) {
+                        @if (reactiveForm.get('name')?.hasError('required')) {
+                        <div>
+                            <p class="error">*Campo obligatorio</p>
+                        </div>
+                        }
+                        }
+                    </div>
+                    <div class="form">
+                        <label for="password" class="label">Contraseña</label>
+                        <input class="control" placeholder="Password" type="password" name="password"
+                            formControlName="password">
+                        <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
+                        <!-- Mensaje de error para el campo de contraseña -->
+                        @if ( (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched) &&
+                        reactiveForm.get('password')?.invalid) {
+                        @if (reactiveForm.get('password')?.hasError('required')) {
+                        <div>
+                            <p class="error">*Campo obligatorio</p>
+                        </div>
+                        }
+                        @if (reactiveForm.get('password')?.hasError('minlength') ||
+                        reactiveForm.get('password')?.hasError('maxlength')) {
+                        <div>
+                            <p class="error">*Longitud de Contraseña incorrecta</p>
+                        </div>
+                        }
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="bntFooter">
+                        <button type="button" class="btnClose btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button class="buttonLogin" type="submit" [disabled]="!reactiveForm.valid"
+                            [style.background-color]="reactiveForm.valid ? '#1B1B1B' : '#707070'">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

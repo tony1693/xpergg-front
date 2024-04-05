@@ -1,23 +1,25 @@
 /* Estilos para el formulario de inicio de sesión */
 
 .containerForm {
-    width: 302px;
-    height: 330px;
-    border-radius: 37px;
+    width: 170px;
+    height: 190px;
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding:2%;
     background: #ffffff;
-    /* padding: 4%; */
 
- }
-
+}
 
 h2 {
-    font: normal normal 800 24px/26px Plus Jakarta Sans;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 17px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #E100FF;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -27,33 +29,42 @@ h2 {
 }
 
 .label {
-    font: normal normal medium 15px/26px Plus Jakarta Sans;
+    font-weight: medium;
+    font-size: 10px;
+    line-height: 17px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #1B1B1B;
     opacity: 80%;
-    font-size: 15px;
-    line-height: 26px;
-    padding-left: 8%;
+    font-size: 10px;
+    line-height: 17px;
+    padding-left: 12%;
+}
+input{
+    align-self: center;
 }
 
 .control {
-    width: 210px;
-    height: 38px;
+    width: 134px;
+    height: 24px;
     background: #E100FF29;
-    border-radius: 52px;
-    opacity: 1;
-    padding: 10px;
+    border-radius: 34px;
+    padding-left: 5%;
     border: 1px solid #E100FF29;
+    font-size: xx-small;
 }
 
 button {
-    width: 131px;
-    height: 32px;
+    width: 84px;
+    height: 20px;
     background: #1B1B1B;
     border: 1px solid #E100FF;
-    border-radius: 16px;
+    border-radius: 10px;
     opacity: 1;
     text-align: center;
-    font: normal normal 800 18px/23px Plus Jakarta Sans;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
     text-align: center;
     cursor: pointer;
@@ -62,17 +73,20 @@ button {
 .buttonLogin {
     text-align: center;
 }
+
 .buttonLogin[disabled] {
     background-color: #707070;
 }
 
 .error {
+    font-size:xx-small;
+    position:absolute;
     color: red;
-    font-size: xx-small;
+    background-color: #FFFFFF;
+    font-weight: bold;
 }
 
 .subtitlePassword {
     color: white;
     font-size: x-small;
 }
-

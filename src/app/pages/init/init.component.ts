@@ -1,22 +1,28 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { StatusComponent } from '../../components/status/status.component';
 import { User } from '../../models/user';
+import { VideoPostComponent } from '../../components/video-post/video-post.component';
+import { UsersListComponent } from '../../components/users-list/users-list.component';
 
 @Component({
-  selector: 'app-video-post',
+  selector: 'app-init',
   standalone: true,
-  imports: [],
-  templateUrl: './video-post.component.html',
-  styleUrl: './video-post.component.css'
+  imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent],
+  templateUrl: './init.component.html',
+  styleUrl: './init.component.css'
 })
-export class VideoPostComponent {
+export class InitComponent {
 
-  @Input() public linkYoutubePost!: string;
-  @Input() public titlePost: string = "El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento";
+  @Input() public apiNewsText: string = 'Ubisoft habría retrasado el Assassins creed ambientado en China';
+  @Input() public linkApiNewsRouting: string = "";
 
   users: User[] = [];
 
-  // Inicializa el contador de likes
-  likesCount: number = 0;
+  public addPost(inputTextPost: HTMLInputElement, inputLinkVideoPost: HTMLInputElement) {
+    console.log(inputTextPost.value);
+    console.log(inputLinkVideoPost.value);
+  }
 
   constructor() { }
 
@@ -54,25 +60,6 @@ export class VideoPostComponent {
       }
 
     ];
-  }
-
-
-  @Input() public likeOff: string = "../../../assets/icon/icono-corazon-off.svg";
-
-  addLike(): void {
-    // this.likesCount++;
-    if (this.likeOff=="../../../assets/icon/icono-corazon-off.svg") {
-      this.likesCount++;
-      this.likeOff = "../../../assets/icon/icono-corazon-on.svg"
-    } else {
-      this.likeOff = "../../../assets/icon/icono-corazon-off.svg"
-      this.likesCount--;
-    }
-  }
-
-
-  public addComment(inputComment: HTMLInputElement) {
-    console.log(inputComment.value)
   }
 
 }

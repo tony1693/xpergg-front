@@ -5,9 +5,9 @@
 }
 
 .container-fluid {
-    width: 100%;
-    height: 100vh;
-    background-image: url('../../../assets/background/background_community.svg');
+    width: 100vw;
+    height: 100%;
+    background-image: url('../../../assets/background/background_community_threads.png');
     background-size: auto;
     background-repeat: repeat;
     max-width: 100%;

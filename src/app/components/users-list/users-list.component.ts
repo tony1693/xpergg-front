@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 
 @Component({
@@ -11,6 +11,8 @@ import { User } from '../../models/user';
 
 export class UsersListComponent implements OnInit {
   users: User[] = [];
+  @Input() title: string= "";
+  @Input() status: boolean= true;
 
   constructor() { }
 

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PlatformCardComponent } from '../../components/platform-card/platform-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-community',
