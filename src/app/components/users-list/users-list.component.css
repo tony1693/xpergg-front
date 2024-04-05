@@ -60,6 +60,7 @@ img{
     border-radius: 50%;
     padding-left: 3%;
 }
+
 .name {
     width: 107px;
     height: 23px;
@@ -74,13 +75,13 @@ img{
     width: 88px;
     font: normal normal normal 11px/26px Plus Jakarta Sans;
 }
-/* Cambia el color del texto para estado activo */
+/* Cambia el color del texto para estado activo /
 .status.activo {
     color: #7CFC00;
     text-decoration-line:large bold;
   }
-  
-  /* Cambia el color del texto para estado inactivo */
+
+  / Cambia el color del texto para estado inactivo */
   .status.inactivo {
     color: #636363;
     opacity: 60%;
