@@ -10,6 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { DropdownsRequestsComponent } from './components/dropdowns-requests/dropdowns-requests.component';
+import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
 
 @Component({
@@ -26,6 +27,7 @@ import { InitComponent } from './pages/init/init.component';
     FooterComponent,
     InitComponent,
     RouterLinkActive,
+    NewsComponent,
   ],
 })
 export class AppComponent {
