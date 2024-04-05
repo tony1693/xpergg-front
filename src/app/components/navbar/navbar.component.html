@@ -30,11 +30,11 @@
             } @else {
             <div class="navbarLinks">
                 <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
-                    linkRouting=""></app-link>
+                    linkRouting="/Landing"></app-link>
                 <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
                     linkText="Publicaciones" linkRouting=""></app-link>
                 <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
-                    linkRouting=""></app-link>
+                    linkRouting="/Community"></app-link>
                 <!-- Created button for Login with modal -->
                 <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -51,7 +51,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <app-form-login></app-form-login>
+                                <app-form-login-navbar></app-form-login-navbar>
                             </div>
                         </div>
                     </div>

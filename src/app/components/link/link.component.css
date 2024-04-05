@@ -27,6 +27,14 @@
     color:#E100FF;
 }
 
+.classUser.active{
+    color: #E100FF
+}
+
+.classGuest.active{
+    color: #C0005A
+}
+
 a{
     text-decoration: none;
 }
@@ -46,7 +54,5 @@ a{
     color:#C0005A;
 }
 
-.active{
-    text-decoration: underline;
-}
+
 

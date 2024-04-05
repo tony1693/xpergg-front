@@ -5,6 +5,7 @@ import { UsersListComponent } from '../users-list/users-list.component';
 import { FormLoginComponent } from '../form-login/form-login.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormLoginNavbarComponent } from '../form-login-navbar/form-login-navbar.component';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     FormLoginComponent,
     CommonModule,
     RouterModule,
+    FormLoginNavbarComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
