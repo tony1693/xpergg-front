@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { User } from '../../models/user';
 
 @Component({
@@ -56,13 +56,23 @@ export class VideoPostComponent {
     ];
   }
 
-  public addComment(inputComment: HTMLInputElement) {
-    console.log(inputComment.value)
+
+  @Input() public likeOff: string = "../../../assets/icon/icono-corazon-off.svg";
+
+  addLike(): void {
+    // this.likesCount++;
+    if (this.likeOff=="../../../assets/icon/icono-corazon-off.svg") {
+      this.likesCount++;
+      this.likeOff = "../../../assets/icon/icono-corazon-on.svg"
+    } else {
+      this.likeOff = "../../../assets/icon/icono-corazon-off.svg"
+      this.likesCount--;
+    }
   }
 
-  // Método para incrementar el contador de likes
-  addLike(): void {
-    this.likesCount++;
+
+  public addComment(inputComment: HTMLInputElement) {
+    console.log(inputComment.value)
   }
 
 }
