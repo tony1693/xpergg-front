@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 
 @Component({
@@ -13,6 +13,7 @@ export class UsersListComponent implements OnInit {
   users: User[] = [];
   @Input() title: string= "";
   @Input() status: boolean= true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -43,7 +44,7 @@ this.users = [
     aboutMe: 'Apasionada por el diseño y la creatividad.',
     password: '********',
     confirmPassword: '********',
-    status: true, // Usuario inactivo
+    status: false, // Usuario inactivo
     platforms: ['Xbox'],
     genres: ['Coches', 'Estrategia']
   }
