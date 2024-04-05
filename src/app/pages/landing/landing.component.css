@@ -1,6 +1,7 @@
 .container-main {
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
 }
 
 .container1 {
@@ -9,6 +10,37 @@
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
     background-repeat: no repeat;
+}
+.boxLanding1{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:7%;
+    gap:1%
+}
+.boxLanding1b{
+    
+    height: 30px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top:4%;
+    margin-left: 1%;
+    gap:2%
+
+}
+.boxLanding1c{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    gap:2%
 }
 
 .boxTitle {
@@ -20,9 +52,6 @@
     font-size: 58px;
     line-height: 62px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
-    top: 25%;
-    left: 26%;
     /* border: 1px solid #707070;  */
     color: #E100FF;
 }
@@ -40,10 +69,7 @@ span {
     font-size: 25px;
     line-height: 31px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
     color: #FFFFFF;
-    top: 48%;
-    left: 32%;
     /* border: 1px solid #707070;  */
 }
 
@@ -57,28 +83,32 @@ span {
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
-    position: absolute;
-    top: 55%;
-    left: 33%;
+   
 }
 
 .img {
     width: 254px;
     height: 483px;
     background: transparent;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    left: 2%;
+    left: 2%; */
+    position: relative;
+    bottom: 66%;
+    left: 1%;
     /* border: 1px solid #707070;  */
 }
 
 .img2 {
-    width: 347px;
+    width: 330px;
     height: 334px;
     background: transparent;
-    position: absolute;
+    /* position: absolute;
     bottom: 2%;
-    right: 2%;
+    right: 2%; */
+    position: relative;
+    bottom: 116%;
+    left: 70%;
     /* border: 1px solid #707070;  */
 }
 
@@ -88,16 +118,12 @@ span {
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 10px;
-    position: absolute;
-    top: 65%;
-    left: 43%;
     text-align: center;
     font-weight: bold;
     font-style: normal;
     font-size: 17px;
     line-height: 22px;
     font-family: "Plus Jakarta Sans", sans-serif;
-
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -113,9 +139,6 @@ span {
     background: transparent url('../../../assets/Images/socializeBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 38px;
-    position: absolute;
-    top: 80%;
-    left: 29%;
 }
 
 .img3b {
@@ -124,9 +147,6 @@ span {
     background: transparent url('../../../assets/Images/shareBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 38px;
-    position: absolute;
-    top: 80%;
-    left: 43%;
 }
 
 .img3c {
@@ -135,10 +155,8 @@ span {
     background: transparent url('../../../assets/Images/newsBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 34px;
-    position: absolute;
-    top: 80%;
-    left: 57%;
 }
+
 
 .socializa {
     width: 166px;
@@ -151,10 +169,8 @@ span {
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
-    position: absolute;
-    top: 75%;
-    left: 29%;
 }
+
 
 .conecta {
     width: 149px;
@@ -167,9 +183,6 @@ span {
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
-    position: absolute;
-    top: 75%;
-    left: 43%;
 }
 
 .noticias {
@@ -183,9 +196,6 @@ span {
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
-    position: absolute;
-    top: 75%;
-    left: 57%;
 }
 
 /* landing container2 */
@@ -197,9 +207,15 @@ span {
     background-size: 100%;
     background-repeat: no repeat;
     background-color: #0100500D;
-    opacity: 100%;
 }
 
+.boxNewsLanding{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:7%;
+}
 .boxTitleLanding2 {
     width: 511px;
     height: 89px;
@@ -210,9 +226,6 @@ span {
     line-height: 61px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 120%;
-    left: 28%;
 }
 
 .spanLanding2 {
@@ -229,22 +242,23 @@ span {
     line-height: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 133%;
-    left: 32%;
     /* border: 1px solid #707070; */
 }
 
 .boxNews {
+    width: 90vw;
+    height: 160px;
     display: flex;
     flex-direction: row;
-    width: 840px;
-    height: 160px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
     background: transparent;
+    padding-top:1%;
+    padding-left: 3%;
     /* border: 1px solid #707070; */
-    position: absolute;
-    top: 145%;
-    left: 13%;
+  
 }
 
 #buttonNews {
@@ -254,8 +268,8 @@ span {
     border: 1px solid #E100FF;
     border-radius: 10px;
     position: absolute;
-    top: 185%;
-    left: 43%;
+    top: 195%;
+    left: 42%;
     text-align: center;
     font-weight: bold;
     font-style: normal;
@@ -282,6 +296,16 @@ span {
     opacity: 100%;
 }
 
+.boxChat{
+       text-align: start;
+    font-weight: normal;
+    font-style: normal;
+    color: #1B1B1B;
+    padding-top: 8%;
+    padding-left: 12%
+    /* border: 1px solid #707070; */
+}
+
 .boxTitleLanding3 {
     width: 330px;
     height: 116px;
@@ -291,9 +315,6 @@ span {
     font-size: 48px;
     line-height: 55px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
-    top: 220%;
-    left: 18%;
     color: #E100FF;
 }
 
@@ -311,9 +332,6 @@ span {
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
-    position: absolute;
-    top: 240%;
-    left: 18%;
 }
 
 #buttonRegister3 {
@@ -329,9 +347,6 @@ span {
     border: 1px solid #E100FF;
     color: #E100FF;
     border-radius: 10px;
-    position: absolute;
-    top: 250%;
-    left: 18%;
     cursor: pointer;
 }
 
@@ -342,33 +357,22 @@ span {
 
 .imgLandingChat {
     position: absolute;
-    top: 215%;
+    top: 230%;
     right: 14%;
 }
 
-.imgPs {
-    position: absolute;
-    top: 270%;
-    left: 35%;
+.boxLogosPlatforms{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: normal;
+    font-style: normal;
+    color: #1B1B1B;
+    padding-top: 8%;
+    gap: 4%
+    /* border: 1px solid #707070; */
 }
 
-.imgXbox {
-    position: absolute;
-    top: 270%;
-    left: 41%;
-}
-
-.imgNintendo {
-    position: absolute;
-    top: 270%;
-    left: 50%;
-}
-
-.imgPc {
-    position: absolute;
-    top: 270%;
-    left: 60%;
-}
 
 /* landing container4 */
 
@@ -444,6 +448,7 @@ span {
     cursor: pointer;
 }
 
+
 .boxMessage1 {
     width: 269px;
     height: auto;
@@ -451,7 +456,7 @@ span {
     border-radius: 33px;
     padding: 20px;
     position: relative;
-    top: 40%;
+    top: 19%;
     left: 58%;
 }
 
@@ -475,13 +480,6 @@ span {
     margin: 0;
 }
 
-.imgDecorador1 {
-
-    position: absolute;
-    top: 349%;
-    left: 65%;
-}
-
 .boxMessage2 {
     width: 269px;
     height: auto;
@@ -489,16 +487,15 @@ span {
     border-radius: 33px;
     padding: 20px;
     position: relative;
-    top: 45%;
+    top: 24%;
     left: 61%;
 }
 
 .pmessage2a {
-    font-weight: normal;
-    font-style: normal;
-    font-size: 11px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
     line-height: 17px;
-    font-family: "Plus Jakarta Sans", sans-serif;
     color: #E100FF;
     margin: 0;
     padding-bottom: 3%;
@@ -514,10 +511,16 @@ span {
     margin: 0;
 }
 
+.imgDecorador1 {
+    position: absolute;
+    top: 349%;
+    left: 65%;
+}
+
 .imgDecorador2 {
     position: absolute;
-    top: 372%;
-    left: 72%;
+    top: 374%;
+    left: 71%;
 }
 
 /* Estilo para el footer */
