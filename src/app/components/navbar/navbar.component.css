@@ -88,6 +88,12 @@
     color: #636363;
 }
 
+.modalBnt-Login{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 #loginBtn {
     border: 2px solid #FFFFFF;
     border-radius: 6px;
@@ -98,6 +104,13 @@
     background-color: transparent;
     color: #FFFFFF;
     font-family: 'Segoe UI';
+    position: relative
+}
+
+.modalLogin{
+    position: absolute;
+    align-self: center;
+    display: block;
 }
 
 .fa-solid{

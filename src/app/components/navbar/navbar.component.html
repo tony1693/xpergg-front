@@ -36,16 +36,17 @@
                 <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
                     linkRouting="/Community" [isUser]=false></app-link>
                 <!-- Created button for Login with modal -->
-                <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    <i class="fa-solid fa-user"></i>
-                    Login
-                </button>
-                <!-- Modal -->
-                <div class="modalLogin">
-                    <app-form-login-navbar></app-form-login-navbar>
+                <div class="modalBnt-Login">
+                    <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-user"></i>
+                        Login
+                    </button>
+                    <!-- Modal -->
+                    <div class="modalLogin">
+                        <app-form-login-navbar></app-form-login-navbar>
+                    </div>
                 </div>
-
             </div>
             }
         </div>
