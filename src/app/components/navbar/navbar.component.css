@@ -44,7 +44,6 @@
     margin: 0px;
 }
 
-
 .navbarLinks{
     height: 58px;
     display: flex;
@@ -53,7 +52,6 @@
     gap: 15px;
     margin-right: 5px;
 }
-
 
 .navbarItem {
     margin-right: 15px;  
@@ -64,14 +62,47 @@
     color:#FFFFFF; 
 }
 
-.navbarItemAvatar {
+.navbarAvatarBtn{
+    display: flex;
+    justify-content: center;
     border-radius: 50%;
     margin-right: 15px;
 }
 
+/* Estilos del dropdown */
+.dropstart{
+    position: relative;
+    display: inline-block;
+}
+
 .dropdown-toggle{
     margin-right: 15px;
-    padding: 0px
+    padding: 0px;
+    color: transparent;
+    position: absolute
+}
+
+.fa-caret-down{
+    color: white;
+}
+
+.dropdown-item {
+    color: #636363;
+    position: absolute;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 30%;
+    left: 0;
+    margin-top: 5px;
+    height: 45px;
+
+}
+
+.dropdown-item{
+    position: absolute;
+    height: 30px;
 }
 
 .linkText:hover {
@@ -84,20 +115,7 @@
     cursor: pointer;
 }
 
-.dropdown-item {
-    color: #636363;
-}
-
-.dropdown-menu{
-    position: relative;
-    height: 45px;
-
-}
-
-.dropdown-item{
-    position: absolute;
-    height: 30px;
-}
+/* Estilos modal */
 
 .modalBnt-Login{
     display: flex;
@@ -128,6 +146,7 @@
     height: 30px;
     margin-right: 8px;
 }
+
 #loginBtn:hover {
     background-color: #FFFFFF;
     border: 2px solid #FFFFFF;

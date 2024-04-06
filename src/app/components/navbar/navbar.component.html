@@ -11,44 +11,51 @@
                     linkRouting="/Init" [isUser]=true></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades"
                     linkRouting="/Community" [isUser]=true></app-link>
-                <app-link class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg" linkText="Solicitudes"
-                    [isUser]=true></app-link>
-                <app-link class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" linkText="Notificaciones"
-                    [isUser]=true></app-link>
+                <app-link-without-page class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg"
+                    linkText="Solicitudes" [isUser]=true></app-link-without-page>
+                <app-link-without-page class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg"
+                    linkText="Notificaciones" [isUser]=true></app-link-without-page>
+                <div class="navbarAvatarBtn">
+                    <app-avatar class="navbarAvatar" selectedAvatar="assets\avatar\fortnite-1.jpg"
+                        userName="{{user.name}}">
+                    </app-avatar>
+                    <div class="btn-group dropstart">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" (click)="logOut()" [routerLink]="['/Landing']">Cerrar
+                                    sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-                <app-link class="navbarItemAvatar" linkImg="assets\avatar\call_of_duty-2.jpg" linkText="{{user.name}}"
-                    linkRouting="" [isUser]=true></app-link>
-
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" (click)="logOut()" [routerLink]="['/Landing']">Cerrar sesión</a>
-                    </li>
-                </ul>
             </div>
-        </div>
-        } @else {
-        <div class="navbarLinks">
-            <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
-                linkRouting="/Landing" [isUser]=false></app-link>
-            <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
-                linkText="Publicaciones" linkRouting="" [isUser]=false></app-link>
-            <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
-                linkRouting="/Community" [isUser]=false></app-link>
-            <!-- Created button for Login with modal -->
-            <div class="modalBnt-Login">
-                <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    <i class="fa-solid fa-user"></i>
-                    Login
-                </button>
-                <!-- Modal -->
-                <div class="modalLogin">
-                    <app-form-login-navbar></app-form-login-navbar>
+
+            } @else {
+            <div class="navbarLinks">
+                <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                    linkRouting="/Landing" [isUser]=false></app-link>
+                <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
+                    linkText="Publicaciones" linkRouting="" [isUser]=false></app-link>
+                <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
+                    linkRouting="/Community" [isUser]=false></app-link>
+                <!-- Created button for Login with modal -->
+                <div class="modalBnt-Login">
+                    <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-user"></i>
+                        Login
+                    </button>
+                    <!-- Modal -->
+                    <div class="modalLogin">
+                        <app-form-login-navbar></app-form-login-navbar>
+                    </div>
                 </div>
             </div>
+            }
         </div>
-        }
     </div>
 </nav>
