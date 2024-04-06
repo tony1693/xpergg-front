@@ -167,7 +167,6 @@ span {
     position: relative;
     bottom: 63%;
     left: 3%;
-    /* border: 1px solid #707070;  */
 }
 
 .kratos {
@@ -205,7 +204,6 @@ span {
     position: relative;
     bottom: 119%;
     left: 70%;
-    /* border: 1px solid #707070;  */
 }
 
 .superMario {
@@ -373,7 +371,6 @@ span {
     line-height: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    /* border: 1px solid #707070; */
 }
 
 .boxNews {
@@ -387,7 +384,6 @@ span {
     background: transparent;
     padding-top: 42px;
     padding-left: 3%;
-    /* border: 1px solid #707070; */
 }
 
 @media screen and (max-width: 768px) {
@@ -538,8 +534,6 @@ span {
     padding-top: 8%;
     gap: 2%;
     padding-right: 3%;
-
-    /* border: 1px solid #707070; */
 }
 
 @media screen and (max-width: 480px) {
