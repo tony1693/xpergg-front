@@ -354,10 +354,9 @@ span {
 
 .container2 {
     min-height: 100vh;
-    background-image: url('/src/assets/background/backgroun_landing_news.svg');
+    background-color: #0100500a;
     background-size: 100%;
-    background-repeat: no repeat;
-    background-color: #0100500D;
+    background-repeat: no-repeat;
 }
 
 .boxNewsLanding {
@@ -572,7 +571,7 @@ span {
     padding-top: 96px;
     background-color: #0100500a;
     background-size: 100%;
-    background-repeat: no repeat;
+    background-repeat: no-repeat;
     position: relative;
 }
 
