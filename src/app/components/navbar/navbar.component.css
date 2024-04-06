@@ -1,5 +1,5 @@
 .navbar {
-    padding: 0px;
+    padding: 40px;
     margin: 0px;
     width: 100%;
     height: 57px;
@@ -25,7 +25,7 @@
     width: 198px;
     height: 58px;
     padding: 0px;
-    margin-left: 20px;
+    margin-left: 40px;
     display: flex;
     justify-content: flex-start;
 
@@ -49,7 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 24px;
     margin-right: 5px;
 }
 
@@ -66,7 +66,8 @@
     display: flex;
     justify-content: center;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 40px;
+    margin-left: 20px;
 }
 
 /* Estilos del dropdown */
