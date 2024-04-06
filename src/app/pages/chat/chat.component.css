@@ -1,0 +1,17 @@
+.bigContainer{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red
+}
+
+.friendsContainer{
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid greenyellow
+}
