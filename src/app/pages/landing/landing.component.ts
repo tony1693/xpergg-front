@@ -12,7 +12,7 @@ import { NewsComponent } from '../news/news.component';
     standalone: true,
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
-    imports: [RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent,NewsComponent, TrendingNewsComponent]
+    imports: [RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent]
 })
 export class LandingComponent {
 
