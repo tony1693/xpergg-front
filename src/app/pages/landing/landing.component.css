@@ -654,8 +654,8 @@ span {
 }
 @media screen and (max-width: 480px) {
     .imgLandingComunidad {
-        width: 40%;
-        height:40%;
+        width: 60%;
+        height:60%;
         left: 67%;
         top:-22%
     }
@@ -666,8 +666,8 @@ span {
 }
 @media screen and (max-width: 480px) {
     .imageComunity {
-        width: 40%;
-        height:40%;
+        width: 60%;
+        height:60%;
         right: 10%;
         top:15%
     }
@@ -689,8 +689,7 @@ span {
 }
 @media screen and (max-width: 480px) {
     .boxMessage1 {
-        width: 70%;
-        height: 70%;
+      
         left: -140%;
         top:15%
     }
@@ -727,8 +726,6 @@ span {
 }
 @media screen and (max-width: 480px) {
     .boxMessage2 {
-        width: 70%;
-        height: 70%;
         left: -140%;
         top:15%
     }
