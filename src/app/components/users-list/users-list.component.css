@@ -79,16 +79,16 @@ img{
 .status.activo {
     color: #7CFC00;
     text-decoration-line:large bold;
-  }
+}
 
   / Cambia el color del texto para estado inactivo */
-  .status.inactivo {
+.status.inactivo {
     color: #636363;
     opacity: 60%;
-  }
+}
 .punto-gordo{
-     font-weight: bold;
-     width: 9px;
-     height: 9px;
-      margin-right: 0.5em;
+    font-weight: bold;
+    width: 9px;
+    height: 9px;
+    margin-right: 0.5em;
 }
