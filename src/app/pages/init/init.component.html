@@ -1,14 +1,13 @@
-
 <div class="container-init">
 
     <div class="news">
         <p>Noticias Destacadas</p>
         <div class="card-news">
-            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class = "viewAll" routerLink="">Ver Todas</a>
+            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class="viewAll" routerLink="">Ver Todas</a>
         </div>
         <div class="status">
             <p class="status-text">Mi Estado</p>
@@ -20,10 +19,12 @@
         <div class="new-post">
             <img class="avatarPost">
             <div class="info-post">
-                <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required #inputTextPost>
+                <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required
+                    #inputTextPost>
                 <input type="text" class="link-video" id="" placeholder="Link Video" required #inputLinkVideoPost>
             </div>
-            <button class="public-post" type="submit" (click)="addPost(inputTextPost, inputLinkVideoPost)">Publicar</button>
+            <button class="public-post" type="submit"
+                (click)="addPost(inputTextPost, inputLinkVideoPost)">Publicar</button>
         </div>
         <app-video-post></app-video-post>
     </div>
@@ -37,8 +38,8 @@
         <div class="new-friends">
             <app-users-list class="amigos" title="Sugerencias de Amistad"></app-users-list>
         </div>
-        
-        <button class="buttonCommunity" routerLink="">Accede a la comunidad</button>
+
+        <button class="buttonCommunity" routerLink="/Community">Accede a la comunidad</button>
 
     </div>
 

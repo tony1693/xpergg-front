@@ -1,0 +1,136 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.bigContainer{
+    border: 1px solid red;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    padding-top: 140px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../../assets/background/background_landing_chat.svg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.topContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100vw;
+    height: 85%
+}
+
+.leftContainer{
+    border: 1px solid greenyellow;
+    padding-top: 140px;
+    margin-left: 40px;
+    height: auto;
+    width: 300px;
+}
+
+.rightContainer{
+    height: 100%;
+    width: calc(100vw - 300px);
+    margin-right: 40px;
+}
+
+.aboveChat{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+.threadTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: center;
+    margin-right: 200px;
+    text-align: center;
+}
+
+.subject{
+    color: #7CFC00;
+    font-size: 12px;
+    font-family: 'Plus Jakarta Sans';
+    text-align: center;
+}
+
+p{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bolder;
+}
+
+.returnBtn{
+    background-color: #E100FF;
+    border: none;
+    color: white;
+    width: 190px;
+    height: 40px;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 22px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chatContainer{
+    margin-top: 10px;
+    height: 85%;
+    border: 2px solid #E100FF;
+    border-radius: 20px;
+    display: flex;
+    background-color: black;
+}
+
+.bottomContainer{
+    width: calc(100vw - 375px);
+    height: 105px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 31px;
+    margin-left: 340px;
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.msg{
+    margin-left: 33px;
+    margin-right: 50px;
+    width: 1200px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: none
+}
+
+.sendBtn{
+    background-color: #7F00FF;
+    height: 37px;
+    width: 140px;
+    border-radius: 16px;
+    border: none;
+    color: white;
+    font-size: 22px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    margin-right: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
