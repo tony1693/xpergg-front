@@ -8,7 +8,6 @@ import { InitComponent } from './pages/init/init.component';
 import { ChatComponent } from './pages/chat/chat.component';
 
 export const routes: Routes = [
-<<<<<<< HEAD
   { path: '', redirectTo: '/Landing', pathMatch: 'full' },
   { path: 'Landing', component: LandingComponent },
   { path: 'Register', component: RegisterComponent },
@@ -18,15 +17,4 @@ export const routes: Routes = [
   { path: 'HttpClient', component: HttpClient },
   { path: 'Community', component: CommunityComponent },
   { path: 'Chat', component: ChatComponent },
-=======
-    { path: '', redirectTo: '/Landing', pathMatch: 'full' },
-    { path: 'Landing', component: LandingComponent},
-    { path: 'Register', component: RegisterComponent},
-    { path: 'HttpClient', component:HttpClient},
-    { path: 'News', component: NewsComponent},
-    { path: 'Init', component: InitComponent},
-    { path: 'HttpClient', component:HttpClient},
-    { path: 'Community', component: CommunityComponent},
-
->>>>>>> main
 ];
