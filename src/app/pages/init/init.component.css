@@ -1,14 +1,12 @@
 
 .container-init {
-    padding-top: 74px;
+    padding-top: 140px;
     width: 100vw;
     height: 1962px;
-    background-image: url('../../../assets/background/background_community.svg');
+    background-image: url('../../../assets/background/background_community_threads.png');
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 100%;
-    opacity: 1;
-    position: absolute;
     display: flex;
 }
 
@@ -181,11 +179,9 @@ p {
 
 
 /* .card-online-friends{
-    width: 305px;
-    height: 50px;
-    background: #141414 0% 0% no-repeat padding-box;
-    border: 2px solid #E100FF;
-    border-radius: 18px;
+    height: 300px;
+    border: 1px solid red
+
 } */
 
 

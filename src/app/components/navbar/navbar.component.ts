@@ -21,7 +21,19 @@ import { FormLoginNavbarComponent } from '../form-login-navbar/form-login-navbar
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  public user: User | null = null;
+  public user: User | null = {
+    user_id: 1,
+    avatar: './assets/avatar/fortnite-1.jpg',
+    name: 'Juan Pérez',
+    email: 'juan@gmail.com',
+    nationality: 'Español',
+    aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
+    password: '********',
+    confirmPassword: '********',
+    status: true, // Usuario activo
+    platforms: ['Playstation', 'Nintendo'],
+    genres: ['Acción', 'Aventura']
+  };
 
   logOut() {
     console.log('Cerrando sesión');
