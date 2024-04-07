@@ -5,12 +5,8 @@
 }
 
 .container-main {
-    /* width: 100vw; */
-    /* height: 100vh; */
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-
 }
 
 .container1 {
@@ -36,16 +32,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 7%;
+    margin-top: 14%;
     gap: 1%
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .boxLanding1 {
-        width: 50%;
+        width: 70%;
+        padding-left: 30%;
     }
 }
 
+@media screen and (max-width: 480px) {
+    .boxLanding1 {
+        width: 50%;
+        padding-left: 50%;
+    }
+}
 
 .boxLanding1b {
     width: 50%;
@@ -60,7 +63,16 @@
     gap: 3%
 }
 
+
+@media screen and (max-width: 768px) {
+
+    .boxLanding1b {
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 480px) {
+
     .boxLanding1b {
         display: none;
     }
@@ -96,13 +108,10 @@
     color: #E100FF;
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .boxTitle {
-        /* padding-top: 20%; */
-        padding-left: 100%;
-        width: 200%;
-        font-size: 180%;
-        line-height: 35px;
+        font-size: 150%;
+        margin-left: 50%;
     }
 }
 
@@ -123,13 +132,11 @@ span {
     /* border: 1px solid #707070;  */
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
+
     .boxText {
-        padding-top: 20%;
-        padding-left: 100%;
-        width: 150%;
-        font-size: 80%;
-        line-height: 15px;
+        font-size: small;
+        padding-left: 50%;
     }
 }
 
@@ -143,15 +150,13 @@ span {
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
-
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
+
     .boxText2 {
-        padding-top: 40%;
-        padding-left: 100%;
-        width: 200%;
-        font-size: 70%;
+        font-size: x-small;
+        padding-left: 50%;
     }
 }
 
@@ -160,34 +165,36 @@ span {
     height: 506px;
     background: transparent;
     position: relative;
-    bottom: 66%;
+    bottom: 63%;
     left: 3%;
-    /* border: 1px solid #707070;  */
 }
 
-/* @media only screen and (max-width: 768px) {
-    .img {
-    
-        width: 40%;
-        height: 40%;
-        position: relative;
-        top: 95%;
-        left: 5%;
-    }
-}
-@media only screen and (max-width: 480px) {
-    .img {
-    
-        width: 50%;
-        height: 50%;
-        position: relative;
-        top:40%;
-        left: 2%;
-    }
-} */
 .kratos {
     width: 100%;
     object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .kratos {
+
+        width: 65%;
+        height: 65%;
+        position: relative;
+        top: 65%;
+        left: 15%;
+
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .kratos {
+
+        width: 60%;
+        height: 60%;
+        position: relative;
+        top: 90%;
+        left: 1%;
+    }
 }
 
 .img2 {
@@ -195,30 +202,35 @@ span {
     height: 334px;
     background: transparent;
     position: relative;
-    bottom: 118%;
+    bottom: 119%;
     left: 70%;
-    /* border: 1px solid #707070;  */
 }
 
-/* @media only screen and (max-width: 768px) {
-    .img2 {
-    
-        width: 40%;
-        height: 40%;
-        position: relative;
-        bottom: 100%;
-        left: 75%;
-    }
-}
-@media screen and (max-width: 480px) {
-    .img2 {
-        display: none;
-    }
-} */
 .superMario {
     width: 100%;
     object-fit: cover;
 }
+
+@media only screen and (max-width: 768px) {
+    .superMario {
+        width: 65%;
+        height: 65%;
+        position: relative;
+        bottom: -90%;
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .superMario {
+        width: 60%;
+        height: 60%;
+        position: relative;
+        top: 120%;
+        right: 30%;
+    }
+}
+
 
 #buttonRegister {
     width: 138px;
@@ -236,17 +248,13 @@ span {
     cursor: pointer;
 }
 
-/* @media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
+
     #buttonRegister {
-    
-        width: 20%;
-        height: 5%;
-        font-size: small;
-        position: absolute;
-        bottom: 7%;
-        right: 40%;
+        margin-left: 9%;
+        margin-top: 10%;
     }
-} */
+}
 
 #buttonRegister:hover {
     background-color: #1B1B1B;
@@ -260,6 +268,7 @@ span {
     border: 1px solid #E100FF;
     border-radius: 38px;
 }
+
 
 .img3b {
     width: 152px;
@@ -291,17 +300,6 @@ span {
     color: #FFFFFF;
 }
 
-/* @media only screen and (max-width: 768px) {
-    .socializa {
-    
-        width: 40%;
-        height: 40%;
-        position: relative;
-        top: 200%;
-        right: 20%;
-    }
-} */
-
 .conecta {
     width: 149px;
     height: 30px;
@@ -314,17 +312,6 @@ span {
     letter-spacing: 3.6px;
     color: #FFFFFF;
 }
-
-/* @media only screen and (max-width: 768px) {
-    .conecta {
-    
-        width: 40%;
-        height: 40%;
-        position: relative;
-        top: 350%;
-        right: 30%;
-    }
-} */
 
 .noticias {
     width: 149px;
@@ -339,25 +326,14 @@ span {
     color: #FFFFFF;
 }
 
-/* @media only screen and (max-width: 768px) {
-    .noticias {
-    
-        width: 40%;
-        height: 40%;
-        position: relative;
-        top: 400%;
-        left: 30%;
-    }
-} */
 
 /* landing container2 */
 
 .container2 {
     min-height: 100vh;
-    background-image: url('/src/assets/background/backgroun_landing_news.svg');
+    background-color: #0100500a;
     background-size: 100%;
-    background-repeat: no repeat;
-    background-color: #0100500D;
+    background-repeat: no-repeat;
 }
 
 .boxNewsLanding {
@@ -395,7 +371,6 @@ span {
     line-height: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    /* border: 1px solid #707070; */
 }
 
 .boxNews {
@@ -409,16 +384,15 @@ span {
     background: transparent;
     padding-top: 42px;
     padding-left: 3%;
-    /* border: 1px solid #707070; */
 }
 
-/* @media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .boxNews {
         width: 100%;
         height: 100%;
         font-size: x-small;
     }
-} */
+}
 
 .buttonNews {
     height: 40px;
@@ -427,7 +401,7 @@ span {
     justify-content: center;
     align-self: center;
     text-align: center;
-    padding-top: 35px;
+    padding-top: 60px;
 }
 
 #buttonNews {
@@ -447,7 +421,7 @@ span {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #buttonNews {
 
         width: 15%;
@@ -459,6 +433,12 @@ span {
     }
 }
 
+@media screen and (max-width: 480px) {
+    #buttonNews {
+        margin-top: 12%;
+    }
+}
+
 #buttonNews:hover {
     background-color: #1B1B1B;
 }
@@ -466,7 +446,7 @@ span {
 /* landing container3 */
 
 .container3 {
-  
+
     height: 525px;
     background-image: url("../../../assets/background/background_landing_chat.svg");
     background-size: 100%;
@@ -483,9 +463,16 @@ span {
     color: #1B1B1B;
     padding-top: 8%;
     padding-left: 13%;
-
-    /* border: 1px solid #707070; */
 }
+
+@media screen and (max-width: 768px) {
+    .boxChat {
+        width: 70%;
+        height: 70%;
+        padding-left: 6%;
+    }
+}
+
 
 .boxTitleLanding3 {
     width: 330px;
@@ -537,13 +524,6 @@ span {
     ;
 }
 
-.imgLandingChat {
-    width: 40%;
-    position: relative;
-    left: 50%;
-    bottom: 250px;
-}
-
 .boxLogosPlatforms {
     display: flex;
     flex-direction: row;
@@ -552,15 +532,55 @@ span {
     font-style: normal;
     color: #1B1B1B;
     padding-top: 8%;
-    gap: 4%
-        /* border: 1px solid #707070; */
+    gap: 2%;
+    padding-right: 3%;
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
     .boxLogosPlatforms {
-        display: none;
+        padding-top: 20%;
+        padding-right: 10%;
     }
-} */
+}
+
+.imgLandingChat {
+    width: 40%;
+    position: relative;
+    left: 50%;
+    bottom: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    .imgLandingChat {
+        width: 70%;
+        height: 70%;
+        left: 45%;
+        bottom: 75%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imgLandingChat {
+        left: 42%;
+        bottom: 50%;
+
+    }
+}
+
+.imageChat {
+    width: 367px;
+    height: 348px;
+}
+
+@media screen and (max-width: 480px) {
+    .imageChat {
+        width: 60%;
+        height: 60%;
+        left: 50%;
+        bottom: 80%;
+    }
+}
+
 
 /* landing container4 */
 
@@ -568,11 +588,12 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 96px;
+    padding-bottom: 140px;
     background-color: #0100500a;
     background-size: 100%;
-    background-repeat: no repeat;
+    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -602,7 +623,13 @@ span {
     line-height: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
+}
 
+@media screen and (max-width: 480px) {
+    .boxTextLanding4 {
+        width: 90%;
+        font-size: x-small;
+    }
 }
 
 #buttonRegister4 {
@@ -627,9 +654,47 @@ span {
 
 .imgLandingComunidad {
     position: absolute;
-    bottom: -40px;
-    left: 45px;
+    bottom: -70px;
+    left: 65px;
+}
 
+@media screen and (max-width: 768px) {
+    .imgLandingComunidad {
+        width: 50%;
+        height: 50%;
+        left:10%;
+        top: 10%
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imgLandingComunidad {
+        width: 60%;
+        height: 60%;
+        left: 67%;
+        top: -22%
+    }
+}
+
+.imageComunity {
+    width: 491px;
+    height: 307px;
+}
+@media screen and (max-width: 768px) {
+    .imageComunity {
+       width: 95%;
+        right: 10%;
+        top: 15%
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imageComunity {
+        width: 60%;
+        height: 60%;
+        right: 10%;
+        top: 15%
+    }
 }
 
 .box2 {
@@ -645,6 +710,14 @@ span {
     padding: 20px;
     position: relative;
 
+}
+
+@media screen and (max-width: 480px) {
+    .boxMessage1 {
+
+        left: -140%;
+        top: 15%
+    }
 }
 
 .pmessage1a {
@@ -675,6 +748,13 @@ span {
     padding: 20px;
     position: relative;
     margin-left: 32px;
+}
+
+@media screen and (max-width: 480px) {
+    .boxMessage2 {
+        left: -140%;
+        top: 15%
+    }
 }
 
 .pmessage2a {
