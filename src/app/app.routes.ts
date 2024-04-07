@@ -4,6 +4,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HttpClient } from '@angular/common/http';
 import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
+import { ThreadsComponent } from './pages/threads/threads.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/Landing', pathMatch: 'full' },
@@ -12,6 +13,6 @@ export const routes: Routes = [
     { path: 'HttpClient', component:HttpClient},
     { path: 'News', component: NewsComponent},
     { path: 'Init', component: InitComponent},
-    { path: 'HttpClient', component:HttpClient}
-
+    { path: 'HttpClient', component:HttpClient},
+    { path: 'Threads', component:ThreadsComponent},
 ];
