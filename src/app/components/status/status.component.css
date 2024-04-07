@@ -8,8 +8,9 @@
   display: inline-block;
   text-align: center;
   /* width: 35px; */
-  width: 180px;
+  width: 275px;
   height: 46px;
+  margin-top: -10px;
   
 }
 

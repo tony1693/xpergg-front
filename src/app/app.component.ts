@@ -12,6 +12,7 @@ import { FormLoginComponent } from './components/form-login/form-login.component
 import { DropdownsRequestsComponent } from './components/dropdowns-requests/dropdowns-requests.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import { InitComponent } from './pages/init/init.component';
     InitComponent,
     RouterLinkActive,
     NewsComponent,
+    ChatComponent,
   ],
 })
 export class AppComponent {

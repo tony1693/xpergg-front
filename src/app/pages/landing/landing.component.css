@@ -1,14 +1,98 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 .container-main {
-    width: 100vw;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container1 {
-    width: 100vw;
+
     height: 690px;
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
-    background-repeat: no repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 480px) {
+    .container1 {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.boxLanding1 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14%;
+    gap: 1%
+}
+
+@media only screen and (max-width: 768px) {
+    .boxLanding1 {
+        width: 70%;
+        padding-left: 30%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .boxLanding1 {
+        width: 50%;
+        padding-left: 50%;
+    }
+}
+
+.boxLanding1b {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    margin-left: 25%;
+    gap: 3%
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .boxLanding1b {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .boxLanding1b {
+        display: none;
+    }
+}
+
+.boxLanding1c {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    gap: 2%
+}
+
+@media screen and (max-width: 768px) {
+    .boxLanding1c {
+        display: none;
+    }
 }
 
 .boxTitle {
@@ -20,11 +104,15 @@
     font-size: 58px;
     line-height: 62px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
-    top: 25%;
-    left: 26%;
     /* border: 1px solid #707070;  */
     color: #E100FF;
+}
+
+@media screen and (max-width: 480px) {
+    .boxTitle {
+        font-size: 150%;
+        margin-left: 50%;
+    }
 }
 
 span {
@@ -40,11 +128,16 @@ span {
     font-size: 25px;
     line-height: 31px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
     color: #FFFFFF;
-    top: 48%;
-    left: 32%;
     /* border: 1px solid #707070;  */
+}
+
+@media screen and (max-width: 480px) {
+
+    .boxText {
+        font-size: small;
+        padding-left: 50%;
+    }
 }
 
 .boxText2 {
@@ -57,30 +150,87 @@ span {
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
-    position: absolute;
-    top: 55%;
-    left: 33%;
+}
+
+@media screen and (max-width: 480px) {
+
+    .boxText2 {
+        font-size: x-small;
+        padding-left: 50%;
+    }
 }
 
 .img {
     width: 254px;
-    height: 483px;
+    height: 506px;
     background: transparent;
-    position: absolute;
-    bottom: 0;
-    left: 2%;
-    /* border: 1px solid #707070;  */
+    position: relative;
+    bottom: 63%;
+    left: 3%;
+}
+
+.kratos {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .kratos {
+
+        width: 65%;
+        height: 65%;
+        position: relative;
+        top: 65%;
+        left: 15%;
+
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .kratos {
+
+        width: 60%;
+        height: 60%;
+        position: relative;
+        top: 90%;
+        left: 1%;
+    }
 }
 
 .img2 {
     width: 347px;
     height: 334px;
     background: transparent;
-    position: absolute;
-    bottom: 2%;
-    right: 2%;
-    /* border: 1px solid #707070;  */
+    position: relative;
+    bottom: 119%;
+    left: 70%;
 }
+
+.superMario {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .superMario {
+        width: 65%;
+        height: 65%;
+        position: relative;
+        bottom: -90%;
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .superMario {
+        width: 60%;
+        height: 60%;
+        position: relative;
+        top: 120%;
+        right: 30%;
+    }
+}
+
 
 #buttonRegister {
     width: 138px;
@@ -88,18 +238,22 @@ span {
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 10px;
-    position: absolute;
-    top: 65%;
-    left: 43%;
     text-align: center;
     font-weight: bold;
     font-style: normal;
     font-size: 17px;
     line-height: 22px;
     font-family: "Plus Jakarta Sans", sans-serif;
-
     color: #FFFFFF;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+
+    #buttonRegister {
+        margin-left: 9%;
+        margin-top: 10%;
+    }
 }
 
 #buttonRegister:hover {
@@ -113,10 +267,8 @@ span {
     background: transparent url('../../../assets/Images/socializeBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 38px;
-    position: absolute;
-    top: 80%;
-    left: 29%;
 }
+
 
 .img3b {
     width: 152px;
@@ -124,9 +276,6 @@ span {
     background: transparent url('../../../assets/Images/shareBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 38px;
-    position: absolute;
-    top: 80%;
-    left: 43%;
 }
 
 .img3c {
@@ -135,10 +284,8 @@ span {
     background: transparent url('../../../assets/Images/newsBox.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 34px;
-    position: absolute;
-    top: 80%;
-    left: 57%;
 }
+
 
 .socializa {
     width: 166px;
@@ -151,9 +298,6 @@ span {
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
-    position: absolute;
-    top: 75%;
-    left: 29%;
 }
 
 .conecta {
@@ -167,9 +311,6 @@ span {
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
-    position: absolute;
-    top: 75%;
-    left: 43%;
 }
 
 .noticias {
@@ -183,21 +324,25 @@ span {
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
-    position: absolute;
-    top: 75%;
-    left: 57%;
 }
+
 
 /* landing container2 */
 
 .container2 {
-    width: 100vw;
-    height: 640px;
-    background-image: url('/src/assets/background/backgroun_landing_news.svg');
+    min-height: 100vh;
+    background-color: #0100500a;
     background-size: 100%;
-    background-repeat: no repeat;
-    background-color: #0100500D;
-    opacity: 100%;
+    background-repeat: no-repeat;
+}
+
+.boxNewsLanding {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7%;
 }
 
 .boxTitleLanding2 {
@@ -210,9 +355,6 @@ span {
     line-height: 61px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 120%;
-    left: 28%;
 }
 
 .spanLanding2 {
@@ -229,33 +371,46 @@ span {
     line-height: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 133%;
-    left: 32%;
-    /* border: 1px solid #707070; */
 }
 
 .boxNews {
+    height: 160px;
     display: flex;
     flex-direction: row;
-    width: 840px;
-    height: 160px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
     background: transparent;
-    /* border: 1px solid #707070; */
-    position: absolute;
-    top: 145%;
-    left: 13%;
+    padding-top: 42px;
+    padding-left: 3%;
+}
+
+@media screen and (max-width: 768px) {
+    .boxNews {
+        width: 100%;
+        height: 100%;
+        font-size: x-small;
+    }
+}
+
+.buttonNews {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding-top: 60px;
 }
 
 #buttonNews {
     width: 138px;
     height: 38px;
+    margin-top: 10%;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
     border-radius: 10px;
-    position: absolute;
-    top: 185%;
-    left: 43%;
     text-align: center;
     font-weight: bold;
     font-style: normal;
@@ -266,6 +421,24 @@ span {
     cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+    #buttonNews {
+
+        width: 15%;
+        height: 4%;
+        font-size: x-small;
+        position: absolute;
+        top: 110%;
+        right: 39%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #buttonNews {
+        margin-top: 12%;
+    }
+}
+
 #buttonNews:hover {
     background-color: #1B1B1B;
 }
@@ -273,14 +446,33 @@ span {
 /* landing container3 */
 
 .container3 {
-    width: 100vw;
+
     height: 525px;
     background-image: url("../../../assets/background/background_landing_chat.svg");
     background-size: 100%;
-    background-repeat: no repeat;
-    background-color: #0100500D;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     opacity: 100%;
 }
+
+.boxChat {
+    text-align: start;
+    font-weight: normal;
+    font-style: normal;
+    color: #1B1B1B;
+    padding-top: 8%;
+    padding-left: 13%;
+}
+
+@media screen and (max-width: 768px) {
+    .boxChat {
+        width: 70%;
+        height: 70%;
+        padding-left: 6%;
+    }
+}
+
 
 .boxTitleLanding3 {
     width: 330px;
@@ -291,9 +483,6 @@ span {
     font-size: 48px;
     line-height: 55px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
-    top: 220%;
-    left: 18%;
     color: #E100FF;
 }
 
@@ -311,9 +500,7 @@ span {
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
-    position: absolute;
-    top: 240%;
-    left: 18%;
+    padding-top: 10px;
 }
 
 #buttonRegister3 {
@@ -329,9 +516,6 @@ span {
     border: 1px solid #E100FF;
     color: #E100FF;
     border-radius: 10px;
-    position: absolute;
-    top: 250%;
-    left: 18%;
     cursor: pointer;
 }
 
@@ -340,45 +524,77 @@ span {
     ;
 }
 
+.boxLogosPlatforms {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: normal;
+    font-style: normal;
+    color: #1B1B1B;
+    padding-top: 8%;
+    gap: 2%;
+    padding-right: 3%;
+}
+
+@media screen and (max-width: 480px) {
+    .boxLogosPlatforms {
+        padding-top: 20%;
+        padding-right: 10%;
+    }
+}
+
 .imgLandingChat {
-    position: absolute;
-    top: 215%;
-    right: 14%;
-}
-
-.imgPs {
-    position: absolute;
-    top: 270%;
-    left: 35%;
-}
-
-.imgXbox {
-    position: absolute;
-    top: 270%;
-    left: 41%;
-}
-
-.imgNintendo {
-    position: absolute;
-    top: 270%;
+    width: 40%;
+    position: relative;
     left: 50%;
+    bottom: 400px;
 }
 
-.imgPc {
-    position: absolute;
-    top: 270%;
-    left: 60%;
+@media screen and (max-width: 768px) {
+    .imgLandingChat {
+        width: 70%;
+        height: 70%;
+        left: 45%;
+        bottom: 75%;
+    }
 }
+
+@media screen and (max-width: 480px) {
+    .imgLandingChat {
+        left: 42%;
+        bottom: 50%;
+
+    }
+}
+
+.imageChat {
+    width: 367px;
+    height: 348px;
+}
+
+@media screen and (max-width: 480px) {
+    .imageChat {
+        width: 60%;
+        height: 60%;
+        left: 50%;
+        bottom: 80%;
+    }
+}
+
 
 /* landing container4 */
 
 .container4 {
-    width: 100vw;
-    height: 800px;
-    background-image: url('/src/assets/background/background_landing_comunidad.svg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 96px;
+    padding-bottom: 140px;
+    background-color: #0100500a;
     background-size: 100%;
-    background-repeat: no repeat;
-    background-color: #0100500D;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .boxTitleLanding4 {
@@ -391,9 +607,6 @@ span {
     line-height: 51px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #E100FF;
-    position: absolute;
-    top: 295%;
-    left: 30%;
 }
 
 .spanLanding4 {
@@ -410,25 +623,27 @@ span {
     line-height: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
-    position: absolute;
-    top: 313%;
-    left: 32%;
+}
+
+@media screen and (max-width: 480px) {
+    .boxTextLanding4 {
+        width: 90%;
+        font-size: x-small;
+    }
 }
 
 #buttonRegister4 {
     width: 138px;
     height: 38px;
-    background: #7F00FF 0% 0% no-repeat padding-box;
+    background: #7F00FF;
     border-radius: 10px;
+    border: none;
     text-align: center;
     font-weight: bold;
     font-size: 17px;
     line-height: 22px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
-    position: absolute;
-    top: 320%;
-    left: 44%;
     cursor: pointer;
 }
 
@@ -439,10 +654,53 @@ span {
 
 .imgLandingComunidad {
     position: absolute;
-    top: 335%;
-    left: 16%;
-    cursor: pointer;
+    bottom: -70px;
+    left: 65px;
 }
+
+@media screen and (max-width: 768px) {
+    .imgLandingComunidad {
+        width: 50%;
+        height: 50%;
+        left:10%;
+        top: 10%
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imgLandingComunidad {
+        width: 60%;
+        height: 60%;
+        left: 67%;
+        top: -22%
+    }
+}
+
+.imageComunity {
+    width: 491px;
+    height: 307px;
+}
+@media screen and (max-width: 768px) {
+    .imageComunity {
+       width: 95%;
+        right: 10%;
+        top: 15%
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imageComunity {
+        width: 60%;
+        height: 60%;
+        right: 10%;
+        top: 15%
+    }
+}
+
+.box2 {
+    padding-left: 32px;
+}
+
 
 .boxMessage1 {
     width: 269px;
@@ -451,8 +709,15 @@ span {
     border-radius: 33px;
     padding: 20px;
     position: relative;
-    top: 40%;
-    left: 58%;
+
+}
+
+@media screen and (max-width: 480px) {
+    .boxMessage1 {
+
+        left: -140%;
+        top: 15%
+    }
 }
 
 .pmessage1a {
@@ -475,13 +740,6 @@ span {
     margin: 0;
 }
 
-.imgDecorador1 {
-
-    position: absolute;
-    top: 349%;
-    left: 65%;
-}
-
 .boxMessage2 {
     width: 269px;
     height: auto;
@@ -489,16 +747,21 @@ span {
     border-radius: 33px;
     padding: 20px;
     position: relative;
-    top: 45%;
-    left: 61%;
+    margin-left: 32px;
+}
+
+@media screen and (max-width: 480px) {
+    .boxMessage2 {
+        left: -140%;
+        top: 15%
+    }
 }
 
 .pmessage2a {
-    font-weight: normal;
-    font-style: normal;
-    font-size: 11px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
     line-height: 17px;
-    font-family: "Plus Jakarta Sans", sans-serif;
     color: #E100FF;
     margin: 0;
     padding-bottom: 3%;
@@ -514,16 +777,29 @@ span {
     margin: 0;
 }
 
-.imgDecorador2 {
+.imgDecorador1 {
     position: absolute;
-    top: 372%;
-    left: 72%;
+    bottom: -24px;
+    right: 0;
 }
 
-/* Estilo para el footer */
-footer {
+.imgDecorador2 {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 20px;
+    bottom: -24px;
+    right: 24px;
+}
+
+.bottonContainer {
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 48px;
+}
+
+.bottonContainerRight {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 32px;
 }

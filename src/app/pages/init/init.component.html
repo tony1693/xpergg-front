@@ -3,11 +3,19 @@
     <div class="news">
         <p>Noticias Destacadas</p>
         <div class="card-news">
+<<<<<<< HEAD
             <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
             <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
             <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
             <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
             <a class="viewAll" routerLink="">Ver Todas</a>
+=======
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <a class = "viewAll" routerLink="/News">Ver Todas</a>
+>>>>>>> main
         </div>
         <div class="status">
             <p class="status-text">Mi Estado</p>
@@ -32,13 +40,17 @@
     <div class="friends">
 
         <div class="card-online-friends">
-            <app-users-list class="amigos" title="Amigos Disponibles"></app-users-list>
+            <app-users-list class="amigos" title="Amigos Disponibles" [withStatus] = "true" [usersList] = "onlineFriends"></app-users-list>
         </div>
 
-        <div class="new-friends">
-            <app-users-list class="amigos" title="Sugerencias de Amistad"></app-users-list>
+        <div class="card-online-friends">
+            <app-users-list class="amigos" title="Sugerencias de Amistad" [usersList] = "sugerenciaFriends"></app-users-list>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> main
         <button class="buttonCommunity" routerLink="/Community">Accede a la comunidad</button>
 
     </div>

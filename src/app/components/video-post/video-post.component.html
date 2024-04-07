@@ -13,9 +13,9 @@
         <p class="titlePost">{{ titlePost }}</p>
     </div>
     <div class="video-interactions">    
-        <button class="likes" (click)="addLike()">
+        <a class="likes" (click)="addLike()">
            <img [src]="likeOff" alt="">
-        </button>     
+        </a>     
         <span class="likes-count">{{ likesCount }}</span>
         <a href="" class="view-comments">Ver comentarios 300K</a>
     </div>
