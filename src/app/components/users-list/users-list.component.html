@@ -1,17 +1,16 @@
 <div>
   {{title}}
-    <div class="form-style">
-      @for (user of usersList; track user.user_id) {
-              <div class="friend">
-                <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
-                <div class="name">{{user.name}}</div>
-                @if (withStatus) {
-                  <div class="status activo"><span class="punto-gordo">•</span>Disponible</div>
-                }
-                
-             </div>
-            }
+  <div class="form-style">
+    @for (user of usersList; track user.user_id) {
+    <div class="friend">
+      <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
+      <div class="name">{{user.name}}</div>
+      @if (withStatus) {
+      <div class="status activo"><span class="punto-gordo">•</span>Disponible</div>
+      }
 
-      </div>
+    </div>
+    }
+
+  </div>
 </div>
-

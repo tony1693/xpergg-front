@@ -57,7 +57,7 @@ h1 {
     justify-content: center;
     align-content: center;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .modal-body{
@@ -129,7 +129,7 @@ h1 {
     width: 84px;
     height: 30px;
     margin: 5px;
-    background: #1B1B1B;
+    background: #E100FF;
     border: 1px solid #E100FF;
     border-radius: 10px;
     opacity: 1;
@@ -166,3 +166,7 @@ h1 {
     border: 1px solid #1B1B1B;
 }
 
+.reactiveForm.valid{
+    background-color:#E100FF;
+    border: 1px solid #1B1B1B;
+}
