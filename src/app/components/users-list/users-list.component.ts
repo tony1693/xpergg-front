@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import { StatusComponent } from '../status/status.component';
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [],
+  imports: [StatusComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
@@ -12,7 +13,8 @@ import { User } from '../../models/user';
 export class UsersListComponent implements OnInit {
   users: User[] = [];
   @Input() title: string= "";
-  @Input() status: boolean= true;
+  @Input() withStatus: boolean= false;
+  @Input() usersList: any[] = [];
 
   constructor() { }
 
