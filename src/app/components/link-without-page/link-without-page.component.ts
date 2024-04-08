@@ -1,17 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-link',
+  selector: 'app-link-without-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterLinkActive],
-  templateUrl: './link.component.html',
-  styleUrl: './link.component.css',
+  imports: [CommonModule],
+  templateUrl: './link-without-page.component.html',
+  styleUrl: './link-without-page.component.css',
 })
-export class LinkComponent {
+export class LinkWithoutPageComponent {
   @Input() public linkText: string = 'Home';
   @Input() public linkImg: string = 'assets/icon/icono-home-landing-nr.svg';
-  @Input() public linkRouting: string = '';
   @Input() public isUser: boolean = false;
 }

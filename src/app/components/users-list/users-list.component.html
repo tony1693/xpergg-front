@@ -1,27 +1,16 @@
 <div>
   {{title}}
-  @if (title == "Amigos Disponibles") {
-    <div class="form-style">
-      @for (user of users; track user.user_id) {
-              <div class="friend">
-                <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
-                <div class="name">{{user.name}}</div>
-                <div class="status {{user.status ? 'activo' : 'inactivo'}}"><span class="punto-gordo">•</span>{{user.status ? ' Disponible' : ' No Disponible'}}</div>
-             </div>
-            }
-    
-      </div>
-  } @else {
-    <div class="form-style-suger">
-      @for (user of users; track user.user_id) {
-              <div class="friend2">
-                <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
-                <div class="name">{{user.name}}</div>
-                
-             </div>
-            }
-    
-      </div>
-  }
+  <div class="form-style">
+    @for (user of usersList; track user.user_id) {
+    <div class="friend">
+      <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
+      <div class="name">{{user.name}}</div>
+      @if (withStatus) {
+      <div class="status activo"><span class="punto-gordo">•</span>Disponible</div>
+      }
 
+    </div>
+    }
+
+  </div>
 </div>
