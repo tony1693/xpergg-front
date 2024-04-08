@@ -11,7 +11,7 @@
 
 .container1 {
 
-    height: 690px;
+    height: 100vh;
     background-image: url("../../../assets/background/background_landing_header.svg");
     background-size: 100%;
     background-repeat: no-repeat;
