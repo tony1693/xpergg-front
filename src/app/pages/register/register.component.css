@@ -1,71 +1,59 @@
 .container-register {
-    width: 100vw;
-    height: 100vh;
+    z-index: -3;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url('../../../assets/background/background_register.svg');
     background-size: cover;
     background-repeat: no-repeat;
+    flex-wrap: wrap;
 }
 
-.boxForm {
-    width: 350px;
-    height: 460px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 37px;
-    opacity: 1;
-    position: absolute;
-    bottom: 12%;
-    left: 60%;
-    /* border: 1px solid #707070;  */
-}
+.img{
 
-.img {
-    position: absolute;
-    bottom: 0;
-    left: 35%;
-    /* border: 1px solid #707070;  */
-}
+    width: 542px;
+    height: 870px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
 
-.boxTitle {
-    width: 330px;
-    height: 183px;
-    text-align: start;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 48px;
-    font-family: 'Plus Jakarta Sans';
-
-    position: absolute;
-    /* border: 1px solid #707070; */
-    bottom: 43%;
-    left: 16%;
-    color: #FFFFFF;
+    
 
 }
 
-.boxText {
+img{
 
-    width: 267px;
-    height: 59px;
-    text-align: left;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 19px;
-    font-family: 'Plus Jakarta Sans';
-
-    letter-spacing: 0px;
-    color: black;
-    opacity: 1;
-    position: absolute;
-    bottom: 35%;
-    left: 16%;
-    /* border: 1px solid #707070; */
-    color: #FFFFFF;
+    width: 100%;
+    object-fit: cover;
+    
+    
 }
 
-span {
-    color: #E100FF;
+.boxTitle{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+
+h1{
+    font-size: 80px;
+    font-size: bold;
+    color: white;
+    line-height: 85px;
+    padding-bottom: 30px;
+}
+
+span{
+    color:#E100FF ;
+}
+
+p{
+    color: white;
+    width: 400px;
 }
