@@ -1,0 +1,17 @@
+<div>
+    {{title}}
+    <div class="form-style">
+        @for (user of usersChat; track user.user_id) {
+        <div class="friend">
+            <div class="friendContent">
+                <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
+                <div class="name">{{user.name}}</div>
+            </div>
+            <div class="borderLine"></div>
+            @if (withStatus) {
+            <div class="status activo"><span class="punto-gordo">•</span>Disponible</div>
+            }
+        </div>
+        }
+    </div>
+</div>
