@@ -13,7 +13,7 @@ import { User } from '../../models/user';
 export class UserListChatComponent implements OnInit {
   usersChat: User[] = [];
   @Input() title: string = '';
-  @Input() withStatus: boolean = false;
+  @Input() status: boolean = true;
   @Input() usersList: any[] = [];
 
   constructor() {}
