@@ -6,6 +6,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -16,4 +17,5 @@ export const routes: Routes = [
   { path: 'init', component: InitComponent },
   { path: 'community', component: CommunityComponent },
   { path: 'chat', component: ChatComponent },
+  { path: 'edit-profile', component: EditProfileComponent },
 ];
