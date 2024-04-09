@@ -29,6 +29,12 @@
     padding-bottom: 15px;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .borderLine{
     width: 70%; 
     height: 1px;
