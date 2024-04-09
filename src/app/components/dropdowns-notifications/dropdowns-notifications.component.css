@@ -1,0 +1,37 @@
+
+
+#button{
+    background-color:black ;
+    border-radius: 14px;
+    text-align: center;
+    font: normal normal bold 18px/22px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+.dropdown-menu{
+    width: 400px;
+    height: 160px;
+    background: #FFFFFF;
+    border: 1px solid #707070;
+    border-radius: 41px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+
+.dropdown-item-text{
+    display: flex;
+    flex-direction: column;
+    background-color: #707070;  
+}
+
+.dropdown-item-text2{
+    display: flex;
+    flex-direction: column;
+}
+.badge{
+    color: #E100FF;
+    border-radius:45%
+}
