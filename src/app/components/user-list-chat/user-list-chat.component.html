@@ -8,14 +8,19 @@
                 <div class="name">{{user.name}}</div>
             </div>
 
-            @if(status) {
+            @if(user.status) {
             <div class="available">
                 <div class="status-activo">
                     • Disponible
                 </div>
             </div>
 
+            }@else{
+            <div class="unavailable">
+                • Ausente
+            </div>
             }
+
         </div>
 
         <div class="container">

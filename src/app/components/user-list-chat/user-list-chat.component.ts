@@ -50,7 +50,7 @@ export class UserListChatComponent implements OnInit {
         genres: ['Coches', 'Estrategia'],
       },
       {
-        user_id: 1,
+        user_id: 3,
         avatar: 'assets/avatar/call_of_duty-2.jpg',
         name: 'Judit',
         email: 'jbr@gmail.com',
