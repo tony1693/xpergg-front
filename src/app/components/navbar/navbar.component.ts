@@ -7,6 +7,9 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { FormLoginNavbarComponent } from '../form-login-navbar/form-login-navbar.component';
 import { AvatarComponent } from '../avatar/avatar.component';
 import { LinkWithoutPageComponent } from '../link-without-page/link-without-page.component';
+import { DropdownsNotificationsComponent } from '../dropdowns-notifications/dropdowns-notifications.component';
+import { DropdownsRequestsComponent } from '../dropdowns-requests/dropdowns-requests.component';
+import { DropdownsThreadsComponent } from '../dropdowns-threads/dropdowns-threads.component';
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +23,9 @@ import { LinkWithoutPageComponent } from '../link-without-page/link-without-page
     RouterLink,
     AvatarComponent,
     LinkWithoutPageComponent,
+    DropdownsNotificationsComponent,
+    DropdownsRequestsComponent,
+    DropdownsThreadsComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
