@@ -27,7 +27,7 @@
                         <label for="password" class="label">Contraseña</label>
                         <input class="control" placeholder="Password" type="password" name="password"
                             formControlName="password">
-                        <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
+
                         <!-- Mensaje de error para el campo de contraseña -->
                         @if ( (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched) &&
                         reactiveForm.get('password')?.invalid) {
