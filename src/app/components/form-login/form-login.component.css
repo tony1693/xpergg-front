@@ -1,26 +1,28 @@
 /* Estilos para el formulario de inicio de sesión */
 
 .containerForm {
-    width: 170px;
-    height: 190px;
-    border-radius: 24px;
+    width: 302px;
+    height: 311px;
+    border-radius: 34px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding:2%;
     background: #ffffff;
+    margin-right: -20px;
 
 }
 
 h2 {
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: 900;
+    font-size: 24px;
     line-height: 17px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #E100FF;
     margin-bottom: 10px;
     text-align: center;
+    padding-bottom: 15px;
 }
 
 .form {
@@ -30,7 +32,7 @@ h2 {
 
 .label {
     font-weight: medium;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 17px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #1B1B1B;
@@ -41,11 +43,12 @@ h2 {
 }
 input{
     align-self: center;
+    margin-bottom: 5px;
 }
 
 .control {
-    width: 134px;
-    height: 24px;
+    width: 250px;
+    height: 38px;
     background: #E100FF29;
     border-radius: 34px;
     padding-left: 5%;
@@ -54,15 +57,14 @@ input{
 }
 
 button {
-    width: 84px;
-    height: 20px;
-    background: #1B1B1B;
+    width: 131px;
+    height: 32px;
+    background-color: #1B1B1B;
     border: 1px solid #E100FF;
-    border-radius: 10px;
-    opacity: 1;
+    border-radius: 20px;
     text-align: center;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 15px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
@@ -72,11 +74,12 @@ button {
 
 .buttonLogin {
     text-align: center;
+    padding-top: 10px;
 }
 
-.buttonLogin[disabled] {
+/* .buttonLogin[disabled] {
     background-color: #707070;
-}
+} */
 
 .error {
     font-size:xx-small;

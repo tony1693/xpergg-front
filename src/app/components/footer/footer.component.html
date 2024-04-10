@@ -1,19 +1,26 @@
-
 <div class="footer-container">
-    <a class="provisional-logo" [href]="">XperGG</a>
-    <div class="navbarLinks">
-        <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
-            linkRouting=""></app-link>
-        <br>
-        <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg" linkText="Publicaciones"
-            linkRouting=""></app-link>
-        <br>
-        <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
-            linkRouting=""></app-link>
-        <br>
-        <button class="buttonRegister" routerLink="/Register">Registro</button>
+    <div class="navLogo-container">
+        <div class="containerLogo">
+            <img src="../../../assets/logo/Logo.png" alt="">
+        </div>
+        <div class="navbarLinks">
+            <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                linkRouting=""></app-link>
+            <br>
+            <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
+                linkText="Publicaciones" linkRouting="/init"></app-link>
+            <br>
+            <app-link class="navbarItem" linkImg="assets\icon\icono-comunidades-landing-nr.svg" linkText="Comunidad"
+                linkRouting="/community"></app-link>
+            <br>
+            <button class="buttonRegister" routerLink="/register">Registro</button>
+        </div>
+        <img class="footerImg" src="../../../assets/Images/imageFooter.png" alt="">
+        <div>
+            <app-form-login></app-form-login>
+        </div>
     </div>
-    <img class="footerImg" src="../../../assets/Images/imageFooter.png" alt="">
-    <app-form-login></app-form-login>
-</div>
 
+
+
+</div>
