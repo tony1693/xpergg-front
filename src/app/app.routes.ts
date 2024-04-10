@@ -5,15 +5,15 @@ import { HttpClient } from '@angular/common/http';
 import { CommunityComponent } from './pages/community/community.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
-import { ChatComponent } from './pages/chat/chat.component';
+import { ThreadsComponent } from './pages/threads/threads.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/landing', pathMatch: 'full' },
-  { path: 'landing', component: LandingComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'http-client', component: HttpClient },
-  { path: 'news', component: NewsComponent },
-  { path: 'init', component: InitComponent },
-  { path: 'community', component: CommunityComponent },
-  { path: 'chat', component: ChatComponent },
+    { path: '', redirectTo: '/Landing', pathMatch: 'full' },
+    { path: 'Landing', component: LandingComponent},
+    { path: 'Register', component: RegisterComponent},
+    { path: 'HttpClient', component:HttpClient},
+    { path: 'News', component: NewsComponent},
+    { path: 'Init', component: InitComponent},
+    { path: 'HttpClient', component:HttpClient},
+    { path: 'Threads', component:ThreadsComponent},
 ];

@@ -10,6 +10,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InitComponent } from './pages/init/init.component';
+import { ThreadsComponent } from './pages/threads/threads.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
 
@@ -28,6 +29,7 @@ import { ChatComponent } from './pages/chat/chat.component';
     InitComponent,
     TrendingNewsComponent,
     NewsComponent,
+    ThreadsComponent
     ChatComponent, 
     VideoPostComponent, 
     FormRegisterComponent
