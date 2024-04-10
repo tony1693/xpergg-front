@@ -7,10 +7,24 @@
                 <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
                 <div class="name">{{user.name}}</div>
             </div>
-            <div class="borderLine"></div>
-            @if (withStatus) {
-            <div class="status activo"><span class="punto-gordo">•</span>Disponible</div>
+
+            @if(user.status) {
+            <div class="available">
+                <div class="status-activo">
+                    • Disponible
+                </div>
+            </div>
+
+            }@else{
+            <div class="unavailable">
+                • Ausente
+            </div>
             }
+
+        </div>
+
+        <div class="container">
+            <div class="borderLine"></div>
         </div>
         }
     </div>

@@ -82,9 +82,16 @@ img{
 }
 
   /* / Cambia el color del texto para estado inactivo */
-  .status.inactivo {
+.unavailable {
     color: #636363;
     opacity: 60%;
+    font-size: 11px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px
 }
 .punto-gordo{
     font-weight: bold;

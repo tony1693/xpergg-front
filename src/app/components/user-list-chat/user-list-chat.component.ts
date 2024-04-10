@@ -13,7 +13,7 @@ import { User } from '../../models/user';
 export class UserListChatComponent implements OnInit {
   usersChat: User[] = [];
   @Input() title: string = '';
-  @Input() withStatus: boolean = false;
+  @Input() status: boolean = true;
   @Input() usersList: any[] = [];
 
   constructor() {}
@@ -48,6 +48,19 @@ export class UserListChatComponent implements OnInit {
         status: false, // Usuario inactivo
         platforms: ['Xbox'],
         genres: ['Coches', 'Estrategia'],
+      },
+      {
+        user_id: 3,
+        avatar: 'assets/avatar/call_of_duty-2.jpg',
+        name: 'Judit',
+        email: 'jbr@gmail.com',
+        nationality: 'Spanish',
+        aboutMe: 'test test test',
+        password: 'Test123',
+        confirmPassword: 'Test123',
+        status: true,
+        platforms: ['PS4, PC'],
+        genres: ['Sports, action'],
       },
     ];
   }

@@ -37,4 +37,6 @@ import { ChatComponent } from './pages/chat/chat.component';
 })
 export class AppComponent {
   title = 'xpergg-front';
+likesCount: any;
+commentsCount: any;
 }
