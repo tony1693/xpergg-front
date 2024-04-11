@@ -6,6 +6,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
 import { ThreadsComponent } from './pages/threads/threads.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -15,5 +16,6 @@ export const routes: Routes = [
     { path: 'news', component: NewsComponent},
     { path: 'init', component: InitComponent},
     { path: 'httpClient', component:HttpClient},
+    { path: 'profile', component: ProfileComponent},
     { path: 'threads', component:ThreadsComponent},
 ];
