@@ -21,39 +21,118 @@
                 </div>
             </div>
 
-            <div class=" editInterests">
+            <div class="editInterests">
                 <h1>Editar Intereses</h1>
                 <div class="platforms">
                     <p>Plataformas</p>
                     <div class="labelPlatforms">
-                        <label>
-                            <input type="checkbox" formControlName="ps">
+                        <label class="options">
+                            <input class="checkbox" type="checkbox" formControlName="ps">
                             <span>Ps</span>
                         </label>
-                        <label>
-                            <input type="checkbox" formControlName="xbox">
+                        <label class="options">
+                            <input class="checkbox" type="checkbox" formControlName="xbox">
                             <span>Xbox</span>
                         </label>
-                        <label>
-                            <input type="checkbox" formControlName="nintendo">
+                        <label class="options">
+                            <input class="checkbox" type="checkbox" formControlName="nintendo">
                             <span>Nintendo</span>
                         </label>
-                        <label>
-                            <input type="checkbox" formControlName="pc">
+                        <label class="options">
+                            <input class="checkbox" type="checkbox" formControlName="pc">
                             <span>Pc</span>
                         </label>
                     </div>
                 </div>
-                <div class="genre"></div>
+                <div class="genre">
+                    <p>Géneros</p>
+                    <div class="genres">
+                        <div class="checkbox1">
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Arcade</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Disparos</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Peleas</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Aventuras</span>
+                            </label>
+                        </div>
+                        <div class="checkbox1">
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Acción</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Puzzle</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Preguntas</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Deportes</span>
+                            </label>
+                        </div>
+                        <div class="checkbox1">
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="coches">
+                                <span>Coches</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="rol">
+                                <span>Rol</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="estrategia">
+                                <span>Estrategia</span>
+                            </label>
+                            <label class="options">
+                                <input class="checkbox" type="checkbox" formControlName="realidadVirtual">
+                                <span>Realidad Virtual</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="containerBottom">
+            <app-confirmation-modal buttonText="Editar"
+                confirmationText="¿Estás seguro de que deseas modificar el perfil?" closeModal="Cancelar"
+                acceptModal="Aceptar"></app-confirmation-modal>
+        </div>
+
+    </div>
+    <div class="modifyPasswordContainer">
+        <div class="passwordContent">
+            <h1>Editar Contraseña</h1>
+            <div class="editPassword">
+                <div class="editInputsPassword">
+                    <div class="inputPass">
+                        <label for="name">Nueva Contraseña</label>
+                        <input class="inputPassword" type="text" id="nombre">
+                    </div>
+                    <div class="inputPass">
+                        <label for="name">Repita Nueva Contraseña</label>
+                        <input class="inputPassword" type="text" id="nombre">
+                    </div>
+                    <div class="passwordBtn">
+                        <app-confirmation-modal></app-confirmation-modal>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="containerBottom">
-
-        </div>
-    </div>
-
-    <div class="modifyPasswordContainer">
 
     </div>
 </div>

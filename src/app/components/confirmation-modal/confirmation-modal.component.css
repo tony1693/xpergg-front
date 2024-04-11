@@ -13,6 +13,13 @@
     padding-bottom: 15px;
 }
 
+@media screen and (max-width: 1400px){
+    #triggerBtn{
+        width: 90px;
+        height: 30px
+    }
+}
+
 .modal-content{
     width: 450px;
     display: flex;
