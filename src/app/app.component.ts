@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { InitComponent } from './pages/init/init.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,8 @@ import { ChatComponent } from './pages/chat/chat.component';
     NewsComponent,
     ChatComponent, 
     VideoPostComponent, 
-    FormRegisterComponent
+    FormRegisterComponent, 
+    ConfirmationModalComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
