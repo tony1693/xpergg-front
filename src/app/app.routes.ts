@@ -9,11 +9,11 @@ import { ThreadsComponent } from './pages/threads/threads.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/Landing', pathMatch: 'full' },
-    { path: 'Landing', component: LandingComponent},
-    { path: 'Register', component: RegisterComponent},
-    { path: 'HttpClient', component:HttpClient},
-    { path: 'News', component: NewsComponent},
-    { path: 'Init', component: InitComponent},
-    { path: 'HttpClient', component:HttpClient},
-    { path: 'Threads', component:ThreadsComponent},
+    { path: 'landing', component: LandingComponent},
+    { path: 'register', component: RegisterComponent},
+    { path: 'httpClient', component:HttpClient},
+    { path: 'news', component: NewsComponent},
+    { path: 'init', component: InitComponent},
+    { path: 'httpClient', component:HttpClient},
+    { path: 'threads', component:ThreadsComponent},
 ];
