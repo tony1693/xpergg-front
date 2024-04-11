@@ -1,0 +1,64 @@
+
+<div class="container-profile">
+
+    <div class="user-info">
+        <img class="avatarUser">
+        <div class="user-data">
+            <div class="botton-edit">
+                <p class="myUser">MyUser</p>
+                <button class="button" routerLink="">Editar Perfil</button>
+            </div>
+            <p class="localidad">Localidad</p>
+            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut metus uma, dictum non sagititis at.</p>
+            <div class="count-data">
+                <p class="numero">Nº Amigos</p>
+                <p class="number">1000</p>
+                <p class="numero">Nº Post</p>
+                <p class="number2">24</p>
+            </div>
+        </div>
+        
+        <div class="interest-card">
+            <div class="interest-container">
+                <p class="interest">Intereses</p>
+                <div class="block">
+                    <div class="block2">
+                        <p class="platGen">Plataformas</p>
+                        <div class="interest-name">
+                            <p class="boxtype">Playstation</p>
+                            <p class="boxtype">Xbox</p>
+                            <p class="boxtype">Nintendo</p>
+                        </div>
+                    </div>
+                    <div class="block3">
+                        <p class="platGen">Géneros</p>
+                        <div class="interest-name2">
+                            <p class="boxtype">Acción</p>
+                            <p class="boxtype">Deportes</p>
+                            <p class="boxtype">Miedo</p>
+                            <p class="boxtype">Realidad Virtual</p>
+                            <p class="boxtype">Disparos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="posts-status-privateChats">
+
+        <div class="status">
+            <p class="status-text">Mi Estado</p>
+            <app-status></app-status>
+        </div>
+
+        <app-video-post></app-video-post>
+
+        <div class="card-online-friends">
+            <app-users-list class="amigos" title="Conversaciones Recientes"
+                [usersList]="recentPrivateChats"></app-users-list>
+        </div>
+        
+    </div>
+
+</div>
