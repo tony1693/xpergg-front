@@ -29,7 +29,7 @@ import { ChatComponent } from './pages/chat/chat.component';
     InitComponent,
     TrendingNewsComponent,
     NewsComponent,
-    ThreadsComponent
+    ThreadsComponent,
     ChatComponent, 
     VideoPostComponent, 
     FormRegisterComponent
