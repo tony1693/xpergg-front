@@ -8,7 +8,7 @@ import { InitComponent } from './pages/init/init.component';
 import { ThreadsComponent } from './pages/threads/threads.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/Landing', pathMatch: 'full' },
+    { path: '', redirectTo: '/landing', pathMatch: 'full' },
     { path: 'landing', component: LandingComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'httpClient', component:HttpClient},
