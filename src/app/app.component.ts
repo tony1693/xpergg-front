@@ -13,6 +13,7 @@ import { InitComponent } from './pages/init/init.component';
 import { ThreadsComponent } from './pages/threads/threads.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,8 @@ import { ChatComponent } from './pages/chat/chat.component';
     ThreadsComponent,
     ChatComponent, 
     VideoPostComponent, 
-    FormRegisterComponent
+    FormRegisterComponent,
+    ProfileComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
