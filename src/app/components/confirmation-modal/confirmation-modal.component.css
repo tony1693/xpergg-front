@@ -15,8 +15,11 @@
 
 @media screen and (max-width: 1400px){
     #triggerBtn{
-        width: 90px;
-        height: 30px
+        width: 80px;
+        height: 25px;
+        font-size: 18px;
+        padding: 0px;
+        justify-self: center;
     }
 }
 

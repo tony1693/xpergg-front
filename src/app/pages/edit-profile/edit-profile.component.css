@@ -116,6 +116,7 @@ label{
     border-radius: 52px;
     background-color: white;
     width: 100%;
+    padding-left: 10px;
 }
 
 .textInput2{
@@ -123,6 +124,7 @@ label{
     background-color: white;
     height: 70px;
     width: 100%;
+    padding-left: 10px;
 }
 
 /* Estilos de la parte de Editar Intereses */
@@ -211,6 +213,7 @@ input:checked{
     flex-direction: column;
     align-content: center;
     padding-bottom: 50px;
+    padding-top: 30px
 }
 
 .passwordContent{
@@ -258,21 +261,27 @@ input:checked{
 
 @media screen and (max-width: 1400px){
 
+    .bigContainer{
+        height: 100%;
+    }
+
     .modifyProfileContainer{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        padding-top: 10px;
         height: 75%;
+        margin-bottom: 0px;
     }
 
     .containerTop{
-        height: 85%;
+        height: 70%;
         width: auto;
-        padding-top: 5px;
+        padding-top: 15px;
         margin-left: 10px;
         display: flex;
         justify-items: center;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .editComponents {
@@ -322,5 +331,9 @@ input:checked{
         background-color: white;
         width: 400px;
         padding-left: 10px;
+    }
+
+    .containerBottom{
+        margin-bottom: 10px;
     }
 }
