@@ -10,33 +10,37 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InitComponent } from './pages/init/init.component';
+import { ThreadsComponent } from './pages/threads/threads.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
-import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     RouterOutlet,
     LandingComponent,
     RegisterComponent,
     NavbarComponent,
-    LinkComponent, 
-    FooterComponent, 
+    LinkComponent,
+    FooterComponent,
     RouterLinkActive,
     InitComponent,
     TrendingNewsComponent,
     NewsComponent,
-    ChatComponent, 
-    VideoPostComponent, 
-    FormRegisterComponent, 
-    ConfirmationModalComponent
+    ThreadsComponent,
+    ChatComponent,
+    VideoPostComponent,
+    FormRegisterComponent,
+    ProfileComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'xpergg-front';
+  likesCount: any;
+  commentsCount: any;
 }

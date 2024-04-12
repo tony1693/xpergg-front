@@ -7,6 +7,8 @@ import { NewsComponent } from './pages/news/news.component';
 import { InitComponent } from './pages/init/init.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ThreadsComponent } from './pages/threads/threads.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -18,4 +20,6 @@ export const routes: Routes = [
   { path: 'community', component: CommunityComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'edit-profile', component: EditProfileComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'threads', component: ThreadsComponent },
 ];

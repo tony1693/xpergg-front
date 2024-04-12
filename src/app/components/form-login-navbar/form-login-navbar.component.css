@@ -3,9 +3,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 #exampleModal {
     width: 270px;
-    height: auto;
+    max-height: 290px;
     border-radius: 24px;
     flex-direction: column;
     justify-content: flex-end;
@@ -21,14 +22,12 @@
 .modal-dialog{
     border: none;
     margin: 0px;
-    height: 100%;
     border: none;
     display: flex;
     flex-direction: column;
 }
 
 .modal-content{
-    height: 100%;
     display: flex;
     border: none; 
     flex-direction: column;
@@ -95,7 +94,7 @@
     flex-direction: column;
     align-items: center;
     gap:10px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .label{
@@ -109,7 +108,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 0px;
 }
 
 .control{
@@ -131,11 +130,6 @@
     color: red;
     background-color: #FFFFFF;
     font-weight: bold;
-}
-
-.subtitlePassword {
-    color: white;
-    font-size: x-small;
 }
 
 .modal-footer{
