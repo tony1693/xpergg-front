@@ -7,14 +7,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './avatar.component.html',
-  styleUrl: './avatar.component.css'
+  styleUrl: './avatar.component.css',
 })
 export class AvatarComponent {
   @Input() user!: User;
-  @Input() public selectedAvatar: string = ''; 
-  @Input() public userName: string = ''; 
+  @Input() public selectedAvatar: string = '';
+  @Input() public userName: string = '';
 
-
-  constructor() {
-  }
+  constructor() {}
 }

@@ -19,28 +19,28 @@ import { ProfileComponent } from './pages/profile/profile.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     RouterOutlet,
     LandingComponent,
     RegisterComponent,
     NavbarComponent,
-    LinkComponent, 
-    FooterComponent, 
+    LinkComponent,
+    FooterComponent,
     RouterLinkActive,
     InitComponent,
     TrendingNewsComponent,
     NewsComponent,
     ThreadsComponent,
-    ChatComponent, 
-    VideoPostComponent, 
+    ChatComponent,
+    VideoPostComponent,
     FormRegisterComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'xpergg-front';
-likesCount: any;
-commentsCount: any;
+  likesCount: any;
+  commentsCount: any;
 }
