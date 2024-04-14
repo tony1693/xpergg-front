@@ -94,4 +94,23 @@ export class EditProfileComponent {
   private getSelectedValues(keys: string[]): string[] {
     return keys.filter((key) => this.reactiveregister.get(key)?.value);
   }
+
+  // Funcion para cambiar avatar //
+
+  avatars = [
+    { avatar_Id: 1, src: 'assets/avatar/call_of_duty-2.jpg' },
+    { avatar_Id: 2, src: 'assets/avatar/call-duty.webp' },
+    { avatar_Id: 3, src: 'assets/avatar/fall_guys.png' },
+    { avatar_Id: 4, src: 'assets/avatar/fortnite-1.jpg' },
+    { avatar_Id: 5, src: 'assets/avatar/fortnite-2.jpg' },
+    { avatar_Id: 6, src: 'assets/avatar/fortnite-3.jpg' },
+    { avatar_Id: 7, src: 'assets/avatar/god_of_war.jpg' },
+    { avatar_Id: 8, src: 'assets/avatar/gtaV_girl-2.webp' },
+    { avatar_Id: 9, src: 'assets/avatar/gtaV.jpg' },
+    { avatar_Id: 10, src: 'assets/avatar/lol.png' },
+    { avatar_Id: 11, src: 'assets/avatar/Paul_2.webp' },
+    { avatar_Id: 12, src: 'assets/avatar/prince-of-persia.jpg' },
+    { avatar_Id: 13, src: 'assets/avatar/red_dead.png' },
+    { avatar_Id: 14, src: 'assets/avatar/Tekken_jim.jpg' },
+  ];
 }
