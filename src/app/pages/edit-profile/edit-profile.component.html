@@ -7,7 +7,8 @@
                     <div class="editComponents">
                         <div class="editAvatar">
                             <img class="avatar" [src]="currentAvatar" alt="{}">
-                            <a class='editAvatarLink' href="">Edit Avatar</a>
+                            <!-- <a class='editAvatarLink' href="">Edit Avatar</a> -->
+                            <app-avatar-options></app-avatar-options>
                         </div>
                         <div class="editInputs">
                             <label for="name">Nombre</label>
@@ -137,18 +138,4 @@
 
         </div>
     </form>
-</div>
-
-<!-- Dropdown Btn para editar avatar -->
-
-<div class="dropdown" #avatarDropdown>
-    <button class="btn btn-secondary dropdown-toggle editAvatarLink" type="button" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Edit Avatar
-    </button>
-    <ul class="dropdown-menu">
-        @for (avatar of avatars; track avatar.avatar_Id) {
-
-        }
-    </ul>
 </div>

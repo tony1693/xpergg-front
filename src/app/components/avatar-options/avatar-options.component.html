@@ -1,0 +1,21 @@
+<div class="mainContainer">
+    <button class="edit" (click)="toggleOptions()">
+        Edit Avatar
+    </button>
+</div>
+<div>
+    @if(optionsVisible){
+    <div class="bigContainer">
+        <div class="container">
+            <button class="close" type="button" (click)="closeOptions()">X</button>
+            <div class="loop">
+                @for (avatar of avatars; track avatar.avatar_Id) {
+                <div class="optionToChoose">
+                    <img [src]="avatar.selectedAvatar" alt="Avatar" (click)="modifyAvatar(avatar)">
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</div>

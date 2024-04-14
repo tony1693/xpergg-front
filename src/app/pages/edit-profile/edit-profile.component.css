@@ -107,16 +107,6 @@ h1{
     align-items: center;
 }
 
-.modalAvatar-header{
-    border: 1px solid red;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-}
-
-.btn-closeAvatar{
-    margin-right: 20px;
-}
 .editInputs{
     display: flex;
     align-items: flex-start;
