@@ -11,12 +11,8 @@
                     linkRouting="/init" [isUser]=true></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades"
                     linkRouting="/community" [isUser]=true></app-link>
-                <app-link-without-page class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg"
-                    linkText="Solicitudes" [isUser]=true></app-link-without-page>
-                <!-- <app-link-without-page class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg" -->
-                <!-- linkText="Notificaciones" -->
-                <!-- [isUser]=true></app-link-without-page> -->
-                <app-dropdowns-notifications></app-dropdowns-notifications>
+                <app-dropdowns-requests class="navbarItemR"></app-dropdowns-requests>
+                <app-dropdowns-notifications class="navbarItemR"></app-dropdowns-notifications>
                 <div class="navbarAvatarBtn">
                     <app-avatar class="navbarAvatar" selectedAvatar="assets\avatar\fortnite-1.jpg"
                         userName="{{user.name}}" profileRouting="/profile">
