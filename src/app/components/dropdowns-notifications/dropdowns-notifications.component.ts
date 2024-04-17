@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { LinkWithoutPageComponent } from '../link-without-page/link-without-page.component';
 
 @Component({
   selector: 'app-dropdowns-notifications',
   standalone: true,
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule, NavbarComponent, LinkWithoutPageComponent],
   templateUrl: './dropdowns-notifications.component.html',
   styleUrls: ['./dropdowns-notifications.component.css'],
 })
@@ -14,7 +15,7 @@ export class DropdownsNotificationsComponent {
   commentsCount: number = 0;
 
   @Input() public linkImg: string = 'assets/icon/iconoNotificacionesR.svg';
-  @Input() public showContent: boolean = false;
+  @Input() public optionsVisible: boolean = false;
 
   // Método para manejar añadir un "me gusta"
   getLikes() {
@@ -27,6 +28,6 @@ export class DropdownsNotificationsComponent {
   }
 
   toggleContent() {
-    this.showContent = !this.showContent;
+    this.optionsVisible = !this.optionsVisible;
   }
 }

@@ -1,26 +1,25 @@
+.container{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px
+}
 
 #button{
     background-color:transparent ;
-    border: none;
-    opacity: 1;
-    font-size: 18px;
-    text-align: center;
-    font-family: "Plus Jakarta Sans";
-    font-weight: bold;
-    letter-spacing: 0px;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    margin-left: 5px;
 }
 
-.linkIconNR{
+.btnContent{
     display: flex;
-    color: white;
-    opacity: 100%;
-    width: 25px;
-    height: 20px;
-    margin-right: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
 }
 
 .dropdown-menu{
@@ -49,5 +48,11 @@
 }
 .badge{
     color: #E100FF;
-    border-radius:45%
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.classUser:hover{
+    color:#E100FF;
 }
