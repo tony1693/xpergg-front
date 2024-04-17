@@ -1,15 +1,15 @@
-
-<div class="dropdown">
+<div class="dropdown linkContainer">
     <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-        aria-expanded="false" data-bs-auto-close="outside">
+        aria-expanded="false" data-bs-auto-close="true">
+        <img class="linkIconNR" [src]="linkImg" alt="Icon">
         Notificaciones <span class="badge">{{ likesCount + commentsCount }}</span>
     </button>
 
     <div class="dropdown-menu" aria-labelledby="notificacionesDropdown">
         <!-- Mostrar número de me gusta -->
-        <p class="dropdown-item-text1">Tienes {{ likesCount }} "Likes".</p>
+        <p class="dropdown-item-text1">Tienes {{ likesCount }} "Likes"</p>
 
         <!-- Mostrar número de comentarios -->
-        <p class="dropdown-item-text2">Tienes {{ commentsCount }} "Comentarios".</p>
+        <p class="dropdown-item-text2">Tienes {{ commentsCount }} "Comentarios"</p>
     </div>
 </div>
