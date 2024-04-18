@@ -2,17 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../../models/user';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LandingComponent } from '../../pages/landing/landing.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
-import { LoginService } from '../../services/post/login/login.service';
+import { LoginService } from '../../services/login/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-login',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule, LandingComponent,NavbarComponent, FooterComponent,],
+  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule, LandingComponent,NavbarComponent, FooterComponent],
   templateUrl: './form-login.component.html',
   styleUrl: './form-login.component.css'
 })
@@ -32,7 +32,7 @@ throw new Error('Method not implemented.');
     ) {}
 
     public loginUser(): void {
-        const myUser: User = {
+        const user: User = {
           user_id: 0,
           name: this.name,
           avatar: '',
@@ -45,7 +45,7 @@ throw new Error('Method not implemented.');
           platforms: [],
           genres: [],
         }
- 
+        console.log(user);
         };
   
     public loginSubmit(): void {

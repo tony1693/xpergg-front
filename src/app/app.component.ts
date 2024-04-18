@@ -14,6 +14,7 @@ import { ThreadsComponent } from './pages/threads/threads.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     VideoPostComponent,
     FormRegisterComponent,
     ProfileComponent,
+    HttpClientModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
