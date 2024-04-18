@@ -1,5 +1,5 @@
 export interface User {
-   
+  
     user_id: number;
     avatar: string;
     name: string;
@@ -11,6 +11,6 @@ export interface User {
     status: boolean;
     platforms: string[];
     genres: string[];
-  
-  }
-  
+
+  };
+
