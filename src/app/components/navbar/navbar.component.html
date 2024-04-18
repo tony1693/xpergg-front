@@ -11,13 +11,11 @@
                     linkRouting="/init" [isUser]=true></app-link>
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoComunidadR.svg" linkText="Comunidades"
                     linkRouting="/community" [isUser]=true></app-link>
-                <app-link-without-page class="navbarItemR" linkImg="assets\icon\iconoSolicitudesR.svg"
-                    linkText="Solicitudes" [isUser]=true></app-link-without-page>
-                <app-link-without-page class="navbarItemR" linkImg="assets\icon\iconoNotificacionesR.svg"
-                    linkText="Notificaciones" [isUser]=true></app-link-without-page>
+                <app-dropdowns-requests class="navbarItemR"></app-dropdowns-requests>
+                <app-dropdowns-notifications class="navbarItemR"></app-dropdowns-notifications>
                 <div class="navbarAvatarBtn">
                     <app-avatar class="navbarAvatar" selectedAvatar="assets\avatar\fortnite-1.jpg"
-                        userName="{{user.name}}">
+                        userName="{{user.name}}" profileRouting="/profile">
                     </app-avatar>
                     <div class="btn-group dropstart">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
@@ -25,7 +23,7 @@
                             <i class="fa-solid fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" (click)="logOut()" [routerLink]="['/Landing']">Cerrar
+                            <li><a class="dropdown-item" (click)="logOut()" [routerLink]="['/landing']">Cerrar
                                     sesión</a>
                             </li>
                         </ul>

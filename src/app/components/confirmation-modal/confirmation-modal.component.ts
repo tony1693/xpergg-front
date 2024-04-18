@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 export class ConfirmationModalComponent {
   @Input() public buttonText: string = 'Cambiar';
   @Input() public confirmationText: string =
-    '¿Está seguro de que desea cambiar de contraseña?';
+    '¿Estás seguro de que deseas modificar los datos?';
   @Input() public closeModal: string = 'Cancelar';
   @Input() public acceptModal: string = 'Aceptar';
 
