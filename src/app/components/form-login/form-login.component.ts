@@ -4,7 +4,7 @@ import { Component } from "@angular/core";
 import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
 import { LandingComponent } from "../../pages/landing/landing.component";
-import { LoginService } from "../../services/login/login.service";
+import { UserService } from "../../services/user/user.service";
 import { FooterComponent } from "../footer/footer.component";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { User } from "../../models/user";
@@ -26,11 +26,11 @@ throw new Error('Method not implemented.');
   public errorMessage: string = '';
 
   constructor(
-    private readonly loginService: LoginService,
+    private readonly userService: UserService,
     private readonly router: Router
   ) {}
   public findUser(name: HTMLInputElement, password: HTMLInputElement): void {
-    this.loginService.verifyUser(name.value, password.value).subscribe(
+    this.userService.verifyUser(name.value, password.value).subscribe(
       (response: User) => {
         // Usuario verificado correctamente
         console.log(response);
