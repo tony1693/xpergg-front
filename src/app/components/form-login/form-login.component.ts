@@ -40,7 +40,7 @@ export class FormLoginComponent {
           this.router.navigate (['init'])
         }, 
         error:(err) => {
-          
+          this.errorMessage = 'Usuario o contraseña incorrectos';
         }
       }
     )

@@ -93,3 +93,13 @@ button {
     color: white;
     font-size: x-small;
 }
+
+.errorMessage {
+    padding-top: 5%;
+    font-size:small;
+    text-align: center;
+    color: red;
+    background-color: #FFFFFF;
+    font-weight: bold;
+  }
+  
