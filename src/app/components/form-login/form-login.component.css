@@ -96,7 +96,7 @@ button {
 
 .errorMessage {
     padding-top: 5%;
-    font-size:small;
+    font-size:x-small;
     text-align: center;
     color: red;
     background-color: #FFFFFF;

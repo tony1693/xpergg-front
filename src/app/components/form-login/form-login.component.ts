@@ -19,8 +19,8 @@ import { JSDocComment } from "@angular/compiler";
 })
 export class FormLoginComponent {
   reactiveForm: FormGroup<any>=new FormGroup({
-    name: new FormControl ('', [Validators.required]),
-    password: new FormControl ('',[Validators.required]),
+    name: new FormControl('',[Validators.required]),
+  password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)])
   });
 
   public name: string = '';
@@ -40,7 +40,7 @@ export class FormLoginComponent {
           this.router.navigate (['init'])
         }, 
         error:(err) => {
-          this.errorMessage = 'Usuario o contraseña incorrectos';
+          this.errorMessage = 'Usuario o contraseña  "INCORRECTOS".';
         }
       }
     )
