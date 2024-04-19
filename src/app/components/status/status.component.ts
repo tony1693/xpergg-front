@@ -16,27 +16,32 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class StatusComponent implements OnInit {
   @Input() user!: User;
-  isAvailable = true;
-  isUser = { status: 'DISPONIBLE' };
+  isAvailable = false;
+  isUser = { status: 'AUSENTE' };
 
   // Crea un Subject para manejar el estado
   private statusSubject = new Subject<boolean>();
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    const storedStatus = localStorage.getItem('userStatus');
-    if (storedStatus) {
-      this.isUser.status = storedStatus;
-      this.isAvailable = storedStatus === 'DISPONIBLE';
-    }
+    // Establecer el estado como 'AUSENTE' al iniciar sesión
+    this.isAvailable = false;
+    this.isUser.status = 'AUSENTE';
+
+    // Actualizar el estado en el almacenamiento local
+    localStorage.setItem('userStatus', this.isUser.status);
+
+    // Emitir el nuevo estado a través del Subject
+    this.statusSubject.next(this.isAvailable);
   }
 
+  // Función para cambiar el estado de disponibilidad
   toggleStatus() {
     this.isAvailable = !this.isAvailable;
     this.isUser.status = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
 
-    // Actualizar el estado en el local storage
+    // Actualizar el estado en el almacenamiento local
     localStorage.setItem('userStatus', this.isUser.status);
 
     // Emitir el nuevo estado a través del Subject
@@ -44,20 +49,45 @@ export class StatusComponent implements OnInit {
 
     // Llamar al servicio para actualizar el estado en la base de datos
     const userId = this.user.user_id.toString();
-    this.userService.updateUserAvailability(userId, this.isAvailable)
-      .subscribe(
-        () => console.log('Estado actualizado correctamente'),
-        (error) => {
-          console.error('Error al actualizar el estado:', error);
-          // Emitir el error a través del Subject
-          this.statusSubject.error(error);
-        }
-      );
+    this.userService.updateUserAvailability(userId, this.isAvailable).subscribe(
+      () => console.log('Estado actualizado correctamente'),
+      (error) => {
+        console.error('Error al actualizar el estado:', error);
+        // Emitir el error a través del Subject
+        this.statusSubject.error(error);
+      }
+    );
   }
 
   // Método público para suscribirse al estado
   getStatusObservable(): Observable<boolean> {
     return this.statusSubject.asObservable();
   }
-}
 
+
+
+  // Función para hacer logout (HAY QUE LLAMAR  a esta funcion al hacer LogOut)
+  logoutStatus() {
+    // Cambiar el estado a 'AUSENTE'
+    this.isAvailable = false;
+    this.isUser.status = 'AUSENTE';
+
+    // Actualizar el estado en el almacenamiento local
+    localStorage.setItem('userStatus', this.isUser.status);
+
+    // Emitir el nuevo estado a través del Subject
+    this.statusSubject.next(this.isAvailable);
+
+    // Llamar al servicio para actualizar el estado en la base de datos
+    const userId = this.user.user_id.toString();
+    this.userService.updateUserAvailability(userId, this.isAvailable).subscribe(
+      () => console.log('Estado actualizado correctamente al hacer logout'),
+      (error) => {
+        console.error('Error al actualizar el estado al hacer logout:', error);
+        // Emitir el error a través del Subject
+        this.statusSubject.error(error);
+      }
+    );
+
+  }
+}
