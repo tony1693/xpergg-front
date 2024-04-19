@@ -12,9 +12,6 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  verifyUser(name: string, password: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/user?name=${name}&password=${password}`);
-  }
 
 updateUserAvailability(userId: string, isAvailable: boolean): Observable<any> {
   return this.http.put(`/api/user/${userId}`, { available_to_play: isAvailable });
