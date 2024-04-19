@@ -21,7 +21,7 @@ export class DropdownsThreadsComponent {
   public toggleDropdown() {
     this.dropdownOpen = false;
   }
-  //
+
   public openDropdown() {
     this.dropdownOpen = true;
   }
