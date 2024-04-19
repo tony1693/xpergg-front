@@ -13,18 +13,18 @@ import { ThreadsService } from '../../services/threads/threads.service';
 })
 export class DropdownsThreadsComponent {
   public createdThreads: Thread[] = [];
-  // public dropdownOpen: boolean = false;
+  public dropdownOpen: boolean = false;
   public message: string = '';
 
   constructor(private readonly threadsService: ThreadsService) {}
 
-  // public toggleDropdown() {
-  //   this.dropdownOpen = false;
-  // }
-
-  // public openDropdown() {
-  //   this.dropdownOpen = true;
-  // }
+  public toggleDropdown() {
+    this.dropdownOpen = false;
+  }
+  //
+  public openDropdown() {
+    this.dropdownOpen = true;
+  }
 
   public createThread(
     subject: HTMLInputElement,
@@ -40,7 +40,6 @@ export class DropdownsThreadsComponent {
     this.threadsService.addNewThread(newThread).subscribe(
       (data) => {
         console.log(data);
-        // this.dropdownOpen = false;
         this.message = 'Hilo creado correctamente';
       },
       (error) => {

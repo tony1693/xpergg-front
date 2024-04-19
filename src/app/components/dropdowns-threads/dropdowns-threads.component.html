@@ -1,11 +1,12 @@
 <div class="dropdown">
   <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-    aria-expanded="false" data-bs-auto-close="outside">
+    aria-expanded="false" data-bs-auto-close="outside" (click)="openDropdown()">
     Crear Hilo
   </button>
+  @if(dropdownOpen){
   <form class="dropdown-menu p-4">
     <div class="closeBtnContainer">
-      <button type="button" class="btn-close" aria-label="Close"></button>
+      <button type="button" class="btn-close" aria-label="Close" (click)="toggleDropdown()"></button>
     </div>
     <div class="dropdownContainer">
       <div class="mb-3">
@@ -28,8 +29,11 @@
       </div>
       <button id="button2" type="button" class="btn btn-primary"
         (click)="createThread(subject, game, platform)">Crear</button>
+      <div class="confirmation">{{message}}</div>
     </div>
-    <div class="confirmation">{{message}}</div>
+
   </form>
+  }
+
 
 </div>
