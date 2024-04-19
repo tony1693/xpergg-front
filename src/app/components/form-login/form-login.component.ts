@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../../models/user';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { LandingComponent } from '../../pages/landing/landing.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
-import { LoginService } from '../../services/login/login.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { Component } from "@angular/core";
+import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Router } from "@angular/router";
+import { LandingComponent } from "../../pages/landing/landing.component";
+import { LoginService } from "../../services/login/login.service";
+import { FooterComponent } from "../footer/footer.component";
+import { NavbarComponent } from "../navbar/navbar.component";
+import { User } from "../../models/user";
 
 @Component({
   selector: 'app-form-login',
@@ -16,57 +16,39 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './form-login.component.html',
   styleUrl: './form-login.component.css'
 })
-  export class FormLoginComponent {
-
-errorMessage: any;
-findUser(_t13: HTMLInputElement,_t22: HTMLInputElement) {
+export class FormLoginComponent {
+  reactiveForm!: FormGroup<any>;
+loginSubmit() {
 throw new Error('Method not implemented.');
 }
+  public name: string = '';
+  public password: string = '';
+  public errorMessage: string = '';
 
-    public name: string = '';
-    public password: string = '';
-
-    constructor(
-        private readonly loginService: LoginService,
-        private readonly router: Router
-    ) {}
-
-    public loginUser(): void {
-        const user: User = {
-          user_id: 0,
-          name: this.name,
-          avatar: '',
-          email: '',
-          nationality: '',
-          aboutMe: '',
-          password: this.password,
-          confirmPassword: '',
-          status: false,
-          platforms: [],
-          genres: [],
-        }
-        console.log(user);
-        };
-  
-    public loginSubmit(): void {
-        // Llama a la función para verificar el usuario
-        this.loginService.verifyUser(this.name, this.password).subscribe(
-            (response: any) => {
-                // Usuario verificado correctamente
-                console.log(response);
-                // Redirige a la página app-init
-                this.router.navigate(['/app-init']);
-            },
-            (error: { message: any; }) => {
-                console.error(error.message);
-                // Muestra un mensaje reactivo en el botón (puedes implementar esto según tu estructura HTML)
-            }
-        );
-    }
-
-public reactiveForm: FormGroup = new FormGroup({
-  name: new FormControl('',[Validators.required]),
-  password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)])
-});
-
+  constructor(
+    private readonly loginService: LoginService,
+    private readonly router: Router
+  ) {}
+  public findUser(name: HTMLInputElement, password: HTMLInputElement): void {
+    this.loginService.verifyUser(name.value, password.value).subscribe(
+      (response: User) => {
+        // Usuario verificado correctamente
+        console.log(response);
+        // Guarda el usuario en el localStorage
+        localStorage.setItem('user', JSON.stringify(response));
+        // Redirige a la página app-init
+        this.router.navigate(['/app-init']);
+      },
+      (error: { message: any; }) => {
+        console.error(error.message);
+        // Muestra un mensaje de error
+        this.errorMessage = 'Usuario o contraseña incorrectos';
+      }
+    );
   }
+
+  public getUserFromLocalStorage(): User | null {
+    const userJson = localStorage.getItem('user');
+    return userJson ? JSON.parse(userJson) : null;
+  }
+}
