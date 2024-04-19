@@ -3,7 +3,7 @@
         <h2>Iniciar Sesión</h2>
         <div class="form">
             <label for="name" class="label">Usuario</label>
-            <input class="control" type="text" name="name" formControlName="name" #name>
+            <input class="control" type="text" name="name" formControlName="name">
             <!-- Mensaje de error para el campo de usuario -->
             @if ( (reactiveForm.get('name')?.dirty || reactiveForm.get('name')?.touched) &&
             reactiveForm.get('name')?.invalid) {
@@ -16,7 +16,7 @@
         </div>
         <div class="form">
             <label for="password" class="label">Contraseña</label>
-            <input class="control" type="password" name="password" formControlName="password" #password>
+            <input class="control" type="password" name="password" formControlName="password">
             <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
             <!-- Mensaje de error para el campo de contraseña -->
             @if ( (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched) &&
@@ -35,7 +35,7 @@
             }
         </div>
         <div class="buttonLogin">
-            <button type="submit" [disabled]="!reactiveForm.valid" (click)="findUser(name, password)">Login</button>
+            <button type="submit" [disabled]="!reactiveForm.valid" >Login</button>
             <!-- Muestra el mensaje de error si existe -->
             @if (errorMessage) {
               <p class="error">{{ errorMessage }}</p>

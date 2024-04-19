@@ -1,13 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { Component } from "@angular/core";
-import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { LandingComponent } from "../../pages/landing/landing.component";
 import { UserService } from "../../services/user/user.service";
 import { FooterComponent } from "../footer/footer.component";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { User } from "../../models/user";
+import { JSDocComment } from "@angular/compiler";
 
 @Component({
   selector: 'app-form-login',
@@ -17,10 +18,11 @@ import { User } from "../../models/user";
   styleUrl: './form-login.component.css'
 })
 export class FormLoginComponent {
-  reactiveForm!: FormGroup<any>;
-loginSubmit() {
-throw new Error('Method not implemented.');
-}
+  reactiveForm: FormGroup<any>=new FormGroup({
+    name: new FormControl ('', [Validators.required]),
+    password: new FormControl ('',[Validators.required]),
+  });
+
   public name: string = '';
   public password: string = '';
   public errorMessage: string = '';
@@ -29,22 +31,20 @@ throw new Error('Method not implemented.');
     private readonly userService: UserService,
     private readonly router: Router
   ) {}
-  public findUser(name: HTMLInputElement, password: HTMLInputElement): void {
-    this.userService.verifyUser(name.value, password.value).subscribe(
-      (response: User) => {
-        // Usuario verificado correctamente
-        console.log(response);
-        // Guarda el usuario en el localStorage
-        localStorage.setItem('user', JSON.stringify(response));
-        // Redirige a la página app-init
-        this.router.navigate(['/app-init']);
-      },
-      (error: { message: any; }) => {
-        console.error(error.message);
-        // Muestra un mensaje de error
-        this.errorMessage = 'Usuario o contraseña incorrectos';
+  loginSubmit() {
+    this.userService.login(this.reactiveForm.value).subscribe (
+      {
+        next:(res)=> {
+          localStorage.setItem('isLoggedIn', 'true')
+          localStorage.setItem('user', JSON.stringify(res.user[0]))
+          this.router.navigate (['init'])
+        }, 
+        error:(err) => {
+          
+        }
       }
-    );
+    )
+   
   }
 
   public getUserFromLocalStorage(): User | null {
