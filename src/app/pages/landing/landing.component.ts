@@ -6,6 +6,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { LinkComponent } from '../../components/link/link.component';
 import { TrendingNewsComponent } from '../../components/trending-news/trending-news.component';
 import { NewsComponent } from '../news/news.component';
+import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
 
 @Component({
@@ -13,8 +14,8 @@ import { UserService } from '../../services/user/user.service';
     standalone: true,
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
-    imports: [RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent],
-    providers: [UserService]
+    imports: [HttpClientModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent ],
+    providers:[UserService]
 })
 export class LandingComponent {
 

@@ -1,5 +1,5 @@
 export interface User {
-   
+  
     user_id: number;
     avatar: string;
     name: string;
@@ -8,9 +8,14 @@ export interface User {
     aboutMe: string;
     password: string;
     confirmPassword: string;
-    available_to_play: boolean;
+    available_to_play:boolean;
     platforms: string[];
     genres: string[];
-  
-  }
-  
+
+  };
+
+export interface LoginBody{
+  name:string;
+  password: string; 
+
+}

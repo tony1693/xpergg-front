@@ -36,8 +36,9 @@
         </div>
         <div class="buttonLogin">
             <button type="submit" [disabled]="!reactiveForm.valid">Login</button>
-            @if ( errorMessage) {
-                <p class="error">{{errorMessage}}</p>
+            <!-- Muestra el mensaje de error si existe -->
+            @if (errorMessage) {
+            <p class="errorMessage">{{ errorMessage }}</p>
             }
         </div>
     </form>

@@ -10,6 +10,7 @@ import { UserService } from '../../services/user/user.service';
   templateUrl: './status.component.html',
   styleUrl: './status.component.css'
 })
+
 export class StatusComponent {
   @Input() user!: User;
 
@@ -24,5 +25,10 @@ export class StatusComponent {
   // }
 }
 
-
- 
+  // toggleStatus() {
+  //   this.isAvailable = !this.isAvailable;
+  //   this.userService.updateUserAvailability(String(this.user.user_id), this.isAvailable).subscribe({
+  //     next: response => console.log(response),
+  //     error: error => console.error(error)
+  //   });
+  // }
