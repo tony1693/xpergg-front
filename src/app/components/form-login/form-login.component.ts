@@ -13,14 +13,14 @@ import { JSDocComment } from "@angular/compiler";
 @Component({
   selector: 'app-form-login',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule, LandingComponent,NavbarComponent, FooterComponent],
+  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule, LandingComponent, NavbarComponent, FooterComponent],
   templateUrl: './form-login.component.html',
   styleUrl: './form-login.component.css'
 })
 export class FormLoginComponent {
-  reactiveForm: FormGroup<any>=new FormGroup({
-    name: new FormControl('',[Validators.required]),
-  password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)])
+  reactiveForm: FormGroup<any> = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)])
   });
 
   public name: string = '';
@@ -30,22 +30,23 @@ export class FormLoginComponent {
   constructor(
     private readonly userService: UserService,
     private readonly router: Router
-  ) {}
+  ) { }
   loginSubmit() {
-    this.userService.login(this.reactiveForm.value).subscribe (
+    this.userService.login(this.reactiveForm.value).subscribe(
       {
-        next:(res)=> {
+        next: (res) => {
           localStorage.setItem('isLoggedIn', 'true')
           localStorage.setItem('user', JSON.stringify(res.user[0]))
-          this.router.navigate (['init'])
-        }, 
-        error:(err) => {
+          this.router.navigate(['init'])
+        },
+        error: (err) => {
           this.errorMessage = 'Usuario o contraseña  "INCORRECTOS".';
         }
       }
     )
-   
+
   }
+
 
   public getUserFromLocalStorage(): User | null {
     const userJson = localStorage.getItem('user');
