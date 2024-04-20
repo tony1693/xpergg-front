@@ -32,7 +32,7 @@
 </div>
 <div class="container-fluid">
     <div class="container2"> 
-        <app-trending-news></app-trending-news>
+        <app-trending-news *ngFor="let game of games" [apiNewsText]="game.title" [apiNewsImg]="game.thumbnailUrl" [linkApiNewsRouting]="game.downloadUrl"></app-trending-news>
         <app-trending-news></app-trending-news>
         <app-trending-news></app-trending-news>
     

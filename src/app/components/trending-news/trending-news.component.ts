@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
 
 export class TrendingNewsComponent {
 
-  @Input() public apiNewsText: string = 'Ubisoft habría retrasado el Assassins creed ambientado en China';
-  @Input() public apiNewsImg: string = 'https://media.vandal.net/i/150x100/6-2023/20236121753490_1.jpg';
+  @Input() public apiNewsText: string = '';
+  @Input() public apiNewsImg: string = '';
   @Input() public linkApiNewsRouting: string = "";
 }
