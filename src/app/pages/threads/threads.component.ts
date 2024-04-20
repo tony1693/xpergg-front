@@ -3,6 +3,8 @@ import { DropdownsThreadsComponent } from '../../components/dropdowns-threads/dr
 import { CardThreadsComponent } from '../../components/card-threads/card-threads.component';
 import { ThreadsService } from '../../services/threads/threads.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Thread } from '../../models/thread';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-threads',
@@ -10,14 +12,29 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [DropdownsThreadsComponent, CardThreadsComponent, HttpClientModule],
   templateUrl: './threads.component.html',
   styleUrl: './threads.component.css',
+  providers: [ThreadsService],
 })
 export class ThreadsComponent {
-  public message = 'hola bienvenidos';
-  public game = 'hola bienvenidos';
-  public platform = 'hola bienvenidos';
+  public message = '';
+  public game = '';
+  public platform = '';
   @Input() public platformTitle = 'PlayStation';
 
-  ngOnInit() {
-    // aqui meter todos los hilos ya creados ordenados por fecha
+  public threads: Thread[] = [];
+
+  constructor(private readonly threadsService: ThreadsService) {}
+
+  ngOnInit(): void {
+    // aquí meter todos los hilos ya creados ordenados por fecha
+
+    this.threadsService.getThreads().subscribe(
+      (data: Thread[]) => {
+        this.threads = data;
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
