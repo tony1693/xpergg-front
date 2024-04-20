@@ -32,7 +32,7 @@ export class DropdownsThreadsComponent {
     platform: HTMLSelectElement
   ) {
     let newThread: Thread = {
-      user_id: 2,
+      user_id: 1, //hay que cambiar el user_id y que venga del localStorage
       thread_subject: subject.value,
       game: game.value,
       platform: platform.value,
