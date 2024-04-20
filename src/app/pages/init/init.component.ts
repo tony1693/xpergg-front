@@ -4,13 +4,15 @@ import { StatusComponent } from '../../components/status/status.component';
 import { User } from '../../models/user';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-init',
   standalone: true,
   imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent],
   templateUrl: './init.component.html',
-  styleUrl: './init.component.css'
+  styleUrl: './init.component.css',
+  providers:[UserService]
 })
 export class InitComponent {
 
@@ -38,7 +40,7 @@ export class InitComponent {
         aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
         password: '********',
         confirmPassword: '********',
-        status: true, // Usuario activo
+        available_to_play: true, // Usuario activo
         platforms: ['Playstation', 'Nintendo'],
         genres: ['Acción', 'Aventura']
       },
@@ -51,7 +53,7 @@ export class InitComponent {
         aboutMe: 'Apasionada por el diseño y la creatividad.',
         password: '********',
         confirmPassword: '********',
-        status: false, // Usuario inactivo
+        available_to_play: false, // Usuario inactivo
         platforms: ['Xbox'],
         genres: ['Coches', 'Estrategia']
       }
@@ -91,7 +93,7 @@ export class InitComponent {
         aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
         password: '********',
         confirmPassword: '********',
-        status: true, // Usuario activo
+        available_to_play: true, // Usuario activo
         platforms: ['Playstation', 'Nintendo'],
         genres: ['Acción', 'Aventura']
       },
@@ -104,7 +106,7 @@ export class InitComponent {
         aboutMe: 'Apasionada por el diseño y la creatividad.',
         password: '********',
         confirmPassword: '********',
-        status: false, // Usuario inactivo
+        available_to_play: false, // Usuario inactivo
         platforms: ['Xbox'],
         genres: ['Coches', 'Estrategia']
       }

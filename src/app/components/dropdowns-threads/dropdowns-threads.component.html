@@ -1,21 +1,39 @@
-
 <div class="dropdown">
-    <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-      Crear Hilo
-    </button>
-    <form class="dropdown-menu p-4">
+  <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+    aria-expanded="false" data-bs-auto-close="outside" (click)="openDropdown()">
+    Crear Hilo
+  </button>
+  @if(dropdownOpen){
+  <form class="dropdown-menu p-4">
+    <div class="closeBtnContainer">
+      <button type="button" class="btn-close" aria-label="Close" (click)="toggleDropdown()"></button>
+    </div>
+    <div class="dropdownContainer">
       <div class="mb-3">
         <label for="exampleDropdownFormEmail2" class="form-label">Asunto</label>
-        <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="">
+        <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="" #subject>
       </div>
       <div class="mb-3">
         <label for="exampleDropdownFormPassword2" class="form-label">Juego</label>
-        <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="">
+        <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="" #game>
       </div>
       <div class="mb-3">
         <label for="exampleDropdownFormPlataform" class="form-label">Plataforma/Consola</label>
-        <input type="text" class="form-control" id="exampleDropdownFormPlataform" placeholder="">
+        <select name="form-select" id="platformSelect" #platform>
+          <option value="PlayStation">PlayStation</option>
+          <option value="X-box">X-box</option>
+          <option value="Nintendo">Nintendo</option>
+          <option value="PC">PC</option>
+        </select>
+        <!-- <input type="text" class="form-control" id="exampleDropdownFormPlataform" placeholder="" #platform> -->
       </div>
-      <button id="button2" type="submit" class="btn btn-primary">Crear</button>
-    </form>
+      <button id="button2" type="button" class="btn btn-primary"
+        (click)="createThread(subject, game, platform)">Crear</button>
+      <div class="confirmation">{{message}}</div>
+    </div>
+
+  </form>
+  }
+
+
 </div>

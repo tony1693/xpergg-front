@@ -40,7 +40,7 @@ export class NavbarComponent {
     aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
     password: '********',
     confirmPassword: '********',
-    status: true, // Usuario activo
+    available_to_play: true, // Usuario activo
     platforms: ['Playstation', 'Nintendo'],
     genres: ['Acción', 'Aventura'],
   };
