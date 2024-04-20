@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../../models/user';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-status',
@@ -13,12 +14,14 @@ export class StatusComponent {
   @Input() user!: User;
 
   isAvailable = true;
-   isUser = { status: 'DISPONIBLE' };
 
-  toggleStatus() {
-    this.isAvailable = !this.isAvailable;
-    this.isUser.status = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
-  }
+  constructor(private userService: UserService){}
+  //  isUser = { status: 'DISPONIBLE' };
+
+  // toggleStatus() {
+  //   this.isAvailable = !this.isAvailable;
+  //   this.isUser.status = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
+  // }
 }
 
 

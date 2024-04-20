@@ -31,7 +31,7 @@ export class UsersListComponent implements OnInit {
         aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
         password: '********',
         confirmPassword: '********',
-        status: true, // Usuario activo
+        available_to_play: true, // Usuario activo
         platforms: ['Playstation', 'Nintendo'],
         genres: ['Acción', 'Aventura'],
       },
@@ -44,7 +44,7 @@ export class UsersListComponent implements OnInit {
         aboutMe: 'Apasionada por el diseño y la creatividad.',
         password: '********',
         confirmPassword: '********',
-        status: false, // Usuario inactivo
+        available_to_play: false, // Usuario inactivo
         platforms: ['Xbox'],
         genres: ['Coches', 'Estrategia'],
       },
