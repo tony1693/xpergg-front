@@ -19,7 +19,7 @@ export class StatusComponent implements OnInit {
   @Input() user!: User;
   
   isAvailable = false;
-  isUser = { status: 'AUSENTE' };
+  isUser = { avalaibleToPlay: 'AUSENTE' };
 
   // Crea un Subject para manejar el estado
   private statusSubject = new Subject<boolean>();
@@ -29,10 +29,10 @@ export class StatusComponent implements OnInit {
   ngOnInit() {
     // Establecer el estado como 'AUSENTE' al iniciar sesión
     this.isAvailable = false;
-    this.isUser.status = 'AUSENTE';
+    this.isUser.avalaibleToPlay = 'AUSENTE';
 
     // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.status);
+    localStorage.setItem('userStatus', this.isUser.avalaibleToPlay);
 
     // Emitir el nuevo estado a través del Subject
     this.statusSubject.next(this.isAvailable);
@@ -41,10 +41,10 @@ export class StatusComponent implements OnInit {
   // Función para cambiar el estado de disponibilidad
   toggleStatus() {
     this.isAvailable = !this.isAvailable;
-    this.isUser.status = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
+    this.isUser.avalaibleToPlay = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
 
     // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.status);
+    localStorage.setItem('userStatus', this.isUser.avalaibleToPlay);
 
     // Emitir el nuevo estado a través del Subject
     this.statusSubject.next(this.isAvailable);
@@ -63,8 +63,8 @@ export class StatusComponent implements OnInit {
     });
 
     // Suscribirse al Observable del estado
-    this.getStatusObservable().subscribe((status: boolean) => {
-      console.log('El estado es', status);
+    this.getStatusObservable().subscribe((available_to_play: boolean) => {
+      console.log('El estado es', available_to_play);
       // Aquí se podría hacer algo con el estado....
     });
   }
@@ -80,10 +80,10 @@ export class StatusComponent implements OnInit {
   logoutStatus() {
     // Cambiar el estado a 'AUSENTE'
     this.isAvailable = false;
-    this.isUser.status = 'AUSENTE';
+    this.isUser.avalaibleToPlay = 'AUSENTE';
 
     // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.status);
+    localStorage.setItem('userStatus', this.isUser.avalaibleToPlay);
 
     // Emitir el nuevo estado a través del Subject
     this.statusSubject.next(this.isAvailable);
