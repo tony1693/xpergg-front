@@ -1,14 +1,22 @@
-<div class="card">
-    <div class="message">
-        <p class="title">Mensaje</p>
-        <p class="text">{{ message }}</p>
-    </div>
-    <div class="game">
-        <p class="title2">Juego</p>
-        <p class="gameText">{{ game }}</p>
-    </div>
-    <div class="platform">
-        <p class="title3">Plataforma</p>
-        <p class="namePlatform">{{ platform }}</p>
+<div class="container">
+    <div class="row">
+        @for(thread of threads; track thread.thread_id){
+        <div class="card">
+            <div class="smallContainer">
+                <p class="title">Mensaje</p>
+                <p class="text">{{ thread.subject }}</p>
+            </div>
+            <div class="smallContainer">
+                <p class="title">Juego</p>
+                <p class="gameText">{{ thread.game }}</p>
+            </div>
+            <div class="smallContainer">
+                <p class="title">Plataforma</p>
+                <p class="namePlatform">{{ thread.platform }}</p>
+            </div>
+        </div>
+        } @empty {
+        <p class="empty">Todavía no hay ningún hilo...¡Empieza a interactuar con la Comunidad!</p>
+        }
     </div>
 </div>

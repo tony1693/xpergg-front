@@ -33,7 +33,7 @@ export class DropdownsThreadsComponent {
   ) {
     let newThread: Thread = {
       user_id: 1, //hay que cambiar el user_id y que venga del localStorage
-      thread_subject: subject.value,
+      subject: subject.value,
       game: game.value,
       platform: platform.value,
     };

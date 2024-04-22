@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { PlatformCardComponent } from '../../components/platform-card/platform-card.component';
-import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-community',
   standalone: true,
-  imports: [PlatformCardComponent],
+  imports: [PlatformCardComponent, HttpClientModule],
   templateUrl: './community.component.html',
   styleUrl: './community.component.css',
 })

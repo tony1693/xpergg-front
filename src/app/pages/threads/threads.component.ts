@@ -23,18 +23,4 @@ export class ThreadsComponent {
   public threads: Thread[] = [];
 
   constructor(private readonly threadsService: ThreadsService) {}
-
-  ngOnInit(): void {
-    // aquí meter todos los hilos ya creados ordenados por fecha
-
-    this.threadsService.getThreads().subscribe(
-      (data: Thread[]) => {
-        this.threads = data;
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
 }
