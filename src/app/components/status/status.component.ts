@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, InitComponent, ProfileComponent, HttpClientModule],
   templateUrl: './status.component.html',
-  styleUrls: ['./status.component.css']
+  styleUrls: ['./status.component.css'],
+  providers:[UserService],
 })
 export class StatusComponent implements OnInit {
   @Input() user!: User;
@@ -49,24 +50,30 @@ export class StatusComponent implements OnInit {
 
     // Llamar al servicio para actualizar el estado en la base de datos
     const userId = this.user.user_id.toString();
-    this.userService.updateUserAvailability(userId, this.isAvailable).subscribe(
-      () => console.log('Estado actualizado correctamente'),
-      (error) => {
+    this.userService.updateUserAvailability(userId, this.isAvailable).subscribe({
+      next: () => {
+        console.log('Estado actualizado correctamente');
+      },
+      error: (error) => {
         console.error('Error al actualizar el estado:', error);
         // Emitir el error a través del Subject
         this.statusSubject.error(error);
       }
-    );
+    });
+
+    // Suscribirse al Observable del estado
+    this.getStatusObservable().subscribe((status: boolean) => {
+      console.log('El estado es', status);
+      // Aquí se podría hacer algo con el estado....
+    });
   }
 
-  // Método público para suscribirse al estado
+  // Método para obtener el Observable del estado
   getStatusObservable(): Observable<boolean> {
     return this.statusSubject.asObservable();
   }
 
-
-
-  // Función para hacer logout (HAY QUE LLAMAR  a esta funcion al hacer LogOut)
+  // Función para hacer logout (HAY QUE LLAMAR a esta funcion al hacer LogOut)
   logoutStatus() {
     // Cambiar el estado a 'AUSENTE'
     this.isAvailable = false;
@@ -88,6 +95,5 @@ export class StatusComponent implements OnInit {
         this.statusSubject.error(error);
       }
     );
-
   }
 }

@@ -5,14 +5,16 @@ import { User } from '../../models/user';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
 import { UserService } from '../../services/user/user.service';
+import { FormLoginComponent } from '../../components/form-login/form-login.component';
 
 @Component({
   selector: 'app-init',
   standalone: true,
-  imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent],
+  imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent, FormLoginComponent],
   templateUrl: './init.component.html',
   styleUrl: './init.component.css',
   providers:[UserService]
+  
 })
 export class InitComponent {
 
