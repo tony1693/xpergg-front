@@ -13,13 +13,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-updateUserAvailability(userId: string, isAvailable: boolean): Observable<any> {
-  return this.http.put(`/api/user/${userId}`, { available_to_play: isAvailable });
-}
 public login(loginBody:LoginBody): Observable<any> {
   return this.http.post<User>(`${this.apiUrl}/login`, loginBody);
 }
 
+
+updateUserAvailability(userId: string, isAvailable: boolean): Observable<any> {
+  return this.http.put(`/api/user/${userId}`, { available_to_play: isAvailable });
+}
 }
   
 

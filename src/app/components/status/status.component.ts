@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class StatusComponent implements OnInit {
   @Input() user!: User;
+  
   isAvailable = false;
   isUser = { status: 'AUSENTE' };
 
@@ -72,6 +73,8 @@ export class StatusComponent implements OnInit {
   getStatusObservable(): Observable<boolean> {
     return this.statusSubject.asObservable();
   }
+
+
 
   // Función para hacer logout (HAY QUE LLAMAR a esta funcion al hacer LogOut)
   logoutStatus() {

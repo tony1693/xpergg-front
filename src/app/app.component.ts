@@ -15,31 +15,33 @@ import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StatusComponent } from "./components/status/status.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    LandingComponent,
-    RegisterComponent,
-    NavbarComponent,
-    LinkComponent,
-    FooterComponent,
-    RouterLinkActive,
-    InitComponent,
-    TrendingNewsComponent,
-    NewsComponent,
-    ThreadsComponent,
-    ChatComponent,
-    VideoPostComponent,
-    FormRegisterComponent,
-    ProfileComponent,
-    HttpClientModule,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        LandingComponent,
+        RegisterComponent,
+        NavbarComponent,
+        LinkComponent,
+        FooterComponent,
+        RouterLinkActive,
+        InitComponent,
+        TrendingNewsComponent,
+        NewsComponent,
+        ThreadsComponent,
+        ChatComponent,
+        VideoPostComponent,
+        FormRegisterComponent,
+        ProfileComponent,
+        HttpClientModule,
+        StatusComponent,
+    ]
 })
 export class AppComponent {
   title = 'xpergg-front';

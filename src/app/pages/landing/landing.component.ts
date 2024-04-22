@@ -8,13 +8,14 @@ import { TrendingNewsComponent } from '../../components/trending-news/trending-n
 import { NewsComponent } from '../news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-landing',
     standalone: true,
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
-    imports: [HttpClientModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent ],
+    imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent ],
     providers:[UserService]
 })
 export class LandingComponent {
@@ -30,6 +31,8 @@ export class LandingComponent {
     newsText3 = 'Texto de la noticia 3';
     newsImage3 = 'URL de la imagen de la noticia 3';
     newsLink3 = 'URL del enlace de la noticia 3';
+
+    
 
 }
 
