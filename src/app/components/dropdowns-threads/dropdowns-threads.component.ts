@@ -20,6 +20,7 @@ export class DropdownsThreadsComponent {
 
   public toggleDropdown() {
     this.dropdownOpen = false;
+    window.location.reload();
   }
 
   public openDropdown() {
