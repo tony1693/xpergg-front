@@ -22,7 +22,7 @@ export class CardThreadsComponent {
 
   ngOnInit(): void {
     // aquí meter todos los hilos ya creados ordenados por fecha
-    this.threadsService.getThreads().subscribe(
+    this.threadsService.getThreadsPS().subscribe(
       (data: Thread[]) => {
         console.log(data);
         this.threads = data;

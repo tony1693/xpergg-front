@@ -32,12 +32,15 @@ export class DropdownsThreadsComponent {
     game: HTMLInputElement,
     platform: HTMLSelectElement
   ) {
+    const currentDate = new Date().toISOString();
     let newThread: Thread = {
       user_id: 1, //hay que cambiar el user_id y que venga del localStorage
       subject: subject.value,
       game: game.value,
       platform: platform.value,
+      date: currentDate,
     };
+    localStorage.setItem('creacionHilo', currentDate);
     this.threadsService.addNewThread(newThread).subscribe(
       (data) => {
         console.log(data);

@@ -21,6 +21,21 @@ export class ThreadsComponent {
   @Input() public platformTitle = 'PlayStation';
 
   public threads: Thread[] = [];
+  public filteredThread: Thread = {} as Thread;
 
   constructor(private readonly threadsService: ThreadsService) {}
+
+  public searchByGame(inputText: HTMLInputElement) {
+    if (inputText.value === '') {
+      this.threadsService.getThreadsPS().subscribe((data) => {
+        console.log(data);
+        this.threads = data;
+      });
+    } else {
+      this.threadsService.getOneThread(inputText.value).subscribe((data) => {
+        console.log(data);
+        this.threads = [data];
+      });
+    }
+  }
 }

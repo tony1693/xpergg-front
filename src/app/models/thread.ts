@@ -4,4 +4,5 @@ export class Thread {
   subject!: string;
   game!: string;
   platform!: string;
+  date!: string;
 }

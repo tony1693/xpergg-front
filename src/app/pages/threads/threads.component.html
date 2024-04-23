@@ -9,8 +9,8 @@
         <div class="container3">
             <input id="Search" type="text" class="form-control" placeholder="Buscar" aria-label="id_book"
                 aria-describedby="basic-addon2" #inputText>
-            <button class="lookFor"><i class="fa-sharp fa-solid fa-magnifying-glass fa-xs"
-                    style="color: #B197FC;"></i></button>
+            <button class="lookFor"><i class="fa-sharp fa-solid fa-magnifying-glass fa-xs" style="color: #B197FC;"
+                    (click)="searchByGame(inputText)"></i></button>
         </div>
         <app-dropdowns-threads id="button"></app-dropdowns-threads>
     </div>
