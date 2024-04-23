@@ -13,11 +13,11 @@ import { UserService } from '../../services/user/user.service';
   styleUrls: ['./status.component.css'],
   providers:[UserService],
 })
-export class StatusComponent implements OnInit {
+export class StatusComponent {
   @Input() user!: User;
   
-  isAvailable = false;
-  isUser = { avalaibleToPlay: 'AUSENTE' };
+  available_to_play = false;
+  isUser = { avalaible_to_play: 'AUSENTE' };
 
   // Crea un Subject para manejar el estado
   private statusSubject = new Subject<boolean>();
@@ -26,30 +26,30 @@ export class StatusComponent implements OnInit {
 
   ngOnInit() {
     // Establecer el estado como 'AUSENTE' al iniciar sesión
-    this.isAvailable = false;
-    this.isUser.avalaibleToPlay = 'AUSENTE';
+    this.available_to_play = false;
+    this.isUser.avalaible_to_play = 'AUSENTE';
 
     // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.avalaibleToPlay);
+    localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
 
     // Emitir el nuevo estado a través del Subject
-    this.statusSubject.next(this.isAvailable);
+    this.statusSubject.next(this.available_to_play);
   }
 
   // Función para cambiar el estado de disponibilidad
   toggleStatus() {
-    this.isAvailable = !this.isAvailable;
-    this.isUser.avalaibleToPlay = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
+    this.available_to_play = !this.available_to_play;
+    this.isUser.avalaible_to_play = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
 
     // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.avalaibleToPlay);
+    localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
 
     // Emitir el nuevo estado a través del Subject
-    this.statusSubject.next(this.isAvailable);
+    this.statusSubject.next(this.available_to_play);
 
     // Llamar al servicio para actualizar el estado en la base de datos
     const userId = this.user.user_id.toString();
-    this.userService.updateUserAvailability(userId, this.isAvailable).subscribe({
+    this.userService.updateUserAvailability(userId, this.available_to_play).subscribe({
       next: () => {
         console.log('Estado actualizado correctamente');
       },
@@ -77,18 +77,18 @@ export class StatusComponent implements OnInit {
   // Función para hacer logout (HAY QUE LLAMAR a esta funcion al hacer LogOut)
   logoutStatus() {
     // Cambiar el estado a 'AUSENTE'
-    this.isAvailable = false;
-    this.isUser.avalaibleToPlay = 'AUSENTE';
+    this.available_to_play = false;
+    this.isUser.avalaible_to_play = 'AUSENTE';
 
     // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.avalaibleToPlay);
+    localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
 
     // Emitir el nuevo estado a través del Subject
-    this.statusSubject.next(this.isAvailable);
+    this.statusSubject.next(this.available_to_play);
 
     // Llamar al servicio para actualizar el estado en la base de datos
     const userId = this.user.user_id.toString();
-    this.userService.updateUserAvailability(userId, this.isAvailable).subscribe(
+    this.userService.updateUserAvailability(userId, this.available_to_play).subscribe(
       () => console.log('Estado actualizado correctamente al hacer logout'),
       (error) => {
         console.error('Error al actualizar el estado al hacer logout:', error);

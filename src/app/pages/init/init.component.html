@@ -10,8 +10,11 @@
             <a class="viewAll" routerLink="/news">Ver Todas</a>
         </div>
         <div class="status">
-            <p class="status-text">Mi Estado</p>
-            <app-status></app-status>
+                <p class="status-text">{{ available_to_play ? 'DISPONIBLE' : 'AUSENTE' }}</p>
+                @if (user.length >0) {
+                    <app-status [user]="user[0]"></app-status>
+                    <button>{{ user[0].available_to_play ? 'DISPONIBLE' : 'AUSENTE' }}</button>
+                }
         </div>
     </div>
 

@@ -19,49 +19,49 @@ export class UserListChatComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // Aquí se cargaran los usuarios desde el servicio o la  API.
-
+  
     //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-    this.usersChat = [
-      {
-        user_id: 1,
-        avatar: './assets/avatar/fortnite-1.jpg',
-        name: 'Juan Pérez',
-        email: 'juan@gmail.com',
-        nationality: 'Español',
-        aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-        password: '********',
-        confirmPassword: '********',
-        available_to_play: true, // Usuario activo
-        platforms: ['Playstation', 'Nintendo'],
-        genres: ['Acción', 'Aventura'],
-      },
-      {
-        user_id: 2,
-        avatar: './assets/avatar/gtaV.jpg',
-        name: 'María García',
-        email: 'maria@hotmail.com',
-        nationality: 'Mexicana',
-        aboutMe: 'Apasionada por el diseño y la creatividad.',
-        password: '********',
-        confirmPassword: '********',
-        available_to_play: false, // Usuario inactivo
-        platforms: ['Xbox'],
-        genres: ['Coches', 'Estrategia'],
-      },
-      {
-        user_id: 3,
-        avatar: 'assets/avatar/call_of_duty-2.jpg',
-        name: 'Judit',
-        email: 'jbr@gmail.com',
-        nationality: 'Spanish',
-        aboutMe: 'test test test',
-        password: 'Test123',
-        confirmPassword: 'Test123',
-        available_to_play: true,
-        platforms: ['PS4, PC'],
-        genres: ['Sports, action'],
-      },
-    ];
-  }
+  //   this.usersChat = [
+  //     {
+  //       user_id: 1,
+  //       avatar: './assets/avatar/fortnite-1.jpg',
+  //       name: 'Juan Pérez',
+  //       email: 'juan@gmail.com',
+  //       nationality: 'Español',
+  //       aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
+  //       password: '********',
+  //       confirmPassword: '********',
+  //       available_to_play: true, // Usuario activo
+  //       platforms: ['Playstation', 'Nintendo'],
+  //       genres: ['Acción', 'Aventura'],
+  //     },
+  //     {
+  //       user_id: 2,
+  //       avatar: './assets/avatar/gtaV.jpg',
+  //       name: 'María García',
+  //       email: 'maria@hotmail.com',
+  //       nationality: 'Mexicana',
+  //       aboutMe: 'Apasionada por el diseño y la creatividad.',
+  //       password: '********',
+  //       confirmPassword: '********',
+  //       available_to_play: false, // Usuario inactivo
+  //       platforms: ['Xbox'],
+  //       genres: ['Coches', 'Estrategia'],
+  //     },
+  //     {
+  //       user_id: 3,
+  //       avatar: 'assets/avatar/call_of_duty-2.jpg',
+  //       name: 'Judit',
+  //       email: 'jbr@gmail.com',
+  //       nationality: 'Spanish',
+  //       aboutMe: 'test test test',
+  //       password: 'Test123',
+  //       confirmPassword: 'Test123',
+  //       available_to_play: true,
+  //       platforms: ['PS4, PC'],
+  //       genres: ['Sports, action'],
+  //     },
+  //   ];
+  // }
+}
 }

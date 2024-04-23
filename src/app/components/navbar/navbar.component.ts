@@ -31,19 +31,20 @@ import { DropdownsThreadsComponent } from '../dropdowns-threads/dropdowns-thread
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  public user: User | null = {
-    user_id: 1,
-    avatar: './assets/avatar/fortnite-1.jpg',
-    name: 'Juan Pérez',
-    email: 'juan@gmail.com',
-    nationality: 'Español',
-    aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-    password: '********',
-    confirmPassword: '********',
-    available_to_play: true, // Usuario activo
-    platforms: ['Playstation', 'Nintendo'],
-    genres: ['Acción', 'Aventura'],
-  };
+user: User [] = [];
+  // public user: User | null = {
+  //   user_id: 1,
+  //   avatar: './assets/avatar/fortnite-1.jpg',
+  //   name: 'Juan Pérez',
+  //   email: 'juan@gmail.com',
+  //   nationality: 'Español',
+  //   aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
+  //   password: '********',
+  //   confirmPassword: '********',
+  //   available_to_play: true, // Usuario activo
+  //   platforms: ['Playstation', 'Nintendo'],
+  //   genres: ['Acción', 'Aventura'],
+  // };
 
   logOut() {
     console.log('Cerrando sesión');
