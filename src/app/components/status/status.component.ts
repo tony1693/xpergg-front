@@ -3,14 +3,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { Observable, Subject } from 'rxjs';
 import { UserService } from '../../services/user/user.service';
-import { InitComponent } from '../../pages/init/init.component';
-import { ProfileComponent } from '../../pages/profile/profile.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [CommonModule, InitComponent, ProfileComponent, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './status.component.html',
   styleUrls: ['./status.component.css'],
   providers:[UserService],
