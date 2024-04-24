@@ -6,11 +6,12 @@ import { VideoPostComponent } from '../../components/video-post/video-post.compo
 import { UsersListComponent } from '../../components/users-list/users-list.component';
 import { UserService } from '../../services/user/user.service';
 import { FormLoginComponent } from '../../components/form-login/form-login.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-init',
   standalone: true,
-  imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent, FormLoginComponent],
+  imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent, FormLoginComponent, CommonModule],
   templateUrl: './init.component.html',
   styleUrl: './init.component.css',
   providers:[UserService]
@@ -39,13 +40,18 @@ export class InitComponent {
     console.log(usersFromStorage)
     console.log(this.user)
   
-
-
-
-
-
-
-
+    // Aquí recuperamos el estado del usuario desde el almacenamiento local
+    let userStatusFromStorage = localStorage.getItem('userStatus');
+    this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
+  }
+  
+  // Agrega esta función
+  toggleAvailability() {
+    this.available_to_play = !this.available_to_play;
+    let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
+    localStorage.setItem('userStatus', status);
+  }
+  
 
 
     // Filtramos los amigos en línea y sugeridos de la lista de users
@@ -60,4 +66,4 @@ export class InitComponent {
     //   return genreMatches && platformMatches;
     // });
   }
-}
+

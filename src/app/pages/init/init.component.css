@@ -248,3 +248,12 @@ p {
     font-weight: 700;
     color: #FFFFFF;
 }
+
+.buttonToogle {
+    width: 200px;
+    height: 60px;
+    background-color: #313131;
+    border-radius: 15px;
+    margin-bottom: 40%;
+    font-size: bold;
+}
