@@ -13,7 +13,7 @@ import { User } from '../../models/user';
 export class UserListChatComponent implements OnInit {
   usersChat: User[] = [];
   @Input() title: string = '';
-  @Input() status: boolean = true;
+  @Input() available_to_play: boolean = true;
   @Input() usersList: any[] = [];
 
   constructor() {}
@@ -32,9 +32,9 @@ export class UserListChatComponent implements OnInit {
         aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
         password: '********',
         confirmPassword: '********',
-        status: true, // Usuario activo
-        platforms: ['Playstation', 'Nintendo'],
-        genres: ['Acción', 'Aventura'],
+        available_to_play: true, // Usuario activo
+        platform: ['Playstation', 'Nintendo'],
+        interest: ['Acción', 'Aventura'],
       },
       {
         user_id: 2,
@@ -45,9 +45,9 @@ export class UserListChatComponent implements OnInit {
         aboutMe: 'Apasionada por el diseño y la creatividad.',
         password: '********',
         confirmPassword: '********',
-        status: false, // Usuario inactivo
-        platforms: ['Xbox'],
-        genres: ['Coches', 'Estrategia'],
+        available_to_play: false, // Usuario inactivo
+        platform: ['Xbox'],
+        interest: ['Coches', 'Estrategia'],
       },
       {
         user_id: 3,
@@ -58,9 +58,9 @@ export class UserListChatComponent implements OnInit {
         aboutMe: 'test test test',
         password: 'Test123',
         confirmPassword: 'Test123',
-        status: true,
-        platforms: ['PS4, PC'],
-        genres: ['Sports, action'],
+        available_to_play: true,
+        platform: ['PS4, PC'],
+        interest: ['Sports, action'],
       },
     ];
   }

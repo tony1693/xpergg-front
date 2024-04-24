@@ -34,9 +34,9 @@ export class VideoPostComponent {
         aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
         password: '********',
         confirmPassword: '********',
-        status: true, // Usuario activo
-        platforms: ['Playstation', 'Nintendo'],
-        genres: ['Acción', 'Aventura'],
+        available_to_play: true, // Usuario activo
+        platform: ['Playstation', 'Nintendo'],
+        interest: ['Acción', 'Aventura'],
       },
     ];
   }
