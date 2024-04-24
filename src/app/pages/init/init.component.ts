@@ -4,14 +4,10 @@ import { StatusComponent } from '../../components/status/status.component';
 import { User } from '../../models/user';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
-<<<<<<< HEAD
 import { PostService } from '../../services/post/post.service';
 import { Post } from '../../models/posts';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
-=======
-import { UserService } from '../../services/user/user.service';
->>>>>>> main
 
 @Component({
   selector: 'app-init',
@@ -26,7 +22,6 @@ import { UserService } from '../../services/user/user.service';
   templateUrl: './init.component.html',
   styleUrl: './init.component.css',
   providers: [PostService, UserService],
-
 })
 export class InitComponent {
   onlineFriends: any[] = [];
