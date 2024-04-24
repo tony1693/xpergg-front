@@ -27,15 +27,25 @@ export class ThreadsComponent {
 
   public searchByGame(inputText: HTMLInputElement) {
     if (inputText.value === '') {
-      this.threadsService.getThreadsPS().subscribe((data) => {
-        console.log(data);
-        this.threads = data;
-      });
+      this.threadsService.getThreadsPS().subscribe(
+        (data) => {
+          console.log(data);
+          this.threads = data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     } else {
-      this.threadsService.getOneThread(inputText.value).subscribe((data) => {
-        console.log(data);
-        this.threads = [data];
-      });
+      this.threadsService.getOneThread(inputText.value).subscribe(
+        (data) => {
+          console.log(data);
+          this.threads = data;
+        },
+        (error) => {
+          console.log('error esta aqui', error);
+        }
+      );
     }
   }
 }
