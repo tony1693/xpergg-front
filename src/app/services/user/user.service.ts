@@ -18,9 +18,15 @@ public login(loginBody:LoginBody): Observable<any> {
 }
 
 
+  public register( registerBody:RegisterBody ): Observable<any> {
+    return this.http.post<User>(`${this.apiUrl}/register`, registerBody)
+  }
+
+
 updateUserAvailability(userId: string, isAvailable: boolean): Observable<any> {
   return this.http.put(`/api/user/${userId}`, { available_to_play: isAvailable });
 }
+
 }
   
 
