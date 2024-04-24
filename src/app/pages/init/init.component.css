@@ -250,10 +250,8 @@ p {
 }
 
 .buttonToogle {
-    width: 200px;
-    height: 60px;
-    background-color: #313131;
-    border-radius: 15px;
-    margin-bottom: 40%;
+    width: 241px;
+    height: 46px;
+    background: #000000;
     font-size: bold;
 }
