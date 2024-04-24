@@ -3,6 +3,7 @@
     padding-top: 140px;
     width: 100vw;
     height: 1962px;
+    background-color: #7F00FF;
     background-image: url('../../../assets/background/background_community_threads.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -246,4 +247,13 @@ p {
     font-size: 28px;
     font-weight: 700;
     color: #FFFFFF;
+}
+
+.buttonToogle {
+    width: 200px;
+    height: 60px;
+    background-color: #313131;
+    border-radius: 15px;
+    margin-bottom: 40%;
+    font-size: bold;
 }

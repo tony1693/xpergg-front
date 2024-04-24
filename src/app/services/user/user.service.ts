@@ -12,15 +12,20 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  public login(loginBody:LoginBody): Observable<any> {
-    return this.http.post<User>(`${this.apiUrl}/login`, loginBody);
-  }
 
+public login(loginBody:LoginBody): Observable<any> {
+  return this.http.post<User>(`${this.apiUrl}/login`, loginBody);
+}
 
   public register( registerBody:RegisterBody ): Observable<any> {
     return this.http.post<User>(`${this.apiUrl}/register`, registerBody)
   }
 
-  
+updateUserAvailability(userId: string, isAvailable: boolean): Observable<any> {
+  return this.http.put(`/api/user/${userId}`, { available_to_play: isAvailable });
 }
+
+}
+  
+
 
