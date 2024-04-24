@@ -6,18 +6,19 @@ import { User } from '../../models/user';
   standalone: true,
   imports: [],
   templateUrl: './video-post.component.html',
-  styleUrl: './video-post.component.css'
+  styleUrl: './video-post.component.css',
 })
 export class VideoPostComponent {
-
   @Input() public linkYoutubePost!: string;
-  @Input() public titlePost: string = "El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento";
+  @Input() public titlePost: string =
+    'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
 
   users: User[] = [];
 
   // Inicializa el contador de likes
   likesCount: number = 0;
 
+<<<<<<< HEAD
   constructor() { }
   public getUserFromLocalStorage(): User | null {
     const userJson = localStorage.getItem('user');
@@ -55,25 +56,46 @@ export class VideoPostComponent {
     //   }
 
     // ];
+=======
+  constructor() {}
+
+  ngOnInit(): void {
+    // Aquí se cargarían los usuarios desde el servicio.
+
+    //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
+    this.users = [
+      {
+        user_id: 1,
+        avatar: './assets/avatar/fortnite-1.jpg',
+        name: 'Juan Pérez',
+        email: 'juan@gmail.com',
+        nationality: 'Español',
+        aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
+        password: '********',
+        confirmPassword: '********',
+        available_to_play: true, // Usuario activo
+        platform: ['Playstation', 'Nintendo'],
+        interest: ['Acción', 'Aventura'],
+      },
+    ];
+>>>>>>> main
   }
 
-
-  @Input() public likeOff: string = "../../../assets/icon/icono-corazon-off.svg";
+  @Input() public likeOff: string =
+    '../../../assets/icon/icono-corazon-off.svg';
 
   addLike(): void {
     // this.likesCount++;
-    if (this.likeOff=="../../../assets/icon/icono-corazon-off.svg") {
+    if (this.likeOff == '../../../assets/icon/icono-corazon-off.svg') {
       this.likesCount++;
-      this.likeOff = "../../../assets/icon/icono-corazon-on.svg"
+      this.likeOff = '../../../assets/icon/icono-corazon-on.svg';
     } else {
-      this.likeOff = "../../../assets/icon/icono-corazon-off.svg"
+      this.likeOff = '../../../assets/icon/icono-corazon-off.svg';
       this.likesCount--;
     }
   }
 
-
   public addComment(inputComment: HTMLInputElement) {
-    console.log(inputComment.value)
+    console.log(inputComment.value);
   }
-
 }

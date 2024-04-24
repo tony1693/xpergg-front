@@ -4,6 +4,9 @@ import { StatusComponent } from '../../components/status/status.component';
 import { User } from '../../models/user';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
+import { PostService } from '../../services/post/post.service';
+import { Post } from '../../models/posts';
+import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
 import { FormLoginComponent } from '../../components/form-login/form-login.component';
 import { CommonModule } from '@angular/common';
@@ -14,26 +17,24 @@ import { CommonModule } from '@angular/common';
   imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent, FormLoginComponent, CommonModule],
   templateUrl: './init.component.html',
   styleUrl: './init.component.css',
-  providers:[UserService]
+  providers: [PostService, UserService],
 })
 export class InitComponent {
   user: User[] = [];
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
+  available_to_play: boolean = false;
 
   @Input() public apiNewsText: string = 'Ubisoft habría retrasado el Assassins creed ambientado en China';
   @Input() public linkApiNewsRouting: string = "";
   @Input() public avalaible_to_play: boolean = false;
-  available_to_play: boolean = false;
+  @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
 
  
 
-  public addPost(inputTextPost: HTMLInputElement, inputLinkVideoPost: HTMLInputElement) {
-    console.log(inputTextPost.value);
-    console.log(inputLinkVideoPost.value);
-  }
+  constructor(private readonly postService: PostService) {
 
-  constructor() {
+
     // Obtenemos los users desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
@@ -53,7 +54,29 @@ export class InitComponent {
     localStorage.setItem('userStatus', status);
   }
   
-  
+  public addPost(
+    inputTextPost: HTMLInputElement,
+    inputLinkVideoPost: HTMLInputElement
+  ) {
+    const currentDate = new Date().toISOString();
+    let newPost: Post = {
+      url: inputLinkVideoPost.value,
+      description: inputTextPost.value,
+      date: currentDate,
+      user_id: 1, // aqui me tiene que venir de local storage
+      post_id: 0,
+    };
+    localStorage.setItem('fecha creacion post', currentDate);
+    this.postService.addPost(newPost).subscribe(
+      (data) => {
+        console.log(data);
+        window.location.reload();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 
 
     // Filtramos los amigos en línea y sugeridos de la lista de users

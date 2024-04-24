@@ -20,6 +20,7 @@ export class DropdownsThreadsComponent {
 
   public toggleDropdown() {
     this.dropdownOpen = false;
+    window.location.reload();
   }
 
   public openDropdown() {
@@ -31,20 +32,28 @@ export class DropdownsThreadsComponent {
     game: HTMLInputElement,
     platform: HTMLSelectElement
   ) {
-    let newThread: Thread = {
-      user_id: 1, //hay que cambiar el user_id y que venga del localStorage
-      thread_subject: subject.value,
-      game: game.value,
-      platform: platform.value,
-    };
-    this.threadsService.addNewThread(newThread).subscribe(
-      (data) => {
-        console.log(data);
-        this.message = 'Hilo creado correctamente';
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    const currentDate = new Date().toISOString();
+    const userId: number = Number(localStorage.getItem('user_id'));
+    if (userId) {
+      let newThread: Thread = {
+        user_id: userId, // para que venga de localStorage
+        subject: subject.value,
+        game: game.value,
+        platform: platform.value,
+        date: currentDate,
+      };
+      localStorage.setItem('creacionHilo', currentDate);
+      this.threadsService.addNewThread(newThread).subscribe(
+        (data) => {
+          console.log(data);
+          this.message = 'Hilo creado correctamente';
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      console.log('No existe ningun usuario con ese ID');
+    }
   }
 }

@@ -152,7 +152,7 @@ p {
     width: 100px;
     height: 40px;
     background: #E100FF 0% 0% no-repeat padding-box;
-    border: 4px solid #E100FF;
+    border: none;
     border-radius: 14px;
     opacity: 1;
     font: normal normal medium 18px/23px Plus Jakarta Sans;
