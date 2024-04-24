@@ -41,8 +41,8 @@
         <a href="" class="name">{{post.user_id}}</a>
     </div>
     <div class="video-player">
-        <youtube-player [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="322" [width]="865"
-            [startSeconds]="1" [endSeconds]=""></youtube-player>
+        <youtube-player id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="320"
+            [width]="830" [startSeconds]="1" [endSeconds]=""></youtube-player>
     </div>
     <div class="video-description">
         <p class="titlePost">{{ post.description }}</p>
