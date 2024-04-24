@@ -54,12 +54,12 @@
 }
 
 .search{
-   display: flex; 
-   flex-direction: row;
-   justify-content: center;
-   align-items: end;
-   margin-bottom: 50px;
-   gap: 50px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 50px;
+    gap: 50px;
 }
 
 #Search{
@@ -104,7 +104,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .cards {

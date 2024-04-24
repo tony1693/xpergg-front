@@ -33,9 +33,10 @@
 </div>
 <div class="container-fluid">
     @for(game of games; track game) {
-        <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail" [link]="game.freetogame_profile_url" ></app-trending-news>  
+    <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
+        [link]="game.freetogame_profile_url"></app-trending-news>
     }
-    
+
 </div>
 
 <app-footer></app-footer>
