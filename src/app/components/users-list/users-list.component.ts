@@ -32,8 +32,8 @@ export class UsersListComponent implements OnInit {
         password: '********',
         confirmPassword: '********',
         available_to_play: true, // Usuario activo
-        platforms: ['Playstation', 'Nintendo'],
-        genres: ['Acción', 'Aventura'],
+        platform: ['Playstation', 'Nintendo'],
+        interest: ['Acción', 'Aventura'],
       },
       {
         user_id: 2,
@@ -45,8 +45,8 @@ export class UsersListComponent implements OnInit {
         password: '********',
         confirmPassword: '********',
         available_to_play: false, // Usuario inactivo
-        platforms: ['Xbox'],
-        genres: ['Coches', 'Estrategia'],
+        platform: ['Xbox'],
+        interest: ['Coches', 'Estrategia'],
       },
     ];
   }

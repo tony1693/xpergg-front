@@ -41,8 +41,8 @@ export class NavbarComponent {
     password: '********',
     confirmPassword: '********',
     available_to_play: true, // Usuario activo
-    platforms: ['Playstation', 'Nintendo'],
-    genres: ['Acción', 'Aventura'],
+    platform: ['Playstation', 'Nintendo'],
+    interest: ['Acción', 'Aventura'],
   };
 
   logOut() {
