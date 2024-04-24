@@ -8,6 +8,7 @@ import { PostService } from '../../services/post/post.service';
 import { Post } from '../../models/posts';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
+import { Thread } from '../../models/thread';
 
 @Component({
   selector: 'app-init',
