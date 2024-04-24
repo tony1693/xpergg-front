@@ -11,11 +11,11 @@ import { UserService } from '../../services/user/user.service';
   imports: [CommonModule],
   templateUrl: './status.component.html',
   styleUrls: ['./status.component.css'],
-  providers:[UserService],
+  providers: [UserService],
 })
 export class StatusComponent {
   @Input() user!: User;
-  
+
   available_to_play = false;
   isUser = { avalaible_to_play: 'AUSENTE' };
 
@@ -74,27 +74,27 @@ export class StatusComponent {
 
 
 
-  // Función para hacer logout (HAY QUE LLAMAR a esta funcion al hacer LogOut)
-  logoutStatus() {
-    // Cambiar el estado a 'AUSENTE'
-    this.available_to_play = false;
-    this.isUser.avalaible_to_play = 'AUSENTE';
+  // // Función para hacer logout (HAY QUE LLAMAR a esta funcion al hacer LogOut)
+  // logoutStatus() {
+  //   // Cambiar el estado a 'AUSENTE'
+  //   this.available_to_play = false;
+  //   this.isUser.avalaible_to_play = 'AUSENTE';
 
-    // Actualizar el estado en el almacenamiento local
-    localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
+  //   // Actualizar el estado en el almacenamiento local
+  //   localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
 
-    // Emitir el nuevo estado a través del Subject
-    this.statusSubject.next(this.available_to_play);
+  //   // Emitir el nuevo estado a través del Subject
+  //   this.statusSubject.next(this.available_to_play);
 
-    // Llamar al servicio para actualizar el estado en la base de datos
-    const userId = this.user.user_id.toString();
-    this.userService.updateUserAvailability(userId, this.available_to_play).subscribe(
-      () => console.log('Estado actualizado correctamente al hacer logout'),
-      (error) => {
-        console.error('Error al actualizar el estado al hacer logout:', error);
-        // Emitir el error a través del Subject
-        this.statusSubject.error(error);
-      }
-    );
-  }
+  //   // Llamar al servicio para actualizar el estado en la base de datos
+  //   const userId = this.user.user_id.toString();
+  //   this.userService.updateUserAvailability(userId, this.available_to_play).subscribe(
+  //     () => console.log('Estado actualizado correctamente al hacer logout'),
+  //     (error) => {
+  //       console.error('Error al actualizar el estado al hacer logout:', error);
+  //       // Emitir el error a través del Subject
+  //       this.statusSubject.error(error);
+  //     }
+  //   );
+  // }
 }

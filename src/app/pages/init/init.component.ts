@@ -43,14 +43,16 @@ export class InitComponent {
     // Aquí recuperamos el estado del usuario desde el almacenamiento local
     let userStatusFromStorage = localStorage.getItem('userStatus');
     this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    console.log(userStatusFromStorage)
   }
   
-  // Agrega esta función
+  // 
   toggleAvailability() {
     this.available_to_play = !this.available_to_play;
     let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
     localStorage.setItem('userStatus', status);
   }
+  
   
 
 
