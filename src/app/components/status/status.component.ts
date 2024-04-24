@@ -3,7 +3,6 @@ import { User } from '../../models/user';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user/user.service';
 
-
 @Component({
   selector: 'app-status',
   standalone: true,
@@ -17,7 +16,14 @@ export class StatusComponent {
 
   isAvailable = true;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService){}
+  //  isUser = { status: 'DISPONIBLE' };
+
+  // toggleStatus() {
+  //   this.isAvailable = !this.isAvailable;
+  //   this.isUser.status = this.isAvailable ? 'DISPONIBLE' : 'AUSENTE';
+  // }
+}
 
   // toggleStatus() {
   //   this.isAvailable = !this.isAvailable;
@@ -26,4 +32,3 @@ export class StatusComponent {
   //     error: error => console.error(error)
   //   });
   // }
-}

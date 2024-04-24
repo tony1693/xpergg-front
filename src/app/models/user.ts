@@ -9,8 +9,8 @@ export interface User {
     password: string;
     confirmPassword: string;
     available_to_play:boolean;
-    platforms: string[];
-    genres: string[];
+    platform: string[];
+    interest: string[];
 
   };
 
@@ -18,4 +18,15 @@ export interface LoginBody{
   name:string;
   password: string; 
 
+}
+
+export interface RegisterBody{
+  user_id?: number;
+  name: string;
+  email: string;
+  nationality: string;
+  available_to_play: boolean;
+  password: string;
+  platform: string[];
+  interest: string[];
 }

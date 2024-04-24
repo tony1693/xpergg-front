@@ -33,8 +33,8 @@ export class UserListChatComponent implements OnInit {
         password: '********',
         confirmPassword: '********',
         available_to_play: true, // Usuario activo
-        platforms: ['Playstation', 'Nintendo'],
-        genres: ['Acción', 'Aventura'],
+        platform: ['Playstation', 'Nintendo'],
+        interest: ['Acción', 'Aventura'],
       },
       {
         user_id: 2,
@@ -46,8 +46,8 @@ export class UserListChatComponent implements OnInit {
         password: '********',
         confirmPassword: '********',
         available_to_play: false, // Usuario inactivo
-        platforms: ['Xbox'],
-        genres: ['Coches', 'Estrategia'],
+        platform: ['Xbox'],
+        interest: ['Coches', 'Estrategia'],
       },
       {
         user_id: 3,
@@ -59,8 +59,8 @@ export class UserListChatComponent implements OnInit {
         password: 'Test123',
         confirmPassword: 'Test123',
         available_to_play: true,
-        platforms: ['PS4, PC'],
-        genres: ['Sports, action'],
+        platform: ['PS4, PC'],
+        interest: ['Sports, action'],
       },
     ];
   }
