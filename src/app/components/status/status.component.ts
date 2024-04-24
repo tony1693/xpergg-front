@@ -4,7 +4,6 @@ import { User } from '../../models/user';
 import { Observable, Subject } from 'rxjs';
 import { UserService } from '../../services/user/user.service';
 
-
 @Component({
   selector: 'app-status',
   standalone: true,
