@@ -18,7 +18,6 @@ export class VideoPostComponent {
   // Inicializa el contador de likes
   likesCount: number = 0;
 
-<<<<<<< HEAD
   constructor() { }
   public getUserFromLocalStorage(): User | null {
     const userJson = localStorage.getItem('user');
@@ -56,29 +55,6 @@ export class VideoPostComponent {
     //   }
 
     // ];
-=======
-  constructor() {}
-
-  ngOnInit(): void {
-    // Aquí se cargarían los usuarios desde el servicio.
-
-    //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-    this.users = [
-      {
-        user_id: 1,
-        avatar: './assets/avatar/fortnite-1.jpg',
-        name: 'Juan Pérez',
-        email: 'juan@gmail.com',
-        nationality: 'Español',
-        aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-        password: '********',
-        confirmPassword: '********',
-        available_to_play: true, // Usuario activo
-        platform: ['Playstation', 'Nintendo'],
-        interest: ['Acción', 'Aventura'],
-      },
-    ];
->>>>>>> main
   }
 
   @Input() public likeOff: string =
