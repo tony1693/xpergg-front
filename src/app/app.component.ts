@@ -16,6 +16,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { StatusComponent } from './components/status/status.component';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     FormRegisterComponent,
     ProfileComponent,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    StatusComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

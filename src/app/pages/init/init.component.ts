@@ -9,6 +9,8 @@ import { Post } from '../../models/posts';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
 import { Thread } from '../../models/thread';
+import { FormLoginComponent } from '../../components/form-login/form-login.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-init',
@@ -18,24 +20,45 @@ import { Thread } from '../../models/thread';
     StatusComponent,
     VideoPostComponent,
     UsersListComponent,
-    HttpClientModule,
+    FormLoginComponent,
+    CommonModule,
   ],
   templateUrl: './init.component.html',
   styleUrl: './init.component.css',
   providers: [PostService, UserService],
 })
 export class InitComponent {
-  onlineFriends: any[] = [];
-  sugerenciaFriends: any[] = [];
+  user: User[] = [];
+  onlineFriends: User[] = [];
+  sugerenciaFriends: User[] = [];
+  available_to_play: boolean = false;
 
   @Input() public apiNewsText: string =
     'Ubisoft habría retrasado el Assassins creed ambientado en China';
   @Input() public linkApiNewsRouting: string = '';
+  @Input() public avalaible_to_play: boolean = false;
   @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
 
-  users: User[] = [];
+  constructor(private readonly postService: PostService) {
+    // Obtenemos los users desde localStorage
+    let usersFromStorage = localStorage.getItem('user');
+    this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
+    console.log(usersFromStorage);
+    console.log(this.user);
 
-  constructor(private readonly postService: PostService) {}
+    // Aquí recuperamos el estado del usuario desde el almacenamiento local
+    let userStatusFromStorage = localStorage.getItem('userStatus');
+    this.available_to_play =
+      userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    console.log(userStatusFromStorage);
+  }
+
+  //
+  toggleAvailability() {
+    this.available_to_play = !this.available_to_play;
+    let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
+    localStorage.setItem('userStatus', status);
+  }
 
   public addPost(
     inputTextPost: HTMLInputElement,
@@ -61,84 +84,15 @@ export class InitComponent {
     );
   }
 
-  // constructor() {
-  // this.onlineFriends = [
-  // {
-  // user_id: 1,
-  // avatar: './assets/avatar/fortnite-1.jpg',
-  // name: 'Juan Pérez',
-  // email: 'juan@gmail.com',
-  // nationality: 'Español',
-  // aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-  // password: '********',
-  // confirmPassword: '********',
-  // status: true, // Usuario activo
-  // platforms: ['Playstation', 'Nintendo'],
-  // genres: ['Acción', 'Aventura'],
-  // },
-  // {
-  // user_id: 2,
-  // avatar: './assets/avatar/gtaV.jpg',
-  // name: 'María García',
-  // email: 'maria@hotmail.com',
-  // nationality: 'Mexicana',
-  // aboutMe: 'Apasionada por el diseño y la creatividad.',
-  // password: '********',
-  // confirmPassword: '********',
-  // status: false, // Usuario inactivo
-  // platforms: ['Xbox'],
-  // genres: ['Coches', 'Estrategia'],
-  // },
-  // ];
-  //
-  // this.sugerenciaFriends = [
-  // {
-  // user_id: 1,
-  // avatar: './assets/avatar/fortnite-1.jpg',
-  // name: 'Juan Pérez',
-  // email: 'juan@gmail.com',
-  // nationality: 'Español',
-  // aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-  // password: '********',
-  // confirmPassword: '********',
-  // status: true, // Usuario activo
-  // platforms: ['Playstation', 'Nintendo'],
-  // genres: ['Acción', 'Aventura'],
-  // },
-  // ];
-  // }
-  //
-  // ngOnInit(): void {
-  // Aquí se cargarían los usuarios desde el servicio.
-  //
-  // * simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-  // this.users = [
-  // {
-  // user_id: 1,
-  // avatar: './assets/avatar/fortnite-1.jpg',
-  // name: 'Juan Pérez',
-  // email: 'juan@gmail.com',
-  // nationality: 'Español',
-  // aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-  // password: '********',
-  // confirmPassword: '********',
-  // status: true, // Usuario activo
-  // platforms: ['Playstation', 'Nintendo'],
-  // genres: ['Acción', 'Aventura'],
-  // },
-  // {
-  // user_id: 2,
-  // avatar: './assets/avatar/gtaV.jpg',
-  // name: 'María García',
-  // email: 'maria@hotmail.com',
-  // nationality: 'Mexicana',
-  // aboutMe: 'Apasionada por el diseño y la creatividad.',
-  // password: '********',
-  // confirmPassword: '********',
-  // status: false, // Usuario inactivo
-  // platforms: ['Xbox'],
-  // genres: ['Coches', 'Estrategia'],
-  // },
-  // ];
-  // }
+  // Filtramos los amigos en línea y sugeridos de la lista de users
+  // this.onlineFriends = this.user.filter(user => user.available_to_play);
+
+  // // Asumimos que el user actual es el primero en la lista
+  // let currentUser = this.user[0];
+
+  // this.sugerenciaFriends = this.user.filter(user => {
+  //   let genreMatches = user.genres.filter(genre => currentUser.genres.includes(genre)).length >= 1;
+  //   let platformMatches = user.platforms.filter(platform => currentUser.platforms.includes(platform)).length >= 1;
+  //   return genreMatches && platformMatches;
+  // });
 }

@@ -32,28 +32,15 @@ export class VideoPostComponent {
       this.posts = data;
     });
   }
+  // public getUserFromLocalStorage(): User | null {
+  // const userJson = localStorage.getItem('user');
+  // return userJson ? JSON.parse(userJson) : null;
+  // }
+
   public obtainIdURL(url: string): string {
     const videoId = url.split('v=')[1];
     return videoId;
   }
-
-  // Aquí se cargarían los usuarios desde el servicio.
-  //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-  // this.users = [
-  // {
-  // user_id: 1,
-  // avatar: './assets/avatar/fortnite-1.jpg',
-  // name: 'Juan Pérez',
-  // email: 'juan@gmail.com',
-  // nationality: 'Español',
-  // aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-  // password: '********',
-  // confirmPassword: '********',
-  // available_to_play: true, // Usuario activo
-  // platform: ['Playstation', 'Nintendo'],
-  // interest: ['Acción', 'Aventura'],
-  // },
-  // ];
 
   @Input() public likeOff: string =
     '../../../assets/icon/icono-corazon-off.svg';
