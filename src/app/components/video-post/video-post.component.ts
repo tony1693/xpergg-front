@@ -1,60 +1,45 @@
 import { Component, Input, input } from '@angular/core';
 import { User } from '../../models/user';
+import { PostService } from '../../services/post/post.service';
+import { HttpClientModule } from '@angular/common/http';
+import { Post } from '../../models/posts';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @Component({
   selector: 'app-video-post',
   standalone: true,
-  imports: [],
+  imports: [HttpClientModule, YouTubePlayerModule],
   templateUrl: './video-post.component.html',
   styleUrl: './video-post.component.css',
+  providers: [PostService],
 })
 export class VideoPostComponent {
   @Input() public linkYoutubePost!: string;
   @Input() public titlePost: string =
     'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
-
+  @Input() public urlId: string = '';
   users: User[] = [];
 
   // Inicializa el contador de likes
   likesCount: number = 0;
+  posts: Post[] = [];
 
-  constructor() { }
-  public getUserFromLocalStorage(): User | null {
-    const userJson = localStorage.getItem('user');
-    return userJson ? JSON.parse(userJson) : null;
-  }
+  constructor(private readonly postService: PostService) {}
+
   ngOnInit(): void {
-    
-    //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-    // this.users = [
-    //   {
-    //     user_id: 1,
-    //     avatar: './assets/avatar/fortnite-1.jpg',
-    //     name: 'Juan Pérez',
-    //     email: 'juan@gmail.com',
-    //     nationality: 'Español',
-    //     aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-    //     password: '********',
-    //     confirmPassword: '********',
-    //     available_to_play: true, // Usuario activo
-    //     platforms: ['Playstation', 'Nintendo'],
-    //     genres: ['Acción', 'Aventura']
-    //   },
-    //   {
-    //     user_id: 2,
-    //     avatar: './assets/avatar/gtaV.jpg',
-    //     name: 'María García',
-    //     email: 'maria@hotmail.com',
-    //     nationality: 'Mexicana',
-    //     aboutMe: 'Apasionada por el diseño y la creatividad.',
-    //     password: '********',
-    //     confirmPassword: '********',
-    //     available_to_play: false, // Usuario inactivo
-    //     platforms: ['Xbox'],
-    //     genres: ['Coches', 'Estrategia']
-    //   }
+    this.postService.getAllPosts().subscribe((data: Post[]) => {
+      console.log(data);
+      this.posts = data;
+    });
+  }
+  // public getUserFromLocalStorage(): User | null {
+  // const userJson = localStorage.getItem('user');
+  // return userJson ? JSON.parse(userJson) : null;
+  // }
 
-    // ];
+  public obtainIdURL(url: string): string {
+    const videoId = url.split('v=')[1];
+    return videoId;
   }
 
   @Input() public likeOff: string =

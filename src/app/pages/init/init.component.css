@@ -2,8 +2,7 @@
 .container-init {
     padding-top: 140px;
     width: 100vw;
-    height: 1962px;
-    background-color: #7F00FF;
+    height: auto;
     background-image: url('../../../assets/background/background_community_threads.png');
     background-size: cover;
     background-repeat: no-repeat;
