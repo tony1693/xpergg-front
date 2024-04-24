@@ -32,24 +32,11 @@
 
 </div>
 <div class="container-fluid">
-    <div class="container2">
-        <app-trending-news></app-trending-news>
-        <app-trending-news></app-trending-news>
-        <app-trending-news></app-trending-news>
+    @for(game of games; track game) {
+    <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
+        [link]="game.freetogame_profile_url"></app-trending-news>
+    }
 
-    </div>
-
-    <div class="container3">
-        <app-trending-news></app-trending-news>
-        <app-trending-news></app-trending-news>
-        <app-trending-news></app-trending-news>
-    </div>
-
-    <div class="container4">
-        <app-trending-news></app-trending-news>
-        <app-trending-news></app-trending-news>
-        <app-trending-news></app-trending-news>
-    </div>
 </div>
 
 <app-footer></app-footer>
