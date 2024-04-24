@@ -1,0 +1,24 @@
+<div class="dropdown">
+    <div class="container">
+        <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false" data-bs-auto-close="true" (click)="toggleContent()">
+            <div class="btnContent">
+                <app-link-without-page class="linkIconNR" linkImg="assets\icon\iconoNotificacionesR.svg"
+                    linkText="Notificaciones" [isUser]=true></app-link-without-page>
+                <span class="badge">{{ likesCount + commentsCount }}</span>
+            </div>
+
+        </button>
+        @if(optionsVisible){
+        <div class="dropdown-menu" aria-labelledby="notificacionesDropdown">
+            <!-- Mostrar número de me gusta -->
+            <p class="dropdown-item-text1">Tienes {{ likesCount }} "Likes"</p>
+
+            <!-- Mostrar número de comentarios -->
+            <p class="dropdown-item-text2">Tienes {{ commentsCount }} "Comentarios"</p>
+        </div>
+        }
+    </div>
+
+
+</div>

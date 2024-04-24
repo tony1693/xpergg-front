@@ -1,6 +1,6 @@
 <div class="containerForm">
 
-  <form [formGroup]="reactiveregister" (ngSubmit)="handleSubmit()">
+  <form [formGroup]="reactiveregister" (ngSubmit)="registersubmit()">
 
     <h1>Regístrate</h1>
 
@@ -34,7 +34,7 @@
 
       <div class="name">
         <label class="firstlabel">Nacionalidad</label><br>
-        <input class="textInput" type="text" formControlName="nacionality" id="nacionalidad">
+        <input class="textInput" type="text" formControlName="nationality" id="nacionalidad">
         <div
           *ngIf="reactiveregister.get('email')?.errors?.['required'] && (reactiveregister.get('email')?.touched || reactiveregister.get('email')?.dirty)">
           <small class="error">Nacionalidad Obligatoria</small>

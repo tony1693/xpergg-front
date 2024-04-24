@@ -1,0 +1,31 @@
+<div>
+    {{title}}
+    <div class="form-style">
+        @for (user of usersChat; track user.user_id) {
+        <div class="friend">
+            <div class="friendContent">
+                <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
+                <div class="name">{{user.name}}</div>
+            </div>
+
+            @if(user.available_to_play) {
+            <div class="available">
+                <div class="status-activo">
+                    • Disponible
+                </div>
+            </div>
+
+            }@else{
+            <div class="unavailable">
+                • Ausente
+            </div>
+            }
+
+        </div>
+
+        <div class="container">
+            <div class="borderLine"></div>
+        </div>
+        }
+    </div>
+</div>

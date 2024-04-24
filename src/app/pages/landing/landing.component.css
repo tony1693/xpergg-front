@@ -7,16 +7,25 @@
 .container-main {
     display: flex;
     flex-direction: column;
+    width: auto;
 }
 
 .container1 {
 
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../../../assets/background/background_landing_header.svg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    
+}
+
+@media screen and (max-width: 1400px) {
+
+    .container1 {
+        max-height: 2600px;
+        padding-top: 100px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -27,41 +36,35 @@
 }
 
 .boxLanding1 {
-
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 14%;
-    gap: 1%
 }
 
-@media only screen and (max-width: 768px) {
-    .boxLanding1 {
-        width: 70%;
-        padding-left: 30%;
-    }
-}
 
-@media screen and (max-width: 480px) {
-    .boxLanding1 {
-        width: 50%;
-        padding-left: 50%;
-    }
-}
 
-.boxLanding1b {
-    width: 50%;
-    height: 30px;
+
+
+.titulo{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 4%;
-    margin-left: 25%;
-    gap: 3%
+    gap: 10px 20px;
 }
+
+
+
+@media screen and (max-width: 1400px) {
+
+    .titulo {
+        gap: 0px
+    }
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -79,14 +82,28 @@
 }
 
 .boxLanding1c {
-
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-left: 1%;
-    gap: 2%
+    gap: 0px 25px;
+    padding-top: 60px;
+}
+
+
+
+@media screen and (max-width: 1400px) {
+
+    .boxLanding1c {
+        /* max-height: 2600px; */
+        padding-top: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+
+.imgventajas{
+    width: 60%;
 }
 
 @media screen and (max-width: 768px) {
@@ -96,22 +113,23 @@
 }
 
 .boxTitle {
-    width: 600px;
+    width: 800px;
     height: 150px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 58px;
-    line-height: 62px;
+    font-size: 90px;
+    line-height: 90px;
     font-family: "Plus Jakarta Sans", sans-serif;
     /* border: 1px solid #707070;  */
     color: #E100FF;
 }
 
-@media screen and (max-width: 480px) {
-    .boxTitle {
-        font-size: 150%;
-        margin-left: 50%;
+
+@media screen and (max-width: 1400px){
+    .boxTitle{
+        font-size: 65px;
+        line-height: 75px;
     }
 }
 
@@ -120,53 +138,71 @@ span {
 }
 
 .boxText {
-    width: 444px;
-    height: 29px;
+    width: 700px;
+    height: 40px;
+    padding-top: 40px ;
+    padding-bottom: 20px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 25px;
-    line-height: 31px;
+    font-size: 39px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     /* border: 1px solid #707070;  */
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1400px) {
 
     .boxText {
-        font-size: small;
-        padding-left: 50%;
+        font-size: 29px;
+        padding-bottom: 10px;
+        padding-top: 20px
+    }
+
+    .titleQuery{
+        margin-bottom: 0px;
     }
 }
 
+
+
 .boxText2 {
-    width: 400px;
+    width: 700px;
     height: 34px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     text-align: center;
     font-weight: normal;
     font-style: normal;
-    font-size: 11px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 26px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1400px) {
 
     .boxText2 {
-        font-size: x-small;
-        padding-left: 50%;
+        font-size: 16px
     }
 }
 
 .img {
-    width: 254px;
-    height: 506px;
+    width: 354px;
+    height: 606px;
     background: transparent;
-    position: relative;
-    bottom: 63%;
+    position: absolute;
+    top: 24%;
     left: 3%;
+}
+
+@media screen and (max-width: 1400px){
+    .img{
+        width: 254px;
+        height: 506px;  
+        background: transparent;
+        position: absolute;
+    }
 }
 
 .kratos {
@@ -186,26 +222,26 @@ span {
     }
 }
 
-@media only screen and (max-width: 480px) {
-    .kratos {
-
-        width: 60%;
-        height: 60%;
-        position: relative;
-        top: 90%;
-        left: 1%;
-    }
-}
 
 .img2 {
-    width: 347px;
-    height: 334px;
+    width: 447px;
+    height: 434px;
     background: transparent;
-    position: relative;
-    bottom: 119%;
-    left: 70%;
+    position: absolute;
+    top: 45%;
+    right: 3%;
 }
 
+@media screen and (max-width: 1400px){
+    .img2{
+        width: 347px;
+        height: 343px;  
+        background: transparent;
+        position: absolute;
+        top: 45%;
+        right: 0%;
+    }
+}
 .superMario {
     width: 100%;
     object-fit: cover;
@@ -217,38 +253,46 @@ span {
         height: 65%;
         position: relative;
         bottom: -90%;
-        right: 20%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .superMario {
-        width: 60%;
-        height: 60%;
-        position: relative;
-        top: 120%;
-        right: 30%;
+        right: 10%;
     }
 }
 
 
 #buttonRegister {
-    width: 138px;
-    height: 38px;
+    width: 210px;
+    height: 60px;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 17px;
+    font-size: 27px;
     line-height: 22px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1400px){
+    #buttonRegister{
+        width: 170px;
+        height: 50px;
+        font-size: 22px;
+        
+    }
+}
+
+
+.buttonRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+@media screen and (max-width: 1400px) {
 
     #buttonRegister {
         margin-left: 9%;
@@ -256,84 +300,154 @@ span {
     }
 }
 
+
 #buttonRegister:hover {
     background-color: #1B1B1B;
     ;
 }
 
-.img3a {
-    width: 152px;
-    height: 104px;
-    background: transparent url('../../../assets/Images/socializeBox.png') 0% 0% no-repeat padding-box;
-    border: 1px solid #E100FF;
-    border-radius: 38px;
+
+.container_socializa{
+    width: 274px;
+    height: 186px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/Images/shareBox.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+@media screen and (max-width: 1400px) {
 
-.img3b {
-    width: 152px;
-    height: 104px;
-    background: transparent url('../../../assets/Images/shareBox.png') 0% 0% no-repeat padding-box;
-    border: 1px solid #E100FF;
-    border-radius: 38px;
+    .container_socializa{
+        width: 174px;
+        height: 116px; 
+    }
 }
 
-.img3c {
-    width: 152px;
-    height: 104px;
-    background: transparent url('../../../assets/Images/newsBox.png') 0% 0% no-repeat padding-box;
-    border: 1px solid #E100FF;
-    border-radius: 34px;
+.container_conecta{
+    width: 274px;
+    height: 186px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/Images/socializeBox.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .container_conecta{
+        width: 174px;
+        height: 116px; 
+    }
+}
+
+.container_noticias{
+    width: 274px;
+    height: 186px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/Images/newsBox.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .container_noticias{
+        width: 174px;
+        height: 116px; 
+    }
 }
 
 
 .socializa {
-    width: 166px;
+
     height: 30px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 15px;
+    font-size: 25px;
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
 }
 
+@media screen and (max-width: 1400px) {
+
+    .socializa{
+       font-size: 17px;
+    }
+}
+
+
+
 .conecta {
-    width: 149px;
+
     height: 30px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 15px;
+    font-size: 25px;
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .conecta{
+       font-size: 17px;
+    }
 }
 
 .noticias {
-    width: 149px;
+
     height: 30px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 15px;
+    font-size: 25px;
     line-height: 19px;
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: 3.6px;
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .noticias{
+       font-size: 17px;
+    }
 }
 
 
 /* landing container2 */
 
 .container2 {
-    min-height: 100vh;
+    min-height: 800px;
     background-color: #0100500a;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px 0px;
+    background-color: #01005017;
+
 }
 
 .boxNewsLanding {
@@ -342,16 +456,16 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 7%;
+    gap: 35px 0px;
+
 }
 
 .boxTitleLanding2 {
-    width: 511px;
-    height: 89px;
+
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 48px;
+    font-size: 75px;
     line-height: 61px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
@@ -362,37 +476,26 @@ span {
 }
 
 .boxTextLanding2 {
-    width: 411px;
-    height: 34px;
+
     text-align: center;
     font-weight: normal;
     font-style: normal;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 25px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
 }
 
 .boxNews {
-    height: 160px;
+
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-self: center;
     text-align: center;
-    background: transparent;
-    padding-top: 42px;
-    padding-left: 3%;
+
 }
 
-@media screen and (max-width: 768px) {
-    .boxNews {
-        width: 100%;
-        height: 100%;
-        font-size: x-small;
-    }
-}
 
 .buttonNews {
     height: 40px;
@@ -401,37 +504,25 @@ span {
     justify-content: center;
     align-self: center;
     text-align: center;
-    padding-top: 60px;
 }
 
 #buttonNews {
-    width: 138px;
-    height: 38px;
-    margin-top: 10%;
+    width: 210px;
+    height: 60px;
     background: #7F00FF 0% 0% no-repeat padding-box;
     border: 1px solid #E100FF;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 27px;
+
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    #buttonNews {
 
-        width: 15%;
-        height: 4%;
-        font-size: x-small;
-        position: absolute;
-        top: 110%;
-        right: 39%;
-    }
-}
 
 @media screen and (max-width: 480px) {
     #buttonNews {
@@ -446,44 +537,48 @@ span {
 /* landing container3 */
 
 .container3 {
-
-    height: 525px;
+    width: auto;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     background-image: url("../../../assets/background/background_landing_chat.svg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    opacity: 100%;
 }
 
 .boxChat {
-    text-align: start;
-    font-weight: normal;
+    max-width: 489px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-style: normal;
-    color: #1B1B1B;
-    padding-top: 8%;
-    padding-left: 13%;
+    gap: 50px 0px;
 }
 
-@media screen and (max-width: 768px) {
-    .boxChat {
-        width: 70%;
-        height: 70%;
-        padding-left: 6%;
-    }
-}
+
 
 
 .boxTitleLanding3 {
-    width: 330px;
+    width: 530px;
     height: 116px;
     text-align: left;
     font-weight: bold;
     font-style: normal;
     font-size: 48px;
-    line-height: 55px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #E100FF;
+}
+
+h2{
+    color: #E100FF;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 75px;
 }
 
 .spanLanding3 {
@@ -491,25 +586,24 @@ span {
 }
 
 .boxTextLanding3 {
-    width: 299px;
-    height: 53px;
+    width: auto;
     text-align: left;
     font-weight: normal;
     font-style: normal;
-    font-size: 12px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 27px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #FFFFFF;
     padding-top: 10px;
 }
 
 #buttonRegister3 {
-    width: 138px;
-    height: 38px;
+    width: 210px;
+    height: 60px;
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 17px;
+    font-size: 27px;
     line-height: 22px;
     font-family: "Plus Jakarta Sans", sans-serif;
     background: #1B1B1B;
@@ -524,31 +618,6 @@ span {
     ;
 }
 
-.boxLogosPlatforms {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-weight: normal;
-    font-style: normal;
-    color: #1B1B1B;
-    padding-top: 8%;
-    gap: 2%;
-    padding-right: 3%;
-}
-
-@media screen and (max-width: 480px) {
-    .boxLogosPlatforms {
-        padding-top: 20%;
-        padding-right: 10%;
-    }
-}
-
-.imgLandingChat {
-    width: 40%;
-    position: relative;
-    left: 50%;
-    bottom: 400px;
-}
 
 @media screen and (max-width: 768px) {
     .imgLandingChat {
@@ -559,27 +628,42 @@ span {
     }
 }
 
-@media screen and (max-width: 480px) {
-    .imgLandingChat {
-        left: 42%;
-        bottom: 50%;
 
+
+.container_chatea{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0px 400px;
+}
+
+@media screen and (max-width: 1400px){
+    .container_chatea{
+        gap: 0px 150px
     }
 }
+
+
+
 
 .imageChat {
-    width: 367px;
-    height: 348px;
+    width: 487px;
+    height: 468px;
 }
 
-@media screen and (max-width: 480px) {
-    .imageChat {
-        width: 60%;
-        height: 60%;
-        left: 50%;
-        bottom: 80%;
-    }
+
+
+.boxLogosPlatforms {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0px 50px;
 }
+
+.icon_platform{
+    width: 80%;
+}
+
 
 
 /* landing container4 */
@@ -587,24 +671,31 @@ span {
 .container4 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 96px;
-    padding-bottom: 140px;
-    background-color: #0100500a;
-    background-size: 100%;
+    min-height: 1200px;
+    background-color: #01005017;
+    background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
+    gap: 100px 0px;
+}
+
+
+.title_comparte{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 0px;
 }
 
 .boxTitleLanding4 {
-    width: 511px;
-    height: 112px;
+
     text-align: center;
     font-weight: bold;
     font-style: normal;
-    font-size: 48px;
-    line-height: 51px;
+    font-size: 75px;
+    line-height: 75px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #E100FF;
 }
@@ -614,33 +705,26 @@ span {
 }
 
 .boxTextLanding4 {
-    width: 448px;
-    height: 37px;
+
     text-align: center;
     font-weight: normal;
     font-style: normal;
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 24px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
 }
 
-@media screen and (max-width: 480px) {
-    .boxTextLanding4 {
-        width: 90%;
-        font-size: x-small;
-    }
-}
 
 #buttonRegister4 {
-    width: 138px;
-    height: 38px;
+    width: 210px;
+    height: 60px;
     background: #7F00FF;
     border-radius: 10px;
     border: none;
     text-align: center;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 27px;
     line-height: 22px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #FFFFFF;
@@ -652,154 +736,132 @@ span {
     ;
 }
 
+.bottonContainer {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+
+
 .imgLandingComunidad {
-    position: absolute;
-    bottom: -70px;
-    left: 65px;
+    
+    justify-content: center;
+    max-width: 810px;
 }
 
-@media screen and (max-width: 768px) {
-    .imgLandingComunidad {
-        width: 50%;
-        height: 50%;
-        left:10%;
-        top: 10%
+@media screen and (max-width: 1400px){
+    .imgLandingComunidad{
+        max-width: 730px;
+        display: flex;
+        justify-content: flex-end;
+
     }
 }
 
-@media screen and (max-width: 480px) {
-    .imgLandingComunidad {
-        width: 60%;
-        height: 60%;
-        left: 67%;
-        top: -22%
-    }
-}
+
+
 
 .imageComunity {
-    width: 491px;
-    height: 307px;
+    width: 95%;
 }
-@media screen and (max-width: 768px) {
-    .imageComunity {
-       width: 95%;
-        right: 10%;
-        top: 15%
+
+@media screen and (max-width: 1400px) {
+
+    .imageComunity{
+        width: 75%;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .imageComunity {
-        width: 60%;
-        height: 60%;
-        right: 10%;
-        top: 15%
-    }
+.bottonContainerRight {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px 0px;
 }
-
-.box2 {
-    padding-left: 32px;
-}
-
 
 .boxMessage1 {
-    width: 269px;
-    height: auto;
-    background-color: #FFFFFF;
-    border-radius: 33px;
-    padding: 20px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 400px;
+    height: 181px;
+    padding: 25px;
+    border-radius: 30px;
+    background-color: white;
+    gap: 10px 0px;
 
 }
 
-@media screen and (max-width: 480px) {
-    .boxMessage1 {
 
-        left: -140%;
-        top: 15%
-    }
-}
 
-.pmessage1a {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 17px;
-    color: #E100FF;
-    margin: 0;
-    padding-bottom: 3%;
-}
 
-.pmessage1b {
-    font-weight: normal;
-    font-style: normal;
-    font-size: 11px;
-    line-height: 17px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    color: #1B1B1B;
-    margin: 0;
-}
 
 .boxMessage2 {
-    width: 269px;
-    height: auto;
-    background-color: #FFFFFF;
-    border-radius: 33px;
-    padding: 20px;
-    position: relative;
-    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 400px;
+    height: 181px;
+    padding: 25px;
+    border-radius: 30px;
+    background-color: white;
+    gap: 10px 0px;
+    margin-left: 90px;
+
 }
 
-@media screen and (max-width: 480px) {
-    .boxMessage2 {
-        left: -140%;
-        top: 15%
-    }
-}
-
-.pmessage2a {
+.pmessage1a, .pmessage2a  {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: bold;
-    font-size: 15px;
-    line-height: 17px;
+    font-size: 24px;
     color: #E100FF;
-    margin: 0;
-    padding-bottom: 3%;
+
+
 }
 
-.pmessage2b {
+.pmessage1b, .pmessage2b {
     font-weight: normal;
     font-style: normal;
-    font-size: 11px;
-    line-height: 17px;
+    font-size: 18px;
+    line-height: 23px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #1B1B1B;
     margin: 0;
 }
 
 .imgDecorador1 {
-    position: absolute;
-    bottom: -24px;
-    right: 0;
+margin-top: -10px;
+padding-left: 70px;
 }
 
-.imgDecorador2 {
-    position: absolute;
-    bottom: -24px;
-    right: 24px;
+.imgDecorador2{
+    margin-top: -10px; 
+     padding-left: 220px;
 }
 
-.bottonContainer {
-    width: 80%;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 48px;
+
+
+
+
+
+.box2 {
+    padding-left: 32px;
 }
 
-.bottonContainerRight {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    gap: 32px;
-}
+
+
+
+
+
+
+
+
+
+
+

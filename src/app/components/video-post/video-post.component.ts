@@ -35,9 +35,9 @@ export class VideoPostComponent {
         aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
         password: '********',
         confirmPassword: '********',
-        status: true, // Usuario activo
-        platforms: ['Playstation', 'Nintendo'],
-        genres: ['Acción', 'Aventura']
+        available_to_play: true, // Usuario activo
+        platform: ['Playstation', 'Nintendo'],
+        interest: ['Acción', 'Aventura']
       },
       {
         user_id: 2,
@@ -48,9 +48,9 @@ export class VideoPostComponent {
         aboutMe: 'Apasionada por el diseño y la creatividad.',
         password: '********',
         confirmPassword: '********',
-        status: false, // Usuario inactivo
-        platforms: ['Xbox'],
-        genres: ['Coches', 'Estrategia']
+        available_to_play: false, // Usuario inactivo
+        platform: ['Xbox'],
+        interest: ['Coches', 'Estrategia']
       }
 
     ];

@@ -1,7 +1,12 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 .navbar {
     padding: 40px;
     margin: 0px;
-    width: 100%;
+    width: 100vw;
     height: 120px;
     position: absolute;
     top:0;

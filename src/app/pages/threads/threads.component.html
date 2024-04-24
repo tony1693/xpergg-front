@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="title">
+        <h4 class="white">Hilos</h4>
+        <h4 class="pink">Disponibles</h4>
+        <h4 class="white">{{platformTitle}}</h4>
+    </div>
+
+    <div class="container2">
+        <div class="container3">
+            <input id="Search" type="text" class="form-control" placeholder="Buscar" aria-label="id_book"
+                aria-describedby="basic-addon2" #inputText>
+
+            <button class="lookFor"><i class="fa-sharp fa-solid fa-magnifying-glass fa-xs"
+                    style="color: #B197FC;"></i></button>
+        </div>
+        <app-dropdowns-threads id="button"></app-dropdowns-threads>
+    </div>
+    <div class="container4">
+        <app-card-threads [message]="message" [game]="game" [platform]="platform"></app-card-threads>
+        <app-card-threads></app-card-threads>
+        <app-card-threads></app-card-threads>
+        <app-card-threads></app-card-threads>
+        <app-card-threads></app-card-threads>
+        <app-card-threads></app-card-threads>
+
+
+    </div>
+</div>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { UsersListComponent } from '../../components/users-list/users-list.component';
+import { UserListChatComponent } from '../../components/user-list-chat/user-list-chat.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [UsersListComponent],
+  imports: [UserListChatComponent, RouterLink],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css',
 })

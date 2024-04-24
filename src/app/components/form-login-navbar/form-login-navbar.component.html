@@ -4,7 +4,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
+                    <div class="divBnt">
+                        <button type="button" class="btnClose btn-secondary" data-bs-dismiss="modal"> X </button>
+                    </div>
+                    <h1 class="modal-title fs-5">Iniciar sesión</h1>
                 </div>
                 <div class="modal-body">
                     <div class="form">
@@ -24,7 +27,7 @@
                         <label for="password" class="label">Contraseña</label>
                         <input class="control" placeholder="Password" type="password" name="password"
                             formControlName="password">
-                        <span class="subtitlePassword">Debe tener entre 8 y 20 caracteres.</span>
+
                         <!-- Mensaje de error para el campo de contraseña -->
                         @if ( (reactiveForm.get('password')?.dirty || reactiveForm.get('password')?.touched) &&
                         reactiveForm.get('password')?.invalid) {
@@ -44,7 +47,6 @@
                 </div>
                 <div class="modal-footer">
                     <div class="bntFooter">
-                        <button type="button" class="btnClose btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button class="buttonLogin" type="submit">Login</button>
                     </div>
                 </div>

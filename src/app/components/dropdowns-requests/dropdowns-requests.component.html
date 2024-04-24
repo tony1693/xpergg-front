@@ -1,21 +1,29 @@
-
 <div class="dropdown">
+    <div class="container">
+        <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown-menu"
+            aria-expanded="false" data-bs-auto-close="true" (click)="toggleContent()">
+            <div class="btnContent">
+                <app-link-without-page class="linkIconNR" linkImg="assets\icon\iconoSolicitudesR.svg"
+                    linkText="Solicitudes" [isUser]=true></app-link-without-page>
+                <span class="badge">{{ notificationsCount}}</span>
+            </div>
+        </button>
+    </div>
 
-    <button id="button" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-        aria-expanded="false" data-bs-auto-close="outside">
-        Solicitudes
-    </button>
-
+    @if(optionsVisible){
     <div class="dropdown-menu" aria-labelledby="notificacionesDropdown">
         <div class="request">
             <p class="dropdown-item-text">Tienes una solicitud de amistad de: "usuario2".</p>
             <div class="request2">
                 <button class="btn">Aceptar</button>
-                <button class="btn">Rechazar</button>                
-            </div> 
+                <button class="btn">Rechazar</button>
+            </div>
         </div>
         <br>
         <p class="dropdown-item-text">"usuario3" ha aceptado tu solicitud de amistad.</p>
     </div>
-    
+    }
+
+
+
 </div>

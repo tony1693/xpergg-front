@@ -5,8 +5,12 @@
     <div class="friend">
       <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
       <div class="name">{{user.name}}</div>
-      @if (withStatus) {
+      @if (user.status) {
       <div class="status activo"><span class="punto-gordo">•</span>Disponible</div>
+      }@else{
+      <div class="unavailable">
+        • Ausente
+      </div>
       }
 
     </div>
