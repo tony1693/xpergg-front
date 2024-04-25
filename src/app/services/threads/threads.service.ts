@@ -14,17 +14,8 @@ export class ThreadsService {
   public addNewThread(newThread: Thread) {
     return this.http.post(`${this.url}/threads`, newThread);
   }
-  // public getThreads(): Observable<Thread[]> {
-  // return this.http.get<Thread[]>(`${this.url}/threads`);
-  // }
 
-  public getThreadsPS(): Observable<Thread[]> {
-    let platform = 'PlayStation';
-    return this.http.get<Thread[]>(`${this.url}/threads?platform=${platform}`);
-  }
-
-  public getThreadsXbox(): Observable<Thread[]> {
-    let platform = 'X-Box';
+  public getThreads(platform: string): Observable<Thread[]> {
     return this.http.get<Thread[]>(`${this.url}/threads?platform=${platform}`);
   }
 

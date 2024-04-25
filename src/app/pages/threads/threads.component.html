@@ -10,11 +10,16 @@
             <input id="Search" type="text" class="form-control" placeholder="Buscar" aria-label="id_book"
                 aria-describedby="basic-addon2" #inputText>
             <button class="lookFor"><i class="fa-sharp fa-solid fa-magnifying-glass fa-xs" style="color: #B197FC;"
-                    (click)="searchByGame(inputText)"></i></button>
+                    (click)="search(inputText.value)"></i></button>
         </div>
         <app-dropdowns-threads id="button"></app-dropdowns-threads>
     </div>
     <div class="container4">
-        <app-card-threads></app-card-threads>
+        @for(thread of threads; track thread.thread_id){
+        <app-card-threads [thread]="thread"></app-card-threads>
+        }@empty{
+        <p class="empty">Ups...no hay hilos disponibles. Empieza a interactuar con la Comunidad!</p>
+        }
+
     </div>
 </div>

@@ -21,5 +21,5 @@ export const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'threads', component: ThreadsComponent },
+  { path: 'threads/:platform', component: ThreadsComponent },
 ];

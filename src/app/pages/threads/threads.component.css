@@ -6,7 +6,8 @@
 
 .container-fluid{
     width: 100vw;
-    min-height: 100vh;    
+    height: auto;  
+    min-height: 100vh;  
     background-image: url("../../../assets/background/background_hilos.png");
     background-size: auto;
     background-repeat: repeat;
@@ -91,5 +92,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+}
+
+.empty{
+    font-family: 'Plus Jakarta Sans';
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: white;
+    margin-top: 10px;
 }
 
