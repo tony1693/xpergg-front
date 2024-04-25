@@ -38,8 +38,11 @@ export class InitComponent {
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
   @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
+  
 
-  constructor(private readonly postService: PostService) {
+  constructor(private readonly postService: PostService, private readonly userService: UserService) {
+
+    
     // Obtenemos los users desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
@@ -48,16 +51,28 @@ export class InitComponent {
 
     // Aquí recuperamos el estado del usuario desde el almacenamiento local
     let userStatusFromStorage = localStorage.getItem('userStatus');
-    this.available_to_play =
-      userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
   }
 
-  //
+  // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
     this.available_to_play = !this.available_to_play;
     let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
     localStorage.setItem('userStatus', status);
+    let user = JSON.parse(localStorage.getItem('user') as string);
+    this.updateDatabase(user.user_id, this.available_to_play)
+  }
+ // Llamar al servicio para actualizar el estado en la base de datos
+  public updateDatabase(userId: string, isAvailable: boolean) {
+    this.userService.updateUserAvailability(userId, isAvailable).subscribe({
+      next: (data) => {
+        console.log('Actualización exitosa', data);
+      },
+      error: (error) => {
+        console.log('Ocurrió un error durante la actualización', error);
+      }
+    });
   }
 
   public addPost(

@@ -22,7 +22,7 @@ public login(loginBody:LoginBody): Observable<any> {
   }
 
 updateUserAvailability(userId: string, isAvailable: boolean): Observable<any> {
-  return this.http.put(`/api/user/${userId}`, { available_to_play: isAvailable });
+  return this.http.put(`${this.apiUrl}/user/available?id=${userId}`, { available_to_play: isAvailable });
 }
 
 }
