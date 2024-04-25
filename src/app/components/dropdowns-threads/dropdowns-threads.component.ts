@@ -32,12 +32,13 @@ export class DropdownsThreadsComponent {
     platform: HTMLSelectElement
   ) {
     const currentDate = new Date().toISOString();
+    // aqui me traigo el user desde el localStorage
     const userId: number = JSON.parse(
       localStorage.getItem('user') as string
     ).user_id;
     if (userId) {
       let newThread: Thread = {
-        user_id: userId, // para que venga de localStorage
+        user_id: userId,
         subject: subject.value,
         game: game.value,
         platform: platform.value,
