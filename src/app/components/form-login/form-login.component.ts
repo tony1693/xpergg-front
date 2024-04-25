@@ -31,13 +31,19 @@ export class FormLoginComponent {
     private readonly userService: UserService,
     private readonly router: Router
   ) { }
+  
   loginSubmit() {
     this.userService.login(this.reactiveForm.value).subscribe(
       {
         next: (res) => {
           localStorage.setItem('isLoggedIn', 'true')
           localStorage.setItem('user', JSON.stringify(res.user[0]))
-          this.router.navigate(['init'])
+          this.router.navigate(['init']) 
+          setTimeout(()=>
+            {location.reload();},1
+          )
+          
+
         },
         error: (err) => {
           this.errorMessage = 'Usuario o contraseña  "INCORRECTOS".';
