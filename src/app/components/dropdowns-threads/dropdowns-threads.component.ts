@@ -47,7 +47,9 @@ export class DropdownsThreadsComponent {
         next: (data) => {
           console.log(data);
           this.message = 'Hilo creado correctamente';
-          this.threadsService;
+          setTimeout(() => {
+            location.reload();
+          }, 1);
         },
         error: (error) => {
           console.log(error);
