@@ -9,10 +9,15 @@ import { Post } from '../../models/posts';
 import { UserService } from '../../services/user/user.service';
 import { FormLoginComponent } from '../../components/form-login/form-login.component';
 import { CommonModule } from '@angular/common';
+import { GamesApiService } from '../../services/games-api/games-api.service';
+import { TrendingNewsComponent } from '../../components/trending-news/trending-news.component';
 
 @Component({
   selector: 'app-init',
   standalone: true,
+  templateUrl: './init.component.html',
+  styleUrl: './init.component.css',
+  providers: [PostService, UserService],
   imports: [
     RouterLink,
     StatusComponent,
@@ -20,10 +25,8 @@ import { CommonModule } from '@angular/common';
     UsersListComponent,
     FormLoginComponent,
     CommonModule,
+    TrendingNewsComponent,
   ],
-  templateUrl: './init.component.html',
-  styleUrl: './init.component.css',
-  providers: [PostService, UserService],
 })
 export class InitComponent {
   users: User[] = [];
@@ -38,17 +41,20 @@ export class InitComponent {
     'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
   public urlId: string = '';
   public post: Post[] = [];
+  games!: any;
 
   @Input() user!: User;
   @Input() public apiNewsText: string =
     'Ubisoft habría retrasado el Assassins creed ambientado en China';
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
+
   // @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
 
   constructor(
     private readonly postService: PostService,
-    private readonly userService: UserService
+    private readonly userService: UserService,
+    private readonly gameService: GamesApiService
   ) {
     // Obtenemos los users desde localStorage
     let usersFromStorage = localStorage.getItem('user');
@@ -76,6 +82,17 @@ export class InitComponent {
     localStorage.setItem('avatar', userAvatar);
     console.log(userAvatar);
   }
+
+  //   ngOnInit() {
+  //     this.getGames()
+  // }
+
+  getGames() {
+    this.gameService.getGames().subscribe((res) => {
+      this.games = res;
+    });
+  }
+
   // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
     this.available_to_play = !this.available_to_play;
@@ -143,6 +160,7 @@ export class InitComponent {
         console.log(error);
       },
     });
+    this.getGames();
   }
 
   // getUserFromLocalStorage(): User | null {
