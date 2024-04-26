@@ -2,7 +2,7 @@ import { Component, Input, input } from '@angular/core';
 import { User } from '../../models/user';
 import { PostService } from '../../services/post/post.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Post } from '../../models/posts';
+import { Post } from '../../models/post';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @Component({
@@ -14,33 +14,17 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
   providers: [PostService],
 })
 export class VideoPostComponent {
-  @Input() public linkYoutubePost!: string;
-  @Input() public titlePost: string =
-    'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
-  @Input() public urlId: string = '';
   users: User[] = [];
-
+  @Input() public post!: Post;
   // Inicializa el contador de likes
   likesCount: number = 0;
-  posts: Post[] = [];
+  public posts: Post[] = [];
 
   constructor(private readonly postService: PostService) {}
-
-  ngOnInit(): void {
-    this.postService.getAllPosts().subscribe((data: Post[]) => {
-      console.log(data);
-      this.posts = data;
-    });
-  }
   // public getUserFromLocalStorage(): User | null {
   // const userJson = localStorage.getItem('user');
   // return userJson ? JSON.parse(userJson) : null;
   // }
-
-  public obtainIdURL(url: string): string {
-    const videoId = url.split('v=')[1];
-    return videoId;
-  }
 
   @Input() public likeOff: string =
     '../../../assets/icon/icono-corazon-off.svg';
@@ -58,5 +42,10 @@ export class VideoPostComponent {
 
   public addComment(inputComment: HTMLInputElement) {
     console.log(inputComment.value);
+  }
+
+  obtainIdURL(url: string): string {
+    const videoId = url.split('v=')[1];
+    return videoId;
   }
 }

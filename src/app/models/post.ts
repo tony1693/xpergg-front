@@ -1,8 +1,7 @@
-
 export interface Post {
-    post_id: number;
-    date: number;
-    url: string;
-    description: string;
-    user_id: number;
-  }
+  post_id: number;
+  date: string;
+  url: string;
+  description: string;
+  user_id: number;
+}

@@ -31,7 +31,14 @@
             <button class="public-post" type="submit"
                 (click)="addPost(inputTextPost, inputLinkVideoPost)">Publicar</button>
         </div>
-        <app-video-post></app-video-post>
+        <div class="allPosts">
+            @for(post of post; track post.post_id){
+            <app-video-post [post]="post"></app-video-post>
+            }@empty {
+            Ups...todavía no hay ningún post. Empieza a interactuar con la Comunidad!
+            }
+        </div>
+
     </div>
 
     <div class="friends">

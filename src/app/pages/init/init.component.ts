@@ -32,17 +32,22 @@ export class InitComponent {
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
   available_to_play: boolean = false;
+  public linkYoutubePost!: string;
+  public titlePost: string =
+    'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
+  public urlId: string = '';
+  public post: Post[] = [];
 
   @Input() public apiNewsText: string =
     'Ubisoft habría retrasado el Assassins creed ambientado en China';
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
   @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
-  
 
-  constructor(private readonly postService: PostService, private readonly userService: UserService) {
-
-    
+  constructor(
+    private readonly postService: PostService,
+    private readonly userService: UserService
+  ) {
     // Obtenemos los users desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
@@ -51,7 +56,8 @@ export class InitComponent {
 
     // Aquí recuperamos el estado del usuario desde el almacenamiento local
     let userStatusFromStorage = localStorage.getItem('userStatus');
-    this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    this.available_to_play =
+      userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
   }
 
@@ -61,9 +67,9 @@ export class InitComponent {
     let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
     localStorage.setItem('userStatus', status);
     let user = JSON.parse(localStorage.getItem('user') as string);
-    this.updateDatabase(user.user_id, this.available_to_play)
+    this.updateDatabase(user.user_id, this.available_to_play);
   }
- // Llamar al servicio para actualizar el estado en la base de datos
+  // Llamar al servicio para actualizar el estado en la base de datos
   public updateDatabase(userId: string, isAvailable: boolean) {
     this.userService.updateUserAvailability(userId, isAvailable).subscribe({
       next: (data) => {
@@ -71,7 +77,7 @@ export class InitComponent {
       },
       error: (error) => {
         console.log('Ocurrió un error durante la actualización', error);
-      }
+      },
     });
   }
 
@@ -99,15 +105,27 @@ export class InitComponent {
     );
   }
 
-  // Filtramos los amigos en línea y sugeridos de la lista de users
-  // this.onlineFriends = this.user.filter(user => user.available_to_play);
+  ngOnInit(): void {
+    this.postService.getAllPosts().subscribe((data: Post[]) => {
+      console.log(data);
+      this.post = data;
+    });
+  }
 
-  // // Asumimos que el user actual es el primero en la lista
-  // let currentUser = this.user[0];
-
-  // this.sugerenciaFriends = this.user.filter(user => {
-  //   let genreMatches = user.genres.filter(genre => currentUser.genres.includes(genre)).length >= 1;
-  //   let platformMatches = user.platforms.filter(platform => currentUser.platforms.includes(platform)).length >= 1;
-  //   return genreMatches && platformMatches;
-  // });
+  getUserFromLocalStorage(): User | null {
+    const userJson = localStorage.getItem('user');
+    return userJson ? JSON.parse(userJson) : null;
+  }
 }
+
+// Filtramos los amigos en línea y sugeridos de la lista de users
+// this.onlineFriends = this.user.filter(user => user.available_to_play);
+
+// // Asumimos que el user actual es el primero en la lista
+// let currentUser = this.user[0];
+
+// this.sugerenciaFriends = this.user.filter(user => {
+//   let genreMatches = user.genres.filter(genre => currentUser.genres.includes(genre)).length >= 1;
+//   let platformMatches = user.platforms.filter(platform => currentUser.platforms.includes(platform)).length >= 1;
+//   return genreMatches && platformMatches;
+// });
