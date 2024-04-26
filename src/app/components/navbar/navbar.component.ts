@@ -12,46 +12,51 @@ import { DropdownsRequestsComponent } from '../dropdowns-requests/dropdowns-requ
 import { DropdownsThreadsComponent } from '../dropdowns-threads/dropdowns-threads.component';
 import { UserService } from '../../services/user/user.service';
 import { Subject } from 'rxjs';
-import { FormLoginComponent } from "../form-login/form-login.component";
+import { FormLoginComponent } from '../form-login/form-login.component';
 
 @Component({
-    selector: 'app-navbar',
-    standalone: true,
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.css',
-    providers: [UserService],
-    imports: [
-        LinkComponent,
-        UsersListComponent,
-        CommonModule,
-        RouterModule,
-        FormLoginNavbarComponent,
-        RouterLink,
-        AvatarComponent,
-        LinkWithoutPageComponent,
-        DropdownsNotificationsComponent,
-        DropdownsRequestsComponent,
-        DropdownsThreadsComponent,
-        FormLoginComponent
-    ]
+  selector: 'app-navbar',
+  standalone: true,
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
+  providers: [UserService],
+  imports: [
+    LinkComponent,
+    UsersListComponent,
+    CommonModule,
+    RouterModule,
+    FormLoginNavbarComponent,
+    RouterLink,
+    AvatarComponent,
+    LinkWithoutPageComponent,
+    DropdownsNotificationsComponent,
+    DropdownsRequestsComponent,
+    DropdownsThreadsComponent,
+    FormLoginComponent,
+  ],
 })
 export class NavbarComponent {
+  @Input() user!: User;
+  isLoggedIn = true;
+  available_to_play = false;
+  isUser = { avalaible_to_play: 'AUSENTE' };
+  public userAvatar: string = '';
 
-@Input() user!: User;
-isLoggedIn = true;
-available_to_play = false;
-isUser = { avalaible_to_play: 'AUSENTE' };
+  // Crea un Subject para manejar el estado
+  private statusSubject = new Subject<boolean>();
 
-// Crea un Subject para manejar el estado
-private statusSubject = new Subject<boolean>();
+  constructor(private userService: UserService) {
+    // Obtenemos los users desde localStorage
+    let usersFromStorage = localStorage.getItem('user');
+    this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
+    console.log(usersFromStorage);
+    console.log(this.user);
 
-constructor(private userService: UserService) {
-  // Obtenemos los users desde localStorage
-  let usersFromStorage = localStorage.getItem('user');
-  this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
-  console.log(usersFromStorage);
-  console.log(this.user);
- }
+    // Aquí recuperamos el avatar:
+    const avatarDataString = localStorage.getItem('avatar');
+    this.userAvatar = avatarDataString as string;
+    console.log(this.userAvatar);
+  }
 
   logout() {
     const userId: number = JSON.parse(
@@ -59,7 +64,6 @@ constructor(private userService: UserService) {
     ).user_id;
     if (userId) {
       this.isLoggedIn = false;
-
 
       // Cambiar el estado a 'AUSENTE'
       this.available_to_play = false;
@@ -73,19 +77,19 @@ constructor(private userService: UserService) {
 
       // Llamar al servicio para actualizar el estado en la base de datos
       const userId = this.user.user_id.toString();
-      this.userService.updateUserAvailability(userId, this.available_to_play).subscribe(
-        () => console.log('Estado actualizado correctamente al hacer logout'),
-        (error) => {
-          console.error('Error al actualizar el estado al hacer logout:', error);
-          // Emitir el error a través del Subject
-          this.statusSubject.error(error);
-        }
-      );
-
-
-
+      this.userService
+        .updateUserAvailability(userId, this.available_to_play)
+        .subscribe(
+          () => console.log('Estado actualizado correctamente al hacer logout'),
+          (error) => {
+            console.error(
+              'Error al actualizar el estado al hacer logout:',
+              error
+            );
+            // Emitir el error a través del Subject
+            this.statusSubject.error(error);
+          }
+        );
     }
-
-
   }
 }

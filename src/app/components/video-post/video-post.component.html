@@ -35,10 +35,6 @@
 
 
 <div class="video-post">
-    <!-- <div class="user-info">
-        <img class="avatar" [src]="user.avatar" alt="User Avatar">
-        <p class="name">{{user.name}}</p>
-    </div> -->
     <div class="video-player">
         <youtube-player id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="322"
             [width]="865" [startSeconds]="1" [endSeconds]=""></youtube-player>
@@ -54,7 +50,7 @@
         <a href="" class="view-comments">Ver comentarios</a>
     </div>
     <div class="comment-section">
-        <input type="text" class="form-control" id="" placeholder="Escribe tu comentario" required #inputComment>
+        <input type="text" class="form-control" id="" placeholder="Escribe tu comentario..." required #inputComment>
     </div>
     <div>
         <button class="comment-btn" type="submit" (click)="addComment(inputComment)">Comentar</button>
