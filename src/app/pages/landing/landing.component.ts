@@ -20,21 +20,18 @@ import { GamesApiService } from '../../services/games-api/games-api.service';
     providers:[UserService, GamesApiService]
 })
 export class LandingComponent {
+  games: any = [];
 
-    constructor(private readonly userService: UserService, private readonly gameService:GamesApiService) {}
+  constructor(private readonly userService: UserService, private readonly gameService:GamesApiService) {}
 
-    games: any;
+  ngOnInit() {
+      this.getGames()
+  }
 
-    ngOnInit() {
-        this.getGames()
-      }
-      getGames() {
-        this.gameService.getGames().subscribe(res => {
+  getGames() {
+      this.gameService.getGames().subscribe(res => {
           this.games = res;      
-        })
-      }
-
-
+      })
+  }
 }
-
 

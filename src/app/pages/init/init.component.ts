@@ -59,14 +59,16 @@ export class InitComponent {
     this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
   }
+ 
   ngOnInit() {
     this.getGames()
-  }
-  getGames() {
+}
+
+getGames() {
     this.gameService.getGames().subscribe(res => {
-      this.games = res;      
+        this.games = res;      
     })
-  }
+}
 
   // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
