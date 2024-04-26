@@ -4,4 +4,6 @@ export class Post {
   url!: string;
   description!: string;
   user_id!: number;
+  user_name!: any;
+  user_avatar!: any;
 }
