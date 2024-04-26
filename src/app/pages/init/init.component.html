@@ -22,7 +22,7 @@
     </div>
     <div class="posts">
         <div class="new-post">
-            <img class="avatarPost" [src]="avatarImg">
+            <img class="avatarPost" [src]="userAvatar">
             <div class="info-post">
                 <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required
                     #inputTextPost>
@@ -35,8 +35,8 @@
             @for(post of post; track post.post_id){
 
             <div class="user-info">
-                <img class="avatar" [src]="userAvatar" alt="User Avatar">
-                <p class="name">{{userName}}</p>
+                <!-- <img class="avatar" [src]="userAvatar" alt="User Avatar">
+                <p class="name">{{userName}}</p> -->
             </div>
 
             <app-video-post [post]="post"></app-video-post>
