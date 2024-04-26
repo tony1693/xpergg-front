@@ -104,12 +104,16 @@ export class InitComponent {
     const userId: number = JSON.parse(
       localStorage.getItem('user') as string
     ).user_id;
+    const userName = localStorage.getItem('name');
+    const avatar = localStorage.getItem('avatar');
     let newPost: Post = {
       url: inputLinkVideoPost.value,
       description: inputTextPost.value,
       date: currentDate,
       user_id: userId,
       post_id: 0,
+      user_name: userName,
+      user_avatar: avatar,
     };
     localStorage.setItem('fecha creacion post', currentDate);
     this.postService.addPost(newPost).subscribe({
@@ -126,8 +130,8 @@ export class InitComponent {
   // Aquí para traer name y avatar:
 
   ngOnInit(): void {
-    const userNameFromLocalStorage = localStorage.getItem('name');
-    this.userName = userNameFromLocalStorage || '';
+    // const userNameFromLocalStorage = localStorage.getItem('name');
+    // this.userName = userNameFromLocalStorage || '';
     const avatarFromLocalStorage = localStorage.getItem('avatar');
     this.userAvatar = avatarFromLocalStorage || '';
     this.postService.getAllPosts().subscribe({

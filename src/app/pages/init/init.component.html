@@ -35,8 +35,8 @@
             @for(post of post; track post.post_id){
 
             <div class="user-info">
-                <!-- <img class="avatar" [src]="userAvatar" alt="User Avatar">
-                <p class="name">{{userName}}</p> -->
+                <img class="avatar" [src]="post.user_avatar" alt="User Avatar">
+                <p class="name">{{post.user_name}}</p>
             </div>
 
             <app-video-post [post]="post"></app-video-post>
