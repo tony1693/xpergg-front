@@ -14,8 +14,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
   providers: [PostService],
 })
 export class VideoPostComponent {
-  users: User[] = [];
   @Input() public post!: Post;
+  @Input() public user!: User;
   // Inicializa el contador de likes
   likesCount: number = 0;
   public posts: Post[] = [];

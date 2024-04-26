@@ -1,7 +1,7 @@
 <div class="container-init">
 
     <div class="news">
-        <p>Noticias Destacadas</p>
+        <p class=" titleNews">Noticias Destacadas</p>
         <div class="card-news">
             <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
             <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
@@ -11,8 +11,8 @@
         </div>
         <div class="status">
             <p class="status-text"></p>
-            @if (user.length >0) {
-            <app-status [user]="user[0]"></app-status>
+            @if (users.length >0) {
+            <app-status [user]="users[0]"></app-status>
             }
             <!-- Agrega el evento de clic y ngStyle aquí -->
             <button class="buttonToogle" (click)="toggleAvailability()"
@@ -33,6 +33,12 @@
         </div>
         <div class="allPosts">
             @for(post of post; track post.post_id){
+
+            <div class="user-info">
+                <img class="avatar" [src]="userAvatar" alt="User Avatar">
+                <p class="name">{{userName}}</p>
+            </div>
+
             <app-video-post [post]="post"></app-video-post>
             }@empty {
             Ups...todavía no hay ningún post. Empieza a interactuar con la Comunidad!

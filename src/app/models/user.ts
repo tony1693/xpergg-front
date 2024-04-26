@@ -1,28 +1,26 @@
 export interface User {
-avalaible_to_play: any;
-avalaibleToPlay: any;
-  
-    user_id: number;
-    avatar: string;
-    name: string;
-    email: string;
-    nationality: string;
-    aboutMe: string;
-    password: string;
-    confirmPassword: string;
-    available_to_play:boolean;
-    platform: string[];
-    interest: string[];
+  avalaible_to_play: any;
+  avalaibleToPlay: any;
 
-  };
-
-export interface LoginBody{
-  name:string;
-  password: string; 
-
+  user_id: number;
+  avatar: string;
+  name: string;
+  email: string;
+  nationality: string;
+  aboutMe: string;
+  password: string;
+  confirmPassword: string;
+  available_to_play: boolean;
+  platform: string[];
+  interest: string[];
 }
 
-export interface RegisterBody{
+export interface LoginBody {
+  name: string;
+  password: string;
+}
+
+export interface RegisterBody {
   user_id?: number;
   name: string;
   email: string;
@@ -31,4 +29,9 @@ export interface RegisterBody{
   password: string;
   platform: string[];
   interest: string[];
+}
+
+export interface userPosts {
+  name: string;
+  avatar: string;
 }

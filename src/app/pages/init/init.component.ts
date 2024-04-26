@@ -6,9 +6,7 @@ import { VideoPostComponent } from '../../components/video-post/video-post.compo
 import { UsersListComponent } from '../../components/users-list/users-list.component';
 import { PostService } from '../../services/post/post.service';
 import { Post } from '../../models/posts';
-import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
-import { Thread } from '../../models/thread';
 import { FormLoginComponent } from '../../components/form-login/form-login.component';
 import { CommonModule } from '@angular/common';
 
@@ -28,16 +26,20 @@ import { CommonModule } from '@angular/common';
   providers: [PostService, UserService],
 })
 export class InitComponent {
-  user: User[] = [];
+  users: User[] = [];
+
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
   available_to_play: boolean = false;
+  public userName: string = '';
+  public userAvatar: string = '';
   public linkYoutubePost!: string;
   public titlePost: string =
     'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
   public urlId: string = '';
   public post: Post[] = [];
 
+  @Input() user!: User;
   @Input() public apiNewsText: string =
     'Ubisoft habría retrasado el Assassins creed ambientado en China';
   @Input() public linkApiNewsRouting: string = '';
@@ -50,17 +52,30 @@ export class InitComponent {
   ) {
     // Obtenemos los users desde localStorage
     let usersFromStorage = localStorage.getItem('user');
-    this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
+    this.users = usersFromStorage ? JSON.parse(usersFromStorage) : [];
     console.log(usersFromStorage);
-    console.log(this.user);
+    console.log(this.users);
 
     // Aquí recuperamos el estado del usuario desde el almacenamiento local
     let userStatusFromStorage = localStorage.getItem('userStatus');
     this.available_to_play =
       userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
-  }
 
+    // Aquí recuperamos el userName:
+    const userDataString = localStorage.getItem('user');
+    const userData = userDataString ? JSON.parse(userDataString) : null;
+    const userName = userData ? userData.name : '';
+    localStorage.setItem('name', userName);
+    console.log(userName);
+
+    // Aquí recuperamos el avatar:
+    const avatarDataString = localStorage.getItem('user');
+    const avatarString = avatarDataString ? JSON.parse(avatarDataString) : null;
+    const userAvatar = avatarString ? avatarString.imgavatar : '';
+    localStorage.setItem('avatar', userAvatar);
+    console.log(userAvatar);
+  }
   // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
     this.available_to_play = !this.available_to_play;
@@ -86,36 +101,50 @@ export class InitComponent {
     inputLinkVideoPost: HTMLInputElement
   ) {
     const currentDate = new Date().toISOString();
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
     let newPost: Post = {
       url: inputLinkVideoPost.value,
       description: inputTextPost.value,
       date: currentDate,
-      user_id: 1, // aqui me tiene que venir de local storage
+      user_id: userId,
       post_id: 0,
     };
     localStorage.setItem('fecha creacion post', currentDate);
-    this.postService.addPost(newPost).subscribe(
-      (data) => {
+    this.postService.addPost(newPost).subscribe({
+      next: (data) => {
         console.log(data);
         window.location.reload();
       },
-      (error) => {
+      error: (error) => {
         console.log(error);
-      }
-    );
-  }
-
-  ngOnInit(): void {
-    this.postService.getAllPosts().subscribe((data: Post[]) => {
-      console.log(data);
-      this.post = data;
+      },
     });
   }
 
-  getUserFromLocalStorage(): User | null {
-    const userJson = localStorage.getItem('user');
-    return userJson ? JSON.parse(userJson) : null;
+  // Aquí para traer name y avatar:
+
+  ngOnInit(): void {
+    const userNameFromLocalStorage = localStorage.getItem('name');
+    this.userName = userNameFromLocalStorage || '';
+    const avatarFromLocalStorage = localStorage.getItem('avatar');
+    this.userAvatar = avatarFromLocalStorage || '';
+    this.postService.getAllPosts().subscribe({
+      next: (data: Post[]) => {
+        console.log(data);
+        this.post = data;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
+
+  // getUserFromLocalStorage(): User | null {
+  //   const userJson = localStorage.getItem('user');
+  //   return userJson ? JSON.parse(userJson) : null;
+  // }
 }
 
 // Filtramos los amigos en línea y sugeridos de la lista de users
