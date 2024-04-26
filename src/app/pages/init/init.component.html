@@ -3,10 +3,11 @@
     <div class="news">
         <p>Noticias Destacadas</p>
         <div class="card-news">
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+           <div class="boxNews">
+    @for(game of games.slice(0, 4); track game) {
+        <app-trending-news class="cards" [text]="game.text"></app-trending-news>
+    }
+</div>
             <a class="viewAll" routerLink="/news">Ver Todas</a>
         </div>
         <div class="status">

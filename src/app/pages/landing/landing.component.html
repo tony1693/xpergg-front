@@ -58,12 +58,10 @@
             </div>
         </div>
         <div class="boxNews">
-            <app-trending-news [text]="newsText1" [img]="newsImage1" [link]="newsLink1">
-            </app-trending-news>
-            <app-trending-news [text]="newsText2" [img]="newsImage2" [link]="newsLink2">
-            </app-trending-news>
-            <app-trending-news [text]="newsText3" [img]="newsImage3" [link]="newsLink3">
-            </app-trending-news>
+            @for(game of games.slice(0, 3); track game) {
+                <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
+                    [link]="game.freetogame_profile_url"></app-trending-news>
+            }
         </div>
         <div class="buttonNews">
             <button id="buttonNews" onclick type="submit" routerLink="/news">Ver Todas</button>

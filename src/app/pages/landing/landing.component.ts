@@ -9,6 +9,7 @@ import { NewsComponent } from '../news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule } from '@angular/common';
+import { GamesApiService } from '../../services/games-api/games-api.service';
 
 @Component({
     selector: 'app-landing',
@@ -16,23 +17,23 @@ import { CommonModule } from '@angular/common';
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
     imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent ],
-    providers:[UserService]
+    providers:[UserService, GamesApiService]
 })
 export class LandingComponent {
 
-    newsText1 = 'Texto de la noticia 1';
-    newsImage1 = 'URL de la imagen de la noticia 1';
-    newsLink1 = 'URL del enlace de la noticia 1';
+    constructor(private readonly userService: UserService, private readonly gameService:GamesApiService) {}
 
-    newsText2 = 'Texto de la noticia 2';
-    newsImage2 = 'URL de la imagen de la noticia 2';
-    newsLink2 = 'URL del enlace de la noticia 2';
+    games: any;
 
-    newsText3 = 'Texto de la noticia 3';
-    newsImage3 = 'URL de la imagen de la noticia 3';
-    newsLink3 = 'URL del enlace de la noticia 3';
+    ngOnInit() {
+        this.getGames()
+      }
+      getGames() {
+        this.gameService.getGames().subscribe(res => {
+          this.games = res;      
+        })
+      }
 
-    
 
 }
 

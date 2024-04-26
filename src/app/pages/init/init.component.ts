@@ -11,36 +11,41 @@ import { UserService } from '../../services/user/user.service';
 import { Thread } from '../../models/thread';
 import { FormLoginComponent } from '../../components/form-login/form-login.component';
 import { CommonModule } from '@angular/common';
+import { GamesApiService } from '../../services/games-api/games-api.service';
+import { TrendingNewsComponent } from "../../components/trending-news/trending-news.component";
 
 @Component({
-  selector: 'app-init',
-  standalone: true,
-  imports: [
-    RouterLink,
-    StatusComponent,
-    VideoPostComponent,
-    UsersListComponent,
-    FormLoginComponent,
-    CommonModule,
-  ],
-  templateUrl: './init.component.html',
-  styleUrl: './init.component.css',
-  providers: [PostService, UserService],
+    selector: 'app-init',
+    standalone: true,
+    templateUrl: './init.component.html',
+    styleUrl: './init.component.css',
+    providers: [PostService, UserService],
+    imports: [
+        RouterLink,
+        StatusComponent,
+        VideoPostComponent,
+        UsersListComponent,
+        FormLoginComponent,
+        CommonModule,
+        TrendingNewsComponent
+    ]
 })
 export class InitComponent {
   user: User[] = [];
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
   available_to_play: boolean = false;
+  games!: any;
 
   @Input() public apiNewsText: string =
     'Ubisoft habría retrasado el Assassins creed ambientado en China';
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
   @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
+ 
 
 
-  constructor(private readonly postService: PostService, private readonly userService: UserService) {
+  constructor(private readonly postService: PostService, private readonly userService: UserService, private readonly gameService:GamesApiService) {
 
 
   // Obtenemos los users desde localStorage
@@ -53,6 +58,14 @@ export class InitComponent {
     let userStatusFromStorage = localStorage.getItem('userStatus');
     this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
+  }
+  ngOnInit() {
+    this.getGames()
+  }
+  getGames() {
+    this.gameService.getGames().subscribe(res => {
+      this.games = res;      
+    })
   }
 
   // Función para cambiar el estado de disponibilidad
