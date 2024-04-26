@@ -38,12 +38,12 @@ export class InitComponent {
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
   @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
-  
+
 
   constructor(private readonly postService: PostService, private readonly userService: UserService) {
 
-    
-    // Obtenemos los users desde localStorage
+
+  // Obtenemos los users desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
     console.log(usersFromStorage);
@@ -63,7 +63,7 @@ export class InitComponent {
     let user = JSON.parse(localStorage.getItem('user') as string);
     this.updateDatabase(user.user_id, this.available_to_play)
   }
- // Llamar al servicio para actualizar el estado en la base de datos
+  // Llamar al servicio para actualizar el estado en la base de datos
   public updateDatabase(userId: string, isAvailable: boolean) {
     this.userService.updateUserAvailability(userId, isAvailable).subscribe({
       next: (data) => {
