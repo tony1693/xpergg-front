@@ -3,7 +3,6 @@
         <a class="navbar-brand" href="">
             <img src="assets\logo\Logo.png" alt="LogoXperGG" class="logo" />
         </a>
-
         <div class="conditional">
             @if (isLoggedIn){
             <div class="navbarLinks">
@@ -14,8 +13,8 @@
                 <app-dropdowns-requests class="navbarItemR"></app-dropdowns-requests>
                 <app-dropdowns-notifications class="navbarItemR"></app-dropdowns-notifications>
                 <div class="navbarAvatarBtn">
-                    <app-avatar class="navbarAvatar" selectedAvatar="{{user.avatar}}"
-                        userName="{{user.name}}" profileRouting="/profile">
+                    <app-avatar class="navbarAvatar" selectedAvatar="{{user.avatar}}" userName="{{user.name}}"
+                        profileRouting="/profile">
                     </app-avatar>
                     <div class="btn-group dropstart">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
@@ -29,31 +28,53 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
-
             } @else {
-            <div class="navbarLinks">
-                <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
-                    linkRouting="/landing" [isUser]=false></app-link>
-                <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
-                    linkText="Publicaciones" linkRouting="/init" [isUser]=false></app-link>
-                <app-link class="navbarItemR" linkImg="assets\icon\icono-comunidades-landing-nr.svg"
-                    linkText="Comunidades" linkRouting="/community" [isUser]="false"></app-link>
-                <!-- Created button for Login with modal -->
-                <div class="modalBnt-Login">
-                    <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        <i class="fa-solid fa-user"></i>
-                        Login
-                    </button>
-                    <!-- Modal -->
-                    <div class="modalLogin">
-                        <app-form-login-navbar></app-form-login-navbar>
+                @if (isIconClicked) {
+                <div class="navbarLinks">
+                    <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                        linkRouting="/landing" [isUser]=false (click)="toggleIcon()"></app-link>
+                    <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                        linkRouting="/landing" [isUser]=false></app-link>
+                    <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
+                        linkText="Publicaciones" linkRouting="/init" [isUser]=false></app-link>
+                    <app-link class="navbarItemR" linkImg="assets\icon\icono-comunidades-landing-nr.svg"
+                        linkText="Comunidades" linkRouting="/community" [isUser]="false"></app-link>
+                    <!-- Created button for Login with modal -->
+                    <div class="modalBnt-Login">
+                        <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-user"></i>
+                            Login
+                        </button>
+                        <!-- Modal -->
+                        <div class="modalLogin">
+                            <app-form-login-navbar></app-form-login-navbar>
+                    </div>
+                </div>
+            } @else {
+                <div class="navbarLinks">
+                    <app-link class="navbarItem" linkImg="assets\icon\icono-home-landing-nr.svg" linkText="Home"
+                        linkRouting="/landing" [isUser]=false></app-link>
+                    <app-link class="navbarItem" linkImg="assets\icon\icono-publicaciones-landing-nr.svg"
+                        linkText="Publicaciones" linkRouting="/init" [isUser]=false></app-link>
+                    <app-link class="navbarItemR" linkImg="assets\icon\icono-comunidades-landing-nr.svg"
+                        linkText="Comunidades" linkRouting="/community" [isUser]="false"></app-link>
+                    <!-- Created button for Login with modal -->
+                    <div class="modalBnt-Login">
+                        <button type="button" id="loginBtn" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-user"></i>
+                            Login
+                        </button>
+                        <!-- Modal -->
+                        <div class="modalLogin">
+                            <app-form-login-navbar></app-form-login-navbar>
                     </div>
                 </div>
             </div>
             }
+        }
         </div>
     </div>
 </nav>

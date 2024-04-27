@@ -37,11 +37,16 @@ import { FormLoginComponent } from "../form-login/form-login.component";
 })
 export class NavbarComponent {
 
-@Input() user!: User;
-isLoggedIn = true;
-available_to_play = false;
-isUser = { avalaible_to_play: 'AUSENTE' };
-
+  @Input() user!: User;
+  isLoggedIn = true;
+  available_to_play = false;
+  isUser = { avalaible_to_play: 'AUSENTE' };
+  
+  isIconClicked = false;
+  
+  toggleIcon() {
+      this.isIconClicked = !this.isIconClicked;
+  }
 // Crea un Subject para manejar el estado
 private statusSubject = new Subject<boolean>();
 
