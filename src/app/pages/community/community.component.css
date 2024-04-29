@@ -6,7 +6,8 @@
 
 .container-fluid {
     width: 100vw;
-    min-height: 100vh;    
+    min-height: 100vh; 
+    height: auto;   
     background-image: url('../../../assets/background/background_community_threads.png');
     background-size: auto;
     background-repeat: repeat;

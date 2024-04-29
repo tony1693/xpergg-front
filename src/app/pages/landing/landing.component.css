@@ -456,6 +456,8 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    
     gap: 35px 0px;
 
 }
@@ -490,12 +492,10 @@ span {
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-self: center;
-    text-align: center;
-
+    flex-direction: row;
+    justify-content:center;
+    gap: 60px;
 }
-
 
 .buttonNews {
     height: 40px;

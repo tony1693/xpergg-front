@@ -15,7 +15,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
-import { YouTubePlayerModule } from '@angular/youtube-player';
+// import { YouTubePlayerModule } from '@angular/youtube-player';
 import { StatusComponent } from './components/status/status.component';
 
 @Component({
@@ -39,7 +39,7 @@ import { StatusComponent } from './components/status/status.component';
     FormRegisterComponent,
     ProfileComponent,
     HttpClientModule,
-    YouTubePlayerModule,
+    // YouTubePlayerModule,
     StatusComponent,
   ],
   templateUrl: './app.component.html',

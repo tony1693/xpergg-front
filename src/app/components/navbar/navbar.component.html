@@ -5,7 +5,7 @@
         </a>
 
         <div class="conditional">
-            @if (user){
+            @if (isLoggedIn){
             <div class="navbarLinks">
                 <app-link class="navbarItemR" linkImg="assets\icon\iconoInicioR.svg" linkText="Inicio"
                     linkRouting="/init" [isUser]=true></app-link>
@@ -14,8 +14,8 @@
                 <app-dropdowns-requests class="navbarItemR"></app-dropdowns-requests>
                 <app-dropdowns-notifications class="navbarItemR"></app-dropdowns-notifications>
                 <div class="navbarAvatarBtn">
-                    <app-avatar class="navbarAvatar" selectedAvatar="assets\avatar\fortnite-1.jpg"
-                        userName="{{user.name}}" profileRouting="/profile">
+                    <app-avatar class="navbarAvatar" [selectedAvatar]="avatar" userName="{{user.name}}"
+                        profileRouting="/profile">
                     </app-avatar>
                     <div class="btn-group dropstart">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
@@ -23,7 +23,7 @@
                             <i class="fa-solid fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" (click)="logoutStatus()" [routerLink]="['/landing']">Cerrar
+                            <li><a class="dropdown-item" (click)="logout()" [routerLink]="['/landing']">Cerrar
                                     sesión</a>
                             </li>
                         </ul>
