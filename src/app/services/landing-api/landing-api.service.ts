@@ -4,14 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class GamesApiService {
-  private url = 'http://localhost:3000/games';
+export class LandingApiService {
+
+  private url2 = 'http://localhost:3000/games';
 
   constructor(private http: HttpClient) { }
 
-  getGames() {
-    return this.http.get(this.url);
+  getGamesLanding() {
+    return this.http.get(this.url2);
   }
-
 }
-
