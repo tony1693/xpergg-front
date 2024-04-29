@@ -9,31 +9,32 @@ import { NewsComponent } from '../news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule } from '@angular/common';
+import { GamesApiService } from '../../services/games-api/games-api.service';
+import { LandingApiService } from '../../services/landing-api/landing-api.service';
 
 @Component({
     selector: 'app-landing',
     standalone: true,
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
-    imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent ],
-    providers:[UserService]
+    imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent  ],
+    providers:[UserService,LandingApiService]
 })
 export class LandingComponent {
 
-    newsText1 = 'Texto de la noticia 1';
-    newsImage1 = 'URL de la imagen de la noticia 1';
-    newsLink1 = 'URL del enlace de la noticia 1';
 
-    newsText2 = 'Texto de la noticia 2';
-    newsImage2 = 'URL de la imagen de la noticia 2';
-    newsLink2 = 'URL del enlace de la noticia 2';
+    public games1:any
+  constructor(private readonly gamesLandingService: LandingApiService) {}
 
-    newsText3 = 'Texto de la noticia 3';
-    newsImage3 = 'URL de la imagen de la noticia 3';
-    newsLink3 = 'URL del enlace de la noticia 3';
-
+  ngOnInit() {
+    this.getGamesLanding1()
+  }
+  getGamesLanding1() {
+    this.gamesLandingService.getGamesLanding().subscribe(res => {
+      this.games1 = res;      
+    })
+  }
     
-
 }
 
 
