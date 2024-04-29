@@ -1,5 +1,5 @@
 <div class="status-container">
-  <button id="button"  [ngClass]="{'available': available_to_play, 'absent': !available_to_play}">
+  <button id="button" [ngClass]="{'available': available_to_play, 'absent': !available_to_play}">
     <span id="dispo" *ngIf="available_to_play; else absentTemplate">• Disponible</span>
     <ng-template id="ausent" #absentTemplate><span>• Ausente</span></ng-template>
   </button>

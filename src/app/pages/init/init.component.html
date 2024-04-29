@@ -1,18 +1,20 @@
 <div class="container-init">
 
     <div class="news">
-        <p>Noticias Destacadas</p>
+        <p class=" titleNews">Noticias Destacadas</p>
         <div class="card-news">
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
-            <a class="apiNewsText" [href]="linkApiNewsRouting">{{apiNewsText}}</a>
+            <div class="boxNews">
+                @for(game of games.slice(0, 4); track game) {
+                    <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
+                        [link]="game.freetogame_profile_url"></app-trending-news>
+                }
+            </div>
             <a class="viewAll" routerLink="/news">Ver Todas</a>
         </div>
         <div class="status">
             <p class="status-text"></p>
-            @if (user.length >0) {
-            <app-status [user]="user[0]"></app-status>
+            @if (users.length >0) {
+            <app-status [user]="users[0]"></app-status>
             }
             <!-- Agrega el evento de clic y ngStyle aquí -->
             <button class="buttonToogle" (click)="toggleAvailability()"
@@ -22,7 +24,7 @@
     </div>
     <div class="posts">
         <div class="new-post">
-            <img class="avatarPost" [src]="avatarImg">
+            <img class="avatarPost" [src]="userAvatar">
             <div class="info-post">
                 <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required
                     #inputTextPost>
@@ -31,7 +33,20 @@
             <button class="public-post" type="submit"
                 (click)="addPost(inputTextPost, inputLinkVideoPost)">Publicar</button>
         </div>
-        <app-video-post></app-video-post>
+        <div class="allPosts">
+            @for(post of post; track post.post_id){
+
+            <div class="user-info">
+                <img class="avatar" [src]="post.user_avatar" alt="User Avatar">
+                <p class="name">{{post.user_name}}</p>
+            </div>
+
+            <app-video-post [post]="post"></app-video-post>
+            }@empty {
+            Ups...todavía no hay ningún post. Empieza a interactuar con la Comunidad!
+            }
+        </div>
+
     </div>
 
     <div class="friends">

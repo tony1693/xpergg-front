@@ -20,7 +20,6 @@ export class DropdownsThreadsComponent {
 
   public toggleDropdown() {
     this.dropdownOpen = false;
-    window.location.reload();
   }
 
   public openDropdown() {
@@ -33,7 +32,9 @@ export class DropdownsThreadsComponent {
     platform: HTMLSelectElement
   ) {
     const currentDate = new Date().toISOString();
-    const userId: number = Number(localStorage.getItem('user_id'));
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
     if (userId) {
       let newThread: Thread = {
         user_id: userId, // para que venga de localStorage
@@ -42,18 +43,20 @@ export class DropdownsThreadsComponent {
         platform: platform.value,
         date: currentDate,
       };
-      localStorage.setItem('creacionHilo', currentDate);
-      this.threadsService.addNewThread(newThread).subscribe(
-        (data) => {
+      this.threadsService.addNewThread(newThread).subscribe({
+        next: (data) => {
           console.log(data);
           this.message = 'Hilo creado correctamente';
+          setTimeout(() => {
+            location.reload();
+          }, 1);
         },
-        (error) => {
+        error: (error) => {
           console.log(error);
-        }
-      );
+        },
+      });
     } else {
-      console.log('No existe ningun usuario con ese ID');
+      console.log('Error al crear el hilo');
     }
   }
 }

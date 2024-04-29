@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { GamesApiService } from '../../services/games-api/games-api.service';
 import { LandingApiService } from '../../services/landing-api/landing-api.service';
 
+
 @Component({
     selector: 'app-landing',
     standalone: true,
@@ -19,8 +20,11 @@ import { LandingApiService } from '../../services/landing-api/landing-api.servic
     styleUrl: './landing.component.css',
     imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent  ],
     providers:[UserService,LandingApiService]
+
 })
 export class LandingComponent {
+  games: any = [];
+
 
 
     public games1:any
@@ -35,6 +39,5 @@ export class LandingComponent {
     })
   }
     
-}
 
 

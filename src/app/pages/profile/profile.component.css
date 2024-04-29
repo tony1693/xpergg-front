@@ -232,3 +232,10 @@
     font-weight: 700;
     color: #FFFFFF;
 }
+
+.buttonToogle {
+    width: 241px;
+    height: 46px;
+    background: #000000;
+    font-size: bold;
+}

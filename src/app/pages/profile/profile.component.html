@@ -48,8 +48,14 @@
     <div class="posts-status-privateChats">
 
         <div class="status">
-            <p class="status-text">Mi Estado</p>
-            <app-status></app-status>
+            <p class="status-text"></p>
+            @if (user.length >0) {
+            <app-status [user]="user[0]"></app-status>
+            }
+            <!-- Agrega el evento de clic y ngStyle aquí -->
+            <button class="buttonToogle" (click)="toggleAvailability()"
+                [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE' :
+                'AUSENTE' }}</button>
         </div>
 
         <app-video-post></app-video-post>

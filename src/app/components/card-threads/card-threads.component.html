@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        @for(thread of threads; track thread.thread_id){
+
         <div class="card">
             <div class="smallContainer">
                 <p class="title">Mensaje</p>
@@ -15,8 +15,5 @@
                 <p class="namePlatform">{{ thread.platform }}</p>
             </div>
         </div>
-        } @empty {
-        <p class="empty">Todavía no hay ningún hilo...¡Empieza a interactuar con la Comunidad!</p>
-        }
     </div>
 </div>

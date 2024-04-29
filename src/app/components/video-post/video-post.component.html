@@ -35,14 +35,9 @@
 
 
 <div class="video-post">
-    @for (post of posts; track post.post_id) {
-    <div class="user-info">
-        <!-- <img class="avatar" [src]="user.avatar" alt="User Avatar"> -->
-        <a href="" class="name">{{post.user_id}}</a>
-    </div>
     <div class="video-player">
-        <youtube-player id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="320"
-            [width]="830" [startSeconds]="1" [endSeconds]=""></youtube-player>
+        <youtube-player id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="322"
+            [width]="865" [startSeconds]="1" [endSeconds]=""></youtube-player>
     </div>
     <div class="video-description">
         <p class="titlePost">{{ post.description }}</p>
@@ -52,10 +47,10 @@
             <img [src]="likeOff" alt="">
         </a>
         <span class="likes-count">{{ likesCount }}</span>
-        <a href="" class="view-comments">Ver comentarios 300K</a>
+        <a href="" class="view-comments">Ver comentarios</a>
     </div>
     <div class="comment-section">
-        <input type="text" class="form-control" id="" placeholder="Escribe tu comentario" required #inputComment>
+        <input type="text" class="form-control" id="" placeholder="Escribe tu comentario..." required #inputComment>
     </div>
     <div>
         <button class="comment-btn" type="submit" (click)="addComment(inputComment)">Comentar</button>
@@ -63,5 +58,4 @@
     <br>
     <br>
     <br>
-    }
 </div>
