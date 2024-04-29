@@ -18,12 +18,4 @@ export class ThreadsService {
   public getThreads(platform: string): Observable<Thread[]> {
     return this.http.get<Thread[]>(`${this.url}/threads?platform=${platform}`);
   }
-
-  public getOneThread(searchedGame: string): Observable<Thread[]> {
-    if (!searchedGame) {
-      return this.http.get<Thread[]>(`${this.url}/threads`);
-    } else {
-      return this.http.get<Thread[]>(`${this.url}/thread`);
-    }
-  }
 }

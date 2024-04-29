@@ -44,13 +44,38 @@ export class ThreadsComponent {
   }
 
   public search(inputText: string) {
-    if (inputText != '') {
+    if (inputText) {
       this.threads = this.threads.filter((thread) =>
         thread.game.toLowerCase().includes(inputText.toLowerCase())
       );
       console.log(this.threads);
     } else {
-      this.ngOnInit();
+      this.threads = this.threads;
+      console.log(this.threads);
     }
   }
 }
+
+// public searchByGame(inputText: HTMLInputElement) {
+// if (inputText.value === '') {
+// this.threadsService.getThreadsPS('').subscribe(
+// (data) => {
+// console.log(data);
+// this.threads = data;
+// },
+// (error) => {
+// console.log(error);
+// }
+// );
+// } else {
+// this.threadsService.getOneThread(inputText.value).subscribe(
+// (data) => {
+// console.log(data);
+// this.threads = data;
+// },
+// (error) => {
+// console.log('error esta aqui', error);
+// }
+// );
+// }
+// }
