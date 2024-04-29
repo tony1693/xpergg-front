@@ -10,28 +10,34 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule } from '@angular/common';
 import { GamesApiService } from '../../services/games-api/games-api.service';
+import { LandingApiService } from '../../services/landing-api/landing-api.service';
+
 
 @Component({
     selector: 'app-landing',
     standalone: true,
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
-    imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent ],
-    providers:[UserService, GamesApiService]
+    imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent  ],
+    providers:[UserService,GamesApiService]
+
 })
 export class LandingComponent {
   games: any = [];
 
-  constructor(private readonly userService: UserService, private readonly gameService:GamesApiService) {}
+
+
+    public games1:any
+  constructor(private readonly gamesLandingService: GamesApiService) {}
 
   ngOnInit() {
-      this.getGames()
+    this.getGamesLanding1()
   }
+  getGamesLanding1() {
+    this.gamesLandingService.getGames().subscribe(res => {
+      this.games1 = res;      
+    })
+  }
+}   
 
-  getGames() {
-      this.gameService.getGames().subscribe(res => {
-          this.games = res;      
-      })
-  }
-}
 

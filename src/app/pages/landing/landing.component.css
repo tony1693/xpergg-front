@@ -492,10 +492,9 @@ span {
 
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content:center;
-    align-self: center;
-    text-align: center;
-    /* gap: 1% */
+    gap: 60px;
 }
 
 .buttonNews {
