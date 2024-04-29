@@ -131,6 +131,7 @@ export class InitComponent {
       post_id: 0,
       user_name: userName,
       user_avatar: avatar,
+      userId: 0
     };
     localStorage.setItem('fecha creacion post', currentDate);
     this.postService.addPost(newPost).subscribe({

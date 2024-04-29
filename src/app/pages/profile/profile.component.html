@@ -4,17 +4,16 @@
         <img class="avatarUser">
         <div class="user-data">
             <div class="botton-edit">
-                <p class="myUser">MyUser</p>
+                <p class="myUser">{{user.name}}</p>
                 <button class="button" routerLink="/edit-profile">Editar Perfil</button>
             </div>
-            <p class="localidad">Localidad</p>
-            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut metus uma, dictum non
-                sagititis at.</p>
+            <p class="localidad">{{user.nationality}}</p>
+            <p class="descripcion">{{user.aboutMe}}</p>
             <div class="count-data">
-                <p class="numero">Nº Amigos</p>
-                <p class="number">1000</p>
+                <!-- <p class="numero">Nº Amigos</p>
+                <p class="number">1000</p> -->
                 <p class="numero">Nº Post</p>
-                <p class="number2">24</p>
+                <p class="number2">{{ userPostCount }}</p>
             </div>
         </div>
 
@@ -25,19 +24,12 @@
                     <div class="block2">
                         <p class="platGen">Plataformas</p>
                         <div class="interest-name">
-                            <p class="boxtype">Playstation</p>
-                            <p class="boxtype">Xbox</p>
-                            <p class="boxtype">Nintendo</p>
+                            <p class="boxtype">{{user.platform}}</p>
                         </div>
                     </div>
                     <div class="block3">
                         <p class="platGen">Géneros</p>
-                        <div class="interest-name2">
-                            <p class="boxtype">Acción</p>
-                            <p class="boxtype">Deportes</p>
-                            <p class="boxtype">Miedo</p>
-                            <p class="boxtype">Realidad Virtual</p>
-                            <p class="boxtype">Disparos</p>
+                        <p class="boxtype">{{user.interest}}</p>
                         </div>
                     </div>
                 </div>
@@ -50,12 +42,12 @@
         <div class="status">
             <p class="status-text"></p>
             @if (user.length >0) {
-            <app-status [user]="user[0]"></app-status>
+            <app-status [user]="user"></app-status>
             }
-            <!-- Agrega el evento de clic y ngStyle aquí -->
-            <button class="buttonToogle" (click)="toggleAvailability()"
-                [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE' :
-                'AUSENTE' }}</button>
+           <!-- Agrega el evento de clic y ngStyle aquí -->
+           <button class="buttonToogle" (click)="toggleAvailability()"
+           [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE' :
+           'AUSENTE' }}</button>
         </div>
 
         <app-video-post></app-video-post>
@@ -66,5 +58,3 @@
         </div>
 
     </div>
-
-</div>

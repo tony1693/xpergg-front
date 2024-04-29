@@ -110,8 +110,10 @@
             </div>
             <div class="containerBottom">
                 <app-confirmation-modal [buttonText]="'Editar'"
-                    [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'" [closeModal]="'Cancelar'"
-                    [acceptModal]="'Aceptar'"></app-confirmation-modal>
+                    [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'"
+                    [closeModal]="'Cancelar'"
+                    [acceptModal]="'Aceptar'"
+                    (click)=" confirmEdit()"></app-confirmation-modal>
             </div>
 
         </div>

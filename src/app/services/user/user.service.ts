@@ -20,7 +20,7 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/register`, registerBody);
   }
 
-  updateUserAvailability(
+ public updateUserAvailability(
     userId: string,
     isAvailable: boolean
   ): Observable<any> {
@@ -37,4 +37,32 @@ export class UserService {
     }
     return null;
   }
+
+  public updateUser(
+    userId: string,
+    imgavatar: string,
+    name: string,
+    email: string,
+    nationality: string,
+    about_me: string,
+    password: string,
+    available_to_play: boolean,
+    platform: string[],
+    interest: string[]
+  ): Observable<any> {
+    return this.http.put(`${this.apiUrl}/profile/${userId}`, {
+      imgavatar,
+      name,
+      email,
+      nationality,
+      about_me,
+      password,
+      available_to_play,
+      platform,
+      interest
+    });
+  }
+  
+
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { StatusComponent } from '../../components/status/status.component';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
@@ -16,18 +16,23 @@ import { CommonModule } from '@angular/common';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
+  @Input() user!: User;
+  isLoggedIn = true;
+  available_to_play = false;
+  isUser = { available_to_play: 'AUSENTE' };
+  public userAvatar: string = '';
 
   recentPrivateChats: any[] = [];
-  user: User[] = [];
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
-  available_to_play: boolean = false;
+
+  user_id!: number; // Asegúrate de tener el ID del usuario
+  userPostCount!: number;
 
 
   constructor(private readonly postService: PostService, private readonly userService: UserService) {
-
-
-    // Obtenemos los users desde localStorage
+   
+    // Obtenemos el user desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
     console.log(usersFromStorage);
@@ -37,7 +42,7 @@ export class ProfileComponent {
     let userStatusFromStorage = localStorage.getItem('userStatus');
     this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
-  }
+}
 
   // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
@@ -59,4 +64,20 @@ export class ProfileComponent {
     });
   }
 
+
+  ngOnInit() {
+    this.getUserPostCount();
+  }
+
+  getUserPostCount(): void {
+    this.postService.getAllPosts().subscribe(posts => {
+      const userPosts = posts.filter(post => post.userId === this.user_id);
+      this.userPostCount = userPosts.length;
+    });
+  }
+
+
+
 }
+
+
