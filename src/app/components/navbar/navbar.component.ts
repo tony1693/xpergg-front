@@ -40,7 +40,8 @@ export class NavbarComponent {
   isLoggedIn = true;
   available_to_play = false;
   isUser = { avalaible_to_play: 'AUSENTE' };
-  public userAvatar: string = '';
+  public avatar: string =
+    'https://cdn-icons-png.flaticon.com/512/4792/4792929.png';
 
   // Crea un Subject para manejar el estado
   private statusSubject = new Subject<boolean>();
@@ -54,8 +55,8 @@ export class NavbarComponent {
 
     // Aquí recuperamos el avatar:
     const avatarDataString = localStorage.getItem('avatar');
-    this.userAvatar = avatarDataString as string;
-    console.log(this.userAvatar);
+    this.avatar = avatarDataString as string;
+    console.log(this.avatar);
   }
 
   logout() {
