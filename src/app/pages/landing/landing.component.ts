@@ -19,7 +19,7 @@ import { LandingApiService } from '../../services/landing-api/landing-api.servic
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.css',
     imports: [HttpClientModule, CommonModule, RouterLink, FooterComponent, RegisterComponent, NavbarComponent, LinkComponent, TrendingNewsComponent, NewsComponent, TrendingNewsComponent  ],
-    providers:[UserService,LandingApiService]
+    providers:[UserService,GamesApiService]
 
 })
 export class LandingComponent {
@@ -28,16 +28,16 @@ export class LandingComponent {
 
 
     public games1:any
-  constructor(private readonly gamesLandingService: LandingApiService) {}
+  constructor(private readonly gamesLandingService: GamesApiService) {}
 
   ngOnInit() {
     this.getGamesLanding1()
   }
   getGamesLanding1() {
-    this.gamesLandingService.getGamesLanding().subscribe(res => {
+    this.gamesLandingService.getGames().subscribe(res => {
       this.games1 = res;      
     })
   }
-    
+}   
 
 
