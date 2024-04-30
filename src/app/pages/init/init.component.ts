@@ -44,8 +44,7 @@ export class InitComponent {
   games!: any;
 
   @Input() user!: User;
-  @Input() public apiNewsText: string =
-    'Ubisoft habría retrasado el Assassins creed ambientado en China';
+  @Input() public apiNewsText: string = '';
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
 
