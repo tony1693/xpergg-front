@@ -20,7 +20,7 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/register`, registerBody);
   }
 
-  updateUserAvailability(
+ public updateUserAvailability(
     userId: string,
     isAvailable: boolean
   ): Observable<any> {
@@ -37,4 +37,34 @@ export class UserService {
     }
     return null;
   }
+
+  public updateUser(
+    userId: string,
+    imgavatar: string,
+    name: string,
+    email: string,
+    nationality: string,
+    about_me: string,
+    password: string,
+    available_to_play: boolean,
+    platform: string[],
+    interest: string[]
+  ): Observable<any> {
+    // Construye el objeto de datos de forma condicional
+    const data: any = {};
+    if (imgavatar !== undefined) data.imgavatar = imgavatar;
+    if (name !== undefined) data.name = name;
+    if (email !== undefined) data.email = email;
+    if (nationality !== undefined) data.nationality = nationality;
+    if (about_me !== undefined) data.about_me = about_me;
+    if (password !== undefined) data.password = password;
+    if (available_to_play !== undefined) data.available_to_play = available_to_play;
+    if (platform !== undefined) data.platform = platform;
+    if (interest !== undefined) data.interest = interest;
+  
+    return this.http.put(`${this.apiUrl}/user/${userId}`, data);
+  }
+  
+
+
 }

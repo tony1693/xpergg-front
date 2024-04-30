@@ -1,6 +1,5 @@
 export interface User {
-  avalaible_to_play: any;
-  avalaibleToPlay: any;
+length: any;
 
   user_id: number;
   avatar: string;

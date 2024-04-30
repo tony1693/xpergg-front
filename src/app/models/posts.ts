@@ -6,4 +6,5 @@ export class Post {
   user_id!: number;
   user_name!: any;
   user_avatar!: any;
+  userId!: number;
 }
