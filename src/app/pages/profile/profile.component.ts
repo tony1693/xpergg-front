@@ -65,8 +65,14 @@ export class ProfileComponent {
   }
 
 
-  ngOnInit() {
+  ngOnInit():void {
+    
+      // Obtén el objeto de usuario del localStorage
+  let user = JSON.parse(localStorage.getItem('user') ?? '{}');
+  
     this.getUserPostCount();
+    
+
   }
 
   getUserPostCount(): void {
