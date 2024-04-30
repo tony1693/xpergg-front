@@ -31,7 +31,8 @@ export class DropdownsThreadsComponent {
   }
 
   public createThread(subject: HTMLInputElement, game: HTMLInputElement) {
-    const currentDate = new Date().toISOString();
+    const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
     // aqui me traigo el user desde el localStorage
     const userId: number = JSON.parse(
       localStorage.getItem('user') as string
