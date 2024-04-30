@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { DropdownsThreadsComponent } from '../../components/dropdowns-threads/dropdowns-threads.component';
 import { CardThreadsComponent } from '../../components/card-threads/card-threads.component';
 import { ThreadsService } from '../../services/threads/threads.service';
@@ -22,7 +22,7 @@ export class ThreadsComponent {
   public platformTitle = 'PlayStation';
 
   public threads: Thread[] = [];
-  public filteredThread: Thread = {} as Thread;
+  public filteredThreads: Thread[] | null = null;
 
   constructor(
     private readonly threadsService: ThreadsService,
@@ -40,18 +40,20 @@ export class ThreadsComponent {
         console.log(error);
       },
     });
+    this.threads = [...this.threads];
     this.platformTitle = platform;
   }
 
   public search(inputText: string) {
-    if (inputText) {
+    if (inputText === '') {
+      this.threads = this.threads;
+      setTimeout(() => {
+        location.reload();
+      }, 0.5);
+    } else {
       this.threads = this.threads.filter((thread) =>
         thread.game.toLowerCase().includes(inputText.toLowerCase())
       );
-      console.log(this.threads);
-    } else {
-      this.threads = this.threads;
-      console.log(this.threads);
     }
   }
 }
