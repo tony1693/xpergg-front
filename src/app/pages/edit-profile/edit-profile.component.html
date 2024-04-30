@@ -11,18 +11,16 @@
                             <app-avatar-options></app-avatar-options>
                         </div>
                         <div class="editInputs">
-                            <label for="name">Nombre</label>
-                            <input class="textInput" type="text" id="nombre">
-
+                            <label for="name" >Nombre</label>
+                            <input class="textInput" type="text" id="name" formControlName="name">
                             <label for="nationality">Nacionalidad</label>
-                            <input class="textInput" type="text" id="nationality">
-
+                            <input class="textInput" type="text" id="nationality" formControlName="nationality">
                             <label for="aboutMe">Sobre mi</label>
-                            <input class="textInput2" type="text" id="aboutMe">
+                            <input class="textInput2" type="text" id="aboutMe" formControlName="about_me">
                         </div>
                     </div>
                 </div>
-
+            </div>
                 <div class="editInterests">
                     <h1>Editar Intereses</h1>
                     <div class="platforms">
@@ -51,37 +49,37 @@
                         <div class="genres">
                             <div class="checkbox1">
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="arcade">
                                     <span>Arcade</span>
                                 </label>
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="disparos">
                                     <span>Disparos</span>
                                 </label>
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="peleas">
                                     <span>Peleas</span>
                                 </label>
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="aventuras">
                                     <span>Aventuras</span>
                                 </label>
                             </div>
                             <div class="checkbox1">
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="accion">
                                     <span>Acción</span>
                                 </label>
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="puzzle">
                                     <span>Puzzle</span>
                                 </label>
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="preguntas">
                                     <span>Preguntas</span>
                                 </label>
                                 <label class="options">
-                                    <input class="checkbox" type="checkbox" formControlName="coches">
+                                    <input class="checkbox" type="checkbox" formControlName="deportes">
                                     <span>Deportes</span>
                                 </label>
                             </div>
@@ -106,17 +104,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="containerBottom">
-                <app-confirmation-modal [buttonText]="'Editar'"
-                    [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'"
-                    [closeModal]="'Cancelar'"
-                    [acceptModal]="'Aceptar'"
-                    (click)=" confirmEdit()"></app-confirmation-modal>
+                <app-confirmation-modal id="buttonText" [buttonText]="'Editar'"
+                    [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'" [closeModal]="'Cancelar'"
+                    [acceptModal]="'Aceptar'" (click)="confirmEdit()"></app-confirmation-modal>
             </div>
-
-        </div>
         <div class="modifyPasswordContainer">
             <div class="passwordContent">
                 <h1>Editar Contraseña</h1>
@@ -134,10 +127,8 @@
                             <app-confirmation-modal></app-confirmation-modal>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </form>
 </div>

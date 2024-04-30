@@ -50,17 +50,19 @@ export class UserService {
     platform: string[],
     interest: string[]
   ): Observable<any> {
-    return this.http.put(`${this.apiUrl}/profile/${userId}`, {
-      imgavatar,
-      name,
-      email,
-      nationality,
-      about_me,
-      password,
-      available_to_play,
-      platform,
-      interest
-    });
+    // Construye el objeto de datos de forma condicional
+    const data: any = {};
+    if (imgavatar !== undefined) data.imgavatar = imgavatar;
+    if (name !== undefined) data.name = name;
+    if (email !== undefined) data.email = email;
+    if (nationality !== undefined) data.nationality = nationality;
+    if (about_me !== undefined) data.about_me = about_me;
+    if (password !== undefined) data.password = password;
+    if (available_to_play !== undefined) data.available_to_play = available_to_play;
+    if (platform !== undefined) data.platform = platform;
+    if (interest !== undefined) data.interest = interest;
+  
+    return this.http.put(`${this.apiUrl}/user/${userId}`, data);
   }
   
 
