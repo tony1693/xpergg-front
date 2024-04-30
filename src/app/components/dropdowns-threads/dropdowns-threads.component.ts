@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Thread } from '../../models/thread';
 import { ThreadsService } from '../../services/threads/threads.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dropdowns-threads',
@@ -16,7 +17,10 @@ export class DropdownsThreadsComponent {
   public dropdownOpen: boolean = false;
   public message: string = '';
 
-  constructor(private readonly threadsService: ThreadsService) {}
+  constructor(
+    private readonly threadsService: ThreadsService,
+    private readonly activatedRoute: ActivatedRoute
+  ) {}
 
   public toggleDropdown() {
     this.dropdownOpen = false;
@@ -26,11 +30,7 @@ export class DropdownsThreadsComponent {
     this.dropdownOpen = true;
   }
 
-  public createThread(
-    subject: HTMLInputElement,
-    game: HTMLInputElement,
-    platform: HTMLSelectElement
-  ) {
+  public createThread(subject: HTMLInputElement, game: HTMLInputElement) {
     const currentDate = new Date().toISOString();
     // aqui me traigo el user desde el localStorage
     const userId: number = JSON.parse(
@@ -41,7 +41,7 @@ export class DropdownsThreadsComponent {
         user_id: userId,
         subject: subject.value,
         game: game.value,
-        platform: platform.value,
+        platform: this.activatedRoute.snapshot.params['platform'],
         date: currentDate,
       };
       this.threadsService.addNewThread(newThread).subscribe({
