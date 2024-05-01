@@ -64,6 +64,12 @@ export class UserService {
   
     return this.http.put(`${this.apiUrl}/user/${userId}`, data);
   }
+
+  public modifyPassword(userId: string, password: string): Observable<any> {
+    return this.http.put(`${this.apiUrl}/modifyPassword`, { user_id: userId, password });
+  }
+
+
   
 
 

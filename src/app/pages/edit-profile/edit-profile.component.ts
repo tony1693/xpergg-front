@@ -12,6 +12,8 @@ import { ConfirmationModalComponent } from '../../components/confirmation-modal/
 import { User } from '../../models/user';
 import { AvatarOptionsComponent } from '../../components/avatar-options/avatar-options.component';
 import { UserService } from '../../services/user/user.service';
+import { ConfirmPasswordComponent } from '../../components/confirm-password/confirm-password.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-profile',
@@ -23,11 +25,14 @@ import { UserService } from '../../services/user/user.service';
     ReactiveFormsModule,
     ConfirmationModalComponent,
     AvatarOptionsComponent,
+    ConfirmPasswordComponent
   ],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
 })
 export class EditProfileComponent {
+  
+
   @Input() public currentAvatar: string = 'assets/avatar/Paul_2.webp';
 
   userModel!: User;
@@ -35,7 +40,11 @@ export class EditProfileComponent {
   private getSelectedValues(keys: string[]): string[] {
     return keys.filter((key) => this.reactiveregister.get(key)?.value);
   }
-  constructor(private readonly userService: UserService) {}
+
+  password1 = '';
+  password2 = '';
+
+  constructor(private readonly userService: UserService, private dialog: MatDialog) {}
 
   public reactiveregister: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -149,6 +158,28 @@ public confirmEdit() {
     error => {
       console.error('Error al actualizar el usuario', error);
     }
+  );
+}
+
+public openConfirmPassword(){
+  const dialogRef = this.dialog.open(ConfirmPasswordComponent);
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.confirmEdit();
+    }
+  });
+}
+
+public updatePassword() {
+  if (this.password1 !== this.password2) {
+    alert('Las contraseñas no coinciden');
+    return;
+  }
+
+  this.userService.modifyPassword('userId', this.password1).subscribe(
+    res => alert('Contraseña actualizada con éxito'),
+    err => alert('Hubo un error al actualizar la contraseña')
   );
 }
 

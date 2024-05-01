@@ -117,14 +117,14 @@
                     <div class="editInputsPassword">
                         <div class="inputPass">
                             <label for="name">Nueva Contraseña</label>
-                            <input class="inputPassword" type="text" id="nombre">
+                            <input class="inputPassword" [(ngModel)]="password1" type="password" id="nombre">
                         </div>
                         <div class="inputPass">
                             <label for="name">Repita Nueva Contraseña</label>
-                            <input class="inputPassword" type="text" id="nombre">
+                            <input class="inputPassword" [(ngModel)]="password2" type="password" id="nombre">
                         </div>
                         <div class="passwordBtn">
-                            <app-confirmation-modal></app-confirmation-modal>
+                            <button (click)="openConfirmPassword()">Actualizar contraseña</button>
                         </div>
                     </div>
                 </div>
