@@ -8,7 +8,7 @@
                 <button class="button" routerLink="/edit-profile">Editar Perfil</button>
             </div>
             <p class="localidad">{{user.nationality}}</p>
-            <p class="descripcion">{{user.aboutMe}}</p>
+            <p class="descripcion">{{user.about_me}}</p>
             <div class="count-data">
                 <!-- <p class="numero">Nº Amigos</p>
                 <p class="number">1000</p> -->
@@ -16,45 +16,40 @@
                 <p class="number2">{{ userPostCount }}</p>
             </div>
         </div>
-
         <div class="interest-card">
-            <div class="interest-container">
-                <p class="interest">Intereses</p>
-                <div class="block">
-                    <div class="block2">
-                        <p class="platGen">Plataformas</p>
-                        <div class="interest-name">
-                            <p class="boxtype">{{user.platform}}</p>
+            <div class="interest-card">
+                <div class="interest-container">
+                    <p class="interest">Intereses</p>
+                    <div class="block">
+                        <div class="block2">
+                            <p class="platGen">Plataformas</p>
+                            <div class="interest-name">
+                                <p class="boxtype" *ngFor="let platform of user.platform">{{platform}}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="block3">
-                        <p class="platGen">Géneros</p>
-                        <p class="boxtype">{{user.interest}}</p>
+                        <div class="block3">
+                            <p class="platGen">Géneros</p>
+                            <p class="boxtype" *ngFor="let interest of user.interest">{{interest}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="posts-status-privateChats">
-
-        <div class="status">
-            <p class="status-text"></p>
-            @if (user.length >0) {
-            <app-status [user]="user"></app-status>
-            }
-           <!-- Agrega el evento de clic y ngStyle aquí -->
-           <button class="buttonToogle" (click)="toggleAvailability()"
-           [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE' :
-           'AUSENTE' }}</button>
+        <div class="posts-status-privateChats">
+            <div class="status">
+                <p class="status-text"></p>
+                @if (user.length >0) {
+                <app-status [user]="user"></app-status>
+                }
+                <!-- Agrega el evento de clic y ngStyle aquí -->
+                <button class="buttonToogle" (click)="toggleAvailability()"
+                    [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE'
+                    :
+                    'AUSENTE' }}</button>
+            </div>
+            <app-video-post></app-video-post>
+            <div class="card-online-friends">
+                <app-users-list class="amigos" title="Conversaciones Recientes"
+                    [usersList]="recentPrivateChats"></app-users-list>
+            </div>
         </div>
-
-        <app-video-post></app-video-post>
-
-        <div class="card-online-friends">
-            <app-users-list class="amigos" title="Conversaciones Recientes"
-                [usersList]="recentPrivateChats"></app-users-list>
-        </div>
-
-    </div>

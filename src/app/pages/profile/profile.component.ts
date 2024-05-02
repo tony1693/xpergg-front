@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 export class ProfileComponent {
   @Input() user!: User;
   isLoggedIn = true;
-  available_to_play = false;
+ 
   isUser = { available_to_play: 'AUSENTE' };
   public userAvatar: string = '';
 
@@ -28,13 +28,14 @@ export class ProfileComponent {
 
   user_id!: number; // Asegúrate de tener el ID del usuario
   userPostCount!: number;
-
+  available_to_play = false;
 
   constructor(private readonly postService: PostService, private readonly userService: UserService) {
-   
     // Obtenemos el user desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
+    this.user_id = this.user.user_id; // Inicializamos user_id aquí
+
     console.log(usersFromStorage);
     console.log(this.user);
 
@@ -42,7 +43,7 @@ export class ProfileComponent {
     let userStatusFromStorage = localStorage.getItem('userStatus');
     this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
-}
+  }
 
   // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
@@ -64,26 +65,29 @@ export class ProfileComponent {
     });
   }
 
-
   ngOnInit():void {
-    
-      // Obtén el objeto de usuario del localStorage
-  let user = JSON.parse(localStorage.getItem('user') ?? '{}');
+    this.getUserPostCount()
   
-    this.getUserPostCount();
+      // Obtén el objeto de usuario del localStorage
+      let user = JSON.parse(localStorage.getItem('user') ?? '{}');
+      this.user_id = user.user_id; // Inicializamos user_id aquí también por si acaso
     
+      // Aquí recuperamos el estado del usuario desde el almacenamiento local
+      let userStatusFromStorage = localStorage.getItem('userStatus');
+      this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
+      console.log(userStatusFromStorage);
+    
+    }
 
+
+ 
+  
+    getUserPostCount(): void {
+      const userId = 1;  // ID del usuario logeado
+      this.postService.getUserPostCount(userId).subscribe((response: { post_count: number; }) => {
+        this.userPostCount = response.post_count;
+      }, (error: any) => {
+        console.log('Error getting post count from user', error);
+      });
+    }
   }
-
-  getUserPostCount(): void {
-    this.postService.getAllPosts().subscribe(posts => {
-      const userPosts = posts.filter(post => post.userId === this.user_id);
-      this.userPostCount = userPosts.length;
-    });
-  }
-
-
-
-}
-
-

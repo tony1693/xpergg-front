@@ -1,4 +1,5 @@
 export interface User {
+about_me: any;
 length: any;
 
   user_id: number;
