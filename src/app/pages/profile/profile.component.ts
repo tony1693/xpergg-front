@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { StatusComponent } from '../../components/status/status.component';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 export class ProfileComponent {
   @Input() user!: User;
   isLoggedIn = true;
- 
+
   isUser = { available_to_play: 'AUSENTE' };
   public userAvatar: string = '';
 
@@ -29,8 +29,9 @@ export class ProfileComponent {
   user_id!: number; // Asegúrate de tener el ID del usuario
   userPostCount!: number;
   available_to_play = false;
+isLast: any;
 
-  constructor(private readonly postService: PostService, private readonly userService: UserService) {
+  constructor(private readonly postService: PostService, private readonly userService: UserService, private cdRef: ChangeDetectorRef) {
     // Obtenemos el user desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
@@ -45,14 +46,22 @@ export class ProfileComponent {
     console.log(userStatusFromStorage);
   }
 
+
   // Función para cambiar el estado de disponibilidad
+
+  ngAfterViewChecked() {
+    // Forzar la detección de cambios
+    this.cdRef.detectChanges();
+  }
+
   toggleAvailability() {
     this.available_to_play = !this.available_to_play;
     let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
     localStorage.setItem('userStatus', status);
     let user = JSON.parse(localStorage.getItem('user') as string);
-    this.updateDatabase(user.user_id, this.available_to_play)
+    this.updateDatabase(user.user_id, this.available_to_play);
   }
+
   // Llamar al servicio para actualizar el estado en la base de datos
   public updateDatabase(userId: string, isAvailable: boolean) {
     this.userService.updateUserAvailability(userId, isAvailable).subscribe({
@@ -65,29 +74,27 @@ export class ProfileComponent {
     });
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.getUserPostCount()
-  
-      // Obtén el objeto de usuario del localStorage
-      let user = JSON.parse(localStorage.getItem('user') ?? '{}');
-      this.user_id = user.user_id; // Inicializamos user_id aquí también por si acaso
-    
-      // Aquí recuperamos el estado del usuario desde el almacenamiento local
-      let userStatusFromStorage = localStorage.getItem('userStatus');
-      this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
-      console.log(userStatusFromStorage);
-    
-    }
+
+    // Obtén el objeto de usuario del localStorage
+    let user = JSON.parse(localStorage.getItem('user') ?? '{}');
+    this.user_id = user.user_id; // Inicializamos user_id aquí también por si acaso
+
+    // Aquí recuperamos el estado del usuario desde el almacenamiento local
+    let userStatusFromStorage = localStorage.getItem('userStatus');
+    this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    console.log(userStatusFromStorage);
 
 
- 
-  
-    getUserPostCount(): void {
-      const userId = 1;  // ID del usuario logeado
-      this.postService.getUserPostCount(userId).subscribe((response: { post_count: number; }) => {
-        this.userPostCount = response.post_count;
-      }, (error: any) => {
-        console.log('Error getting post count from user', error);
-      });
-    }
   }
+
+  getUserPostCount(): void {
+    const userId = 1;  // ID del usuario logeado
+    this.postService.getUserPostCount(userId).subscribe((response: { post_count: number; }) => {
+      this.userPostCount = response.post_count;
+    }, (error: any) => {
+      console.log('Error getting post count from user', error);
+    });
+  }
+}

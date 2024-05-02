@@ -24,12 +24,19 @@
                         <div class="block2">
                             <p class="platGen">Plataformas</p>
                             <div class="interest-name">
-                                <p class="boxtype" *ngFor="let platform of user.platform">{{platform}}</p>
+                                <p class="boxtype">
+                                    @for(platform of user.platform; track platform) {
+                                    {{platform}}
+                                    <hr>
+                                    }</p>
                             </div>
                         </div>
                         <div class="block3">
                             <p class="platGen">Géneros</p>
-                            <p class="boxtype" *ngFor="let interest of user.interest">{{interest}}</p>
+                            <p class="boxtype">
+                                @for(interest of user.interest; track interest) {
+                                {{interest}}
+                                }</p>
                         </div>
                     </div>
                 </div>
