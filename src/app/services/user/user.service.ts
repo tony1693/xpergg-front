@@ -20,7 +20,7 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/register`, registerBody);
   }
 
- public updateUserAvailability(
+  public updateUserAvailability(
     userId: string,
     isAvailable: boolean
   ): Observable<any> {
@@ -58,13 +58,21 @@ export class UserService {
     if (nationality !== undefined) data.nationality = nationality;
     if (about_me !== undefined) data.about_me = about_me;
     if (password !== undefined) data.password = password;
-    if (available_to_play !== undefined) data.available_to_play = available_to_play;
+    if (available_to_play !== undefined)
+      data.available_to_play = available_to_play;
     if (platform !== undefined) data.platform = platform;
     if (interest !== undefined) data.interest = interest;
-  
+
     return this.http.put(`${this.apiUrl}/user/${userId}`, data);
   }
-  
 
+  // Funcion para modificar el Avatar:
 
+  updateAvatar(userId: number, newAvatar: string): Observable<any> {
+    const data: any = {
+      imgavatar: newAvatar,
+      user_id: userId,
+    };
+    return this.http.put(`${this.apiUrl}/editAvatar`, data);
+  }
 }

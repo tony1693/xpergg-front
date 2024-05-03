@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { AvatarComponent } from '../avatar/avatar.component';
 import { CommonModule } from '@angular/common';
 import { User } from '../../models/user';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-avatar-options',
@@ -12,7 +13,7 @@ import { User } from '../../models/user';
 })
 export class AvatarOptionsComponent {
   userModel!: User;
-  @Input() public selectedAvatar: string = '';
+  public selectedAvatar: string = '';
   @Input() public optionsVisible: boolean = false;
 
   // Funcion para cambiar avatar //
@@ -90,7 +91,7 @@ export class AvatarOptionsComponent {
     },
   ];
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   toggleOptions() {
     this.optionsVisible = true;
@@ -100,10 +101,40 @@ export class AvatarOptionsComponent {
     this.optionsVisible = false;
   }
 
-  modifyAvatar(avatar: any) {
-    this.selectedAvatar = avatar.selectedAvatar;
-    setTimeout(() => {
-      location.reload();
-    }, 1);
+  selectAvatar(newAvatar: string) {
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
+    this.userService.updateAvatar(userId, newAvatar).subscribe({
+      next: () => {
+        console.log('Avatar modificado correctamente');
+        this.selectedAvatar = newAvatar;
+        localStorage.setItem('avatar', newAvatar);
+        location.reload();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
+
+  updateAvatarDataBase(newAvatar: string) {
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
+    this.userService.updateAvatar(userId, newAvatar).subscribe({
+      next: () => {
+        console.log('Actualizado correctamente en BD');
+      },
+      error: (error) => {
+        console.log('Error al actualizar la base de datos');
+      },
+    });
+  }
+  // modifyAvatar(avatar: any) {
+  //   this.selectedAvatar = avatar.selectedAvatar;
+  //   setTimeout(() => {
+  //     location.reload();
+  //   }, 1);
+  // }
 }
