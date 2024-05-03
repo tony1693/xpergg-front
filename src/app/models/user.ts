@@ -1,5 +1,5 @@
 export interface User {
-length: any;
+  length: any;
 
   user_id: number;
   avatar: string;

@@ -11,7 +11,7 @@
             <div class="loop">
                 @for (avatar of avatars; track avatar.avatar_Id) {
                 <div class="optionToChoose">
-                    <img [src]="avatar.selectedAvatar" alt="Avatar" (click)="modifyAvatar(avatar)">
+                    <img [src]="avatar.selectedAvatar" alt="Avatar" (click)="selectAvatar(avatar.selectedAvatar)">
                 </div>
                 }
             </div>
