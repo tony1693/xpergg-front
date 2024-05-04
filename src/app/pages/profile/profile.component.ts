@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { StatusComponent } from '../../components/status/status.component';
 import { VideoPostComponent } from '../../components/video-post/video-post.component';
 import { UsersListComponent } from '../../components/users-list/users-list.component';
-import { User } from '../../models/user';
+import { User, userPosts } from '../../models/user';
 import { PostService } from '../../services/post/post.service';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule } from '@angular/common';
@@ -30,6 +30,8 @@ export class ProfileComponent {
   isUser = { available_to_play: 'AUSENTE' };
   public userAvatar: string = '';
   posts: Post[] = [];
+  public userName: string = '';
+  public avatar: string = '';
   recentPrivateChats: any[] = [];
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
@@ -57,6 +59,13 @@ export class ProfileComponent {
     const avatarDataString = localStorage.getItem('avatar');
     this.userAvatar = avatarDataString as string;
     console.log(this.userAvatar);
+
+    // Aqui recogemos el nombre de usuario:
+    const userDataString = localStorage.getItem('user');
+    const userData = userDataString ? JSON.parse(userDataString) : null;
+    const userName = userData ? userData.name : '';
+    localStorage.setItem('name', userName);
+    console.log(userName);
   }
 
   ngOnInit(): void {
@@ -67,7 +76,7 @@ export class ProfileComponent {
       this.postService.getPostsByUser(userId).subscribe({
         next: (posts) => {
           this.posts = posts;
-          console.log('Hasta aqui funciona');
+          console.log('Estos son los posts del usuario');
         },
         error: (error) => {
           console.log(error);

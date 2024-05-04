@@ -50,7 +50,7 @@
 
         <div class="postsUser">
             @for(post of posts; track post.post_id){
-            <div class="user-info">
+            <div class="userInfo">
                 <img class="avatar" [src]="post.user_avatar" alt="User Avatar">
                 <p class="name">{{post.user_name}}</p>
             </div>
@@ -58,7 +58,6 @@
             }
         </div>
     </div>
-
 </div>
 
 

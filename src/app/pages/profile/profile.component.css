@@ -207,22 +207,24 @@
 
 .content{
     display: flex;
-    gap: 30px;
+    gap: 200px;
     margin-top: 30px;
+    justify-content: flex-start;
 }
+
 .status {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
-    padding-left: 130px;
+    padding-left: 100px;
 }
 
 
 .status-text {
     text-align: left;
     padding-left: 5px;
-    font: Plus Jakarta Sans;
+    font: 'Plus Jakarta Sans';
     font-size: 18px;
     color: #8D8D8D;
 }
@@ -232,7 +234,7 @@
     width: 459px;
     height: 35px;
     text-align: center;
-    font: Plus Jakarta Sans;
+    font: 'Plus Jakarta Sans';
     font-size: 28px;
     font-weight: 700;
     color: #FFFFFF;
@@ -245,4 +247,54 @@
     font-size: bold;
 }
 
+.postsUser{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.userInfo {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    gap: 10px;
+}
+
+.name{
+    width: auto;
+    height: 23px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-left: 0px;
+    display: flex;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 3%;
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1400px){
+    .content{
+        gap: 30px;
+    }
+
+    
+}
 
