@@ -7,13 +7,21 @@ import { User } from '../../models/user';
 import { PostService } from '../../services/post/post.service';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule } from '@angular/common';
+import { Post } from '../../models/posts';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterLink, StatusComponent, VideoPostComponent, UsersListComponent, CommonModule],
+  imports: [
+    RouterLink,
+    StatusComponent,
+    VideoPostComponent,
+    UsersListComponent,
+    CommonModule,
+  ],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  styleUrl: './profile.component.css',
+  providers: [PostService, UserService],
 })
 export class ProfileComponent {
   @Input() user!: User;
@@ -21,7 +29,7 @@ export class ProfileComponent {
   available_to_play = false;
   isUser = { available_to_play: 'AUSENTE' };
   public userAvatar: string = '';
-
+  posts: Post[] = [];
   recentPrivateChats: any[] = [];
   onlineFriends: User[] = [];
   sugerenciaFriends: User[] = [];
@@ -29,9 +37,10 @@ export class ProfileComponent {
   user_id!: number; // Asegúrate de tener el ID del usuario
   userPostCount!: number;
 
-
-  constructor(private readonly postService: PostService, private readonly userService: UserService) {
-   
+  constructor(
+    private readonly postService: PostService,
+    private readonly userService: UserService
+  ) {
     // Obtenemos el user desde localStorage
     let usersFromStorage = localStorage.getItem('user');
     this.user = usersFromStorage ? JSON.parse(usersFromStorage) : [];
@@ -40,9 +49,34 @@ export class ProfileComponent {
 
     // Aquí recuperamos el estado del usuario desde el almacenamiento local
     let userStatusFromStorage = localStorage.getItem('userStatus');
-    this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    this.available_to_play =
+      userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
-}
+
+    // Aquí recuperamos el avatar:
+    const avatarDataString = localStorage.getItem('avatar');
+    this.userAvatar = avatarDataString as string;
+    console.log(this.userAvatar);
+  }
+
+  ngOnInit(): void {
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
+    if (userId) {
+      this.postService.getPostsByUser(userId).subscribe({
+        next: (posts) => {
+          this.posts = posts;
+          console.log('Hasta aqui funciona');
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
+    } else {
+      console.log('No existe ese usuario');
+    }
+  }
 
   // Función para cambiar el estado de disponibilidad
   toggleAvailability() {
@@ -50,7 +84,7 @@ export class ProfileComponent {
     let status = this.available_to_play ? 'DISPONIBLE' : 'AUSENTE';
     localStorage.setItem('userStatus', status);
     let user = JSON.parse(localStorage.getItem('user') as string);
-    this.updateDatabase(user.user_id, this.available_to_play)
+    this.updateDatabase(user.user_id, this.available_to_play);
   }
   // Llamar al servicio para actualizar el estado en la base de datos
   public updateDatabase(userId: string, isAvailable: boolean) {
@@ -60,30 +94,21 @@ export class ProfileComponent {
       },
       error: (error) => {
         console.log('Ocurrió un error durante la actualización', error);
-      }
+      },
     });
   }
 
+  // ngOnInit(): void {
+  //   // Obtén el objeto de usuario del localStorage
+  //   let user = JSON.parse(localStorage.getItem('user') ?? '{}');
 
-  ngOnInit():void {
-    
-      // Obtén el objeto de usuario del localStorage
-  let user = JSON.parse(localStorage.getItem('user') ?? '{}');
-  
-    this.getUserPostCount();
-    
-
-  }
+  //   this.getUserPostCount();
+  // }
 
   getUserPostCount(): void {
-    this.postService.getAllPosts().subscribe(posts => {
-      const userPosts = posts.filter(post => post.userId === this.user_id);
+    this.postService.getAllPosts().subscribe((posts) => {
+      const userPosts = posts.filter((post) => post.userId === this.user_id);
       this.userPostCount = userPosts.length;
     });
   }
-
-
-
 }
-
-
