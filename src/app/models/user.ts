@@ -1,6 +1,7 @@
 export interface User {
-  length: any;
 
+  about_me: any;
+  length: any;
   user_id: number;
   avatar: string;
   name: string;
