@@ -69,3 +69,11 @@ img{
 .optionToChoose img:hover {
     transform: scale(1.1); 
 }
+
+@media screen and (max-width: 1130px){
+    .container{
+        width: 1000px;
+        max-height: 1500px;
+        flex-wrap: wrap;
+    }
+}
