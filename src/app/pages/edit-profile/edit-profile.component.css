@@ -12,8 +12,8 @@
     flex-direction: column;
     justify-content: space-between;
     background-image: url('../../../assets/background/background_edit_profile.svg');
-    background-size: auto;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     max-width: 100%;
     opacity: 1;
 }

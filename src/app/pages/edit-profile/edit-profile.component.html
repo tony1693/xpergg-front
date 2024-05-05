@@ -110,26 +110,28 @@
                     [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'" [closeModal]="'Cancelar'"
                     [acceptModal]="'Aceptar'" (click)="confirmEdit()"></app-confirmation-modal>
             </div>
-        <div class="modifyPasswordContainer">
-            <div class="passwordContent">
-                <h1>Editar Contraseña</h1>
-                <div class="editPassword">
-                    <div class="editInputsPassword">
-                        <div class="inputPass">
-                            <label for="name">Nueva Contraseña</label>
-                            <input class="inputPassword" [(ngModel)]="password1" type="password" id="nombre">
-                        </div>
-                        <div class="inputPass">
-                            <label for="name">Repita Nueva Contraseña</label>
-                            <input class="inputPassword" [(ngModel)]="password2" type="password" id="nombre">
-                        </div>
-                        <div class="passwordBtn">
-                            <button (click)="openConfirmPassword()">Actualizar contraseña</button>
-                        </div>
+    </form>
+    <form [formGroup]="password" (ngSubmit)="changePassword()">
+    <div class="modifyPasswordContainer">
+        <div class="passwordContent">
+            <h1>Editar Contraseña</h1>
+            <div class="editPassword">
+                <div class="editInputsPassword">
+                    <div class="inputPass">
+                        <label for="name">Nueva Contraseña</label>
+                        <input class="inputPassword" formControlName="password" type="password">
+                    </div>
+                    <div class="inputPass">
+                        <label for="name">Repita Nueva Contraseña</label>
+                        <input class="inputPassword" formControlName="confirmPassword" type="password">
+                    </div>
+                    <div class="passwordBtn">
+                        <button type="submit">Actualizar contraseña</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </form>
 </div>
 
