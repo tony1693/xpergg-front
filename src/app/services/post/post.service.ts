@@ -22,4 +22,8 @@ export class PostService {
   public getPostsByUser(userId: number): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.url}/postsUser/${userId}`);
   }
+
+  getUserPostCount(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/getUserPostCount?id=${userId}`);
+  }
 }

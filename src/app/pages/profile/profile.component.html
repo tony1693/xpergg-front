@@ -8,7 +8,7 @@
                 <button class="button" routerLink="/edit-profile">Editar Perfil</button>
             </div>
             <p class="localidad">{{user.nationality}}</p>
-            <p class="descripcion">{{user.aboutMe}}</p>
+            <p class="descripcion">{{user.about_me}}</p>
             <div class="count-data">
                 <!-- <p class="numero">Nº Amigos</p>
                 <p class="number">1000</p> -->
@@ -16,20 +16,29 @@
                 <p class="number2">{{ userPostCount }}</p>
             </div>
         </div>
-
         <div class="interest-card">
-            <div class="interest-container">
-                <p class="interest">Intereses</p>
-                <div class="block">
-                    <div class="block2">
-                        <p class="platGen">Plataformas</p>
-                        <div class="interest-name">
-                            <p class="boxtype">{{user.platform}}</p>
+            <div class="interest-card">
+                <div class="interest-container">
+                    <p class="interest">Intereses</p>
+                    <div class="block">
+                        <div class="block2">
+                            <p class="platGen">Plataformas</p>
+                            <div class="interest-name">
+                                <p class="boxtype">
+                                    @for(platform of user.platform; track platform) {
+                                    {{platform}}
+                                    <hr>
+                                    }
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="block3">
-                        <p class="platGen">Géneros</p>
-                        <p class="boxtype">{{user.interest}}</p>
+                        <div class="block3">
+                            <p class="platGen">Géneros</p>
+                            <p class="boxtype">
+                                @for(interest of user.interest; track interest) {
+                                {{interest}}
+                                }</p>
+                        </div>
                     </div>
                 </div>
             </div>
