@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .container-init {
-    padding-top: 140px;
+    padding-top: 160px;
     width: 100vw;
     height: auto;
     background-image: url('../../../assets/background/background_community_threads.png');
@@ -12,6 +12,7 @@
     background-repeat: repeat;
     max-width: 100%;
     display: flex;
+    justify-content: space-around;
 }
 
 
@@ -37,6 +38,7 @@
     font-size: 28px;
     font-weight: 700;
     color: #FFFFFF;
+    margin-bottom: 30px;
 }
 
 
