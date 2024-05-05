@@ -33,9 +33,7 @@ import { error } from 'jquery';
   styleUrl: './edit-profile.component.css',
 })
 export class EditProfileComponent {
-
-
-  @Input() public currentAvatar: string = 'assets/avatar/Paul_2.webp';
+  @Input() public currentAvatar: string = '';
 
   userModel!: User;
   // Método para recoger los valores seleccionados de los checkboxes
@@ -46,13 +44,14 @@ export class EditProfileComponent {
 
   constructor(
     private readonly userService: UserService,
-    private dialog: MatDialog
   ) {
     const userDataString = localStorage.getItem('user');     
     const userData = userDataString ? JSON.parse(userDataString) : null;     
     const userId = userData ? userData.user_id : '';     
     localStorage.setItem('userId', userId);     
     console.log(userId);
+   
+    this.currentAvatar = localStorage.getItem('avatar') as string;
   }
 
   public reactiveregister: FormGroup = new FormGroup({
@@ -236,7 +235,4 @@ changePassword() {
     
   }
 }
-
-
-
 }

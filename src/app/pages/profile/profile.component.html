@@ -1,14 +1,14 @@
 <div class="container-profile">
 
     <div class="user-info">
-        <img class="avatarUser">
+        <img class="avatarUser" [src]="userAvatar">
         <div class="user-data">
             <div class="botton-edit">
                 <p class="myUser">{{user.name}}</p>
                 <button class="button" routerLink="/edit-profile">Editar Perfil</button>
             </div>
             <p class="localidad">{{user.nationality}}</p>
-            <p class="descripcion">{{user.aboutMe}}</p>
+            <p class="descripcion">{{user.about_me}}</p>
             <div class="count-data">
                 <!-- <p class="numero">Nº Amigos</p>
                 <p class="number">1000</p> -->
@@ -16,20 +16,28 @@
                 <p class="number2">{{ userPostCount }}</p>
             </div>
         </div>
-
         <div class="interest-card">
-            <div class="interest-container">
-                <p class="interest">Intereses</p>
-                <div class="block">
-                    <div class="block2">
-                        <p class="platGen">Plataformas</p>
-                        <div class="interest-name">
-                            <p class="boxtype">{{user.platform}}</p>
+            <div class="interest-card">
+                <div class="interest-container">
+                    <p class="interest">Intereses</p>
+                    <div class="block">
+                        <div class="block2">
+                            <p class="platGen">Plataformas</p>
+                            <div class="interest-name">
+                                <p class="boxtype">
+                                    @for(platform of user.platform; track platform) {
+                                    {{platform}}
+                                    <hr>
+                                    }
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="block3">
-                        <p class="platGen">Géneros</p>
-                        <p class="boxtype">{{user.interest}}</p>
+                        <div class="block3">
+                            <p class="platGen">Géneros</p>
+                            <p class="boxtype">
+                                @for(interest of user.interest; track interest) {
+                                {{interest}}
+                                }</p>
                         </div>
                     </div>
                 </div>
@@ -37,24 +45,35 @@
         </div>
     </div>
 
-    <div class="posts-status-privateChats">
-
+    <div class="content">
         <div class="status">
             <p class="status-text"></p>
             @if (user.length >0) {
             <app-status [user]="user"></app-status>
             }
-           <!-- Agrega el evento de clic y ngStyle aquí -->
-           <button class="buttonToogle" (click)="toggleAvailability()"
-           [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE' :
-           'AUSENTE' }}</button>
+            <!-- Agrega el evento de clic y ngStyle aquí -->
+            <button class="buttonToogle" (click)="toggleAvailability()"
+                [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{ available_to_play ? 'DISPONIBLE' :
+                'AUSENTE' }}</button>
         </div>
 
-        <app-video-post></app-video-post>
-
-        <div class="card-online-friends">
-            <app-users-list class="amigos" title="Conversaciones Recientes"
-                [usersList]="recentPrivateChats"></app-users-list>
+        <div class="postsUser">
+            @for(post of posts; track post.post_id){
+            <div class="userInfo">
+                <img class="avatar" [src]="post.user_avatar" alt="User Avatar">
+                <p class="name">{{post.user_name}}</p>
+            </div>
+            <app-video-post [post]="post"></app-video-post>
+            }
         </div>
-
     </div>
+</div>
+
+
+
+<!-- <div class="posts-status-privateChats"> -->
+<!-- <div class="card-online-friends">
+        <app-users-list class="amigos" title="Conversaciones Recientes"
+            [usersList]="recentPrivateChats"></app-users-list>
+    </div> -->
+<!-- </div> -->
