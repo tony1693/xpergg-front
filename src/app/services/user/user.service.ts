@@ -62,7 +62,7 @@ export class UserService {
     if (platform !== undefined) data.platform = platform;
     if (interest !== undefined) data.interest = interest;
   
-    return this.http.put(`${this.apiUrl}/user/${userId}`, data);
+    return this.http.put(`${this.apiUrl}modifyProfile/:id${userId}`, data);
   }
   
 
