@@ -145,14 +145,16 @@ export class ProfileComponent {
   // }
 
   getUserPostCount(): void {
-    const userId = 1; // ID del usuario logeado
-    this.postService.getUserPostCount(userId).subscribe(
-      (response: { post_count: number }) => {
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
+    this.postService.getUserPostCount(userId).subscribe({
+      next: (response: { post_count: number }) => {
         this.userPostCount = response.post_count;
       },
-      (error: any) => {
+      error: (error) => {
         console.log('Error getting post count from user', error);
-      }
-    );
+      },
+    });
   }
 }
