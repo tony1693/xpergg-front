@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class PostService {
   private url: string = 'http://localhost:3000';
 
-
   constructor(private http: HttpClient) {}
 
   public addPost(newPost: Post) {
@@ -19,9 +18,12 @@ export class PostService {
   public getAllPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.url}/posts`);
   }
-  
-    getUserPostCount(userId: number): Observable<any> {
-      return this.http.get<any>(`${this.url}/getUserPostCount?id=${userId}`);
-    }
-}
 
+  public getPostsByUser(userId: number): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.url}/postsUser/${userId}`);
+  }
+
+  getUserPostCount(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/getUserPostCount?id=${userId}`);
+  }
+}

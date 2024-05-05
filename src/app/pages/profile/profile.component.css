@@ -1,9 +1,9 @@
 
 
 .container-profile {
-    padding-top: 140px;
     width: 100vw;
-    height: 1962px;
+    min-height: 100vh; 
+    height: auto;   
     background-image: url('../../../assets/background/background_edit_profile.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,15 +14,16 @@
 
 .user-info {
     display: flex;
-    padding-left: 300px;
+    padding-top: 140px;
+    margin: 0 150px;
+    justify-content: center;
     gap: 50px;
 }
 
 .avatarUser {
     border-radius: 50%;
-    width: 159px;
+    width: 199px;
     height: 159px;
-    background: #E100FF ;
     border: 5px solid #636363;
 }
 
@@ -58,7 +59,9 @@
     width: 152px;
     height: 35px;
     text-align: left;
-    font: normal normal bold 28px/47px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 28px;
     letter-spacing: 0px;
     color: #FFFFFF;
 }
@@ -67,7 +70,9 @@
     width: 170px;
     height: 28px;
     text-align: left;
-    font: normal normal normal 22px/47px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 22px;
     letter-spacing: 0px;
     color: #FFFFFF;
     margin-top: -13px;
@@ -77,7 +82,9 @@
     width: 375px;
     height: 56px;
     text-align: left;
-    font: normal normal normal 15px/28px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 20px;
     letter-spacing: 0px;
     color: #FFFFFF;
     margin-top: 10px;
@@ -90,31 +97,24 @@
     gap: 15px;
     border-top: 1px solid gray;
     padding-top: 10px;
-
 }
 
 .numero{
     width: 64px;
     height: 22px;
     text-align: left;
-    font: normal normal normal 12px/28px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 12px;
     color: #FFFFFF;
-}
-
-.number {
-    width: 48px;
-    height: 22px;
-    text-align: center;
-    font: normal normal 800 14px/28px Plus Jakarta Sans;
-    color: #E100FF;
-    margin-left: -20px;
 }
 
 .number2 {
     width: 48px;
     height: 22px;
     text-align: center;
-    font: normal normal 800 14px/28px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;;
     color: #E100FF;
     margin-left: -46px;
 }
@@ -135,7 +135,9 @@
     width: 294px;
     height: 35px;
     text-align: left;
-    font: normal normal bold 28px/47px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 28px;
     letter-spacing: 0px;
     color: #FFFFFF;
 }
@@ -143,14 +145,15 @@
 .interest-container{
     display: flex;
     flex-direction: column;
-    padding-left: 35px;
-    padding-top: 20px;
+    padding: 20px 35px;
+
 }
 
 
 .block {
     display: flex;
     gap: 50px;
+    justify-content: space-around;
 }
 
 .block2 {
@@ -168,7 +171,10 @@
     width: 170px;
     height: 19px;
     text-align: left;
-    font: normal normal bold 15px/47px Plus Jakarta Sans;
+    margin-bottom: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 15px;
     letter-spacing: 0px;
     color: #E100FF;
 
@@ -178,21 +184,15 @@
     display: flex;
     gap: 8px;
     margin-top: 5px;
+    width: auto;
 }
-
-.interest-name2{
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 5px;
-}
-
 
 .boxtype {
     padding: 1px 1px;
     border: 2px solid #636363;
     border-radius: 10px;
-    font: normal normal normal 15px/28px Plus Jakarta Sans;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 15px;
     letter-spacing: 0px;
     color: #FFFFFF;
     display: flex;
@@ -202,26 +202,32 @@
 }
 
 
-.posts-status-privateChats {
+/* .posts-status-privateChats {
     display: flex;
     gap: 100px;
     padding-top: 50px;
-}
+} */
 
+.content{
+    display: flex;
+    gap: 200px;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
 
 .status {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
-    padding-left: 130px;
+    padding-left: 100px;
 }
 
 
 .status-text {
     text-align: left;
     padding-left: 5px;
-    font: Plus Jakarta Sans;
+    font: 'Plus Jakarta Sans';
     font-size: 18px;
     color: #8D8D8D;
 }
@@ -231,7 +237,7 @@
     width: 459px;
     height: 35px;
     text-align: center;
-    font: Plus Jakarta Sans;
+    font: 'Plus Jakarta Sans';
     font-size: 28px;
     font-weight: 700;
     color: #FFFFFF;
@@ -243,3 +249,55 @@
     background: #000000;
     font-size: bold;
 }
+
+.postsUser{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.userInfo {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    gap: 10px;
+}
+
+.name{
+    width: auto;
+    height: 23px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-left: 0px;
+    display: flex;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 3%;
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1400px){
+    .content{
+        gap: 30px;
+    }
+
+    
+}
+
