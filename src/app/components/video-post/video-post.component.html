@@ -23,29 +23,3 @@
     <br>
     <br>
 </div>
-
-<!-- Scrollable modal -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-    (click)="showComments(post.post_id)">
-    Ver comentarios
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="closeBtn">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i
-                    class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="modal-content">
-            <div class="modal-body">
-                <ul>
-                    @for(comment of comments; track comment.comment_id){
-                    <p>{{comment.text}}</p>
-                    }
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
