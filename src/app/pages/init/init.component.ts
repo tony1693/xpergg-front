@@ -35,10 +35,10 @@ export class InitComponent {
   sugerenciaFriends: User[] = [];
   available_to_play: boolean = false;
   public userName: string = '';
-  public userAvatar: string = '';
+  public avatar: string = '';
+  // 'https://cdn-icons-png.flaticon.com/512/4792/4792929.png';
   public linkYoutubePost!: string;
-  public titlePost: string =
-    'El estudio de Nightingale cambia sus prioridades por el tibio recibimiento tras el lanzamiento';
+  public titlePost: string = '';
   public urlId: string = '';
   public post: Post[] = [];
   games!: any;
@@ -75,11 +75,9 @@ export class InitComponent {
     console.log(userName);
 
     // Aquí recuperamos el avatar:
-    const avatarDataString = localStorage.getItem('user');
-    const avatarString = avatarDataString ? JSON.parse(avatarDataString) : null;
-    const userAvatar = avatarString ? avatarString.imgavatar : '';
-    localStorage.setItem('avatar', userAvatar);
-    console.log(userAvatar);
+    const avatarDataString = localStorage.getItem('avatar');
+    this.avatar = avatarDataString as string;
+    console.log(this.avatar);
   }
 
   //   ngOnInit() {
@@ -116,8 +114,11 @@ export class InitComponent {
     inputTextPost: HTMLInputElement,
     inputLinkVideoPost: HTMLInputElement
   ) {
-    const currentDate = new Date().toISOString();
-    const userId: number = JSON.parse(localStorage.getItem('user') as string
+
+    const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+
     ).user_id;
     const userName = localStorage.getItem('name');
     const avatar = localStorage.getItem('avatar');
@@ -129,13 +130,16 @@ export class InitComponent {
       post_id: 0,
       user_name: userName,
       user_avatar: avatar,
-      userId: 0
+      userId: 0,
     };
     localStorage.setItem('fecha creacion post', currentDate);
     this.postService.addPost(newPost).subscribe({
       next: (data) => {
         console.log(data);
         window.location.reload();
+        setTimeout(() => {
+          location.reload();
+        }, 1);
       },
       error: (error) => {
         console.log(error);
@@ -148,8 +152,10 @@ export class InitComponent {
   ngOnInit(): void {
     // const userNameFromLocalStorage = localStorage.getItem('name');
     // this.userName = userNameFromLocalStorage || '';
-    const avatarFromLocalStorage = localStorage.getItem('avatar');
-    this.userAvatar = avatarFromLocalStorage || '';
+    const storedAvatar = localStorage.getItem('avatar');
+    if (storedAvatar) {
+      this.avatar = storedAvatar;
+    }
     this.postService.getAllPosts().subscribe({
       next: (data: Post[]) => {
         console.log(data);
