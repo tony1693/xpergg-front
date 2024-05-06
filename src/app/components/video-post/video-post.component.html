@@ -1,39 +1,3 @@
-<!-- 
-<div class="video-post">
-    @for (user of users; track user.user_id) {
-    <div class="user-info">
-        <img class="avatar" [src]="user.avatar" alt="User Avatar">
-        <a href="" class="name">{{user.name}}</a>
-    </div>
-    <div class="video-player">
-        <p class="">{{ linkYoutubePost }}</p>
-        <a href="" class="play-btn">PLAY</a>
-    </div>
-    <div class="video-description">
-        <p class="titlePost">{{ titlePost }}</p>
-    </div>
-    <div class="video-interactions">    
-        <a class="likes" (click)="addLike()">
-           <img [src]="likeOff" alt="">
-        </a>     
-        <span class="likes-count">{{ likesCount }}</span>
-        <a href="" class="view-comments">Ver comentarios 300K</a>
-    </div>
-    <div class="comment-section">
-        <input type="text" class="form-control" id="" placeholder="Escribe tu comentario" required #inputComment>
-    </div>
-    <div>
-        <button class="comment-btn" type="submit" (click)="addComment(inputComment)">Comentar</button>
-    </div>
-    <br>
-    <br>
-    <br>
-    }
-</div> -->
-
-<!-- Mi codigo aqui: -->
-
-
 <div class="video-post">
     <div class="video-player">
         <youtube-player id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="322"
@@ -58,4 +22,30 @@
     <br>
     <br>
     <br>
+</div>
+
+<!-- Scrollable modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    (click)="showComments(post.post_id)">
+    Ver comentarios
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="closeBtn">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul>
+                    @for(comment of comments; track comment.comment_id){
+                    <p>{{comment.text}}</p>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
