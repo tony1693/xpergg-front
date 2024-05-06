@@ -117,8 +117,7 @@ export class InitComponent {
     inputLinkVideoPost: HTMLInputElement
   ) {
     const currentDate = new Date().toISOString();
-    const userId: number = JSON.parse(
-      localStorage.getItem('user') as string
+    const userId: number = JSON.parse(localStorage.getItem('user') as string
     ).user_id;
     const userName = localStorage.getItem('name');
     const avatar = localStorage.getItem('avatar');
