@@ -33,7 +33,7 @@ export class VideoPostComponent {
       // const reactionId: number = Date.now();
       // const postId: number = JSON.parse(localStorage.getItem('post') as string).post_id;
         let newReaction: Reaction = {
-        reaction_id: 1005,
+        reaction_id: 1,
         date: currentDate,
         reaction_type: "like",
         user_id: userId,
@@ -45,8 +45,8 @@ export class VideoPostComponent {
       this.notificationService.sendNotification(newReaction).subscribe({
         next: (data) => {
           console.log(data);
-          window.location.reload();
-          setTimeout(() => { location.reload(); }, 1);
+          // window.location.reload();
+          // setTimeout(() => { location.reload(); }, 1);
         },
         error: (error) => { console.log(error); },
       });
