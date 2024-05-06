@@ -1,17 +1,23 @@
 .container1 {
     height: 470px;
     background-image: url("../../../assets/background/background_news.svg");
-    background-size: 100%;
-    background-repeat: no repeat;
-    flex-wrap:wrap;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    gap: 20px;
-    
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
 }
 
-
+.container-news{
+    gap: 40px 0px;
+    /* height: 300px; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
 
 .title{
 
@@ -19,28 +25,32 @@
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   margin-top: 100px;
-   
+   /* margin-top: 100px; */
+   /* margin-bottom: 20px; */
+   /* padding-top: 100px; */
 }
 
 
 .news{
-    height: 95px;
     text-align: center;
-    font: normal normal bold Plus Jakarta Sans;
     font-size: 68px;
     color:#FFFFFF;
-    
+    font-weight: bold;
+    font-style: normal;
+    font-size: 75px;
+    /* line-height: 61px; */
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .gaming{
-    height: 95px;
     text-align: center;
-    font: normal normal bold  Plus Jakarta Sans;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 68px;
     letter-spacing: 0px;
     color: #E100FF;
-
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 10px;
 }
 
 
@@ -98,12 +108,17 @@
 
 
 .container-fluid{
-    flex-wrap:wrap;
-    margin: 50px;
+    flex-wrap: wrap;
+    min-width: 100%;
+    /* margin: 50px; */
+    min-height: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+}
+
+.separador{
+    height: 200px;
 }
 
 .cards {
