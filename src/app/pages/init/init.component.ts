@@ -114,9 +114,11 @@ export class InitComponent {
     inputTextPost: HTMLInputElement,
     inputLinkVideoPost: HTMLInputElement
   ) {
+
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const userId: number = JSON.parse(
       localStorage.getItem('user') as string
+
     ).user_id;
     const userName = localStorage.getItem('name');
     const avatar = localStorage.getItem('avatar');
