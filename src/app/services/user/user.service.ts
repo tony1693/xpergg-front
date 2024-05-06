@@ -66,6 +66,13 @@ export class UserService {
     return this.http.put(`${this.apiUrl}/user/${userId}`, data);
   }
 
+  public modifyPassword(userId: string, password: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/modifyPassword`, { user_id: userId, password });
+  }
+
+
+  
+
   // Funcion para modificar el Avatar:
 
   updateAvatar(userId: number, newAvatar: string): Observable<any> {

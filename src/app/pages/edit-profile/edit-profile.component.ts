@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AvatarComponent } from '../../components/avatar/avatar.component';
 import {
+  FormBuilder,
   FormControl,
   FormGroup,
   FormsModule,
@@ -12,6 +13,9 @@ import { ConfirmationModalComponent } from '../../components/confirmation-modal/
 import { User } from '../../models/user';
 import { AvatarOptionsComponent } from '../../components/avatar-options/avatar-options.component';
 import { UserService } from '../../services/user/user.service';
+import { ConfirmPasswordComponent } from '../../components/confirm-password/confirm-password.component';
+import { MatDialog } from '@angular/material/dialog';
+import { error } from 'jquery';
 
 @Component({
   selector: 'app-edit-profile',
@@ -23,6 +27,7 @@ import { UserService } from '../../services/user/user.service';
     ReactiveFormsModule,
     ConfirmationModalComponent,
     AvatarOptionsComponent,
+    ConfirmPasswordComponent,
   ],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
@@ -35,7 +40,17 @@ export class EditProfileComponent {
   private getSelectedValues(keys: string[]): string[] {
     return keys.filter((key) => this.reactiveregister.get(key)?.value);
   }
-  constructor(private readonly userService: UserService) {
+
+
+  constructor(
+    private readonly userService: UserService,
+  ) {
+    const userDataString = localStorage.getItem('user');     
+    const userData = userDataString ? JSON.parse(userDataString) : null;     
+    const userId = userData ? userData.user_id : '';     
+    localStorage.setItem('userId', userId);     
+    console.log(userId);
+   
     this.currentAvatar = localStorage.getItem('avatar') as string;
   }
 
@@ -181,5 +196,43 @@ export class EditProfileComponent {
           console.error('Error al actualizar el usuario', error);
         }
       );
+
+      
   }
+
+  password =  new FormGroup({
+  password: new FormControl('', [Validators.required]),
+  confirmPassword: new FormControl('', [Validators.required])
+
+})
+
+changePassword() {
+  if (this.password.valid) {
+    const { password, confirmPassword } = this.password.value;
+    if (password === confirmPassword) {
+      const userId = localStorage.getItem('userId');
+      if (userId) { // Verifica si userId no es null o undefined
+        this.userService.modifyPassword(userId, password).subscribe(
+          response => {
+            console.log(response);
+            
+          },
+          error => {
+            console.error(error);
+            
+          }
+        );
+      } else {
+        console.error('No se pudo obtener el ID del usuario');
+        
+      }
+    } else {
+      console.error('Las contraseñas no coinciden');
+      
+    }
+  } else {
+    console.error('El formulario no es válido');
+    
+  }
+}
 }
