@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
                 <div class="editInterests">
                     <h1>Editar Intereses</h1>
                     <div class="platforms">
@@ -103,18 +103,22 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+
             </div>
             <div class="containerBottom">
                 <app-confirmation-modal id="buttonText" [buttonText]="'Editar'"
                     [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'" [closeModal]="'Cancelar'"
                     [acceptModal]="'Aceptar'" (click)="confirmEdit()"></app-confirmation-modal>
             </div>
+
     </form>
     <form [formGroup]="password" (ngSubmit)="changePassword()">
     <div class="modifyPasswordContainer">
-        <div class="passwordContent">
-            <h1>Editar Contraseña</h1>
+        <div class="passwordContent"><br>
+            <h1 class="h1">Editar Contraseña</h1>
             <div class="editPassword">
                 <div class="editInputsPassword">
                     <div class="inputPass">
@@ -126,7 +130,7 @@
                         <input class="inputPassword" formControlName="confirmPassword" type="password">
                     </div>
                     <div class="passwordBtn">
-                        <button type="submit">Actualizar contraseña</button>
+                        <button type="submit">Actualizar</button>
                     </div>
                 </div>
             </div>

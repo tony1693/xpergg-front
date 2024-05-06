@@ -5,31 +5,32 @@
 }
 
 .bigContainer{
-    padding-top: 140px;
+    padding-top: 180px;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     background-image: url('../../../assets/background/background_edit_profile.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    max-width: 100%;
-    opacity: 1;
+    /* max-width: 100%; */
+    /* opacity: 1; */
 }
 
 /* Estilos de la parte de editar perfil */
 
 .modifyProfileContainer{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     border-radius: 31px;
     background-color: #141414;
     justify-content: center;
-    align-content: center;
-    width: 60%;
-    height: 70%;
-    margin: auto;
+    align-items: center;
+    width: 1000px;
+    height: 450px;
+    /* margin: auto; */
 }
 
 .containerTop{
@@ -38,8 +39,8 @@
     align-items: center;
     background-color: #141414;
     color:white;
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 400px;
     padding: 30px;
     margin-top: 0px;
     gap: 50px;
@@ -52,7 +53,7 @@
     justify-content: center;
     color: white;
     height: 100%;
-    width: 50%;
+    width: 450px;
 }
 
 h1{
@@ -144,8 +145,8 @@ label{
     flex-direction: column;
     justify-content: center;
     color: white;
-    height: 100%;
-    width: 50%;
+    height: 400px;
+    width: 450px;
     margin-top: 30px;
   
 }
@@ -214,7 +215,9 @@ input:checked{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-top: -60px;
+    /* height: 100px; */
+    /* margin-bottom: 50px; */
 }
 
 /* Estilos para container contraseña */
@@ -223,15 +226,18 @@ input:checked{
     display: flex;
     flex-direction: column;
     align-content: center;
+    width: 1700px;
     padding-bottom: 50px;
-    padding-top: 30px
+    padding-top: 30px;
+
+    
 }
 
 .passwordContent{
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
+    width: 1000px;
 }
 
 .editPassword{
@@ -263,10 +269,28 @@ input:checked{
 
 .passwordBtn{
     display: flex;
-    justify-self: flex-end;
-    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    /* justify-self: flex-end; */
+    /* align-self: flex-end; */
 }
 
+button{
+    width: 190px;
+    height: 40px;
+    background-color: #E100FF;
+    color: white;
+    font-family: "Plus Jakarta Sans";
+    font-weight: bold;
+    font-size: 22px;
+    border: 1px solid #E100FF;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 7px 0;
+    border-radius: 16px;
+    }
 
 /* Media Query pantallas más pequeñas*/
 
@@ -279,9 +303,9 @@ input:checked{
     .modifyProfileContainer{
         display: flex;
         justify-content: flex-start;
-        padding-top: 10px;
+        margin-top: 60px;
         height: 75%;
-        margin-bottom: 0px;
+        /* margin-bottom: 0px; */
     }
 
     .containerTop{
@@ -347,4 +371,6 @@ input:checked{
     .containerBottom{
         margin-bottom: 10px;
     }
+
+    
 }
