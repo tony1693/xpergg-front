@@ -15,7 +15,12 @@ export class ConfirmationModalComponent {
   @Input() public closeModal: string = 'Cancelar';
   @Input() public acceptModal: string = 'Aceptar';
 
-  changePassword() {
-    console.log('Contraseña cambiada con éxito');
+  update() {
+    window.location.reload();
+    setTimeout(() => {
+      location.reload()
+    }, 0.5);
   }
+
+ 
 }
