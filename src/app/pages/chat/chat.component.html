@@ -17,12 +17,17 @@
             </div>
             <div class="chatContainer">
                 <!--Aquí la funcionalidad de chat -->
+                <div *ngFor="let message of messages">
+                    <p><strong>User {{message.user_id}}</strong>: {{message.text}}</p>
+                    <p><small>{{message.date | date:'short'}}</small></p>
+                </div>
             </div>
+            
+            
         </div>
     </div>
-
     <div class="bottomContainer">
-        <input type="text" class="msg" placeholder="Escribe aquí tu mensaje">
-        <button type="button" class="sendBtn">Enviar</button>
+        <input type="text" [(ngModel)]="messageText" class="msg" placeholder="Escribe aquí tu mensaje">
+        <button type="button" (click)="sendMessage()" class="sendBtn">Enviar</button>
     </div>
 </div>

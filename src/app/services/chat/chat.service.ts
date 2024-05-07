@@ -12,9 +12,9 @@ export class ChatService {
   constructor(private http: HttpClient) { }
 
   postMessage(message: ChatMessage): Observable<any> {
-    return this.http.post(this.url, message);
+    return this.http.post(this.url + 'chatMessages', message);
   }
   getMessages(): Observable<ChatMessage[]> {
-    return this.http.get<ChatMessage[]>(this.url);
+    return this.http.get<ChatMessage[]>(this.url + 'chatMessages');
   }
 }
