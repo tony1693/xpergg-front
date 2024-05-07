@@ -98,16 +98,22 @@
 
 
 .container-fluid{
+    min-width: 100%;
+    min-height: auto;
     flex-wrap:wrap;
-    margin: 50px;
+    /* margin: 50px; */
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    /* flex-direction: row; */
+    justify-content: center;
     align-items: center;
 }
 
+.separador{
+    height: 200px;
+}
+
 .cards {
-    width: calc(28.333% - 10px); /* Ajusta el ancho para 3 tarjetas por fila, restando el margen */
+    width: 400px; /* Ajusta el ancho para 3 tarjetas por fila, restando el margen */
     margin: 15px; /* Margen para separar las tarjetas */
 }
 
