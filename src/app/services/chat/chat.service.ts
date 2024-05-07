@@ -18,3 +18,4 @@ export class ChatService {
     return this.http.get<ChatMessage[]>(this.url + 'chatMessages');
   }
 }
+
