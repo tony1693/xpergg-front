@@ -96,6 +96,10 @@ export class FormRegisterComponent{
           localStorage.setItem('user', JSON.stringify(res.user[0]));
           console.log('Usuario registrado con éxito');
           this.router.navigate(['init']);
+          window.location.reload();
+          setTimeout(() => {
+            location.reload()
+          }, 0.5);
         },
         error:(err) =>{
           this.error=""

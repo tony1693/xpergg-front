@@ -123,9 +123,8 @@
 
 .bigContainer{
     display: flex;
-    /* width: 100vw;  */
     max-width: 100%;
-    min-height: 350px; 
+    min-height: 350px;
     justify-content: center; 
     align-items: center; 
     background: url("../../../assets/background/background_landing_footer.svg"); 
@@ -147,8 +146,13 @@
 
 .footerImg{ 
     width: 499px; 
+<<<<<<< HEAD
     height: 570px;  
     margin-top: -100px;
+=======
+    height: 570px; 
+    margin-top: -100px; 
+>>>>>>> d812fd2d98e925ccfee1c1e7a395fcc0d397dc9b
 }
 
 .buttonRegister { 

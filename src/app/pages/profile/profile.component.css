@@ -190,7 +190,7 @@
 }
 
 .boxtype {
-    padding: 1px 10px;
+    padding: 1px 5px;
     border: 2px solid #636363;
     border-radius: 10px;
     font-family: 'Plus Jakarta Sans';
@@ -203,6 +203,19 @@
     margin-top: 5%;
 }
 
+.boxtype2 {
+    padding: 1px 2px;
+    border: 2px solid #636363;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
 
 /* .posts-status-privateChats {
     display: flex;
