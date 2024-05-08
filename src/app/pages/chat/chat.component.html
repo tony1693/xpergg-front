@@ -6,11 +6,11 @@
         <div class="rightContainer">
             <div class="aboveChat">
                 <div class="threadTitle">
-                    <p class="subject">Asunto</p>
-                    <p>Aquí me viene el titulo del asunto, que viene de crear hilo/unirme</p>
+                    <p class="subject">{{ thread?.game }} de la {{ thread?.platform }}</p>
+                    <p>{{ thread?.subject }}</p>
                 </div>
                 <div>
-                    <button type="button" class="returnBtn" routerLink="/threads">Volver a hilos</button>
+                    <button type="button" class="returnBtn"  [routerLink]="['/thread',]">Volver a hilos</button>
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserListChatComponent } from '../../components/user-list-chat/user-list-chat.component';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ThreadsComponent } from '../threads/threads.component';
 import { CommunityComponent } from '../community/community.component';
 import { ChatService } from '../../services/chat/chat.service';
@@ -22,14 +22,23 @@ import { CardThreadsComponent } from "../../components/card-threads/card-threads
 export class ChatComponent {
   messages: ChatMessage[] = [];
   messageText!: string;
-thread: any;
+  thread: any = {}; // Inicializa `thread` con un objeto vacío
 
 
-  constructor(private chatService: ChatService, private userService: UserService) { }
+  constructor(private chatService: ChatService, private userService: UserService, private route: ActivatedRoute, private threadsService: ThreadsService ) { }
 
   ngOnInit() {
-    this.getMessages();
-  
+   
+    this.route.params.subscribe(params => {
+      let threadId = params['threadId'];
+      // Ahora puedes usar threadId para cargar los datos del chat correspondiente
+      this.getThreadById(threadId);
+    });
+  }
+  getThreadById(id: string) {
+    this.chatService.getThreadById(id).subscribe((thread: any) => {
+      this.thread = thread;
+    });
   }
   
   getMessages() {
@@ -45,3 +54,4 @@ thread: any;
     });
   }
 }
+
