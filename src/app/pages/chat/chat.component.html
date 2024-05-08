@@ -15,11 +15,9 @@
 
             </div>
             <div class="chatContainer">
-                <!--Aquí la funcionalidad de chat -->
-                <div *ngFor="let message of messages">
+                    @for(message of messages; track message) {
                     <p><strong>User {{message.user_id}}</strong>: {{message.text}}</p>
-                    <p><small>{{message.date | date:'short'}}</small></p>
-                </div>
+                    <p><small>{{message.date | date:'short'}}</small></p>}
             </div>
         </div>
     </div>

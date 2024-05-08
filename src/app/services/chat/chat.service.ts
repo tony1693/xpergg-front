@@ -11,10 +11,10 @@ export class ChatService {
   private url = 'http://localhost:3000/';
 
   constructor(private http: HttpClient) { }
-  getThreadById(id: string): Observable<any> {
-    return this.http.get<any>(`api/threads/${id}`);
-  }
   
+  getThreadById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.url}api/threads/${id}`);
+  }
 
   postMessage(message: ChatMessage): Observable<any> {
     return this.http.post(this.url + 'chatMessages', message);
