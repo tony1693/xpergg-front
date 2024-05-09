@@ -16,11 +16,19 @@ export class ChatService {
     return this.http.get<any>(`${this.url}api/threads/${id}`);
   }
 
-  postMessage(message: ChatMessage): Observable<any> {
-    return this.http.post(this.url + 'chatMessages', message);
+  // postMessage(message: ChatMessage): Observable<any> {
+  //   return this.http.post(this.url + 'chatMessages', message);
+  // }
+  // getMessagesById(): Observable<ChatMessage[]> {
+  //   return this.http.get<ChatMessage[]>(`this.url + chatMessages`);
+  // }
+  getMessagesById(chat_id: number): Observable<ChatMessage[]> {
+    return this.http.get<ChatMessage[]>(`${this.url}api/chat/${chat_id}/messages`);
   }
-  getMessages(): Observable<ChatMessage[]> {
-    return this.http.get<ChatMessage[]>(this.url + 'chatMessages');
+
+  postMessage(message: ChatMessage): Observable<any> {
+    return this.http.post(`${this.url}api/chat/${message.chat_id}/messages`, message);
   }
 }
+
 
