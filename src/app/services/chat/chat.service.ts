@@ -25,9 +25,11 @@ export class ChatService {
   getMessagesById(chat_id: number): Observable<ChatMessage[]> {
     return this.http.get<ChatMessage[]>(`${this.url}api/chat/${chat_id}/messages`);
   }
+  
+
 
   postMessage(message: ChatMessage): Observable<any> {
-    return this.http.post(`${this.url}api/chat/${message.chat_id}/messages`, message);
+    return this.http.post(`${this.url}api/chat/${message.chat_message_id}/messages`, message);
   }
 }
 
