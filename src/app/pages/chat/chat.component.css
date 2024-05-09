@@ -147,5 +147,8 @@ p{
     padding-left: 30px;
     padding-right: 30px;
 }
-
+span{
+    color: white;
+    background-color: #7F00FF;
+}
 

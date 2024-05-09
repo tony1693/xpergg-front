@@ -39,7 +39,7 @@ export class ChatComponent {
   getThreadById(id: string) {
     this.chatService.getThreadById(id).subscribe((thread: any) => {
       console.log('Received thread from server:', thread);
-      this.thread = thread;
+      this.thread = thread[0];
     });
   }
  
