@@ -37,14 +37,26 @@ throw new Error('Method not implemented.');
   @Input()thread: any = {}; // Inicializa `thread` con un objeto vacío
 
   constructor(private chatService: ChatService, private userService: UserService, private route: ActivatedRoute, private threadsService: ThreadsService ) { }
+  // Obtenemos los users desde localStorage
+
 
   ngOnInit() {
+      // Obtenemos el objeto de usuario desde localStorage
+  const user = localStorage.getItem('user');
+  if (user) {
+    const parsedUser = JSON.parse(user);
+    this.user_id = parsedUser.user_id;
+  }
+    console.log(this.user_id);
+
     this.route.params.subscribe(params => {
       let threadId = params['threadId'];
       console.log('threadId:', threadId);  // Añade esta línea
       this.getThreadById(threadId);
     });
   }
+  
+  
   
   getThreadById(id: string) {
     this.chatService.getThreadById(id).subscribe((thread: any) => {
@@ -59,8 +71,8 @@ throw new Error('Method not implemented.');
 
   getMessagesById() {
     // Comprueba si `this.chat_message_id` tiene un valor antes de realizar la solicitud
-    if (this.chat_id) {
-      this.chatService.getMessagesById(Number(this.chat_id)).subscribe({
+    if (this.chat_message_id) {
+      this.chatService.getMessagesById(Number(this.chat_message_id)).subscribe({
         next: (messages: ChatMessage[]) => {
           this.messages = messages;
           console.log('Mensajes recibidos:', messages);
@@ -83,6 +95,8 @@ throw new Error('Method not implemented.');
     this.chatService.postMessage(message).subscribe(response => {
       console.log(response);
       this.getMessagesById(); // Actualiza los mensajes después de enviar uno nuevo
+      console.log('Mensajes recibidos:', this.messages);
+      console.log(response);
     });
   }
 }
