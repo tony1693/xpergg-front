@@ -24,6 +24,7 @@ import { of } from 'rxjs/internal/observable/of';
 })
 export class ChatComponent {
   chat_id!: string;
+activeUserId: any;
 
 Number(arg0: typeof ChatMessage): number {
 throw new Error('Method not implemented.');

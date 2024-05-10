@@ -3,6 +3,9 @@
         <div class="leftContainer">
             <app-user-list-chat class="userListTitle" title="Participantes"></app-user-list-chat>
         </div>
+        <div class="astroImg">
+            <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
+        </div>
         <div class="rightContainer">
             <div class="aboveChat">
                 <div class="threadTitle">
@@ -14,15 +17,20 @@
                 </div>
             </div>
             <div class="chatContainer">
-                    @for(message of messages; track message) {
-                    <p><strong>User {{message.user_id}}</strong>: {{message.text}}</p>
-                    <p><small>{{message.date | date:'short'}}</small></p>}
+                @for(message of messages; track message) {
+                <div [class.activeUser]="message.user_id === activeUserId" class="message">
+                    <p class="messageUserId">User- {{message.user_id}}</p>
+                    <p class="messageText"> {{message.text}}</p>
+                    <p class="messageDate">{{message.date | date:'short'}}</p>
+                </div>}
+            </div>
+            <div class="bottomContainer">
+                <input type="text" [(ngModel)]="messageText" class="msg" placeholder="Escribe aquí tu mensaje">
+                <button type="button" (click)="sendMessage(chat_message_id, user_id, messageText)"
+                    class="sendBtn">Enviar</button>
             </div>
         </div>
     </div>
-    <div class="bottomContainer">
-        <input type="text" [(ngModel)]="messageText" class="msg" placeholder="Escribe aquí tu mensaje">
-        <button type="button" (click)="sendMessage(chat_message_id, user_id, messageText)" class="sendBtn">Enviar</button>
-      </div>
-      
+
+
 </div>
