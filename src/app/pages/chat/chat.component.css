@@ -71,23 +71,30 @@
     align-items: flex-start;
     width: 100%;
     text-align: center;
-    padding-left: 30px;
+  
 }
 
 .subject{
-    color: #7CFC00;
-    font-size: 12px;
+    color: #E100FF;
+    font-size: 10px;
     font-family: 'Plus Jakarta Sans';
     text-align: center;
+    /* padding-left: 2%;
+    padding-right: 12%; */
     margin-bottom: 0px;
+   margin-left: 35px;
+    
+
 }
 
-p{
-    color: white;
+.threadText{
+    color: #7CFC00;
     text-align: center;
     font-size: 16px;
     font-family: 'Plus Jakarta Sans';
     font-weight: bolder;
+    font-style: italic;
+    margin-left: 35px;
 }
 
 .returnBtn{
@@ -107,7 +114,7 @@ p{
 .chatContainer{
     margin-top: 10px;
     max-width: 850px;
-    max-height: 350px;
+    height: 350px;
     border: 1px solid #E100FF;
     border-radius: 20px;
     display: flex;
@@ -166,6 +173,8 @@ p{
 span{
     color: white;
     background-color: #7F00FF;
+    font-size: 6px;
+
 }
 
 .message {
@@ -178,13 +187,13 @@ span{
     background-color: #1b1b1b;
   }
   
-  /* .message.activeUser {
+  .message.activeUser {
     align-items: flex-start;
     background-color: #e8e8e8;
     color: #E100FF;
     border: 1px solid #7F00FF;
 
-  } */
+  }
   .messageUserId{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
@@ -195,7 +204,7 @@ span{
   .messageText{
     font-family: "Plus Jakarta Sans", sans-serif;
     text-align: right;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 16px;
     margin-top: 0px;
     color: white;
@@ -204,13 +213,14 @@ span{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 200;
     font-size: 8px;
+    color: rgba(255, 255, 255, 0.489);
   }
   .astroImg {
     width: 285px;
     height: 360px;
     position: absolute;
     bottom: -70px;
-    left: 20px;
+    left: 25px;
   }
   .astro{
     width: 100%;
