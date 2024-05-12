@@ -3,7 +3,7 @@
 .containerForm {
     margin-top: 30px;
     width: 460px;
-    min-height: 650px;
+    min-height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,6 +20,7 @@ padding-right: 3%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px 0px;
 }
 
 
@@ -37,12 +38,16 @@ text-align: center;
     font-size: 14px;
 }
 
+.textInput{
+    padding-left: 15px;
+}
+
 label{
 margin-bottom: -20px;
 }
 
 .name{
-    width: 420px;
+    width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -63,6 +68,8 @@ padding-left: 15px;
 
 h6{
     margin-bottom: 0px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 p{
@@ -98,7 +105,7 @@ label{
 .styleGenres{
     padding-left: 15px;
     width: 420px; 
-    padding-top: 20px;  
+    padding-top: 5px;  
     /* padding-top: 10px; */
 }
 
@@ -123,6 +130,12 @@ label{
     display: flex;
     font-size: 12px;
     height: 30px;
+    min-width: 100px;
+}
+
+span{
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .realidad{

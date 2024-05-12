@@ -39,11 +39,11 @@
     align-items: center;
     background-color: #141414;
     color:white;
-    width: 600px;
-    height: 400px;
-    padding: 30px;
+    /* width: 600px; */
+    /* height: 400px; */
+    padding-bottom: 30px;
     margin-top: 0px;
-    gap: 50px;
+    /* gap: 50px; */
     border-radius: 31px;
 }
 
@@ -147,12 +147,16 @@ label{
     color: white;
     height: 400px;
     width: 450px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   
 }
 
 .checkbox1{
     margin-bottom: 5px;
+}
+
+.checkbox2{
+    width: 150px;
 }
 
 p{
@@ -186,7 +190,9 @@ label{
 
 .options {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    font-size: 13px;
+
 }
 
 /* Editar checkbox */
@@ -195,10 +201,15 @@ input[type="checkbox"]{
     appearance: none;
     width: 15px;
     height: 15px;
+
     background: #141414;
     border: 1px solid #E100FF;
     border-radius: 1px;
     margin-right: 7px;
+}
+
+.checkbox{
+    font-size: 12px;
 }
 
 input:checked{
@@ -264,6 +275,7 @@ input:checked{
     border-radius: 52px;
     background-color: white;
     width: 400px;
+    height: 40px;
     padding-left: 10px;
 }
 
@@ -271,8 +283,13 @@ input:checked{
     display: flex;
     justify-content: center;
     align-items: center;
+
     /* justify-self: flex-end; */
     /* align-self: flex-end; */
+}
+
+.actualizar{
+    margin-top: 25px;
 }
 
 button{

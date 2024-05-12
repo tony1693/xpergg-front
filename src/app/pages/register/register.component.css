@@ -1,7 +1,14 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
 .container-register {
     z-index: -3;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,28 +16,52 @@
     background-size: cover;
     background-repeat: no-repeat;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .img{
 
     width: 542px;
-    height: 870px;
+    min-height: 870px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-
-    
-
+    margin-bottom: -85px;
 }
 
 img{
 
     width: 100%;
     object-fit: cover;
-    
-    
 }
+
+@media screen and (max-width: 1000px){
+    .img{
+
+        width: 542px;
+        min-height: 870px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-bottom: -85px;
+    }
+}
+
+@media screen and (max-width: 2600px){
+    .img{
+
+        width: 742px;
+        min-height: 1070px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-bottom: -245px;
+    }
+}
+
 
 .boxTitle{
     width: 400px;
@@ -43,7 +74,8 @@ img{
 
 h1{
     font-size: 80px;
-    font-size: bold;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
     color: white;
     line-height: 85px;
     padding-bottom: 30px;
@@ -56,4 +88,12 @@ span{
 p{
     color: white;
     width: 400px;
+}
+
+.boxForm{
+    padding-top: 70px;
+}
+
+.name{
+    width: 1000px;
 }

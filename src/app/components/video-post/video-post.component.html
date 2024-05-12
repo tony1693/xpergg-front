@@ -1,8 +1,8 @@
 <div class="video-post">
-    <div class="video-player">
-        <youtube-player id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="322"
-            [width]="865" [startSeconds]="1" [endSeconds]=""></youtube-player>
-    </div>
+    <!-- <div class="video-player"> -->
+        <youtube-player class="player" id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres" [height]="332"
+            [width]="865"  [startSeconds]="1" [endSeconds]=""></youtube-player>
+    <!-- </div> -->
     <div class="video-description">
         <p class="titlePost">{{ post.description }}</p>
     </div>
