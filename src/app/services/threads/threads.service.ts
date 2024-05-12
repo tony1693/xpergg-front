@@ -7,6 +7,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ThreadsService {
+  getThreadById(chatId: any) {
+    throw new Error('Method not implemented.');
+  }
   private url: string = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}

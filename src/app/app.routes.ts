@@ -18,8 +18,10 @@ export const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'init', component: InitComponent },
   { path: 'community', component: CommunityComponent },
+  { path: 'chat/:threadId', component: ChatComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'threads/:platform', component: ThreadsComponent },
+  { path: 'thread', component: ThreadsComponent},
 ];

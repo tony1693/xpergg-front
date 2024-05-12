@@ -5,17 +5,15 @@
 }
 
 .bigContainer{
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
+    max-width: 100%;
+    min-height: 100%;
     padding-top: 140px;
     display: flex;
     flex-direction: column;
     background-image: url('../../../assets/background/background_landing_chat.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    max-width: 100%;
-    opacity: 1
+    
 }
 
 .topContainer{
@@ -27,6 +25,8 @@
 }
 
 .leftContainer{
+    display: flex;
+    flex-direction: column;
     margin-left: 40px;
     height: auto;
     width: 300px;
@@ -56,36 +56,45 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-grow: 1;
     height: 42px;
-    width: 100%;
+    width: 95%;
 }
 
 
 .threadTitle{
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items: center;
+    justify-content:flex-start;
+    align-items: flex-start;
     width: 100%;
     text-align: center;
+  
 }
 
 .subject{
-    color: #7CFC00;
-    font-size: 12px;
+    color: #E100FF;
+    font-size: 10px;
     font-family: 'Plus Jakarta Sans';
     text-align: center;
+    /* padding-left: 2%;
+    padding-right: 12%; */
+    margin-bottom: 0px;
+   margin-left: 35px;
+    
+
 }
 
-p{
-    color: white;
+.threadText{
+    color: #7CFC00;
     text-align: center;
     font-size: 16px;
     font-family: 'Plus Jakarta Sans';
     font-weight: bolder;
+    font-style: italic;
+    margin-left: 35px;
 }
 
 .returnBtn{
@@ -104,23 +113,33 @@ p{
 
 .chatContainer{
     margin-top: 10px;
-    height: 90%;
-    border: 2px solid #E100FF;
+    max-width: 850px;
+    height: 350px;
+    border: 1px solid #E100FF;
     border-radius: 20px;
     display: flex;
-    background-color: #141414;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 8%);
+    padding: 30px;
+    overflow: auto;
+}
+.chatContainer::-webkit-scrollbar{
+    display: none;
 }
 
+
 .bottomContainer{
-    width: calc(100vw - 375px);
-    height: 105px;
+    max-width: 850px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 31px;
-    margin:  30px 30px 30px 340px;
+    /* margin:  30px 30px 30px 340px; */
     border: 1px solid #141414;
     background-color: #141414;
+    margin-top: 10px;
+   
 }
 
 .msg{
@@ -130,7 +149,11 @@ p{
     height: 30px;
     background-color: #141414;
     color: white;
-    border: none
+    border: none;
+}
+.msg:focus{
+    outline: none;
+    border:none;
 }
 
 .sendBtn{
@@ -147,5 +170,61 @@ p{
     padding-left: 30px;
     padding-right: 30px;
 }
+span{
+    color: white;
+    background-color: #7F00FF;
+    font-size: 6px;
 
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: #1b1b1b;
+  }
+  
+  .message.activeUser {
+    align-items: flex-start;
+    background-color: #e8e8e8;
+    color: #E100FF;
+    border: 1px solid #7F00FF;
+
+  }
+  .messageUser{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, 0.489);
+  }
+  .messageText{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    text-align: right;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 0px;
+    color: white;
+  }
+  .messageDate{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 200;
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.489);
+  }
+  .astroImg {
+    width: 260px;
+    height: 300px;
+    position: absolute;
+    bottom: 60px;
+    left: 25px;
+  }
+  .astro{
+    width: 120%;
+    object-fit: cover;
+  }
+  
 
