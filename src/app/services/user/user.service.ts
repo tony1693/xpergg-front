@@ -10,7 +10,8 @@ import { Post } from '../../models/posts';
 export class UserService {
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   public login(loginBody: LoginBody): Observable<any> {
     return this.http.post<User>(`${this.apiUrl}/login`, loginBody);
@@ -70,9 +71,6 @@ export class UserService {
     return this.http.put(`${this.apiUrl}/modifyPassword`, { user_id: userId, password });
   }
 
-
-  
-
   // Funcion para modificar el Avatar:
 
   updateAvatar(userId: number, newAvatar: string): Observable<any> {
@@ -82,4 +80,5 @@ export class UserService {
     };
     return this.http.put(`${this.apiUrl}/editAvatar`, data);
   }
+
 }

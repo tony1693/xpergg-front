@@ -1,33 +1,33 @@
-.container{
+.container {
     display: flex;
     justify-content: flex-start;
     width: auto;
 }
 
-.row{
+.row {
     width: 100%;
 }
 
-.card{
+.card {
     width: 100%;
     height: 90px;
     background: #141414 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     display: flex;
     flex-direction: row;
-    border-radius: 15px;   
+    border-radius: 15px;
     margin-bottom: 20px;
     padding-left: 30px;
 }
 
-.smallContainer{
+.smallContainer {
     display: flex;
     flex-direction: column;
     margin-left: 18px;
     gap: 10px
 }
 
-.title{
+.title {
     width: 100px;
     height: 17px;
     text-align: left;
@@ -37,7 +37,7 @@
     padding-top: 10px;
 }
 
-.text{
+.text {
     width: 435px;
     height: 58px;
     text-align: left;
@@ -46,8 +46,8 @@
     color: #FFFFFF;
 }
 
-.gameText{
-    width: 435px;
+.gameText {
+    width: 300px;
     height: 58px;
     text-align: left;
     font: normal normal medium 18px/23px Plus Jakarta Sans;
@@ -55,8 +55,8 @@
     color: #FFFFFF;
 }
 
-.namePlatform{
-    width: 435px;
+.namePlatform {
+    width: 200px;
     height: 58px;
     text-align: left;
     font: normal normal medium 18px/23px Plus Jakarta Sans;
@@ -64,12 +64,25 @@
     color: #FFFFFF;
 }
 
-.empty{
-    font-family:'Plus Jakarta Sans';
+.empty {
+    font-family: 'Plus Jakarta Sans';
     font-size: 24px;
     color: white;
     font-weight: bold;
     display: flex;
     justify-self: center;
     align-self: center;
+}
+
+.buttonChat {
+    width: 129px;
+    height: 37px;
+    background: #7F00FF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    text-align: center;
+    font: normal normal bold 20px/28px Plus Jakarta Sans;
+    color: #FFFFFF;
+    align-self: center;
+    margin-right: 2%;
+
 }
