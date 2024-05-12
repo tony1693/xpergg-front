@@ -13,6 +13,7 @@ import { CardThreadsComponent } from "../../components/card-threads/card-threads
 import { Thread } from '../../models/thread';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { of } from 'rxjs/internal/observable/of';
+import { User } from '../../models/user';
 
 @Component({
     selector: 'app-chat',
@@ -23,40 +24,76 @@ import { of } from 'rxjs/internal/observable/of';
     imports: [UserListChatComponent, RouterLink, ThreadsComponent, CommunityComponent, CommonModule, FormsModule, CardThreadsComponent, ThreadsComponent]
 })
 export class ChatComponent {
-  chat_id!: string;
-activeUserId: any;
-
-Number(arg0: typeof ChatMessage): number {
-throw new Error('Method not implemented.');
-}
+  chat_id!: number;
+  activeUserId: any;
+  name: string = '';
+  imgavatar!: string;
   messages: ChatMessage[] = [];
   messageText: string = '';
   thread_id!: number;
   chat_message_id!: number;
   user_id!: number;
-  
+  // usersChat: User[] = []; 
+  usersChat: any[] = [];
+  message!: any[];
+  @Input() users!: User;
   @Input()thread: any = {}; // Inicializa `thread` con un objeto vacío
+  @Input() userId!: number;
+  handleUserSelected: any;
+  available_to_play: boolean = false;
 
-  constructor(private chatService: ChatService, private userService: UserService, private route: ActivatedRoute, private threadsService: ThreadsService ) { }
-  // Obtenemos los users desde localStorage
+  constructor(private chatService: ChatService, private userService: UserService, private route: ActivatedRoute, private threadsService: ThreadsService ) { 
+       // Obtenemos los users desde localStorage
+    let usersFromStorage = localStorage.getItem('user');
+    this.users = usersFromStorage ? JSON.parse(usersFromStorage) : [];
+    console.log(usersFromStorage);
+    console.log(this.users);
 
+    // Aquí recuperamos el estado del usuario desde el almacenamiento local
+    let userStatusFromStorage = localStorage.getItem('userStatus');
+    this.available_to_play =
+      userStatusFromStorage === 'DISPONIBLE' ? true : false;
+    console.log(userStatusFromStorage);
+
+    // Aquí recuperamos el userName:
+    const userDataString = localStorage.getItem('user');
+    const userData = userDataString ? JSON.parse(userDataString) : null;
+    const userName = userData ? userData.name : '';
+    localStorage.setItem('name', userName);
+    console.log(userName);
+
+    // Aquí recuperamos el avatar:
+    const avatarDataString = localStorage.getItem('avatar');
+    this.imgavatar = avatarDataString as string;
+    console.log(this.imgavatar);
+  }
+ 
 
   ngOnInit() {
+   
       // Obtenemos el objeto de usuario desde localStorage
   const user = localStorage.getItem('user');
   if (user) {
     const parsedUser = JSON.parse(user);
     this.user_id = parsedUser.user_id;
   }
-    console.log(this.user_id);
+    console.log('este es el user_id logeado', this.user_id);
 
     this.route.params.subscribe(params => {
       let threadId = params['threadId'];
-      console.log('threadId:', threadId);  // Añade esta línea
+      console.log('threadId:', threadId);
       this.getThreadById(threadId);
     });
-  }
-  
+    this.getMessagesById();
+
+    // this.getUsersChat();
+
+    this.chatService.getMessageChatUserId(this.chat_id).subscribe((userId: number) => {
+      this.user_id = userId;
+    });
+    
+    }
+    
   
   
   getThreadById(id: string) {
@@ -89,15 +126,29 @@ throw new Error('Method not implemented.');
     }
   }
   
-
-
   sendMessage(chat_id: number, user_id: number, text: string) {
-    const message = new ChatMessage(0, new Date(), this.user_id, text, chat_id);
+    const message = new ChatMessage(0, new Date(), user_id, text, chat_id, this.name, this.imgavatar);
+    const user_name = localStorage.getItem('name');
+    const imgavatar = localStorage.getItem('avatar');
     this.chatService.postMessage(message).subscribe(response => {
       console.log(response);
       this.getMessagesById(); // Actualiza los mensajes después de enviar uno nuevo
       console.log('Mensajes recibidos:', this.messages);
       console.log(response);
     });
+    window.location.reload();
   }
+
+  // getUserIdFromChat() {
+  //   // Llama a getMessageChatUserId aquí, después de que this.chat_id se haya definido
+  //   this.chatService.getMessageChatUserId(this.chat_id).subscribe((userId: number) => {
+  //     this.user_id = userId;
+  //   });
+  //   window.location.reload()
+  // }
+
+  // trackByUserId(index: number, user: User): number {
+  //   return user.user_id;
+  // }
+
 }

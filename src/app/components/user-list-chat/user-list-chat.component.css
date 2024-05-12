@@ -12,6 +12,7 @@
     min-height: 165px;
     background: #141414;
     border: 1px solid #E100FF;
+    color:white;
     border-radius: 18px;
     display: flex;
     flex-direction: column;

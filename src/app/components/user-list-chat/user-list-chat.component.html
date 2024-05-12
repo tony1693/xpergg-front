@@ -1,31 +1,27 @@
 <div class="containerParent">
     <p class="participantes">{{title}}</p>
     <div class="form-style">
-        @for (user of usersChat; track user.user_id) {
-        <div class="friend">
+        <div *ngFor="let user of usersChat; trackBy: trackByUserId">
+            <p>User ID: {{user.user_id}}</p>
+          </div>
+        <!-- <div *ngFor="let user of usersChat; trackBy: trackByUserId" class="friend">
             <div class="friendContent">
                 <div class="avatar"><img [src]="user.avatar" alt="User Avatar"></div>
                 <div class="name">{{user.name}}</div>
             </div>
-
-            @if(user.available_to_play) {
-            <div class="available">
+            <div *ngIf="user.available_to_play" class="available">
                 <div class="status-activo">
                     • Disponible
                 </div>
             </div>
 
-            }@else{
-            <div class="unavailable">
+            <div *ngIf="!user.available_to_play" class="unavailable">
                 • Ausente
             </div>
-            }
-
-        </div>
+        </div> -->
 
         <div class="container">
             <div class="borderLine"></div>
         </div>
-        }
     </div>
 </div>

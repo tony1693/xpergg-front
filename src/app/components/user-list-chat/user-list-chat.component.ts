@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TrackByFunction } from '@angular/core';
 import { StatusComponent } from '../status/status.component';
 import { User } from '../../models/user';
+import { ChatMessage } from '../../models/chatMessage';
+import { ActivatedRoute } from '@angular/router';
+import { ChatService } from '../../services/chat/chat.service';
+import { ThreadsService } from '../../services/threads/threads.service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-user-list-chat',
@@ -11,57 +16,29 @@ import { User } from '../../models/user';
   styleUrl: './user-list-chat.component.css',
 })
 export class UserListChatComponent implements OnInit {
-  usersChat: User[] = [];
+[x: string]: any;
+  
   @Input() title: string = '';
   @Input() available_to_play: boolean = true;
   @Input() usersList: any[] = [];
+  @Input() chat_id!: number;
+  @Input() usersChat!: any[];
+  @Input() message!: any[];
+  @Input() userId!: number;
+  
 
-  constructor() {}
+  constructor(private chatService: ChatService, private userService: UserService, private route: ActivatedRoute, private threadsService: ThreadsService ) {}
+  @Output() userSelected = new EventEmitter<number>();
 
+  selectUser(userId: number) {
+    this.userSelected.emit(userId);
+  }
   ngOnInit(): void {
   
-    //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-  //   this.usersChat = [
-  //     {
-  //       user_id: 1,
-  //       avatar: './assets/avatar/fortnite-1.jpg',
-  //       name: 'Juan Pérez',
-  //       email: 'juan@gmail.com',
-  //       nationality: 'Español',
-  //       aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-  //       password: '********',
-  //       confirmPassword: '********',
-  //       available_to_play: true, // Usuario activo
-  //       platforms: ['Playstation', 'Nintendo'],
-  //       genres: ['Acción', 'Aventura'],
-  //     },
-  //     {
-  //       user_id: 2,
-  //       avatar: './assets/avatar/gtaV.jpg',
-  //       name: 'María García',
-  //       email: 'maria@hotmail.com',
-  //       nationality: 'Mexicana',
-  //       aboutMe: 'Apasionada por el diseño y la creatividad.',
-  //       password: '********',
-  //       confirmPassword: '********',
-  //       available_to_play: false, // Usuario inactivo
-  //       platforms: ['Xbox'],
-  //       genres: ['Coches', 'Estrategia'],
-  //     },
-  //     {
-  //       user_id: 3,
-  //       avatar: 'assets/avatar/call_of_duty-2.jpg',
-  //       name: 'Judit',
-  //       email: 'jbr@gmail.com',
-  //       nationality: 'Spanish',
-  //       aboutMe: 'test test test',
-  //       password: 'Test123',
-  //       confirmPassword: 'Test123',
-  //       available_to_play: true,
-  //       platforms: ['PS4, PC'],
-  //       genres: ['Sports, action'],
-  //     },
-  //   ];
-  // }
-}
-}
+  }
+  trackByUserId(index: number, user: any): number {
+    return user.id;
+  }
+  
+  }
+  

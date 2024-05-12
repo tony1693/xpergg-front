@@ -1,7 +1,7 @@
 <div class="bigContainer">
     <div class="topContainer">
         <div class="leftContainer">
-            <app-user-list-chat class="userListTitle" title="Participantes"></app-user-list-chat>
+            <app-user-list-chat [userId]="userId" (userSelected)="handleUserSelected($event)"></app-user-list-chat>
         </div>
         <div class="astroImg">
             <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
@@ -18,12 +18,23 @@
             </div>
             <div class="chatContainer">
                 @for(message of messages; track message) {
+                    <div [class.activeUser]="message.user_id === activeUserId" class="message">
+                        <img [src]="message.imgavatar" alt="Avatar" class="avatar"/>
+                        <p class="messageUser">{{ message.name }}</p>
+                        <p class="messageText">{{ message.text }}</p>
+                        <p class="messageDate">{{ message.date | date:'short' }}</p>
+                    </div>
+                }
+            </div>
+            <!-- <div class="chatContainer" >
+                @for(message of messages; track message) {
                 <div [class.activeUser]="message.user_id === activeUserId" class="message">
-                    <p class="messageUserId">User- {{message.user_id}}</p>
+                    <p class="messageUser">User- {{message.user_id}}</p>
+                
                     <p class="messageText"> {{message.text}}</p>
                     <p class="messageDate">{{message.date | date:'short'}}</p>
                 </div>}
-            </div>
+            </div> -->
             <div class="bottomContainer">
                 <input type="text" [(ngModel)]="messageText" class="msg" placeholder="Escribe aquí tu mensaje">
                 <button type="button" (click)="sendMessage(chat_message_id, user_id, messageText)"

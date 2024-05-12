@@ -194,7 +194,7 @@ span{
     border: 1px solid #7F00FF;
 
   }
-  .messageUserId{
+  .messageUser{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
     font-size: 10px;
@@ -216,14 +216,14 @@ span{
     color: rgba(255, 255, 255, 0.489);
   }
   .astroImg {
-    width: 285px;
-    height: 360px;
+    width: 260px;
+    height: 300px;
     position: absolute;
-    bottom: -70px;
+    bottom: 60px;
     left: 25px;
   }
   .astro{
-    width: 100%;
+    width: 120%;
     object-fit: cover;
   }
   
