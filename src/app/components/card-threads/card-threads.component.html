@@ -14,7 +14,9 @@
                 <p class="title">Plataforma</p>
                 <p class="namePlatform">{{ thread.platform }}</p>
             </div>
-            <button class="buttonChat" [routerLink]="['/chat', thread.thread_id]">Unirme</button>
+            <!-- <button class="buttonChat" [routerLink]="['/chat', thread.thread_id]">Unirme</button> -->
+            <button class="buttonChat"
+                (click)="thread.thread_id !== undefined && joinThread(thread.thread_id)">Unirme</button> -->
         </div>
     </div>
 </div>
