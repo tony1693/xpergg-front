@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ThreadsService } from '../../services/threads/threads.service';
 import { Thread } from '../../models/thread';
 import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ChatMessage } from '../../models/chatMessage';
 import { ChatService } from '../../services/chat/chat.service';
 
@@ -16,4 +16,10 @@ import { ChatService } from '../../services/chat/chat.service';
 })
 export class CardThreadsComponent {
   @Input() public thread!: Thread;
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  joinThread(threadId: number) {
+    this.router.navigate(['/chat', threadId]);
+  }
 }
