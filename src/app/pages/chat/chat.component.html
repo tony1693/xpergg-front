@@ -8,13 +8,15 @@
         </div>
         <div class="rightContainer">
             <div class="aboveChat">
+                @if(thread){
                 <div class="threadTitle">
-                    <p class="subject">{{ thread?.game }} <span> {{ thread?.platform }}</span></p>
-                    <p class="threadText">#{{ thread?.subject }}</p>
+                    <p class="subject">{{ thread.game }} <span> {{ thread.platform }}</span></p>
+                    <p class="threadText">#{{ thread.subject }}</p>
                 </div>
                 <div>
                     <button type="button" class="returnBtn" routerLink="/community">Volver a hilos</button>
                 </div>
+                }
             </div>
             <div class="chatContainer">
                 @for(message of messages; track message) {

@@ -47,7 +47,7 @@ export class ChatComponent {
   public usersChat: any[] = [];
   public message!: any[];
   @Input() user!: User;
-  @Input() thread: any = {}; // Inicializa `thread` con un objeto vacío
+  @Input() thread!: Thread; // Inicializa `thread` con un objeto vacío
   @Input() userId!: number;
   handleUserSelected: any;
   available_to_play: boolean = false;
@@ -176,7 +176,14 @@ export class ChatComponent {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.thread_id = params['threadId'];
+      this.chatService
+        .getThreadById(this.thread_id)
+        .subscribe((thread: any) => {
+          console.log('Received thread from server:', thread);
+          this.thread = thread[0];
+        });
     });
+
     this.chatService.getAllMessages(this.thread_id).subscribe({
       next: (data) => {
         console.log(data);
@@ -186,14 +193,6 @@ export class ChatComponent {
         console.log(error);
       },
     });
-    // getThreadById(id: string) {
-    //     this.chatService.getThreadById(id).subscribe((thread: any) => {
-    //       console.log('Received thread from server:', thread);
-    //       this.thread = thread[0];
-    //       this.chat_message_id = this.thread.thread_id; // Usa thread_id en lugar de chat_id
-    //       this.getMessagesById(); // Llama a getMessagesById aquí después de que chat_id se haya definido
-    //       console.log('chat_id:', this.chat_message_id); // Añade esta línea
-    //     });
   }
 
   // getAllMessages() {
