@@ -13,9 +13,9 @@ export class ChatService {
 
   constructor(private http: HttpClient) {}
 
-  // getThreadById(id: string): Observable<any> {
-  //   return this.http.get<any>(`${this.url}api/threads/${id}`);
-  // }
+  getThreadById(id: any): Observable<any> {
+    return this.http.get<any>(`${this.url}/api/threads/${id}`);
+  }
 
   // getMessagesById(chat_id: number): Observable<ChatMessage[]> {
   //   return this.http.get<ChatMessage[]>(
