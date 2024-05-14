@@ -21,7 +21,7 @@
     flex-direction: row;
     gap: 10px;
     width: 100vw;
-    height: 85%
+    height: 85%;
 }
 
 .leftContainer{
@@ -29,10 +29,42 @@
     flex-direction: column;
     margin-left: 40px;
     height: auto;
+    min-height: 200px;
     width: 300px;
     display: flex;
     align-items: flex-start;
+    width: 250px;
+    min-height: 165px;
+    background: #141414;
+    border: 1px solid #E100FF;
+    color:white;
+    border-radius: 18px;
+    margin-top: 5px;
+    padding: 20px;
 }
+
+.userData{
+    display: flex;
+    margin: 10px 0 20px 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.avatarBox{
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 3%;
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+}
+
+.availableToPlay{
+    margin-left: 10px;
+}
+
 
 .userListTitle{
     color: white;
@@ -226,5 +258,16 @@ span{
     width: 120%;
     object-fit: cover;
   }
+
+.avatar{
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 3%;
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+}
   
 

@@ -1,7 +1,6 @@
-
-<div class="trending-news-container">
-    <img class = "img" [src]= "img" alt="">
-    <a class = "text" [href]="link">{{text}}</a>
+<div class="trending-news-container" [ngClass]="{'init-page': isInitPage}">
+    <img class="img" [src]="img" alt="{{text}}">
+    <a class="text" [href]="link">{{text}}</a>
 </div>
 
 
