@@ -168,6 +168,11 @@ export class InitComponent {
     this.getGames();
   }
 
+  trackByGame(index: number, game: any): number {
+    return game.id;
+  }
+
+
   // getUserFromLocalStorage(): User | null {
   //   const userJson = localStorage.getItem('user');
   //   return userJson ? JSON.parse(userJson) : null;
