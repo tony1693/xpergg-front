@@ -1,19 +1,22 @@
 <div class="container-profile">
 
     <div class="user-info">
-        <img class="avatarUser" [src]="userAvatar">
-        <div class="user-data">
-            <div class="botton-edit">
-                <p class="myUser">{{user.name}}</p>
-                <button class="button" routerLink="/edit-profile">Editar Perfil</button>
-            </div>
-            <p class="localidad">{{user.nationality}}</p>
-            <p class="descripcion">{{user.about_me}}</p>
-            <div class="count-data">
-                <!-- <p class="numero">Nº Amigos</p>
-                <p class="number">1000</p> -->
-                <p class="numero">Nº Post</p>
-                <p class="number2">{{ userPostCount }}</p>
+        
+        <div class="imgname">
+            <img class="avatarUser" [src]="userAvatar">
+            <div class="user-data">
+                <div class="botton-edit">
+                    <p class="myUser">{{user.name}}</p>
+                    <button class="button" routerLink="/edit-profile">Editar Perfil</button>
+                </div>
+                <p class="localidad">{{user.nationality}}</p>
+                <p class="descripcion">{{user.about_me}}</p>
+                <div class="count-data">
+                    <!-- <p class="numero">Nº Amigos</p>
+                    <p class="number">1000</p> -->
+                    <p class="numero">Nº Post</p>
+                    <p class="number2">{{ userPostCount }}</p>
+                </div>
             </div>
         </div>
         <div class="interest-card">
@@ -23,17 +26,16 @@
                     <div class="block">
                         <div class="block2">
                             <p class="platGen">Plataformas</p>
-                            <div class="interest-name">
                                     @for(platform of user.platform; track platform) {
                                         <p class="boxtype">{{platform}}</p>
-                                    <hr>
+                                    
                                     }
-                            </div>
                         </div>
                         <div class="block3">
-                            <p class="platGen">Géneros</p>
+                                <p class="platGen">Géneros</p>
                                 @for(interest of user.interest; track interest) {
                                     <p class="boxtype2">{{interest}}</p>
+                                    
                                 }
                         </div>
                     </div>

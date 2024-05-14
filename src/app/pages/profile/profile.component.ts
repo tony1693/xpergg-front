@@ -40,6 +40,24 @@ export class ProfileComponent {
   userPostCount!: number;
   available_to_play = false;
   isLast: any;
+  // platform: string[] = []; 
+
+  public platform = ['ps', 'xbox', 'nintendo', 'pc'];
+  // Claves exclusivas para géneros
+  public interest = [
+    'arcade',
+    'disparos',
+    'peleas',
+    'aventuras',
+    'accion',
+    'puzzle',
+    'preguntas',
+    'deportes',
+    'coches',
+    'rol',
+    'estrategia',
+    'realidadVirtual',
+  ];
 
   constructor(
     private readonly postService: PostService,
@@ -71,7 +89,23 @@ export class ProfileComponent {
     const userName = userData ? userData.name : '';
     localStorage.setItem('name', userName);
     console.log(userName);
+
+    //Recogemos Platform de LocalStorage
+    const userPlatform = localStorage.getItem('user');
+    const userDataPlatform = userPlatform ? JSON.parse(userPlatform) : null;
+    const userPlatformName = userDataPlatform ? userDataPlatform.platform : '';
+    localStorage.setItem('platform', userPlatformName);
+    console.log(userPlatformName);
+
+    //Recogemos Platform de LocalStorage
+    const userInterest = localStorage.getItem('user');
+    const userDataInterest = userInterest ? JSON.parse(userInterest) : null;
+    const userInterestName = userDataInterest ? userDataInterest.Interest : '';
+    localStorage.setItem('Interest', userInterestName);
+    console.log(userInterestName);
   }
+
+
 
   ngOnInit(): void {
     this.getUserPostCount();
@@ -93,6 +127,7 @@ export class ProfileComponent {
         next: (posts) => {
           this.posts = posts;
           console.log('Estos son los posts del usuario');
+          
         },
         error: (error) => {
           console.log(error);
@@ -101,6 +136,12 @@ export class ProfileComponent {
     } else {
       console.log('No existe ese usuario');
     }
+  }
+
+  //Funcion para mostrar plataformas y generos
+  public getInterest(){
+    let interest = JSON.parse(localStorage.getItem('platform') ?? '{}');
+
   }
 
   // Función para cambiar el estado de disponibilidad
