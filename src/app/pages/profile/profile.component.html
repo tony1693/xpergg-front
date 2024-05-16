@@ -26,17 +26,17 @@
                     <div class="block">
                         <div class="block2">
                             <p class="platGen">Plataformas</p>
-                                    @for(platform of user.platform; track platform) {
-                                        <p class="boxtype">{{platform}}</p>
                                     
-                                    }
+                                        <div>
+                                            <p class="boxtype">{{user.platform}}</p>
+                                        </div>
+                                    
                         </div>
                         <div class="block3">
                                 <p class="platGen">Géneros</p>
-                                @for(interest of user.interest; track interest) {
-                                    <p class="boxtype2">{{interest}}</p>
-                                    
-                                }
+                                    <div>
+                                        <p class="boxtype2">{{user.interest}}</p>
+                                    </div>
                         </div>
                     </div>
                 </div>

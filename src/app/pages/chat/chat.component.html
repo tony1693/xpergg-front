@@ -1,8 +1,7 @@
 <div class="bigContainer">
     <div class="topContainer">
         <div class="leftContainer">
-            <div class="wholeContainer">
-
+            
                 @for(message of messages; track message) {
                 <div class="userData">
                     <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
@@ -12,17 +11,17 @@
                         'AUSENTE' }} </p>
                 </div>
                 }
+            
+            <div class="astroImg">
+                <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
             </div>
+        </div>
 
-        </div>
-        <div class="astroImg">
-            <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
-        </div>
         <div class="rightContainer">
             <div class="aboveChat">
                 @if(thread){
                 <div class="threadTitle">
-                    <p class="subject">{{ thread.game }} <span> {{ thread.platform }}</span></p>
+                    <p class="subject">Juego: <span>{{ thread.game }}</span>  Plataforma: <span>{{ thread.platform }}</span></p>
                     <p class="threadText">#{{ thread.subject }}</p>
                 </div>
                 <div>
@@ -33,8 +32,10 @@
             <div class="chatContainer">
                 @for(message of messages; track message) {
                 <div [class.activeUser]="message.user_id === activeUserId" class="message">
-                    <img [src]="message.user_avatar" alt="Avatar" class="avatar" />
-                    <p class="messageUser">{{ message.user_name }}</p>
+                    <div class="imgusername">
+                        <img [src]="message.user_avatar" alt="Avatar" class="avatar" />
+                        <p class="messageUser">{{ message.user_name }}</p>
+                    </div>
                     <p class="messageText">{{ message.text }}</p>
                     <p class="messageDate">{{ message.date | date:'short' }}</p>
                 </div>

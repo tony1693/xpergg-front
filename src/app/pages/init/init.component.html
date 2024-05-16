@@ -1,20 +1,25 @@
 <div class="container-init">
 
     <div class="news">
-        <p class=" titleNews">Juegos  Destacados</p>
-        <div class="card-news">
-            <div class="boxNews">
-
-                <ng-container *ngFor="let game of games.slice(0, 6); trackBy: trackByGame">
-                    <app-trending-news class="cards"
-                                       [text]="game.title"
-                                       [img]="game.thumbnail"
-                                       [link]="game.freetogame_profile_url"></app-trending-news>
-                </ng-container>
-
-
+        <div class="juegosdestacados">
+            <div class="parrafo">
+                <p class=" titleNews">Juegos  Destacados</p>
             </div>
-            <a class="viewAll" routerLink="/news">Ver Todas</a>
+            <div class="card-news">
+
+                <div class="boxNews">
+
+                    <ng-container *ngFor="let game of games.slice(0, 6); trackBy: trackByGame">
+                        <app-trending-news class="cards"
+                                           [text]="game.title"
+                                           [img]="game.thumbnail"
+                                           [link]="game.freetogame_profile_url"></app-trending-news>
+                    </ng-container>
+
+
+                </div>
+                <a class="viewAll" routerLink="/news">Ver Todas</a>
+            </div>
         </div>
         <div class="status">
             <p class="status-text"></p>
@@ -53,8 +58,9 @@
         </div>
     </div>
 
-    <button class="buttonCommunity" routerLink="/community">Accede a la comunidad</button>
-
+    <div class="container-button">
+        <button class="buttonCommunity" routerLink="/community">Accede a la comunidad</button>
+    </div>
     <!-- <div class="friends">
 
         <div class="card-online-friends">

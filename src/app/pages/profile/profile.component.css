@@ -131,7 +131,7 @@
 
 
 .interest-card {
-    width: 560px;
+    min-width: 20%;
     height: 324px;
     background: #141414 0% 0% no-repeat padding-box;
     border-radius: 31px;
@@ -155,8 +155,11 @@
 }
 
 .interest-container{
+    min-width: 30%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     gap: 0px 0px;
     padding: 20px 35px;
 
@@ -165,8 +168,9 @@
 
 .block {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    gap: 20px 60px;
+    gap: 30px 20px;
 }
 
 .block2 {
@@ -217,6 +221,7 @@
     justify-content: center;
     margin-top: 4%;
     margin-bottom: 0px;
+    flex-wrap: wrap;
 }
 
 .boxtype2 {

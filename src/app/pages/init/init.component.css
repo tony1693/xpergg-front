@@ -17,9 +17,11 @@
 
 
 .news {
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 100px 0px;
 }
 
 .boxNews {
@@ -38,22 +40,36 @@
     font-size: 28px;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
+.juegosdestacados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parrafo{
+    margin-top: 0px;
+    /* height: 100px; */
+}
 
 .card-news {
     width: 275px;
-    height: 570px;
+    height: 430px;
     background: #141414 0% 0% no-repeat padding-box;
     border: 2px solid #313131;
     border-radius: 18px;
     opacity: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px 0px;
     /* margin-top: 10px; */
 }
 
@@ -269,12 +285,11 @@
 
 .buttonCommunity{
     width: 305px;
-    height: 61px;
-    background: #7F00FF 0% 0% no-repeat padding-box;
+    height: 71px;
+    background: #7F00FF ;
     border-radius: 18px;
     text-align: center;
-    font: normal normal bold 22px/28px Plus Jakarta Sans;
-    letter-spacing: 0px;
+    font: bold 22px/28px Plus Jakarta Sans;
     color: #FFFFFF;
     margin-top: 90px;
 }
@@ -295,6 +310,13 @@
     height: 46px;
     background: #000000;
     font-size: bold;
+}
+
+.container-button{
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 

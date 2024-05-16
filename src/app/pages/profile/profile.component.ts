@@ -25,6 +25,7 @@ import { Post } from '../../models/posts';
 })
 export class ProfileComponent {
   @Input() user!: User;
+  @Input() platform!: string [];
   isLoggedIn = true;
 
   isUser = { available_to_play: 'AUSENTE' };
@@ -42,22 +43,22 @@ export class ProfileComponent {
   isLast: any;
   // platform: string[] = []; 
 
-  public platform = ['ps', 'xbox', 'nintendo', 'pc'];
-  // Claves exclusivas para géneros
-  public interest = [
-    'arcade',
-    'disparos',
-    'peleas',
-    'aventuras',
-    'accion',
-    'puzzle',
-    'preguntas',
-    'deportes',
-    'coches',
-    'rol',
-    'estrategia',
-    'realidadVirtual',
-  ];
+  // public platform = ['ps', 'xbox', 'nintendo', 'pc'];
+  // // Claves exclusivas para géneros
+  // public interest = [
+  //   'arcade',
+  //   'disparos',
+  //   'peleas',
+  //   'aventuras',
+  //   'accion',
+  //   'puzzle',
+  //   'preguntas',
+  //   'deportes',
+  //   'coches',
+  //   'rol',
+  //   'estrategia',
+  //   'realidadVirtual',
+  // ];
 
   constructor(
     private readonly postService: PostService,
