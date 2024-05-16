@@ -5,7 +5,7 @@
             <div class="btnContent">
                 <app-link-without-page class="linkIconNR" linkImg="assets\icon\iconoNotificacionesR.svg"
                     linkText="Notificaciones" [isUser]=true></app-link-without-page>
-                <span class="badge">{{ likesCount + commentsCount }}</span>
+                <span class="badge">{{ likesCount + messageCount }}</span>
             </div>
 
         </button>
@@ -15,7 +15,7 @@
             <p class="dropdown-item-text1">Tienes {{ likesCount }} "Likes"</p>
 
             <!-- Mostrar número de comentarios -->
-            <p class="dropdown-item-text2">Tienes {{ commentsCount }} "Comentarios"</p>
+            <p class="dropdown-item-text2">Tienes {{ messageCount }} "Comentarios"</p>
         </div>
         }
     </div>

@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { LinkWithoutPageComponent } from '../link-without-page/link-without-page.component';
+import { CommentService } from '../../services/comment/comment.service';
+import { NotificationService } from '../../services/notification/notification.service';
 
 @Component({
   selector: 'app-dropdowns-notifications',
@@ -9,24 +11,68 @@ import { LinkWithoutPageComponent } from '../link-without-page/link-without-page
   imports: [CommonModule, NavbarComponent, LinkWithoutPageComponent],
   templateUrl: './dropdowns-notifications.component.html',
   styleUrls: ['./dropdowns-notifications.component.css'],
+  providers: [CommentService],
 })
 export class DropdownsNotificationsComponent {
   likesCount: number = 0;
-  commentsCount: number = 0;
+  public messageCount!: number;
+  comments_count!: number;
+  // Asigna el valor al dropdown (asegúrate de que sea un número válido)
+  // public dropdownValue: number = isNaN(this.messageCount)
+  //   ? 0
+  //   : this.messageCount;
 
   @Input() public linkImg: string = 'assets/icon/iconoNotificacionesR.svg';
   @Input() public optionsVisible: boolean = false;
 
+  constructor(
+    private readonly commentService: CommentService,
+    private readonly notificationService: NotificationService
+  ) {}
+
   // Método para manejar añadir un "me gusta"
-  getLikes() {
-    this.likesCount += 1;
+  // getLikes(): any {
+  //   const userId: number = JSON.parse(
+  //     localStorage.getItem('user') as string
+  //   ).user_id;
+  //   this.notificationService.showNumberReactionsUser(userId).subscribe({
+  //     next: (response: { reactions_count: number }) => {
+  //       this.likesCount = response.reactions_count;
+  //       console.log(this.likesCount);
+  //     },
+  //     error: (error) => {
+  //       console.log('Error getting comment count from user', error);
+  //     },
+  //   });
+  // }
+
+  ngOnInit() {
+    console.log(this.getUserPostCount());
+    // this.getLikes();
   }
 
   // Método para manejar añadir un comentario
-  getComments() {
-    this.commentsCount += 1;
-  }
 
+  getUserPostCount(): void {
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    )?.user_id;
+    // Verifica que userId no sea undefined
+
+    this.commentService.showNumberCommentsUser(userId).subscribe({
+      next: (response: any) => {
+        // Accede directamente a la propiedad comment_count
+        this.messageCount = response.comments_count;
+        console.log('Recuento de comentarios:', this.messageCount);
+      },
+      error: (error) => {
+        console.log(
+          'Error al obtener el recuento de comentarios del usuario',
+          error
+        );
+      },
+    });
+  }
   toggleContent() {
     this.optionsVisible = !this.optionsVisible;
   }

@@ -217,6 +217,7 @@ export class VideoPostComponent {
       date: currentDate,
       text: inputComment.value,
       user_id: userId,
+      post_id: this.post.post_id,
     };
     this.commentService.addComment(newComment).subscribe({
       next: (data) => {
