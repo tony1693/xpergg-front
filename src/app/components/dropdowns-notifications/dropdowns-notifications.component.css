@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 
+
+
 .container{
     display: flex;
     justify-items: center;
@@ -32,13 +34,14 @@
     height: auto;
     background: #FFFFFF;
     border: 1px solid #707070;
-    border-radius: 41px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     text-align: center;
     padding: 20px;
+    margin-top: 140px;
 }
 
 .dropdown-item-text{
