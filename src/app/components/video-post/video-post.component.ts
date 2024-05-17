@@ -105,10 +105,10 @@ export class VideoPostComponent {
       this.notificationService.sendNotification(this.newReaction).subscribe({
         next: (data) => {
           console.log(data);
-          window.location.reload();
-          setTimeout(() => {
-            location.reload();
-          }, 1);
+          // window.location.reload();
+          // setTimeout(() => {
+          //   location.reload();
+          // }, 1);
         },
         error: (error) => {
           console.log(error);
