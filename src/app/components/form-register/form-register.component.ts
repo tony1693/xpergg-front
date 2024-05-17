@@ -115,7 +115,5 @@ export class FormRegisterComponent{
   // Método para recoger los valores seleccionados de los checkboxes
   private getSelectedValues(keys:string[]):string[] {
     return keys.filter((key) =>this.reactiveregister.get(key)?.value);
-
-    
   }
 }
