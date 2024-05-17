@@ -298,5 +298,9 @@ span{
     border: 1px solid #ffffff;
     margin-right: 10px;
 }
+h1{
+ width: 0px;
+ color: #ffffff;
+}
   
 
