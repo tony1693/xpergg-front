@@ -17,10 +17,6 @@ export class DropdownsNotificationsComponent {
   likesCount: number = 0;
   public messageCount!: number;
   comments_count!: number;
-  // Asigna el valor al dropdown (asegúrate de que sea un número válido)
-  // public dropdownValue: number = isNaN(this.messageCount)
-  //   ? 0
-  //   : this.messageCount;
 
   @Input() public linkImg: string = 'assets/icon/iconoNotificacionesR.svg';
   @Input() public optionsVisible: boolean = false;
@@ -75,5 +71,11 @@ export class DropdownsNotificationsComponent {
   }
   toggleContent() {
     this.optionsVisible = !this.optionsVisible;
+  }
+
+  resetNotifications() {
+    this.messageCount = 0;
+    this.optionsVisible = !this.optionsVisible;
+    this.getUserPostCount();
   }
 }
