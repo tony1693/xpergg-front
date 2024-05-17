@@ -9,13 +9,19 @@
             </div>
 
         </button>
-        @if(optionsVisible){
-        <div class="dropdown-menu" aria-labelledby="notificacionesDropdown">
-            <!-- Mostrar número de me gusta -->
-            <p class="dropdown-item-text1">Tienes {{ likesCount }} "Likes"</p>
 
-            <!-- Mostrar número de comentarios -->
-            <p class="dropdown-item-text2">Tienes {{ messageCount }} "Comentarios"</p>
+        @if(optionsVisible){
+
+        <div class="dropdown-menu" aria-labelledby="notificacionesDropdown">
+            <button type="button" id="closeBtn" data-bs-dismiss="modal" aria-label="Close"
+                (click)="resetNotifications()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="notifications"><!-- Mostrar número de me gusta -->
+                <p class="dropdown-item-text1">Tienes {{ likesCount }} Likes</p>
+
+                <!-- Mostrar número de comentarios -->
+                <p class="dropdown-item-text2">Tienes {{ messageCount }} Comentarios</p>
+            </div>
+
         </div>
         }
     </div>
