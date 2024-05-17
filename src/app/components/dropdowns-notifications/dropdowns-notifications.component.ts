@@ -13,6 +13,8 @@ import { LinkWithoutPageComponent } from '../link-without-page/link-without-page
 export class DropdownsNotificationsComponent {
   likesCount: number = 0;
   commentsCount: number = 0;
+  
+
 
   @Input() public linkImg: string = 'assets/icon/iconoNotificacionesR.svg';
   @Input() public optionsVisible: boolean = false;
@@ -20,6 +22,13 @@ export class DropdownsNotificationsComponent {
   // Método para manejar añadir un "me gusta"
   getLikes() {
     this.likesCount += 1;
+  }
+
+  resetNotifications() {
+    this.initialCommentsCount += this.messageCount;
+    this.messageCount = 0;
+    this.optionsVisible = !this.optionsVisible;
+    this.lastReset = new Date();
   }
 
   // Método para manejar añadir un comentario
