@@ -14,10 +14,10 @@ import { NotificationService } from '../../services/notification/notification.se
   providers: [CommentService],
 })
 export class DropdownsNotificationsComponent {
-  likesCount: number = 0;
+  likesCount!: number;
   public messageCount!: number;
   comments_count!: number;
-
+  reactions_count!: number;
   @Input() public linkImg: string = 'assets/icon/iconoNotificacionesR.svg';
   @Input() public optionsVisible: boolean = false;
 
@@ -27,24 +27,24 @@ export class DropdownsNotificationsComponent {
   ) {}
 
   // Método para manejar añadir un "me gusta"
-  // getLikes(): any {
-  //   const userId: number = JSON.parse(
-  //     localStorage.getItem('user') as string
-  //   ).user_id;
-  //   this.notificationService.showNumberReactionsUser(userId).subscribe({
-  //     next: (response: { reactions_count: number }) => {
-  //       this.likesCount = response.reactions_count;
-  //       console.log(this.likesCount);
-  //     },
-  //     error: (error) => {
-  //       console.log('Error getting comment count from user', error);
-  //     },
-  //   });
-  // }
+  getLikes(): any {
+    const userId: number = JSON.parse(
+      localStorage.getItem('user') as string
+    ).user_id;
+    this.notificationService.showNumberReactionsUser(userId).subscribe({
+      next: (response: { reactions_count: number }) => {
+        this.likesCount = response.reactions_count;
+        console.log(this.likesCount);
+      },
+      error: (error) => {
+        console.log('Error getting comment count from user', error);
+      },
+    });
+  }
 
   ngOnInit() {
     console.log(this.getUserPostCount());
-    // this.getLikes();
+    this.getLikes();
   }
 
   // Método para manejar añadir un comentario
@@ -75,6 +75,7 @@ export class DropdownsNotificationsComponent {
 
   resetNotifications() {
     this.messageCount = 0;
+    this.likesCount = 0;
     this.optionsVisible = !this.optionsVisible;
   }
 }
