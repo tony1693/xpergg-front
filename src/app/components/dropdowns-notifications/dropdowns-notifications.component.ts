@@ -76,6 +76,5 @@ export class DropdownsNotificationsComponent {
   resetNotifications() {
     this.messageCount = 0;
     this.optionsVisible = !this.optionsVisible;
-    this.getUserPostCount();
   }
 }
