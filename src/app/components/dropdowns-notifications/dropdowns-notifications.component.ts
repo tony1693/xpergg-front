@@ -16,7 +16,7 @@ import { NotificationService } from '../../services/notification/notification.se
 export class DropdownsNotificationsComponent {
   likesCount: number = 0;
   public messageCount!: number;
-  comments_count!: number;
+  commentsCount!: number;
   // Asigna el valor al dropdown (asegúrate de que sea un número válido)
   // public dropdownValue: number = isNaN(this.messageCount)
   //   ? 0
@@ -62,7 +62,7 @@ export class DropdownsNotificationsComponent {
     this.commentService.showNumberCommentsUser(userId).subscribe({
       next: (response: any) => {
         // Accede directamente a la propiedad comment_count
-        this.messageCount = response.comments_count;
+        this.messageCount = response.commentsCount;
         console.log('Recuento de comentarios:', this.messageCount);
       },
       error: (error) => {
