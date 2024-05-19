@@ -1,22 +1,23 @@
 <div class="bigContainer">
     <div class="topContainer">
+        <div class="title">
+        <h1>Participantes</h1>
+        </div>
         <div class="leftContainer">
-            
-                @for(message of messages; track message) {
-                <div class="userData">
-                    <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
-                    <p class="userBox">{{ message.user_name }}</p>
-                    <p class="availableToPlay" [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{
-                        available_to_play ? 'DISPONIBLE' :
-                        'AUSENTE' }} </p>
-                </div>
-                }
-            
+            @for(message of getUniqueUsers(messages); track message) {
+            <div class="userData">
+                <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
+                <p class="userBox">{{ message.user_name }}</p>
+                <!-- <p class="availableToPlay" [ngStyle]="{'color': available_to_play ? '#11ec48' : '#707070'}">{{
+                                available_to_play ? 'DISPONIBLE' :
+                                'AUSENTE' }} </p> -->
+            </div>
+            }
+        
             <div class="astroImg">
                 <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
             </div>
         </div>
-
         <div class="rightContainer">
             <div class="aboveChat">
                 @if(thread){

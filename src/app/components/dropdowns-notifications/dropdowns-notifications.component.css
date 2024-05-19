@@ -50,6 +50,14 @@
     background-color: #707070;  
 }
 
+#closeBtn{
+    border: none; 
+    background-color: transparent;
+    color: #E100FF;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
 .dropdown-item-text2{
     display: flex;
     flex-direction: column;

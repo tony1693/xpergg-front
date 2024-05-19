@@ -195,6 +195,19 @@ export class ChatComponent {
     });
   }
 
+  getUniqueUsers(messages: any) {
+    const uniqueUsers = [];
+    const map = new Map();
+    for (const message of messages) {
+      if(!map.has(message.user_id)){
+          map.set(message.user_id, true);
+          uniqueUsers.push(message);
+      }
+    }
+    return uniqueUsers;
+  }
+  
+
   // getAllMessages() {
   //   this.route.params.subscribe((params) => {
   //     let threadId = params['threadId'];
