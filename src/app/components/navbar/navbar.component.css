@@ -99,13 +99,19 @@
 }
 
 .dropdown-menu{
-    position: absolute;
-    top: 30%;
+    /* position: absolute; */
+    /* top: 180px; */
+    top: 0;
     left: 0;
-    margin-top: 5px;
+    
     height: 45px;
 
 }
+
+dropdown-menu{
+    margin-top: 50px !important;
+}
+
 
 .dropdown-item{
     position: absolute;

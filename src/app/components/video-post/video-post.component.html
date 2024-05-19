@@ -18,13 +18,21 @@
     </div>
     @if(visible){
         <div class="commentBox">
-        @for(comment of comments; track comments){
-        <p>{{comment.userName}}</p>
-        <p>{{comment.text}}</p>
-
+            <div class="comentarioCompleto">
+            @for(comment of comments; track comments){
+            <p class="username">{{comment.userName}}</p>
+            <p class="comment">{{comment.text}}</p>
+            <p class="date">{{ comment.date }}</p>
+            <hr>
+        
+            }
+            </div>
+            <div>
+                <button type="button" id="closeBtn" data-bs-dismiss="modal" aria-label="Close" (click)="closeComments()"><i
+                    class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
         }
-    </div>
-    }
     
     <div class="comment-section">
         <input type="text" class="form-control" id="" placeholder="Escribe tu comentario..." required #inputComment>

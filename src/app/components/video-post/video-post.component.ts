@@ -170,4 +170,8 @@ export class VideoPostComponent {
     });
     this.visible = true;
   }
+
+  closeComments(){
+    this.visible = false;
+  }
 }

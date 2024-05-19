@@ -102,11 +102,51 @@ youtube-player{
 }
 
 .commentBox{
+    max-height:110px ;
+    min-width: 60%;
     margin-top: 10px;
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 20px;
+    display: flex;
+    overflow: scroll;
 }
+
+.commentBox::-webkit-scrollbar{
+    display: none;
+}
+
+.comentarioCompleto{
+    width: 800px;
+}
+
+
+
+.username{
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.comment{
+    margin-bottom: 0px;
+}
+
+#closeBtn{
+    border: 1px solid #E100FF; 
+    border-radius: 15px;
+    background-color: transparent;
+    color: #E100FF;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.date{
+    font-size: 10px;
+    margin-top: 1px;
+}
+
+
 
 
 .comment-section {
