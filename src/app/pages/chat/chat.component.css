@@ -175,6 +175,7 @@
 }
 .chatContainer::-webkit-scrollbar{
     display: none;
+    text-align: right;
 }
 
 
@@ -248,13 +249,7 @@ span{
     background-color: #1b1b1b;
   }
   
-  .message.activeUser {
-    align-items: flex-start;
-    background-color: #e8e8e8;
-    color: #E100FF;
-    border: 1px solid #7F00FF;
 
-  }
   .messageUser{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
@@ -264,7 +259,6 @@ span{
   }
   .messageText{
     font-family: "Plus Jakarta Sans", sans-serif;
-    text-align: right;
     font-weight: 300;
     font-size: 16px;
     color: white;
@@ -302,5 +296,20 @@ h1{
  width: 0px;
  color: #ffffff;
 }
-  
 
+.activeUser {
+    display: flex;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.155);
+    /* border: 0.1px solid #7CFC00; */
+  }
+  
+  .otherUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color:  rgba(255, 255, 255, 0.071);
+    /* border: 0.1px solid grey; */
+  }
+
+  
