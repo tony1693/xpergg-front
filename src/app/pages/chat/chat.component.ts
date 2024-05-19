@@ -45,6 +45,7 @@ export class ChatComponent {
   public handleUserSelected: any;
   public available_to_play: boolean = false;
   public activeUserId: any;
+  public isLoggedIn = true;
 
   @Input() user!: User;
   @Input() thread!: Thread; // Inicializa `thread` con un objeto vacío

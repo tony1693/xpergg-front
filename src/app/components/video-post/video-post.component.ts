@@ -61,22 +61,6 @@ export class VideoPostComponent {
     this.getPostComments(this.postId);
   }
 
-  // public getUserFromLocalStorage(): User | null {
-  // const userJson = localStorage.getItem('user');
-  // return userJson ? JSON.parse(userJson) : null;
-  // }
-
-  // addLike(): void {
-  //   // this.likesCount++;
-  //   if (this.likeOff == '../../../assets/icon/icono-corazon-off.svg') {
-  //     this.likesCount++;
-  //     this.likeOff = '../../../assets/icon/icono-corazon-on.svg';
-  //   } else {
-  //     this.likeOff = '../../../assets/icon/icono-corazon-off.svg';
-  //     this.likesCount--;
-  //   }
-  // }
-
   addLike(): void {
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const userId: number = JSON.parse(
