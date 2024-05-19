@@ -16,44 +16,10 @@ export class UsersListComponent implements OnInit {
   @Input() usersList: any[] = [];
 
   constructor() {}
-  
+
   public getUserFromLocalStorage(): User | null {
     const userJson = localStorage.getItem('user');
     return userJson ? JSON.parse(userJson) : null;
   }
-  ngOnInit(): void {
-   
-
-    //* simulamos algunos usuarios para comprobacion, una vez que carguemos desde el servicio o API suprimir esta simulacion
-    // this.users = [
-    //   {
-    //     user_id: 1,
-    //     avatar: './assets/avatar/fortnite-1.jpg',
-    //     name: 'Juan Pérez',
-    //     email: 'juan@gmail.com',
-    //     nationality: 'Español',
-    //     aboutMe: '¡Hola! Soy Juan y me encanta la programación.',
-    //     password: '********',
-    //     confirmPassword: '********',
-    //     available_to_play: true, // Usuario activo
-    //     platforms: ['Playstation', 'Nintendo'],
-    //     genres: ['Acción', 'Aventura'],
-    //   },
-    //   {
-    //     user_id: 2,
-    //     avatar: './assets/avatar/gtaV.jpg',
-    //     name: 'María García',
-    //     email: 'maria@hotmail.com',
-    //     nationality: 'Mexicana',
-    //     aboutMe: 'Apasionada por el diseño y la creatividad.',
-    //     password: '********',
-    //     confirmPassword: '********',
-    //     available_to_play: false, // Usuario inactivo
-    //     platforms: ['Xbox'],
-    //     genres: ['Coches', 'Estrategia'],
-    //   },
-    // ];
-  }
-
-  // Agregar otras funciones y métodos si fuera necesario en el componente...
+  ngOnInit(): void {}
 }
