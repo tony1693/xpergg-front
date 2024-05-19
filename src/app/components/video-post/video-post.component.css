@@ -91,6 +91,9 @@ youtube-player{
 
 .view-comments {
     color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
 }
 
 .titlePost{

@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input, Output, input } from '@angular/core';
 import { User } from '../../models/user';
 import { PostService } from '../../services/post/post.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,7 +7,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { CommentService } from '../../services/comment/comment.service';
 import { Comment } from '../../models/comment';
 import { error } from 'jquery';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotificationService } from '../../services/notification/notification.service';
 import { Reaction } from '../../models/reaction';
 
@@ -24,14 +24,17 @@ export class VideoPostComponent {
   @Input() public user!: User;
   @Input() public likeOff: string =
     '../../../assets/icon/icono-corazon-off.svg';
-  // Inicializa el contador de likes
+  @Output() public postId!: number;
+
+  // Inicial publiza el contador de likes
   likesCount: number = 0;
   newReaction: Reaction[] = [];
   public posts: Post[] = [];
-  public postId: number = 0;
+
   public comments: Comment[] = [];
   public userName: string = '';
   public avatar: string = '';
+  public showCommentsDiv: boolean = false;
 
   // @Input() public likeOff: string =
   // '../../../assets/icon/icono-corazon-off.svg';
@@ -40,6 +43,7 @@ export class VideoPostComponent {
     private readonly postService: PostService,
     private readonly commentService: CommentService,
     private route: ActivatedRoute,
+    private router: Router,
     private readonly notificationService: NotificationService
   ) {
     // Aquí recuperamos el userName:
@@ -53,6 +57,8 @@ export class VideoPostComponent {
     const avatarDataString = localStorage.getItem('avatar');
     this.avatar = avatarDataString as string;
     console.log(this.avatar);
+
+    this.getPostComments(this.postId);
   }
 
   // public getUserFromLocalStorage(): User | null {
@@ -237,19 +243,35 @@ export class VideoPostComponent {
     return videoId;
   }
 
-  public showComments(postId: number) {
-    if (postId) {
-      this.commentService.showComments(postId).subscribe({
-        next: (comments) => {
-          this.comments = comments;
-          console.log(comments);
-        },
-        error: (error) => {
-          console.log(error);
-        },
+  // ngOnInit(): void {
+  //   let post_id: number;
+  //   this.router.navigate(['/init']);
+  //   console.log('El post ID de este video es: ', post_id);
+  // }
+
+  public getPostID(post_id: number) {
+    this.router.navigate(['/init']);
+    console.log('El post ID de este video es: ', post_id);
+  }
+
+  getPostComments(postId: number) {
+    this.commentService
+      .getAllCommentsByPost(postId)
+      .subscribe((data: any[]) => {
+        this.comments = data;
       });
-    } else {
-      console.log('no existe ese post');
-    }
+  }
+
+  public showComments(post_id: number) {
+    this.router.navigate(['/init']);
+    this.commentService.getAllCommentsByPost(post_id).subscribe({
+      next: (comments) => {
+        this.comments = comments;
+        console.log(comments);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }
