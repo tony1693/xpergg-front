@@ -34,7 +34,7 @@ export class VideoPostComponent {
   public comments: Comment[] = [];
   public userName: string = '';
   public avatar: string = '';
-  public showCommentsDiv: boolean = false;
+  public visible: boolean = false;
 
   // @Input() public likeOff: string =
   // '../../../assets/icon/icono-corazon-off.svg';
@@ -168,5 +168,6 @@ export class VideoPostComponent {
         console.log(error);
       },
     });
+    this.visible = true;
   }
 }

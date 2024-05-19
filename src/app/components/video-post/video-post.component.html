@@ -16,11 +16,16 @@
             Ver comentarios
         </button>
     </div>
-    <div class="commentBox">
+    @if(visible){
+        <div class="commentBox">
         @for(comment of comments; track comments){
+        <p>{{comment.userName}}</p>
         <p>{{comment.text}}</p>
+
         }
     </div>
+    }
+    
     <div class="comment-section">
         <input type="text" class="form-control" id="" placeholder="Escribe tu comentario..." required #inputComment>
     </div>
