@@ -47,6 +47,7 @@ export class InitComponent {
   @Input() public apiNewsText: string = '';
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
+  @Input() public postId!: number;
 
   // @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
 
@@ -114,11 +115,9 @@ export class InitComponent {
     inputTextPost: HTMLInputElement,
     inputLinkVideoPost: HTMLInputElement
   ) {
-
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const userId: number = JSON.parse(
       localStorage.getItem('user') as string
-
     ).user_id;
     const userName = localStorage.getItem('name');
     const avatar = localStorage.getItem('avatar');
@@ -171,7 +170,6 @@ export class InitComponent {
   trackByGame(index: number, game: any): number {
     return game.id;
   }
-
 
   // getUserFromLocalStorage(): User | null {
   //   const userJson = localStorage.getItem('user');

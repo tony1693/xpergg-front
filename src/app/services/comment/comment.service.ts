@@ -24,7 +24,7 @@ export class CommentService {
     return this.http.get<any>(`${this.url}/getCommentsUser?id=${userId}`);
   }
 
-  // public getAllComments(): Observable<Comment[]> {
-  //   return this.http.get<Comment[]>(`${this.url}/comments`);
-  // }
+  getAllCommentsByPost(post_id: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.url}/comments/${post_id}`);
+  }
 }
