@@ -8,13 +8,10 @@
             <div class="card-news">
 
                 <div class="boxNews">
-
-                    <ng-container *ngFor="let game of games.slice(0, 6); trackBy: trackByGame">
-                        <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
-                            [link]="game.freetogame_profile_url"></app-trending-news>
-                    </ng-container>
-
-
+                    @for(game of games.slice(0,6); track game.game_id){
+                        <app-trending-news-init class="cards" [text]="game.title" [img]="game.thumbnail"
+                        [link]="game.freetogame_profile_url"></app-trending-news-init>
+                    }    
                 </div>
                 <a class="viewAll" routerLink="/news">Ver Todas</a>
             </div>
@@ -71,8 +68,8 @@
                 <div class="boxNews">
 
                     <ng-container *ngFor="let game of games.slice(0, 6); trackBy: trackByGame">
-                        <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
-                            [link]="game.freetogame_profile_url"></app-trending-news>
+                        <app-trending-news-init class="cards" [text]="game.title" [img]="game.thumbnail"
+                            [link]="game.freetogame_profile_url"></app-trending-news-init>
                     </ng-container>
 
 

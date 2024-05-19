@@ -111,7 +111,7 @@
             <div class="containerBottom">
                 <app-confirmation-modal id="buttonText" [buttonText]="'Editar'"
                     [confirmationText]="'¿Estás seguro de que deseas modificar el perfil?'" [closeModal]="'Cancelar'"
-                    [acceptModal]="'Aceptar'" (click)="confirmEdit()"></app-confirmation-modal>
+                    [acceptModal]="'Aceptar'" (click)="confirmEdit()" ></app-confirmation-modal>
             </div>
 
     </form>
@@ -130,7 +130,7 @@
                         <input class="inputPassword" formControlName="confirmPassword" type="password">
                     </div>
                     <div class="passwordBtn">
-                        <button class="actualizar" type="submit">Actualizar</button>
+                        <button class="actualizar" type="submit" [routerLink]="['/profile']" routerLinkActive="router-link-active" >Actualizar</button>
                     </div>
                 </div>
             </div>

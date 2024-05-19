@@ -16,6 +16,7 @@ import { UserService } from '../../services/user/user.service';
 import { ConfirmPasswordComponent } from '../../components/confirm-password/confirm-password.component';
 import { MatDialog } from '@angular/material/dialog';
 import { error } from 'jquery';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -28,6 +29,7 @@ import { error } from 'jquery';
     ConfirmationModalComponent,
     AvatarOptionsComponent,
     ConfirmPasswordComponent,
+    RouterLink
   ],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
@@ -234,5 +236,7 @@ changePassword() {
     console.error('El formulario no es válido');
     
   }
+  window.location.reload()
 }
+
 }

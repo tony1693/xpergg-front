@@ -11,6 +11,7 @@ import { FormLoginComponent } from '../../components/form-login/form-login.compo
 import { CommonModule } from '@angular/common';
 import { GamesApiService } from '../../services/games-api/games-api.service';
 import { TrendingNewsComponent } from '../../components/trending-news/trending-news.component';
+import { TrendingNewsInitComponent } from '../../components/trending-news init/trending-news-init.component';
 
 @Component({
   selector: 'app-init',
@@ -25,7 +26,7 @@ import { TrendingNewsComponent } from '../../components/trending-news/trending-n
     UsersListComponent,
     FormLoginComponent,
     CommonModule,
-    TrendingNewsComponent,
+    TrendingNewsInitComponent,
   ],
 })
 export class InitComponent {

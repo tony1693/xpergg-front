@@ -16,6 +16,11 @@
     
 }
 
+h1{
+    text-align: center;
+    /* margin-left: 10px; */
+}
+
 .topContainer{
     display: flex;
     justify-content: center;
@@ -26,10 +31,17 @@
     padding: 40px;
 }
 
+.participantes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
 .leftContainer{
     display: flex;
     flex-direction: column;
-    min-width: 13%;
+    min-width: 200px;
     justify-content: center;
     align-items: center;
     /* height: 50%; */
@@ -38,7 +50,7 @@
     border: 1px solid #E100FF;
     color:white;
     border-radius: 18px;
-    margin-top: 55px;
+    margin-top: 10px;
     padding: 20px;
     overflow: auto;
 }
@@ -151,11 +163,11 @@
     background-color: #E100FF;
     border: none;
     color: white;
-    width: 190px;
+    width: 270px;
     height: 40px;
     text-align: center;
     border-radius: 16px;
-    font-size: 22px;
+    font-size: 20px;
     font-family: 'Plus Jakarta Sans';
     font-weight: bold;
     cursor: pointer;

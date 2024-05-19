@@ -1,22 +1,26 @@
 <div class="bigContainer">
     @if(isLoggedIn ){
     <div class="topContainer">
-        <div class="title">
-            <h1>Participantes</h1>
-        </div>
-        <div class="leftContainer">
-            @for(message of getUniqueUsers(messages); track message) {
-            <div class="userData">
-                <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
-                <p class="userBox">{{ message.user_name }}</p>
-                <!-- <p class="availableToPlay" 
-                    [ngStyle]="{'color': isUserAvailable(message.user_id) ? '#11ec48' : '#707070'}">
-                   {{ isUserAvailable(message.user_id) ? 'DISPONIBLE' : 'AUSENTE' }}
-                 </p> -->
+        
+            
+       <div class="participantes">
+            <div>
+                <h1>Participantes</h1>
             </div>
-            }
-            <div class="astroImg">
-                <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
+            <div class="leftContainer">
+                @for(message of getUniqueUsers(messages); track message) {
+                <div class="userData">
+                    <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
+                    <p class="userBox">{{ message.user_name }}</p>
+                    <!-- <p class="availableToPlay" 
+                        [ngStyle]="{'color': isUserAvailable(message.user_id) ? '#11ec48' : '#707070'}">
+                       {{ isUserAvailable(message.user_id) ? 'DISPONIBLE' : 'AUSENTE' }}
+                     </p> -->
+                </div>
+                }
+                <div class="astroImg">
+                    <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
+                </div>
             </div>
         </div>
         <div class="rightContainer">

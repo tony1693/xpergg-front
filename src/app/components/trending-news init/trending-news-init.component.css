@@ -1,9 +1,9 @@
 
 .trending-news-container{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 10px 0;
     /* width: 400px; */
 }
@@ -11,7 +11,7 @@
 .text{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     color: #010050;
 }
 
@@ -53,7 +53,7 @@ a {
 }
 
 .init-page .text {
-    font-size: 16px;
+    font-size: 14px;
     color: #E100FF;
     margin-left: 10px;
 }

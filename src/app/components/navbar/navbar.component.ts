@@ -60,10 +60,11 @@ export class NavbarComponent {
   }
 
   logout() {
+    localStorage.clear();
     localStorage.removeItem('user');
 
     this.isLoggedIn = false;
-
+    // localStorage.setItem('isLoggedIn', JSON.stringify(false));
     // Cambiar el estado a 'AUSENTE'
     this.available_to_play = false;
     this.isUser.avalaible_to_play = 'AUSENTE';
