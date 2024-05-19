@@ -30,11 +30,11 @@ export class VideoPostComponent {
   likesCount: number = 0;
   newReaction: Reaction[] = [];
   public posts: Post[] = [];
-
+  public isLoggedIn = true;
   public comments: Comment[] = [];
   public userName: string = '';
   public avatar: string = '';
-  public showCommentsDiv: boolean = false;
+  public visible: boolean = false;
 
   // @Input() public likeOff: string =
   // '../../../assets/icon/icono-corazon-off.svg';
@@ -61,22 +61,6 @@ export class VideoPostComponent {
     this.getPostComments(this.postId);
   }
 
-  // public getUserFromLocalStorage(): User | null {
-  // const userJson = localStorage.getItem('user');
-  // return userJson ? JSON.parse(userJson) : null;
-  // }
-
-  // addLike(): void {
-  //   // this.likesCount++;
-  //   if (this.likeOff == '../../../assets/icon/icono-corazon-off.svg') {
-  //     this.likesCount++;
-  //     this.likeOff = '../../../assets/icon/icono-corazon-on.svg';
-  //   } else {
-  //     this.likeOff = '../../../assets/icon/icono-corazon-off.svg';
-  //     this.likesCount--;
-  //   }
-  // }
-
   addLike(): void {
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const userId: number = JSON.parse(
@@ -98,7 +82,9 @@ export class VideoPostComponent {
       next: (data) => {
         console.log(data);
         // window.location.reload();
-        // setTimeout(() => { location.reload(); }, 1);
+        // setTimeout(() => {
+        //   location.reload();
+        // }, 0.1);
       },
       error: (error) => {
         console.log(error);
@@ -127,91 +113,6 @@ export class VideoPostComponent {
       this.likesCount--;
     }
   }
-
-  //   addLike(): void {
-  //   const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
-  //   const userId: number = JSON.parse(localStorage.getItem('user') as string).user_id;
-  //   // const reactionId: number = Date.now();
-  //   // const postId: number = JSON.parse(localStorage.getItem('post') as string).post_id;
-  //     let newReaction: Reaction = {
-  //     reaction_id: 1,
-  //     date: currentDate,
-  //     reaction_type: "like",
-  //     user_id: userId,
-  //     post_id: this.post.post_id
-  //   };
-  //   localStorage.setItem('likes', JSON.stringify(newReaction));
-  //   // localStorage.setItem('posts', JSON.stringify(newReaction.post_id));
-
-  //   this.notificationService.sendNotification(newReaction).subscribe({
-  //     next: (data) => {
-  //       console.log(data);
-  //       window.location.reload();
-  //       setTimeout(() => { location.reload(); }, 1);
-  //     },
-  //     error: (error) => { console.log(error); },
-  //   });
-
-  //   if (this.likeOff == '../../../assets/icon/icono-corazon-off.svg') {
-  //     this.likesCount++;
-  //     this.likeOff = '../../../assets/icon/icono-corazon-on.svg';
-  //     this.notificationService.sendNotification(this.newReaction).subscribe({
-  //       next: (data) => {
-  //         console.log(data);
-  //         window.location.reload();
-  //         setTimeout(() => { location.reload(); }, 1);
-  //       },
-  //       error: (error) => { console.log(error); },
-  //     });
-  //     console.log("like")
-  //     console.log(this.newReaction)
-  //   } else {
-  //     this.likeOff = '../../../assets/icon/icono-corazon-off.svg';
-  //     this.likesCount--;
-  //   }
-  // }
-
-  // addLike() {
-  //   const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
-  //   const userId: number = JSON.parse(localStorage.getItem('user') as string).user_id;
-  //   const postId: number = JSON.parse(localStorage.getItem('post') as string).post_id;
-
-  //   let newReaction: Reaction = {
-  //     reaction_id: 0,
-  //     date: currentDate,
-  //     reaction_type: "like",
-  //     user_id: userId,
-  //     post_id: postId
-  //   };
-  //   localStorage.setItem('likes', JSON.stringify(newReaction));
-  //   localStorage.setItem('posts', JSON.stringify(newReaction.post_id));
-
-  //   this.notificationService.sendNotification(newReaction).subscribe({
-  //     next: (data) => {
-  //       console.log(data);
-  //       window.location.reload();
-  //       setTimeout(() => { location.reload(); }, 1);
-  //     },
-  //     error: (error) => { console.log(error); },
-  //   });
-  //   if (this.likeOff == '../../../assets/icon/icono-corazon-off.svg') {
-  //     this.likesCount++;
-  //     this.likeOff = '../../../assets/icon/icono-corazon-on.svg';
-  //     this.notificationService.sendNotification(this.newReaction).subscribe({
-  //       next: (data) => {
-  //         console.log(data);
-  //         window.location.reload();
-  //         setTimeout(() => { location.reload(); }, 1);
-  //       },
-  //       error: (error) => { console.log(error); },
-  //     });
-  //     console.log("like")
-  //     console.log(this.newReaction)
-  //   } else {
-  //     this.likeOff = '../../../assets/icon/icono-corazon-off.svg';
-  //     this.likesCount--;
-  //   }
-  // }
 
   public addComment(inputComment: HTMLInputElement) {
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -243,12 +144,6 @@ export class VideoPostComponent {
     return videoId;
   }
 
-  // ngOnInit(): void {
-  //   let post_id: number;
-  //   this.router.navigate(['/init']);
-  //   console.log('El post ID de este video es: ', post_id);
-  // }
-
   public getPostID(post_id: number) {
     this.router.navigate(['/init']);
     console.log('El post ID de este video es: ', post_id);
@@ -273,5 +168,6 @@ export class VideoPostComponent {
         console.log(error);
       },
     });
+    this.visible = true;
   }
 }

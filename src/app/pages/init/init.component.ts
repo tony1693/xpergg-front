@@ -42,14 +42,13 @@ export class InitComponent {
   public urlId: string = '';
   public post: Post[] = [];
   games!: any;
+  public isLoggedIn = true;
 
   @Input() user!: User;
   @Input() public apiNewsText: string = '';
   @Input() public linkApiNewsRouting: string = '';
   @Input() public avalaible_to_play: boolean = false;
   @Input() public postId!: number;
-
-  // @Input() public avatarImg: string = 'assets/avatar/call-duty.webp'; // esto me tiene que venir de localStorage
 
   constructor(
     private readonly postService: PostService,
@@ -80,10 +79,6 @@ export class InitComponent {
     this.avatar = avatarDataString as string;
     console.log(this.avatar);
   }
-
-  //   ngOnInit() {
-  //     this.getGames()
-  // }
 
   getGames() {
     this.gameService.getGames().subscribe((res) => {
@@ -151,6 +146,7 @@ export class InitComponent {
   ngOnInit(): void {
     // const userNameFromLocalStorage = localStorage.getItem('name');
     // this.userName = userNameFromLocalStorage || '';
+    let user = localStorage.getItem('user');
     const storedAvatar = localStorage.getItem('avatar');
     if (storedAvatar) {
       this.avatar = storedAvatar;
@@ -170,21 +166,4 @@ export class InitComponent {
   trackByGame(index: number, game: any): number {
     return game.id;
   }
-
-  // getUserFromLocalStorage(): User | null {
-  //   const userJson = localStorage.getItem('user');
-  //   return userJson ? JSON.parse(userJson) : null;
-  // }
 }
-
-// Filtramos los amigos en línea y sugeridos de la lista de users
-// this.onlineFriends = this.user.filter(user => user.available_to_play);
-
-// // Asumimos que el user actual es el primero en la lista
-// let currentUser = this.user[0];
-
-// this.sugerenciaFriends = this.user.filter(user => {
-//   let genreMatches = user.genres.filter(genre => currentUser.genres.includes(genre)).length >= 1;
-//   let platformMatches = user.platforms.filter(platform => currentUser.platforms.includes(platform)).length >= 1;
-//   return genreMatches && platformMatches;
-// });

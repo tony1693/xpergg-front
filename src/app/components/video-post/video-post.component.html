@@ -1,4 +1,5 @@
 <div class="video-post">
+    @if( isLoggedIn){
     <!-- <div class="video-player"> -->
     <youtube-player class="player" id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres"
         [height]="332" [width]="865" [startSeconds]="1" [endSeconds]=""></youtube-player>
@@ -14,13 +15,17 @@
         <button class="view-comments" (click)="showComments(post.post_id)">
             Ver comentarios
         </button>
-
     </div>
-    <div class="commentBox">
+    @if(visible){
+        <div class="commentBox">
         @for(comment of comments; track comments){
+        <p>{{comment.userName}}</p>
         <p>{{comment.text}}</p>
+
         }
     </div>
+    }
+    
     <div class="comment-section">
         <input type="text" class="form-control" id="" placeholder="Escribe tu comentario..." required #inputComment>
     </div>
@@ -30,4 +35,16 @@
     <br>
     <br>
     <br>
+
+    }@else {
+    <!-- <div class="video-player"> -->
+    <youtube-player class="player" id="youtube" [videoId]="obtainIdURL(post.url)" suggestedQuality="highres"
+        [height]="332" [width]="865" [startSeconds]="1" [endSeconds]=""></youtube-player>
+    <!-- </div> -->
+    <div class="video-description">
+        <p class="titlePost">{{ post.description }}</p>
+    </div>
+
+    }
+
 </div>

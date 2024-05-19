@@ -25,7 +25,7 @@ import { Post } from '../../models/posts';
 })
 export class ProfileComponent {
   @Input() user!: User;
-  @Input() platform!: string [];
+  @Input() platform!: string[];
   isLoggedIn = true;
 
   isUser = { available_to_play: 'AUSENTE' };
@@ -41,7 +41,7 @@ export class ProfileComponent {
   userPostCount!: number;
   available_to_play = false;
   isLast: any;
-  // platform: string[] = []; 
+  // platform: string[] = [];
 
   // public platform = ['ps', 'xbox', 'nintendo', 'pc'];
   // // Claves exclusivas para géneros
@@ -106,8 +106,6 @@ export class ProfileComponent {
     console.log(userInterestName);
   }
 
-
-
   ngOnInit(): void {
     this.getUserPostCount();
 
@@ -128,7 +126,6 @@ export class ProfileComponent {
         next: (posts) => {
           this.posts = posts;
           console.log('Estos son los posts del usuario');
-          
         },
         error: (error) => {
           console.log(error);
@@ -140,9 +137,8 @@ export class ProfileComponent {
   }
 
   //Funcion para mostrar plataformas y generos
-  public getInterest(){
+  public getInterest() {
     let interest = JSON.parse(localStorage.getItem('platform') ?? '{}');
-
   }
 
   // Función para cambiar el estado de disponibilidad
@@ -171,20 +167,6 @@ export class ProfileComponent {
       },
     });
   }
-
-  // ngOnInit(): void {
-  //   this.getUserPostCount()
-
-  //   // Obtén el objeto de usuario del localStorage
-  //   let user = JSON.parse(localStorage.getItem('user') ?? '{}');
-  //   this.user_id = user.user_id; // Inicializamos user_id aquí también por si acaso
-
-  //   // Aquí recuperamos el estado del usuario desde el almacenamiento local
-  //   let userStatusFromStorage = localStorage.getItem('userStatus');
-  //   this.available_to_play = userStatusFromStorage === 'DISPONIBLE' ? true : false;
-  //   console.log(userStatusFromStorage);
-
-  // }
 
   getUserPostCount(): void {
     const userId: number = JSON.parse(

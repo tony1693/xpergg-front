@@ -17,12 +17,6 @@ export class ChatService {
     return this.http.get<any>(`${this.url}/api/threads/${id}`);
   }
 
-  // getMessagesById(chat_id: number): Observable<ChatMessage[]> {
-  //   return this.http.get<ChatMessage[]>(
-  //     `${this.url}api/chat/${chat_id}/messages`
-  //   );
-  // }
-
   postMessage(message: ChatMessage): Observable<any> {
     return this.http.post(`${this.url}/threads_messages/:id`, message);
   }
@@ -32,18 +26,4 @@ export class ChatService {
       `${this.url}/threads-messages-users/${thread_id}`
     );
   }
-
-  // postMessage(message: ChatMessage): Observable<any> {
-  //   return this.http.post(
-  //     `${this.url}api/chat/${message.chat_message_id}/messages`,
-  //     message
-  //   );
-  // }
-  // getUsersInChat(chatId: number): Observable<User[]> {
-  //   return this.http.get<User[]>(`${this.url}/chats/${chatId}/users`);
-
-  // }
-  // getMessageChatUserId(chatId: number): Observable<number> {
-  //   return this.http.get<number>(`${this.url}chat_messages/${chatId}/user_id`);
-  // }
 }

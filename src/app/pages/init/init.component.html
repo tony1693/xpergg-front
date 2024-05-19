@@ -1,19 +1,17 @@
 <div class="container-init">
-
+    @if(isLoggedIn){
     <div class="news">
         <div class="juegosdestacados">
             <div class="parrafo">
-                <p class=" titleNews">Juegos  Destacados</p>
+                <p class=" titleNews">Juegos Destacados</p>
             </div>
             <div class="card-news">
 
                 <div class="boxNews">
 
                     <ng-container *ngFor="let game of games.slice(0, 6); trackBy: trackByGame">
-                        <app-trending-news class="cards"
-                                           [text]="game.title"
-                                           [img]="game.thumbnail"
-                                           [link]="game.freetogame_profile_url"></app-trending-news>
+                        <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
+                            [link]="game.freetogame_profile_url"></app-trending-news>
                     </ng-container>
 
 
@@ -61,19 +59,57 @@
     <div class="container-button">
         <button class="buttonCommunity" routerLink="/community">Accede a la comunidad</button>
     </div>
-    <!-- <div class="friends">
+    }
+    @else {
+    <div class="news">
+        <div class="juegosdestacados">
+            <div class="parrafo">
+                <p class=" titleNews">Juegos Destacados</p>
+            </div>
+            <div class="card-news">
 
-        <div class="card-online-friends">
-            <app-users-list class="amigos" title="Amigos Disponibles" [usersList]="onlineFriends"></app-users-list>
+                <div class="boxNews">
+
+                    <ng-container *ngFor="let game of games.slice(0, 6); trackBy: trackByGame">
+                        <app-trending-news class="cards" [text]="game.title" [img]="game.thumbnail"
+                            [link]="game.freetogame_profile_url"></app-trending-news>
+                    </ng-container>
+
+
+                </div>
+                <a class="viewAll" routerLink="/news">Ver Todas</a>
+            </div>
         </div>
 
-        <div class="card-online-friends">
-            <app-users-list class="amigos" title="Sugerencias de Amistad"
-                [usersList]="sugerenciaFriends"></app-users-list>
+    </div>
+    <div class="posts">
+        <div class="new-post">
+            <img class="avatarPost">
+            <div class="info-post">
+                <input type="text" class="description-video" id="" placeholder="Descripción Jugada" required
+                    #inputTextPost>
+                <input type="text" class="link-video" id="" placeholder="Link Video" required #inputLinkVideoPost>
+            </div>
+            <button class="public-post" type="submit" routerLink="/register">Publicar</button>
         </div>
+        <div class="allPosts">
+            @for(post of post; track post.post_id){
 
-       
+            <div class="user-info">
+                <img class="avatar" [src]="post.user_avatar" alt="User Avatar">
+                <p class="name">{{post.user_name}}</p>
+            </div>
 
-    </div> -->
+            <app-video-post [post]="post"></app-video-post>
+            }@empty {
+            <p class="empty">Ups...todavía no hay ningún post. Empieza a interactuar con la Comunidad!</p>
+            }
+        </div>
+    </div>
+
+    <div class="container-button">
+        <button class="buttonCommunity" routerLink="/community">Accede a la comunidad</button>
+    </div>
+    }
 
 </div>
