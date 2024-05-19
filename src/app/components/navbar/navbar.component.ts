@@ -60,37 +60,18 @@ export class NavbarComponent {
   }
 
   logout() {
-    const userId: number = JSON.parse(
-      localStorage.getItem('user') as string
-    ).user_id;
-    if (userId) {
-      this.isLoggedIn = false;
+    localStorage.removeItem('user');
 
-      // Cambiar el estado a 'AUSENTE'
-      this.available_to_play = false;
-      this.isUser.avalaible_to_play = 'AUSENTE';
+    this.isLoggedIn = false;
 
-      // Actualizar el estado en el almacenamiento local
-      localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
+    // Cambiar el estado a 'AUSENTE'
+    this.available_to_play = false;
+    this.isUser.avalaible_to_play = 'AUSENTE';
 
-      // Emitir el nuevo estado a través del Subject
-      this.statusSubject.next(this.available_to_play);
+    // Actualizar el estado en el almacenamiento local
+    localStorage.setItem('userStatus', this.isUser.avalaible_to_play);
 
-      // Llamar al servicio para actualizar el estado en la base de datos
-      const userId = this.user.user_id.toString();
-      this.userService
-        .updateUserAvailability(userId, this.available_to_play)
-        .subscribe(
-          () => console.log('Estado actualizado correctamente al hacer logout'),
-          (error) => {
-            console.error(
-              'Error al actualizar el estado al hacer logout:',
-              error
-            );
-            // Emitir el error a través del Subject
-            this.statusSubject.error(error);
-          }
-        );
-    }
+    // Emitir el nuevo estado a través del Subject
+    this.statusSubject.next(this.available_to_play);
   }
 }

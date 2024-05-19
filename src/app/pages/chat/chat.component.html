@@ -1,7 +1,8 @@
 <div class="bigContainer">
+    @if(user){
     <div class="topContainer">
         <div class="title">
-        <h1>Participantes</h1>
+            <h1>Participantes</h1>
         </div>
         <div class="leftContainer">
             @for(message of getUniqueUsers(messages); track message) {
@@ -9,9 +10,9 @@
                 <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
                 <p class="userBox">{{ message.user_name }}</p>
                 <!-- <p class="availableToPlay" 
-                [ngStyle]="{'color': isUserAvailable(message.user_id) ? '#11ec48' : '#707070'}">
-               {{ isUserAvailable(message.user_id) ? 'DISPONIBLE' : 'AUSENTE' }}
-             </p> -->
+                    [ngStyle]="{'color': isUserAvailable(message.user_id) ? '#11ec48' : '#707070'}">
+                   {{ isUserAvailable(message.user_id) ? 'DISPONIBLE' : 'AUSENTE' }}
+                 </p> -->
             </div>
             }
             <div class="astroImg">
@@ -22,35 +23,87 @@
             <div class="aboveChat">
                 @if(thread){
                 <div class="threadTitle">
-                    <p class="subject">Juego: <span>{{ thread.game }}</span>  Plataforma: <span>{{ thread.platform }}</span></p>
+                    <p class="subject">Juego: <span>{{ thread.game }}</span> Plataforma: <span>{{ thread.platform
+                            }}</span></p>
                     <p class="threadText">#{{ thread.subject }}</p>
                 </div>
                 <div>
-                    <button type="button" class="returnBtn" routerLink="/community">Volver a hilos</button>
+                    <button type="button" class="returnBtn" routerLink="/community">Volver a Comunidad</button>
                 </div>
                 }
             </div>
             <div class="chatContainer" #chatContainer>
                 @for(message of messages; track message) {
-                  <div [class.activeUser]="isMessageFromActiveUser(message.user_name)" 
-                  [class.otherUser]="!isMessageFromActiveUser(message.user_name)"
-                       class="message">
+                <div [class.activeUser]="isMessageFromActiveUser(message.user_name)"
+                    [class.otherUser]="!isMessageFromActiveUser(message.user_name)" class="message">
                     <div class="imgusername">
-                      <img [src]="message.user_avatar" alt="Avatar" class="avatar" />
-                      <p class="messageUser">{{ message.user_name }}</p>
+                        <img [src]="message.user_avatar" alt="Avatar" class="avatar" />
+                        <p class="messageUser">{{ message.user_name }}</p>
                     </div>
                     <p class="messageText">{{ message.text }}</p>
                     <p class="messageDate">{{ message.date | date:'short' }}</p>
-                  </div>
+                </div>
                 }
-              </div>            
+            </div>
             <div class="bottomContainer">
                 <input type="text" [(ngModel)]="messageText" class="msg" placeholder="Escribe aquí tu mensaje"
                     #inputMessage>
                 <button type="button" (click)="addMessageToChat(inputMessage)" class="sendBtn">Enviar</button>
             </div>
+
+
         </div>
     </div>
+    } @else{
+    <div class="topContainer">
+        <div class="title">
+            <h1>Participantes</h1>
+        </div>
+        <div class="leftContainer">
+            @for(message of getUniqueUsers(messages); track message) {
+            <div class="userData">
+                <img [src]="message.user_avatar" alt="Avatar" class="avatarBox" />
+                <p class="userBox">{{ message.user_name }}</p>
+                <!-- <p class="availableToPlay" 
+                    [ngStyle]="{'color': isUserAvailable(message.user_id) ? '#11ec48' : '#707070'}">
+                   {{ isUserAvailable(message.user_id) ? 'DISPONIBLE' : 'AUSENTE' }}
+                 </p> -->
+            </div>
+            }
+            <div class="astroImg">
+                <img class="astro" src="../../../assets/Images/astro.png" alt="imagen de Astro">
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div class="aboveChat">
+                @if(thread){
+                <div class="threadTitle">
+                    <p class="subject">Juego: <span>{{ thread.game }}</span> Plataforma: <span>{{ thread.platform
+                            }}</span></p>
+                    <p class="threadText">#{{ thread.subject }}</p>
+                </div>
+                <div>
+                    <button type="button" class="returnBtn" routerLink="/community">Volver a Comunidad</button>
+                </div>
+                }
+            </div>
+            <div class="chatContainer" #chatContainer>
+                @for(message of messages; track message) {
+                <div [class.activeUser]="isMessageFromActiveUser(message.user_name)"
+                    [class.otherUser]="!isMessageFromActiveUser(message.user_name)" class="message">
+                    <div class="imgusername">
+                        <img [src]="message.user_avatar" alt="Avatar" class="avatar" />
+                        <p class="messageUser">{{ message.user_name }}</p>
+                    </div>
+                    <p class="messageText">{{ message.text }}</p>
+                    <p class="messageDate">{{ message.date | date:'short' }}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    }
+
 
 
 </div>

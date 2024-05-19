@@ -17,13 +17,4 @@ export class CommentComponent {
   comments: Comment[] = [];
 
   constructor(private readonly commentService: CommentService) {}
-
-  // public getAllComments() {
-  //   this.commentService.showComments(this.postID).subscribe({
-  //     next: (comments) => {
-  //       this.comments = comments;
-  //       console.log(comments);
-  //     },
-  //   });
-  // }
 }

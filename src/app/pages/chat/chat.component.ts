@@ -68,7 +68,6 @@ export class ChatComponent {
     this.available_to_play =
       userStatusFromStorage === 'DISPONIBLE' ? true : false;
     console.log(userStatusFromStorage);
-    
 
     // Aquí recuperamos el userName:
     const userDataString = localStorage.getItem('user');
@@ -82,14 +81,13 @@ export class ChatComponent {
     this.imgavatar = avatarDataString as string;
     console.log(this.imgavatar);
 
-     // Aquí recuperamos el userId:
-     const userIdDataString = localStorage.getItem('user');
-     const userIdData = userDataString ? JSON.parse(userDataString) : null;
-     const userId = userData ? userData.user_id : '';
-     localStorage.setItem('name', userName);
-     console.log('userNmae localstorage: ',userName);
-
-}
+    // Aquí recuperamos el userId:
+    const userIdDataString = localStorage.getItem('user');
+    const userIdData = userDataString ? JSON.parse(userDataString) : null;
+    const userId = userData ? userData.user_id : '';
+    localStorage.setItem('name', userName);
+    console.log('userNmae localstorage: ', userName);
+  }
 
   public addMessageToChat(inputMessage: HTMLInputElement) {
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -145,7 +143,7 @@ export class ChatComponent {
         console.log(error);
       },
     });
-   
+
     this.activeUserId = localStorage.getItem('name');
     this.isMessageFromActiveUser;
     this.updateUserStatus();
@@ -153,16 +151,15 @@ export class ChatComponent {
     window.addEventListener('storage', () => {
       this.updateUserStatus();
     });
-    
   }
 
   getUniqueUsers(messages: any) {
     const uniqueUsers = [];
     const map = new Map();
     for (const message of messages) {
-      if(!map.has(message.user_id)){
-          map.set(message.user_id, true);
-          uniqueUsers.push(message);
+      if (!map.has(message.user_id)) {
+        map.set(message.user_id, true);
+        uniqueUsers.push(message);
       }
     }
     return uniqueUsers;
@@ -177,13 +174,13 @@ export class ChatComponent {
 
   scrollToBottom(): void {
     try {
-      this.chatContainer.nativeElement.scrollTop = this.chatContainer.nativeElement.scrollHeight;
-    } catch(err) { }
+      this.chatContainer.nativeElement.scrollTop =
+        this.chatContainer.nativeElement.scrollHeight;
+    } catch (err) {}
   }
 
   isUserAvailable(userId: number): boolean {
     let userStatus = localStorage.getItem(`userStatus_${userId}`);
     return userStatus === 'DISPONIBLE';
   }
-  
 }
